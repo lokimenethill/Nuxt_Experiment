@@ -82,7 +82,10 @@ export default {
       }
     }
   },
-
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    API_HOST: "https://staging.mesolex.org/api/search/"
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

@@ -120,6 +120,11 @@ export default {
           icon: 'mdi-apps',
           title: 'Biblioteca',
           to:'/publicaciones/dino'
+        },
+        {
+          icon:'mdi-apps',
+          title:'Search Bar',
+          to:'/SearchView'
         }
       ],
       miniVariant: false,
