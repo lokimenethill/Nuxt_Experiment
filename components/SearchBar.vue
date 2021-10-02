@@ -59,7 +59,7 @@ export default {
           {label:"expresión regular",val:"regex"},
           ],
         demodata:{"dataset":"azz",
-        "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]}
+        "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]},
     }
   },
   watch:{
@@ -75,7 +75,7 @@ export default {
 },
    methods: { 
   async prueba_axios() {
-    const resp = await this.$axios.$get(process.env.API_HOST,this.demodata)
+    const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
   },
   set_values(){
