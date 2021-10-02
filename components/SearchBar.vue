@@ -26,12 +26,14 @@
                  <button style="background-color:green"  @click="prueba_axios()" >Search</button>
                  <h2>{{axios_response}}</h2>
                  <h3>demo query build:{{demodata}}</h3>
+                 <h1>test data:{{testData}}</h1>
     </div>
 </template>
 <script>
 export default {
       data(){
     return{
+        testData:"",
       axios_response:"",
       selected_datalist_first:"Entrada",
       selected_datalist_first_val:"",
@@ -71,6 +73,9 @@ export default {
      },
      selected_datalist_second(){
          this.set_values()
+     },
+     checkbx(){
+         this.set_values()
      }
 },
    methods: { 
@@ -82,6 +87,8 @@ export default {
           this.demodata={"dataset":"azz",
         "query":[[{"type_tag":`${this.selected_datalist_first}`,"filter_type":`${this.selected_datalist_second}`,"value":`${this.search_element}`,"exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]}
        // this.demodata.modifiers.push(this.checkbx)
+       this.testData = JSON.stringify(Object.assign({}, this.checkbx))
+      // this.demodata.query[0][0].modifiers.push(JSON.stringify(this.checkbx))
   }
 },
 
