@@ -1,18 +1,14 @@
 <template lang="">
     <div>
         <h1>Componente barra de busqueda</h1>
-                 <button style="background-color:blue;">{{selected_datalist_first}} {{selected_datalist_second}}</button>
-                 <input  v-model="search_element" type="text" style="background-color:white;" >
-                 <p></p>
-                     <div>
-                         <select v-model="selected_datalist_first" style="background-color:white;" >
+                  <select v-model="selected_datalist_first" style="background-color:white;" >
                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                          </select>
-                             <p></p>
-                          <select v-model="selected_datalist_second" style="background-color:white;" >
+                           <select v-model="selected_datalist_second" style="background-color:white;" >
                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                          </select>
-                     </div>
+                 <input  v-model="search_element" type="text" style="background-color:white;" >
+                 <p></p>
                  <div>
                 <input  v-model="checkbx" type="checkbox" value="nahuat_orthography" >
                 <label for="nahuat_orthography">Activar flexibilidad ortográfica</label>
@@ -23,10 +19,23 @@
                     <br>
                     <span>opciones seleccionadas: {{ checkbx }}</span>
                 </div>
-                 <button style="background-color:green"  @click="prueba_axios()" >Search</button>
-                 <h2>{{axios_response}}</h2>
-                 <h3>demo query build:{{demodata}}</h3>
+      <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
+          <p>   
+              <select v-model="find.type_tag" style="background-color:white;" >
+                             <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                         </select>
+                           <select v-model="find.filter_type" style="background-color:white;" >
+                             <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                         </select>
+                            <input  v-model="find.value" style="background-color:white;" ></p>
+  </div>
+                <p><button style="background-color:blue;" @click="addFilter" >Añadir filtro</button></p>
+                 <button style="background-color:green"  @click="prueba_axios()" >Search</button>.
+                      <h3>demo query build:{{demodata}}</h3>
                  <h1>test data:{{testData}}</h1>
+                 <h2>{{axios_response}}</h2>
+                 <h3>test extra filters:{{extraFilters}}</h3>
+            
     </div>
 </template>
 <script>
@@ -35,9 +44,9 @@ export default {
     return{
         testData:"",
       axios_response:"",
-      selected_datalist_first:"Entrada",
+      selected_datalist_first:"lemma",
       selected_datalist_first_val:"",
-      selected_datalist_second:"empieza con",
+      selected_datalist_second:"begins_with",
       selected_datalist_second_val:"",
       search_element:"",
       checkbx:[] ,
@@ -62,6 +71,9 @@ export default {
           ],
         demodata:{"dataset":"azz",
         "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]},
+        extraFilter:[{"type_tag":"lemma","filter_type":"begins_with","value":"ou","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]},{"type_tag":"lemma","filter_type":"begins_with","value":"s","exclude":false,"modifiers":[]}]
+        ,
+        extraFilters: []
     }
   },
   watch:{
@@ -83,13 +95,30 @@ export default {
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
   },
+  setChkBox(){
+      const newArrJson=[]
+      this.checkbx.forEach(element => {
+          newArrJson.push({"name":element})
+      });
+      return newArrJson
+  },
   set_values(){
           this.demodata={"dataset":"azz",
-        "query":[[{"type_tag":`${this.selected_datalist_first}`,"filter_type":`${this.selected_datalist_second}`,"value":`${this.search_element}`,"exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]}
+        "query":[[{"type_tag":`${this.selected_datalist_first}`,"filter_type":`${this.selected_datalist_second}`,"value":`${this.search_element}`,"exclude":false,"modifiers":this.setChkBox()}]],"global_modifiers":[]}
        // this.demodata.modifiers.push(this.checkbx)
-       this.testData = JSON.stringify(Object.assign({}, this.checkbx))
+       this.testData = JSON.stringify(Object.assign({},this.checkbx))
       // this.demodata.query[0][0].modifiers.push(JSON.stringify(this.checkbx))
+      this.testData = this.setChkBox()
+  },
+  addFilter(){
+      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with'});
+      
+        
+     
+
+      
   }
+
 },
 
 }
