@@ -73,7 +73,8 @@ export default {
         "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]},
         extraFilter:[{"type_tag":"lemma","filter_type":"begins_with","value":"ou","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]},{"type_tag":"lemma","filter_type":"begins_with","value":"s","exclude":false,"modifiers":[]}]
         ,
-        extraFilters: []
+        extraFilters: [],
+        extraChekrs:[{label:"Activar flexibilidad ortográfica",val:"nahuat_orthography"},{label:"Activar búsqueda bilingüe",val:"bilingual" },{label:"Activar tesauro", val:"es_thesaurus_lookup" }]
     }
   },
   watch:{
@@ -111,7 +112,7 @@ export default {
       this.testData = this.setChkBox()
   },
   addFilter(){
-      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with'});
+      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[]});
       
         
      
