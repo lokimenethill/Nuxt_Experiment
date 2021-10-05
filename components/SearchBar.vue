@@ -27,9 +27,13 @@
                            <select v-model="find.filter_type" style="background-color:white;" >
                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                          </select>
-                            <input  v-model="find.value" style="background-color:white;" ></p>
+                            <input  v-model="find.value" style="background-color:white;" >
+                            <div  v-for="(checks) in extraChekrs" :key="checks.name" >
+                                <input value="checks.name" type="checkbox"  /> <label>{{checks.name}}{{index}}</label>
+                            </div>
+                            </p>
   </div>
-                <p><button style="background-color:blue;" @click="addFilter" >Añadir filtro</button></p>
+                <p><button style="background-color:blue;" @click="addFilter" >Añadir filtro</button><button style="background-color:red;" @click="deleteFilter" >Eliminar filtro</button></p>
                  <button style="background-color:green"  @click="prueba_axios()" >Search</button>.
                       <h3>demo query build:{{demodata}}</h3>
                  <h1>test data:{{testData}}</h1>
@@ -74,7 +78,8 @@ export default {
         extraFilter:[{"type_tag":"lemma","filter_type":"begins_with","value":"ou","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]},{"type_tag":"lemma","filter_type":"begins_with","value":"s","exclude":false,"modifiers":[]}]
         ,
         extraFilters: [],
-        extraChekrs:[{label:"Activar flexibilidad ortográfica",val:"nahuat_orthography"},{label:"Activar búsqueda bilingüe",val:"bilingual" },{label:"Activar tesauro", val:"es_thesaurus_lookup" }]
+        extraChekrs:[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }],
+        extraChekrsLabels:[""]
     }
   },
   watch:{
@@ -93,6 +98,7 @@ export default {
 },
    methods: { 
   async prueba_axios() {
+      this.set_values()
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
   },
@@ -110,14 +116,15 @@ export default {
        this.testData = JSON.stringify(Object.assign({},this.checkbx))
       // this.demodata.query[0][0].modifiers.push(JSON.stringify(this.checkbx))
       this.testData = this.setChkBox()
+      if(this.extraFilters.length>0){
+          this.demodata.query.push(this.extraFilters)
+      }
   },
   addFilter(){
-      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[]});
-      
-        
-     
-
-      
+      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":this.extraChekrs});
+  },
+  deleteFilter(){
+      this.extraFilters.pop()
   }
 
 },
