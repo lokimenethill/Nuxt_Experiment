@@ -21,6 +21,9 @@
                 </div>
       <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
           <p>   
+              <select v-model="find.exclude" style="background-color:white;" >
+                             <option v-for="(elements) in datalist_condition" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                         </select>
               <select v-model="find.type_tag" style="background-color:white;" >
                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                          </select>
@@ -28,9 +31,14 @@
                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                          </select>
                             <input  v-model="find.value" style="background-color:white;" >
-                            <div  v-for="(checks) in extraChekrs" :key="checks.name" >
-                                <input value="checks.name" type="checkbox"  /> <label>{{checks.name}}{{index}}</label>
-                            </div>
+                                    <p>
+                                     <input  v-model="find.modifiers[0].name" type="checkbox" value="nahuat_orthography" >
+                                     <label for="nahuat_orthography">Activar flexibilidad ortográfica</label>
+                                     <input  v-model="find.modifiers[1].name" type="checkbox"  value="bilingual" >
+                                    <label  for="bilingual">Activar búsqueda bilingüe</label>
+                                    <input  v-model="find.modifiers[2].name" type="checkbox"  value="es_thesaurus_lookup" >
+                                     <label for="es_thesaurus_lookup">Activar tesauro</label>
+                                     </p>
                             </p>
   </div>
                 <p><button style="background-color:blue;" @click="addFilter" >Añadir filtro</button><button style="background-color:red;" @click="deleteFilter" >Eliminar filtro</button></p>
@@ -39,6 +47,7 @@
                  <h1>test data:{{testData}}</h1>
                  <h2>{{axios_response}}</h2>
                  <h3>test extra filters:{{extraFilters}}</h3>
+                 <h4>Functions test {{functionTester}}</h4>
             
     </div>
 </template>
@@ -73,13 +82,17 @@ export default {
           {label:"es exactamente igual a",val:"exactly_equals"},
           {label:"expresión regular",val:"regex"},
           ],
+        datalist_condition:[
+            {label:"Y",val:false},
+            {label:"Y no",val:true},
+        ],
         demodata:{"dataset":"azz",
         "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]},
         extraFilter:[{"type_tag":"lemma","filter_type":"begins_with","value":"ou","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]},{"type_tag":"lemma","filter_type":"begins_with","value":"s","exclude":false,"modifiers":[]}]
         ,
         extraFilters: [],
         extraChekrs:[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }],
-        extraChekrsLabels:[""]
+        functionTester:""
     }
   },
   watch:{
@@ -102,6 +115,38 @@ export default {
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
   },
+  watchExtraModifTrue(){
+      for(let i=0;i<this.extraFilters.length;i++){
+                if(this.extraFilters[i].modifiers[0].name===true){
+                  this.extraFilters[i].modifiers[0].name="nahuat_orthography"
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+                if(this.extraFilters[i].modifiers[1].name===true){
+                  this.extraFilters[i].modifiers[1].name="bilingual"
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+                 if(this.extraFilters[i].modifiers[2].name===true){
+                  this.extraFilters[i].modifiers[2].name="es_thesaurus_lookup"
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+          }
+  },
+  watchExtraModifFalse(){
+       for(let i=0;i<this.extraFilters.length;i++){
+               if(this.extraFilters[i].modifiers[0].name===false){
+                  this.extraFilters[i].modifiers[0].name=""
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+                 if(this.extraFilters[i].modifiers[1].name===false){
+                  this.extraFilters[i].modifiers[1].name=""
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+                 if(this.extraFilters[i].modifiers[2].name===false){
+                  this.extraFilters[i].modifiers[2].name=""
+                  this.functionTester=this.extraFilters[i].modifiers[0].name
+                }
+          }
+  },
   setChkBox(){
       const newArrJson=[]
       this.checkbx.forEach(element => {
@@ -116,12 +161,16 @@ export default {
        this.testData = JSON.stringify(Object.assign({},this.checkbx))
       // this.demodata.query[0][0].modifiers.push(JSON.stringify(this.checkbx))
       this.testData = this.setChkBox()
+        
       if(this.extraFilters.length>0){
-          this.demodata.query.push(this.extraFilters)
+            this.watchExtraModifTrue()
+            this.watchExtraModifFalse()
+            this.demodata.query.push(this.extraFilters)
       }
+      
   },
   addFilter(){
-      this.extraFilters.push({ "value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":this.extraChekrs});
+      this.extraFilters.push({"exclude":false ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":this.extraChekrs});
   },
   deleteFilter(){
       this.extraFilters.pop()
