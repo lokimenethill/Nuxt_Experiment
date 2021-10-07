@@ -32,12 +32,12 @@
                          </select>
                             <input  v-model="find.value" style="background-color:white;" >
                                     <p>
-                                     <input  v-model="find.modifiers[0].name" type="checkbox" value="nahuat_orthography" >
-                                     <label for="nahuat_orthography">Activar flexibilidad ortográfica</label>
-                                     <input  v-model="find.modifiers[1].name" type="checkbox"  value="bilingual" >
-                                    <label  for="bilingual">Activar búsqueda bilingüe</label>
-                                    <input  v-model="find.modifiers[2].name" type="checkbox"  value="es_thesaurus_lookup" >
-                                     <label for="es_thesaurus_lookup">Activar tesauro</label>
+                                     <input  v-model="find.modifiers[0].name" type="checkbox" >
+                                     <label >Activar flexibilidad ortográfica</label>
+                                     <input  v-model="find.modifiers[1].name" type="checkbox"   >
+                                    <label  >Activar búsqueda bilingüe</label>
+                                    <input  v-model="find.modifiers[2].name" type="checkbox"   >
+                                     <label >Activar tesauro</label>
                                      </p>
                             </p>
   </div>
@@ -91,7 +91,6 @@ export default {
         extraFilter:[{"type_tag":"lemma","filter_type":"begins_with","value":"ou","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]},{"type_tag":"lemma","filter_type":"begins_with","value":"s","exclude":false,"modifiers":[]}]
         ,
         extraFilters: [],
-        extraChekrs:[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }],
         functionTester:""
     }
   },
@@ -170,7 +169,7 @@ export default {
       
   },
   addFilter(){
-      this.extraFilters.push({"exclude":false ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":this.extraChekrs});
+      this.extraFilters.push({"exclude":false ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }]});
   },
   deleteFilter(){
       this.extraFilters.pop()
