@@ -179,7 +179,7 @@ export default {
                 if(i<=0){
                   this.demodata.query[0].push(extraFiltersQueryFormat[i])
                 }else{
-                   this.demodata.query[i].push(extraFiltersQueryFormat[i])
+                  this.demodata.query[i].push(extraFiltersQueryFormat[i])
                 }
               }
               if(excludeVal==="or" || excludeVal==="orNot"){
