@@ -1,5 +1,5 @@
 <template>
-    <SearchBar/>
+    <search-Bar/>
 </template>
 <script>
 import SearchBar from "@/components/SearchBar"
