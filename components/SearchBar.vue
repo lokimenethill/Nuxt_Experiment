@@ -96,20 +96,6 @@ export default {
         functionTester:""
     }
   },
-  watch:{
-     search_element(){
-         this.set_values()
-     },
-     selected_datalist_first(){
-         this.set_values()
-     },
-     selected_datalist_second(){
-         this.set_values()
-     },
-     checkbx(){
-         this.set_values()
-     }
-},
    methods: { 
   async prueba_axios() {
       this.set_values()
@@ -190,10 +176,14 @@ export default {
                 extraFiltersQueryFormat[i].exclude=true
               }
               if(excludeVal==="and" || excludeVal==="andNot"){
-                this.demodata.query.push([extraFiltersQueryFormat[i]])
+                if(i<=0){
+                  this.demodata.query[0].push(extraFiltersQueryFormat[i])
+                }else{
+                   this.demodata.query[i].push(extraFiltersQueryFormat[i])
+                }
               }
               if(excludeVal==="or" || excludeVal==="orNot"){
-                this.demodata.query[i].push(extraFiltersQueryFormat[i])
+                this.demodata.query.push([extraFiltersQueryFormat[i]])
               }
             }
             this.testData=extraFiltersQueryFormat
