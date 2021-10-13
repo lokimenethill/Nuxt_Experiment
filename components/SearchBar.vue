@@ -45,14 +45,17 @@
                  <button style="background-color:green"  @click="prueba_axios()" >Search</button>.
                       <h3>demo query build:{{demodata}}</h3>
                  <h1>test data:{{testData}}</h1>
-                 <h2>{{axios_response}}</h2>
                  <h3>test extra filters:{{extraFilters}}</h3>
                  <h4>Functions test {{functionTester}}</h4>
-            
+             <viewer-Searchbar :prueba=axios_response />
     </div>
 </template>
 <script>
+import ViewerSearchbar from "@/components/ViewerSearchbar"
 export default {
+    components:{
+    ViewerSearchbar    
+  },
       data(){
     return{
         testData:"",
@@ -194,7 +197,7 @@ export default {
   }
   ,
   addFilter(){
-      this.extraFilters.push({"exclude":"and" ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }]});
+      this.extraFilters.push({"exclude":"and" ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[{"name":false},{"name":false },{"name":false }]});
   },
   deleteFilter(){
       this.extraFilters.pop()
