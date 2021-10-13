@@ -83,8 +83,10 @@ export default {
           {label:"expresión regular",val:"regex"},
           ],
         datalist_condition:[
-            {label:"Y",val:false},
-            {label:"Y no",val:true},
+            {label:"Y",val:"and"},
+            {label:"Y no",val:"andNot"},
+            {label:"O", val:"or"},
+            {label:"O no", val:"orNot"}
         ],
         demodata:{"dataset":"azz",
         "query":[[{"type_tag":"lemma","filter_type":"begins_with","value":"ojtli","exclude":false,"modifiers":[{"name":"nahuat_orthography"}]}]],"global_modifiers":[]},
@@ -164,12 +166,45 @@ export default {
       if(this.extraFilters.length>0){
             this.watchExtraModifTrue()
             this.watchExtraModifFalse()
-            this.demodata.query.push(this.extraFilters)
+            this.formatQueryData()
+
+            
       }
       
   },
+  formatQueryData(){   
+            const extraFiltersQueryFormat=[]
+            for(let i = 0 ; i <this.extraFilters.length;i++){
+              if(this.extraFilters.length>extraFiltersQueryFormat.length)
+              extraFiltersQueryFormat.push(this.extraFilters[i]);
+              
+            }
+            for(let i =0; i < extraFiltersQueryFormat.length;i++){
+              let excludeVal=""
+              if(extraFiltersQueryFormat[i].exclude==="and" || extraFiltersQueryFormat[i].exclude==="or"){
+                excludeVal=extraFiltersQueryFormat[i].exclude
+                extraFiltersQueryFormat[i].exclude=false
+              }
+              if(extraFiltersQueryFormat[i].exclude==="andNot" || extraFiltersQueryFormat==="orNot"){
+                excludeVal=extraFiltersQueryFormat[i].exclude
+                extraFiltersQueryFormat[i].exclude=true
+              }
+              if(excludeVal==="and" || excludeVal==="andNot"){
+                this.demodata.query.push([extraFiltersQueryFormat[i]])
+              }
+              if(excludeVal==="or" || excludeVal==="orNot"){
+                this.demodata.query[i].push(extraFiltersQueryFormat[i])
+              }
+            }
+            this.testData=extraFiltersQueryFormat
+          
+                 /*
+               this.demodata.query.push([this.extraFilters[i]])
+            */
+  }
+  ,
   addFilter(){
-      this.extraFilters.push({"exclude":false ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }]});
+      this.extraFilters.push({"exclude":"and" ,"value": '',"type_tag":`lemma`, "filter_type":'begins_with', "modifiers":[{"name":"nahuat_orthography"},{"name":"bilingual" },{"name":"es_thesaurus_lookup" }]});
   },
   deleteFilter(){
       this.extraFilters.pop()
