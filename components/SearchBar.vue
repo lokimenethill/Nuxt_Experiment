@@ -17,7 +17,7 @@
                 <input  v-model="checkbx" type="checkbox"  value="es_thesaurus_lookup" >
                 <label for="es_thesaurus_lookup">Activar tesauro</label>
                     <br>
-                    <span>opciones seleccionadas: {{ checkbx }}</span>
+             
                 </div>
       <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
           <p>   
@@ -42,12 +42,22 @@
                             </p>
   </div>
                 <p><button style="background-color:blue;" @click="addFilter" >Añadir filtro</button><button style="background-color:red;" @click="deleteFilter" >Eliminar filtro</button></p>
-                 <button style="background-color:green"  @click="prueba_axios()" >Search</button>.
-                      <h3>demo query build:{{demodata}}</h3>
-                 <h1>test data:{{testData}}</h1>
-                 <h3>test extra filters:{{extraFilters}}</h3>
-                 <h4>Functions test {{functionTester}}</h4>
-             <viewer-Searchbar :prueba=axios_response />
+                <p><button style="background-color:green"  @click="prueba_axios" >Search</button></p>
+                 <p v-if="axios_response.page" ><button style="background-color:purple;"  @click="prevPage" >Pagina anterior</button><button style="background-color:purple;"  @click="nextPage" >Siguiente pagina</button></p>
+                 
+                <div v-if="devstate===true">
+                <span>opciones seleccionadas: {{ checkbx }}</span>
+                <h3>demo query build:{{demodata}}</h3>
+                <h1>test data:{{testData}}</h1>
+                <h3>test extra filters:{{extraFilters}}</h3>
+                <h4>Functions test {{functionTester}}</h4>
+                <h3>pagina actual{{actualPage}}</h3>
+                </div>
+                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}</p>
+             <viewer-Searchbar :datasend=axios_response />
+              <div v-if="devstate===true">
+                <h4>Axios response{{axios_response}}</h4>
+                </div>
     </div>
 </template>
 <script>
@@ -58,8 +68,12 @@ export default {
   },
       data(){
     return{
-        testData:"",
-      axios_response:"",
+      devstate:true,
+      testData:"",
+      actualPage:1,
+      maxPages:0,
+      paginator:[],
+      axios_response:{},
       selected_datalist_first:"lemma",
       selected_datalist_first_val:"",
       selected_datalist_second:"begins_with",
@@ -104,6 +118,8 @@ export default {
       this.set_values()
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
+    this.actualPage=resp.page
+    this.calcPages()
   },
   watchExtraModifTrue(){
       for(let i=0;i<this.extraFilters.length;i++){
@@ -201,6 +217,28 @@ export default {
   },
   deleteFilter(){
       this.extraFilters.pop()
+  },
+  calcPages(){
+    this.maxPages = Math.ceil(this.axios_response.total / this.axios_response.pageSize)
+  },
+  async nextPage(){
+    this.calcPages()
+    if(this.actualPage<this.maxPages){
+    this.actualPage++
+    this.demodata.page=this.actualPage
+    const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
+    this.axios_response = resp
+    }
+    
+  },
+  async prevPage(){
+    this.calcPages()
+    if(this.actualPage>1){
+    this.actualPage--
+    this.demodata.page=this.actualPage
+    const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
+    this.axios_response = resp
+    }
   }
 
 },
