@@ -122,7 +122,8 @@ export default {
   },
    methods: { 
   async prueba_axios() {
-      this.set_values()
+    this.paginator=[]
+    this.set_values()
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
     this.actualPage=resp.page
@@ -263,7 +264,6 @@ export default {
   }
 
 },
-
 }
 </script>
 <style lang="">
