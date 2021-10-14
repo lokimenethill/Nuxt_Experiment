@@ -53,7 +53,11 @@
                 <h4>Functions test {{functionTester}}</h4>
                 <h3>pagina actual{{actualPage}}</h3>
                 </div>
-                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}</p>
+                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
+                   <p>
+                    <span v-for="(number) in paginator" :key="number" :v-bind="number" > <button @click="goPage(number)" > [{{number}}]</button></span>
+                   </p>
+                 </p>
              <viewer-Searchbar :datasend=axios_response />
               <div v-if="devstate===true">
                 <h4>Axios response{{axios_response}}</h4>
@@ -68,7 +72,7 @@ export default {
   },
       data(){
     return{
-      devstate:true,
+      devstate:false,
       testData:"",
       actualPage:1,
       maxPages:0,
@@ -120,6 +124,7 @@ export default {
     this.axios_response = resp
     this.actualPage=resp.page
     this.calcPages()
+    this.paginatorMaker()
   },
   watchExtraModifTrue(){
       for(let i=0;i<this.extraFilters.length;i++){
@@ -221,6 +226,11 @@ export default {
   calcPages(){
     this.maxPages = Math.ceil(this.axios_response.total / this.axios_response.pageSize)
   },
+  paginatorMaker(){
+     for(let i =1;i<=this.maxPages;i++){
+      this.paginator.push(i)
+    }
+  },
   async nextPage(){
     this.calcPages()
     if(this.actualPage<this.maxPages){
@@ -239,6 +249,14 @@ export default {
     const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
     this.axios_response = resp
     }
+  },
+  async goPage(targetPage){
+    this.calcPages()
+    this.actualPage=targetPage
+    this.demodata.page=this.actualPage
+    const resp = await this.$axios.$post(process.env.API_HOST,this.demodata)
+    this.axios_response = resp
+    
   }
 
 },
