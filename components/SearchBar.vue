@@ -55,7 +55,10 @@
                 </div>
                  <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
                    <p>
-                    <span v-for="(number) in paginator" :key="number" :v-bind="number" > <button @click="goPage(number)" > [{{number}}]</button></span>
+                    <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
+                      <button  v-if="number===actualPage" @click="goPage(number)" style="background-color:purple" > [{{number}}] </button>
+                      <button v-if="number!=actualPage" @click="goPage(number)" > [{{number}}] </button>
+                    </span>
                    </p>
                  </p>
              <viewer-Searchbar :datasend=axios_response />
