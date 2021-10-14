@@ -124,7 +124,7 @@ export default {
         {
           icon:'mdi-apps',
           title:'Search Bar',
-          to:'/SearchView'
+          to:'/searchView'
         }
       ],
       miniVariant: false,
