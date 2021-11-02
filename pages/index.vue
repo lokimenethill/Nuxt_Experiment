@@ -1,100 +1,39 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-           <p class="capa_global">parrafo de prueba de la clase globar</p>
-          <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-          <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
-          <nuxt-link :to="switchLocalePath('es')">Español</nuxt-link>
-          {{$t('welcome')}} to the Vuetify + Nuxt.js template
-          {{prueba}}
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+    <main class="">
+    <div class="contenedor-general-rebasado">
+      <div class="contenedor-general">
+        <h1>{{$t('home.title')}}</h1>
+        <p class="large">
+          {{$t('home.p1')}}
+        </p>
+      </div>
+    </div>
+      <div class="contenedor-slideshow">
+        <div class="slide ">
+          <div id="slide1" class="contenido-slide " >
+            <!--Para fondo-->
+            <div class="contenedor-slideshow-anidado">
+              <!--Para contenido-->
+            </div>
+
           </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-          <v-btn
-          color="error"
-           @click="prueba_axios()">
-            prueba axios
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+          <div class="contenedor-credito-slideshow">
+            <p class="credito-slideshow ">{{$t('home.ilustration')}}: Inocencio Jiménez</p>
+          </div>
+        </div>
+      </div>
+
+  </main>
 </template>
 <script>
 export default {
   data(){
     return{
-    prueba:"prueba variable intependiente"
     }
   },
   head(){
     return{
-      title:'pagina de inicio'
+      title:this.$t('navBar.home')
     /* metatags  
     meta:[
         {name:'twitter:title', content: this.post.title},
@@ -113,3 +52,61 @@ export default {
 }
 }
 </script>
+<style >
+.contenedor-slideshow {
+  width: 100%;
+  height: 378px;
+}
+.slide {
+  height: 100%;
+}
+.contenido-slide {
+  height: calc(378px - 1.5rem);
+}
+
+.contenedor-slideshow-anidado {
+  height: 100%;
+  max-width: 1020px;
+  margin: 0px auto;
+  padding: 1rem;
+}
+
+.contenedor-credito-slideshow {
+  padding: 0 1rem 0 0;
+  margin: 1rem auto 0 auto;
+  max-width: 1020px;
+}
+
+p.credito-slideshow {
+  font-size: 0.6666rem; /*12 px*/
+  line-height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: right;
+  color: var(--gris1);
+}
+/*Slides de home*/
+#slide1 {
+  background-image: url(/home/slide1-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 125%;
+  background-position: 40% 0%;
+  animation: scala-background-120-a-100 15s linear 1;
+}
+/* animaciones de slider individuales  */
+@keyframes scala-background-120-a-100 {
+  100% {
+    background-size: 110%;
+    background-position: 50% 0%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .contenedor-slideshow {
+    width: 100%;
+    min-height: 800px;
+  }
+  .contenido-slide {
+    min-height: calc(800px - 1.5rem);
+  }
+}
+</style>
