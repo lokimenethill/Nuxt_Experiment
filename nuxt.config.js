@@ -1,10 +1,9 @@
-import SpanishLang from './locales/es.json';
-import EnglishLang from './locales/en.json';
+import vueI18n from './config/i18n';
 
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-  target: 'static',
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - prueba1',
@@ -48,21 +47,18 @@ export default {
   // internacionalizacion
   i18n: {
     parsePages: true,
-    strategy: 'no_prefix',
+    strategy: 'prefix',
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: true,
       fallbackLocale: 'es',
     },
-    locales: ['en', 'es'],
+    locales: [
+      { code: 'es', name: 'ESP' },
+      { code: 'en', name: 'ENG' },
+    ],
     defaultLocale: 'en',
-    vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: EnglishLang,
-        es: SpanishLang,
-      },
-    },
+    vueI18n,
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',

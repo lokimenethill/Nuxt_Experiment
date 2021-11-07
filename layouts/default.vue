@@ -18,7 +18,7 @@
         href="../imagenes-generales/favicon_package/site.webmanifest"
       />
       <nav class="">
-        <nuxt-link to="/">
+        <nuxt-link :to="localePath('index')">
           <img
             class="logo-mesolex"
             src="/generals/logo-mesolex-menu-01.svg"
@@ -26,10 +26,10 @@
           />
         </nuxt-link>
 
-        <nuxt-link id="menu-item-1" to="/topicIndex" class="menu-item">{{
+        <nuxt-link id="menu-item-1" :to="localePath('topicIndex')" class="menu-item">{{
           $t('navBar.topicIndex')
         }}</nuxt-link>
-        <nuxt-link id="menu-item-2" to="/languageIndex" class="menu-item">{{
+        <nuxt-link id="menu-item-2" :to="localePath('languageIndex')" class="menu-item">{{
           $t('navBar.languagesIndex')
         }}</nuxt-link>
         <nuxt-link
@@ -38,50 +38,11 @@
           class="menu-item"
           >{{ $t('navBar.about') }}</nuxt-link
         >
-        <nuxt-link id="menu-item-4" to="/help" class="menu-item">{{
+        <nuxt-link id="menu-item-4" :to="localePath('help')" class="menu-item">{{
           $t('navBar.help')
         }}</nuxt-link>
-        <div class="contenedor-selector-leng">
-          <div class="menu-item-vertical-line"></div>
-          <!-- <a href="#" class="menu-item" id="selector-leng">ESP|ING</a> -->
-          <a
-            v-if="lang === 'i18n_redirected=es'"
-            class="selector-lenguaje-activo"
-            @click="changeLanguage('es')"
-            >ESP</a
-          >
-          <p
-            v-if="lang === 'i18n_redirected=es'"
-            class="divisor-selector-lenguaje"
-          >
-            |
-          </p>
-          <a
-            v-if="lang === 'i18n_redirected=es'"
-            class="selector-lenguaje"
-            @click="changeLanguage('en')"
-            >ING</a
-          >
-          <!-- if condicional para elementos activos -->
-          <a
-            v-if="lang === 'i18n_redirected=en'"
-            class="selector-lenguaje"
-            @click="changeLanguage('es')"
-            >ESP</a
-          >
-          <p
-            v-if="lang === 'i18n_redirected=en'"
-            class="divisor-selector-lenguaje"
-          >
-            |
-          </p>
-          <a
-            v-if="lang === 'i18n_redirected=en'"
-            class="selector-lenguaje-activo"
-            @click="changeLanguage('en')"
-            >ING</a
-          >
-        </div>
+        <!-- Language Selector -->
+        <the-language-selector />
       </nav>
     </header>
     <Nuxt />
@@ -162,19 +123,27 @@ export default {
     };
   },
   methods: {
-    changeLanguage(lang) {
-      switch (lang) {
-        case 'es':
-          document.cookie = 'i18n_redirected=es';
-          break;
-        case 'en':
-          document.cookie = 'i18n_redirected=en';
-          break;
-        default:
-          break;
+    created() {
+      if (process.client) {
+        const locale = localStorage.getItem('locale');
+        if (locale) {
+          this.$i18n.locale = locale;
+        }
       }
-      location.reload();
     },
+    // changeLanguage(lang) {
+    //   switch (lang) {
+    //     case 'es':
+    //       document.cookie = 'i18n_redirected=es';
+    //       break;
+    //     case 'en':
+    //       document.cookie = 'i18n_redirected=en';
+    //       break;
+    //     default:
+    //       break;
+    //   }
+    //   location.reload();
+    // },
   },
 };
 </script>
