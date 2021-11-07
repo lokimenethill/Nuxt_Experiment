@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="contenedor-general">
-        <h4 class="instrucciones">Choose a language group</h4>
+        <h4 class="instrucciones">{{$t('languageIndex.title')}}</h4>
         <div class="contenedor-languaje-index">
           <div  class="language-index-item " id="amuzgo">
             <h3 class="titulo-modulo">{{$t('languageIndex.amuzgoan.title')}}</h3>
