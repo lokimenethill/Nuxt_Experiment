@@ -34,29 +34,25 @@
     </div>
 </template>
 <script>
-
 export default {
-  props:{
-    datasend:{
-      type:Object,
-      default(){
-        return {data:{}}
-      }
-    }
+  props: {
+    datasend: {
+      type: Object,
+      default() {
+        return { data: {} };
+      },
+    },
   },
-      data(){
-    return{
-      json_datasend:{},
-     contador:1
-    }
+  data() {
+    return {
+      json_datasend: {},
+      contador: 1,
+    };
   },
-   methods: { 
-     pruebastorepush(){
-       
-     }
-  }
-}
+  methods: {
+    pruebastorepush() {},
+  },
+};
 </script>
 <style lang="">
-    
 </style>

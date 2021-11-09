@@ -1,159 +1,327 @@
 <template>
-    <div>
-      <div class="contenedor-general-rebasado">
+  <div>
+    <div class="contenedor-general-rebasado">
       <div class="contenedor-general">
-        <h4 class="instrucciones">{{$t('topicIndex.instructions')}}</h4>
-        <div class="contenedor-topic-index ">
-          <div @click="lexiconsPush()" class="topic-index-item " id="lexicons">
-            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.lexicon.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('topicIndex.topCards.lexicon.text')}}
+        <h4 class="instrucciones">{{ $t('topicIndex.instructions') }}</h4>
+        <div class="contenedor-topic-index">
+          <div @click="lexiconsPush()" class="topic-index-item" id="lexicons">
+            <h3 class="titulo-modulo">
+              {{ $t('topicIndex.topCards.lexicon.title') }}
+            </h3>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.lexicon.text') }}
             </p>
           </div>
-          <div onclick="location.href='#'" class="topic-index-item " id="library">
-            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.library.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('topicIndex.topCards.library.text')}}</p>
+          <div
+            onclick="location.href='#'"
+            class="topic-index-item"
+            id="library"
+          >
+            <h3 class="titulo-modulo">
+              {{ $t('topicIndex.topCards.library.title') }}
+            </h3>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.library.text') }}
+            </p>
           </div>
-          <div onclick="location.href='#'" class="topic-index-item " id="flora-and-fauna">
-            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.flora.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('topicIndex.topCards.flora.text')}}</p>
+          <div
+            onclick="location.href='#'"
+            class="topic-index-item"
+            id="flora-and-fauna"
+          >
+            <h3 class="titulo-modulo">
+              {{ $t('topicIndex.topCards.flora.title') }}
+            </h3>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.flora.text') }}
+            </p>
           </div>
-          <div onclick="location.href='#'" class="topic-index-item " id="audios">
-            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.audios.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('topicIndex.topCards.audios.text')}}</p>
+          <div onclick="location.href='#'" class="topic-index-item" id="audios">
+            <h3 class="titulo-modulo">
+              {{ $t('topicIndex.topCards.audios.title') }}
+            </h3>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.audios.text') }}
+            </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
-          <div onclick="location.href='#'" class="topic-index-item " id="videos">
-            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.videos.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('topicIndex.topCards.videos.text')}}</p>
+          <div onclick="location.href='#'" class="topic-index-item" id="videos">
+            <h3 class="titulo-modulo">
+              {{ $t('topicIndex.topCards.videos.title') }}
+            </h3>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.videos.text') }}
+            </p>
           </div>
-
-
-
-
         </div>
         <!-- Contenedor léxicos - Se despliega al darle click al módulo de Léxicos-->
-        <p><strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle click a Léxicos</p>
-        <div v-if="lexic" class="contenedor-mosaico-lexicos ">
+        <p>
+          <strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle
+          click a Léxicos
+        </p>
+        <div v-if="lexic" class="contenedor-mosaico-lexicos">
           <div onclick="" class="lexico-item item-amuzgo" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.region0')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/sanp1260" target="_blank">sanp1260</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.amuzgoan.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.amuzgoan.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/sanp1260"
+                target="_blank"
+                >sanp1260</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region0')}}</h3>
-            <code class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/high1278
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/high1278
 
-              " target="_blank">high1278</a></code>
+              "
+                target="_blank"
+                >high1278</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region1')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/isth1242" target="_blank">isth1242</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.region1') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/isth1242"
+                target="_blank"
+                >isth1242</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region2')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/tete1251" target="_blank">tete1251</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.region2') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/tete1251"
+                target="_blank"
+                >tete1251</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region3')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/pipi1250" target="_blank">pipi1250</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.nahuatl.region3') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/pipi1250"
+                target="_blank"
+                >pipi1250</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-maya" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.region0')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chol1282" target="_blank">chol1282</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mayan.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mayan.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/chol1282"
+                target="_blank"
+                >chol1282</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-maya" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.region1')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chuj1250" target="_blank">chuj1250</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mayan.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mayan.region1') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/chuj1250"
+                target="_blank"
+                >chuj1250</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region0')}}</h3>
-
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region0') }}
+            </h3>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico  ">{{$t('topicIndex.bottomCards.mixtec.region1')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/magd1235" target="_blank">magd1235</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region1') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/magd1235"
+                target="_blank"
+                >magd1235</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region2')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/juxt1235" target="_blank">juxt1235</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region2') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/juxt1235"
+                target="_blank"
+                >juxt1235</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region3')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/juxt1235" target="_blank">juxt1235</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region3') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/juxt1235"
+                target="_blank"
+                >juxt1235</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region4')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/xoch1238" target="_blank">xoch1238</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region4') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/xoch1238"
+                target="_blank"
+                >xoch1238</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region5')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/yolo1241" target="_blank">yolo1241</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.mixtec.region5') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/yolo1241"
+                target="_blank"
+                >yolo1241</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-totonaco" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.totonacan.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.totonacan.region0')}} </h3>
-            <code class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/high1243"
-
-               target="_blank">high1243</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.totonacan.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.totonacan.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/high1243"
+                target="_blank"
+                >high1243</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-triqui" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.region0')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chic1273" target="_blank">chic1273</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.triqui.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.triqui.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/chic1273"
+                target="_blank"
+                >chic1273</a
+              ></code
+            >
           </div>
           <div onclick="" class="lexico-item item-triqui" id="">
-            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.title')}}</h5>
-            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.region0')}}</h3>
-            <code
-              class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/sanm1298" target="_blank">sanm1298</a></code>
+            <h5 class="titulo-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.triqui.title') }}
+            </h5>
+            <h3 class="descripcion-modulo-lexico">
+              {{ $t('topicIndex.bottomCards.triqui.region0') }}
+            </h3>
+            <code class="modulo-lexico"
+              ><a
+                href="https://glottolog.org/resource/languoid/id/sanm1298"
+                target="_blank"
+                >sanm1298</a
+              ></code
+            >
           </div>
-          <div onclick="" class="lexico-item-boton-regresar " id="">
-            <h5 class="titulo-modulo-lexico-instrucciones ">{{$t('topicIndex.bottomCards.back')}}</h5>
+          <div onclick="" class="lexico-item-boton-regresar" id="">
+            <h5 class="titulo-modulo-lexico-instrucciones">
+              {{ $t('topicIndex.bottomCards.back') }}
+            </h5>
 
-            <span class="material-icons-outlined lexico-item-icono-boton-regresar ">
+            <span
+              class="material-icons-outlined lexico-item-icono-boton-regresar"
+            >
               arrow_back
             </span>
           </div>
         </div>
       </div>
-</div>
     </div>
+  </div>
 </template>
 <script>
 export default {
-  data(){
-    return{
-      lexic:false
-    }
+  data() {
+    return {
+      lexic: false,
+    };
   },
-  head(){
-    return{
-      title:this.$t('navBar.topicIndex')
-    /* metatags  
+  head() {
+    return {
+      title: this.$t('navBar.topicIndex'),
+      /* metatags  
     meta:[
         {name:'twitter:title', content: this.post.title},
         {name:'twitter:description', content:"prueba de proyecto nuxt"},
@@ -161,18 +329,18 @@ export default {
         {name:'twitter:card', content:'summary_large_image'}
       ]
       */
-    }
+    };
   },
   methods: {
-    lexiconsPush(){
-      if(this.lexic===false){
-        this.lexic=true;
-      }else{
-        this.lexic=false;
+    lexiconsPush() {
+      if (this.lexic === false) {
+        this.lexic = true;
+      } else {
+        this.lexic = false;
       }
     },
-}
-}
+  },
+};
 </script>
 <style >
 /*CONTENEDOR DE MOSAICO*/
@@ -574,5 +742,4 @@ h5.titulo-modulo-lexico-instrucciones {
 .lexico-item:nth-of-type(16) {
   animation: desplegado-lexicos 1.5s ease-in-out;
 }
-
 </style>

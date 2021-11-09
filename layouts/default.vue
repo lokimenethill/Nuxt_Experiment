@@ -26,21 +26,30 @@
           />
         </nuxt-link>
 
-        <nuxt-link id="menu-item-1" :to="localePath('topicIndex')" class="menu-item">{{
-          $t('navBar.topicIndex')
-        }}</nuxt-link>
-        <nuxt-link id="menu-item-2" :to="localePath('languageIndex')" class="menu-item">{{
-          $t('navBar.languagesIndex')
-        }}</nuxt-link>
+        <nuxt-link
+          id="menu-item-1"
+          :to="localePath('topicIndex')"
+          class="menu-item"
+          >{{ $t('navBar.topicIndex') }}</nuxt-link
+        >
+        <nuxt-link
+          id="menu-item-2"
+          :to="localePath('languageIndex')"
+          class="menu-item"
+          >{{ $t('navBar.languagesIndex') }}</nuxt-link
+        >
         <nuxt-link
           id="menu-item-3"
           to="../about/about.html"
           class="menu-item"
           >{{ $t('navBar.about') }}</nuxt-link
         >
-        <nuxt-link id="menu-item-4" :to="localePath('help')" class="menu-item">{{
-          $t('navBar.help')
-        }}</nuxt-link>
+        <nuxt-link
+          id="menu-item-4"
+          :to="localePath('help')"
+          class="menu-item"
+          >{{ $t('navBar.help') }}</nuxt-link
+        >
         <!-- Language Selector -->
         <the-language-selector />
       </nav>
