@@ -8,12 +8,12 @@ module.exports = {
     parser: '@babel/eslint-parser',
     requireConfigFile: false,
   },
-  extends: ['@nuxtjs', 'plugin:nuxt/recommended',"prettier"],
+  extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
   plugins: [],
   // add your custom rules here
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
-    'space-before-function-paren':['error','never'],
-    semi:['error','always']
+    'space-before-function-paren': ['error', 'never'],
+    semi: ['error', 'always'],
   },
-}
+};
