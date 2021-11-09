@@ -1,40 +1,39 @@
 <template>
-    <main class="">
+  <main class="">
     <div class="contenedor-general-rebasado">
       <div class="contenedor-general">
-        <h1>{{$t('home.title')}}</h1>
+        <h1>{{ $t('home.title') }}</h1>
         <p class="large">
-          {{$t('home.p1')}}
+          {{ $t('home.p1') }}
         </p>
       </div>
     </div>
-      <div class="contenedor-slideshow">
-        <div class="slide ">
-          <div id="slide1" class="contenido-slide " >
-            <!--Para fondo-->
-            <div class="contenedor-slideshow-anidado">
-              <!--Para contenido-->
-            </div>
-
-          </div>
-          <div class="contenedor-credito-slideshow">
-            <p class="credito-slideshow ">{{$t('home.ilustration')}}: Inocencio Jiménez</p>
+    <div class="contenedor-slideshow">
+      <div class="slide">
+        <div id="slide1" class="contenido-slide">
+          <!--Para fondo-->
+          <div class="contenedor-slideshow-anidado">
+            <!--Para contenido-->
           </div>
         </div>
+        <div class="contenedor-credito-slideshow">
+          <p class="credito-slideshow">
+            {{ $t('home.ilustration') }}: Inocencio Jiménez
+          </p>
+        </div>
       </div>
-
+    </div>
   </main>
 </template>
 <script>
 export default {
-  data(){
-    return{
-    }
+  data() {
+    return {};
   },
-  head(){
-    return{
-      title:this.$t('navBar.home')
-    /* metatags  
+  head() {
+    return {
+      title: this.$t('navBar.home'),
+      /* metatags  
     meta:[
         {name:'twitter:title', content: this.post.title},
         {name:'twitter:description', content:"prueba de proyecto nuxt"},
@@ -42,15 +41,15 @@ export default {
         {name:'twitter:card', content:'summary_large_image'}
       ]
       */
-    }
+    };
   },
   methods: {
-  async prueba_axios() {
-    const ip = await this.$axios.$get('http://icanhazip.com')
-    this.prueba = ip
-  }
-}
-}
+    async prueba_axios() {
+      const ip = await this.$axios.$get('http://icanhazip.com');
+      this.prueba = ip;
+    },
+  },
+};
 </script>
 <style >
 .contenedor-slideshow {

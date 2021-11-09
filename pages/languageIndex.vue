@@ -1,71 +1,113 @@
 <template>
-    <div>
-      <div class="contenedor-general">
-        <h4 class="instrucciones">Choose a language group</h4>
-        <div class="contenedor-languaje-index">
-          <div  class="language-index-item " id="amuzgo">
-            <h3 class="titulo-modulo">{{$t('languageIndex.amuzgoan.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.amuzgoan.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/amuz1254" target="_blank">amuz1254</a></code>
-              {{$t('languageIndex.amuzgoan.text')}}
-            </p>
-          </div>
-          <div  class=" language-index-item" id="nahuatl">
-            <h3 class="titulo-modulo ">{{$t('languageIndex.nahuatl.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.nahuatl.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/azte1234" target="_blank">azte1234</a></code>
-              {{$t('languageIndex.nahuatl.text')}}
-            </p>
-          </div>
-          <div  class="language-index-item " id="maya">
-            <h3 class="titulo-modulo ">{{$t('languageIndex.mayan.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.mayan.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/maya1287" target="_blank">maya1287</a></code>
-              {{$t('languageIndex.mayan.text')}}
-            </p>
-          </div>
-          <div onclick="location.href='../sumario-grupo-lengua/sumario-grupo-lenguas.html'" class="language-index-item "
-            id="mixteco">
-            <h3 class="titulo-modulo">{{$t('languageIndex.mixtec.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.mixtec.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/mixt1427" target="_blank">mixt1247</a></code>
-              {{$t('languageIndex.mixtec.text')}}
-            </p>
-          </div>
-          <div  class="language-index-item " id="totonaco">
-            <h3 class="titulo-modulo ">{{$t('languageIndex.totonacan.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.totonacan.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/toto1251" target="_blank">toto1251</a></code>
-              {{$t('languageIndex.totonacan.text')}}
-            </p>
-          </div>
-          <div  class="language-index-item " id="triqui">
-            <h3 class="titulo-modulo ">{{$t('languageIndex.triqui.title')}}</h3>
-            <p class="descripcion-modulo">{{$t('languageIndex.triqui.preText')}}
-              <code><a href="https://glottolog.org/resource/languoid/id/triq1251" target="_blank">triq1251</a></code>
-              {{$t('languageIndex.triqui.text')}}
-            </p>
-          </div>
-
-
-
-
-
+  <div>
+    <div class="contenedor-general">
+      <h4 class="instrucciones">{{ $t('languageIndex.title') }}</h4>
+      <div class="contenedor-languaje-index">
+        <div class="language-index-item" id="amuzgo">
+          <h3 class="titulo-modulo">
+            {{ $t('languageIndex.amuzgoan.title') }}
+          </h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.amuzgoan.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/amuz1254"
+                target="_blank"
+                >amuz1254</a
+              ></code
+            >
+            {{ $t('languageIndex.amuzgoan.text') }}
+          </p>
+        </div>
+        <div class="language-index-item" id="nahuatl">
+          <h3 class="titulo-modulo">{{ $t('languageIndex.nahuatl.title') }}</h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.nahuatl.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/azte1234"
+                target="_blank"
+                >azte1234</a
+              ></code
+            >
+            {{ $t('languageIndex.nahuatl.text') }}
+          </p>
+        </div>
+        <div class="language-index-item" id="maya">
+          <h3 class="titulo-modulo">{{ $t('languageIndex.mayan.title') }}</h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.mayan.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/maya1287"
+                target="_blank"
+                >maya1287</a
+              ></code
+            >
+            {{ $t('languageIndex.mayan.text') }}
+          </p>
+        </div>
+        <div
+          onclick="location.href='../sumario-grupo-lengua/sumario-grupo-lenguas.html'"
+          class="language-index-item"
+          id="mixteco"
+        >
+          <h3 class="titulo-modulo">{{ $t('languageIndex.mixtec.title') }}</h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.mixtec.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/mixt1427"
+                target="_blank"
+                >mixt1247</a
+              ></code
+            >
+            {{ $t('languageIndex.mixtec.text') }}
+          </p>
+        </div>
+        <div class="language-index-item" id="totonaco">
+          <h3 class="titulo-modulo">
+            {{ $t('languageIndex.totonacan.title') }}
+          </h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.totonacan.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/toto1251"
+                target="_blank"
+                >toto1251</a
+              ></code
+            >
+            {{ $t('languageIndex.totonacan.text') }}
+          </p>
+        </div>
+        <div class="language-index-item" id="triqui">
+          <h3 class="titulo-modulo">{{ $t('languageIndex.triqui.title') }}</h3>
+          <p class="descripcion-modulo">
+            {{ $t('languageIndex.triqui.preText') }}
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/triq1251"
+                target="_blank"
+                >triq1251</a
+              ></code
+            >
+            {{ $t('languageIndex.triqui.text') }}
+          </p>
         </div>
       </div>
-
-</div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
-  data(){
-    return{
-    }
+  data() {
+    return {};
   },
-  head(){
-    return{
-      title:this.$t('navBar.help')
-    /* metatags  
+  head() {
+    return {
+      title: this.$t('navBar.languagesIndex'),
+      /* metatags  
     meta:[
         {name:'twitter:title', content: this.post.title},
         {name:'twitter:description', content:"prueba de proyecto nuxt"},
@@ -73,15 +115,15 @@ export default {
         {name:'twitter:card', content:'summary_large_image'}
       ]
       */
-    }
+    };
   },
   methods: {
-  async prueba_axios() {
-    const ip = await this.$axios.$get('http://icanhazip.com')
-    this.prueba = ip
-  }
-}
-}
+    async prueba_axios() {
+      const ip = await this.$axios.$get('http://icanhazip.com');
+      this.prueba = ip;
+    },
+  },
+};
 </script>
 <style >
 .contenedor-languaje-index {
@@ -180,5 +222,4 @@ p.descripcion-modulo {
     transform: translateY(0%);
   }
 }
-
 </style>
