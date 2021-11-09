@@ -64,7 +64,7 @@ export default {
   },
   head(){
     return{
-      title:this.$t('navBar.help')
+      title:this.$t('navBar.languagesIndex')
     /* metatags  
     meta:[
         {name:'twitter:title', content: this.post.title},
