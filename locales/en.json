@@ -55,11 +55,11 @@
         "topCards":{
             "lexicon":{
                 "title":"Lexicons",
-                "text":"Searchable lexicosemantic resources in Mesoamerican&nbsp;languages."
+                "text":"Searchable lexicosemantic resources in Mesoamerican languages."
             },
             "library":{
                 "title":"Library",
-                "text":"Searchable lexicosemantic resources in Mesoamerican&nbsp;languages."
+                "text":"Searchable lexicosemantic resources in Mesoamerican languages."
             },
             "flora":{
                 "title":"Flora & fauna",
@@ -67,7 +67,7 @@
             },
             "audios":{
                 "title":"Audios",
-                "text":"Link to SYLARD for line&#8209;by&#8209;line playback documented audio corpora."
+                "text":"Link to SYLARD for line by line playback documented audio corpora."
             }
             ,
             "videos":{

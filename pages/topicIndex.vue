@@ -4,7 +4,7 @@
       <div class="contenedor-general">
         <h4 class="instrucciones">{{$t('topicIndex.instructions')}}</h4>
         <div class="contenedor-topic-index ">
-          <div onclick="location.href=''" class="topic-index-item " id="lexicons">
+          <div @click="lexiconsPush()" class="topic-index-item " id="lexicons">
             <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.lexicon.title')}}</h3>
             <p class="descripcion-modulo">{{$t('topicIndex.topCards.lexicon.text')}}
             </p>
@@ -33,7 +33,7 @@
         </div>
         <!-- Contenedor léxicos - Se despliega al darle click al módulo de Léxicos-->
         <p><strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle click a Léxicos</p>
-        <div class="contenedor-mosaico-lexicos ">
+        <div v-if="lexic" class="contenedor-mosaico-lexicos ">
           <div onclick="" class="lexico-item item-amuzgo" id="">
             <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.title')}}</h5>
             <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.region0')}}</h3>
@@ -147,6 +147,7 @@
 export default {
   data(){
     return{
+      lexic:false
     }
   },
   head(){
@@ -163,7 +164,13 @@ export default {
     }
   },
   methods: {
- 
+    lexiconsPush(){
+      if(this.lexic===false){
+        this.lexic=true;
+      }else{
+        this.lexic=false;
+      }
+    },
 }
 }
 </script>
