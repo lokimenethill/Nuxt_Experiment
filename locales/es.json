@@ -75,7 +75,7 @@
             }
         },
         "bottomCards":{
-            "mixteco":{
+            "amuzgoan":{
                 "title":"Amuzgo",
                 "region0":"San Pedro Amuzgos"
             },
@@ -84,12 +84,12 @@
                 "region0":"Náhuat de la Sierra Nororiental de Puebla",
                 "region1":"Náhuatl de Mecayapan, Veracruz",
                 "region2":"Náhuatl de Tetelcingo, Morelos",
-                "region3":"Náwat (Pipil) de El&onBreakingSpace;Salvador"
+                "region3":"Náwat (Pipil) de El Salvador"
             },
             "mayan":{
                 "title":"Maya",
                 "region0":"Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a 1935",
-                "region1":"Diccionario de Chuj (Maya) hablado en San&NonBreakingSpace;Mateo Ixtatán, Guatemala(1964–65)"
+                "region1":"Diccionario de Chuj (Maya) hablado en San Mateo Ixtatán, Guatemala(1964–65)"
             },
             "mixtec":{
                 "title":"Mixteco",

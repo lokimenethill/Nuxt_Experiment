@@ -2,31 +2,29 @@
     <div>
       <div class="contenedor-general-rebasado">
       <div class="contenedor-general">
-        <h4 class="instrucciones">Elegir tema</h4>
+        <h4 class="instrucciones">{{$t('topicIndex.instructions')}}</h4>
         <div class="contenedor-topic-index ">
           <div onclick="location.href=''" class="topic-index-item " id="lexicons">
-            <h3 class="titulo-modulo ">Léxicos</h3>
-            <p class="descripcion-modulo">Búsqueda de recursos lexicosemánticos en lenguas originarias de Mesoamérica.
+            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.lexicon.title')}}</h3>
+            <p class="descripcion-modulo">{{$t('topicIndex.topCards.lexicon.text')}}
             </p>
           </div>
           <div onclick="location.href='#'" class="topic-index-item " id="library">
-            <h3 class="titulo-modulo ">Biblioteca</h3>
-            <p class="descripcion-modulo">Gramáticas, descripciones y análisis publicados y no publicados.</p>
+            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.library.title')}}</h3>
+            <p class="descripcion-modulo">{{$t('topicIndex.topCards.library.text')}}</p>
           </div>
           <div onclick="location.href='#'" class="topic-index-item " id="flora-and-fauna">
-            <h3 class="titulo-modulo ">Flora y fauna</h3>
-            <p class="descripcion-modulo">Documentación incluyendo guías ilustradas y bases de datos de nomenclatura,
-              clasificación y uso.</p>
+            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.flora.title')}}</h3>
+            <p class="descripcion-modulo">{{$t('topicIndex.topCards.flora.text')}}</p>
           </div>
           <div onclick="location.href='#'" class="topic-index-item " id="audios">
-            <h3 class="titulo-modulo ">Audios</h3>
-            <p class="descripcion-modulo">Vínculo a SYLARD para la reproducción línea por línea de audio en las lenguas
-              documentadas.</p>
+            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.audios.title')}}</h3>
+            <p class="descripcion-modulo">{{$t('topicIndex.topCards.audios.text')}}</p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
           <div onclick="location.href='#'" class="topic-index-item " id="videos">
-            <h3 class="titulo-modulo ">Videos</h3>
-            <p class="descripcion-modulo">Catálogo de videos de interés lingüístico</p>
+            <h3 class="titulo-modulo ">{{$t('topicIndex.topCards.videos.title')}}</h3>
+            <p class="descripcion-modulo">{{$t('topicIndex.topCards.videos.text')}}</p>
           </div>
 
 
@@ -37,107 +35,104 @@
         <p><strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle click a Léxicos</p>
         <div class="contenedor-mosaico-lexicos ">
           <div onclick="" class="lexico-item item-amuzgo" id="">
-            <h5 class="titulo-modulo-lexico ">Amuzgo</h5>
-            <h3 class="descripcion-modulo-lexico ">San Pedro Amuzgos</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.amuzgoan.region0')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/sanp1260" target="_blank">sanp1260</a></code>
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">Náhuatl</h5>
-            <h3 class="descripcion-modulo-lexico ">Náhuat de la Sierra Nororiental de Puebla</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region0')}}</h3>
             <code class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/high1278
 
               " target="_blank">high1278</a></code>
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">Náhuatl</h5>
-            <h3 class="descripcion-modulo-lexico ">Náhuatl de Mecayapan, Veracruz</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region1')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/isth1242" target="_blank">isth1242</a></code>
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">Náhuatl</h5>
-            <h3 class="descripcion-modulo-lexico ">Náhuatl de Tetelcingo, Morelos</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region2')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/tete1251" target="_blank">tete1251</a></code>
           </div>
           <div onclick="" class="lexico-item item-nahuatl" id="">
-            <h5 class="titulo-modulo-lexico ">Náhuatl</h5>
-            <h3 class="descripcion-modulo-lexico ">Náwat (Pipil) de El&NonBreakingSpace;Salvador</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.nahuatl.region3')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/pipi1250" target="_blank">pipi1250</a></code>
           </div>
           <div onclick="" class="lexico-item item-maya" id="">
-            <h5 class="titulo-modulo-lexico ">maya</h5>
-            <h3 class="descripcion-modulo-lexico ">Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a
-              1935</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.region0')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chol1282" target="_blank">chol1282</a></code>
           </div>
           <div onclick="" class="lexico-item item-maya" id="">
-            <h5 class="titulo-modulo-lexico ">Maya</h5>
-            <h3 class="descripcion-modulo-lexico ">Diccionario de Chuj (Maya) hablado en San&NonBreakingSpace;Mateo
-              Ixtatán, Guatemala
-              (1964–65) </h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mayan.region1')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chuj1250" target="_blank">chuj1250</a></code>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico ">Mixteco histórico (proto-mixteco)</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region0')}}</h3>
 
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico  ">Mixteco de Magdalena Peñascos</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico  ">{{$t('topicIndex.bottomCards.mixtec.region1')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/magd1235" target="_blank">magd1235</a></code>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico ">Mixteco de San Martín Duraznos</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region2')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/juxt1235" target="_blank">juxt1235</a></code>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico ">Mixteco de San Martín Peras</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region3')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/juxt1235" target="_blank">juxt1235</a></code>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico ">Mixteco de Xochapan</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region4')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/xoch1238" target="_blank">xoch1238</a></code>
           </div>
           <div onclick="" class="lexico-item item-mixteco" id="">
-            <h5 class="titulo-modulo-lexico ">Mixteco</h5>
-            <h3 class="descripcion-modulo-lexico ">Mixteco de la comunidad de Yoloxóchitl</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.mixtec.region5')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/yolo1241" target="_blank">yolo1241</a></code>
           </div>
           <div onclick="" class="lexico-item item-totonaco" id="">
-            <h5 class="titulo-modulo-lexico ">Totonacano</h5>
-            <h3 class="descripcion-modulo-lexico ">Totonaco del municipio de Zongozotla </h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.totonacan.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.totonacan.region0')}} </h3>
             <code class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/high1243"
 
                target="_blank">high1243</a></code>
           </div>
           <div onclick="" class="lexico-item item-triqui" id="">
-            <h5 class="titulo-modulo-lexico ">Triqui</h5>
-            <h3 class="descripcion-modulo-lexico ">Triqui de Chicahuaxtla</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.region0')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/chic1273" target="_blank">chic1273</a></code>
           </div>
           <div onclick="" class="lexico-item item-triqui" id="">
-            <h5 class="titulo-modulo-lexico ">Triqui</h5>
-            <h3 class="descripcion-modulo-lexico ">Triqui de San Martín Itunyoso</h3>
+            <h5 class="titulo-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.title')}}</h5>
+            <h3 class="descripcion-modulo-lexico ">{{$t('topicIndex.bottomCards.triqui.region0')}}</h3>
             <code
               class="modulo-lexico "><a href="https://glottolog.org/resource/languoid/id/sanm1298" target="_blank">sanm1298</a></code>
           </div>
           <div onclick="" class="lexico-item-boton-regresar " id="">
-            <h5 class="titulo-modulo-lexico-instrucciones ">Go back</h5>
+            <h5 class="titulo-modulo-lexico-instrucciones ">{{$t('topicIndex.bottomCards.back')}}</h5>
 
             <span class="material-icons-outlined lexico-item-icono-boton-regresar ">
               arrow_back
