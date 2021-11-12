@@ -3,7 +3,7 @@ import vueI18n from './config/i18n';
 export default {
   ssr: false,
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  target: 'server',
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - prueba1',
