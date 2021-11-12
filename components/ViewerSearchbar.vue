@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-       <h1>Preview componente searchbar</h1>
+       <h1>Preview componente searchbar Nahu</h1>
        <div v-if="datasend.page">
        <h2>{{datasend.pageSize}} Resultados mostrados de ({{datasend.total}}) totales</h2>
         </div>
