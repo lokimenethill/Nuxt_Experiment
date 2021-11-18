@@ -124,7 +124,7 @@ a.texto-vinculo-readme:visited {
 /* Dropdown tipo busqueda */
 .dropdown-tipo-busqueda {
   position: relative;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   flex-basis: 21%;
   margin-right: 0.5rem;
@@ -144,7 +144,7 @@ a.texto-vinculo-readme:visited {
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0.55rem;
   right: 10px;
   width: 0;
@@ -202,7 +202,7 @@ a.texto-vinculo-readme:visited {
 /* The container must be positioned relative: */
 .dropdow-parametros-palabras {
   position: relative;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   flex-basis: 19%;
   margin-right: 0.5rem;
@@ -278,7 +278,7 @@ a.texto-vinculo-readme:visited {
 /* Dropdow opciones al añadir filtro */
 .dropdown-opcion-filtro {
   position: relative;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   flex-basis: 12%;
   margin-right: 0.5rem;
@@ -440,5 +440,4 @@ button.eliminar-filtro:hover {
 .contenedor-general-resultados {
   margin-top: 4rem;
 }
-
 </style>

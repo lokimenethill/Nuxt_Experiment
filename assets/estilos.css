@@ -359,7 +359,6 @@ p.large {
 p {
   font-family: "Fira Sans", sans-serif;
   font-size: 0.955rem; /*17.19 px*/
-  line-height: 130%;
   margin-top: 0;
   margin-bottom: 1rem;
   color: var(--gris1);

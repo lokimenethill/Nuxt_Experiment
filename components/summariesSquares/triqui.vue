@@ -1,139 +1,63 @@
 <template>
-  <div class="container">
-    <div class="contenedor-general-rebasado">
-      <div class="contenedor-general">
-        <breadcrumbLangugageIndex :datasend="$t(post.langRoute)" />
-        <div class="contenedor-columnas">
-          <div
-            :id="post.styles.s1"
-            class="contenedor-3-col contenedor-titulo-sumario-gpo-lenguas"
-          >
-            <h1 :id="post.styles.s2" class="titulo-estaticas">
-              {{ post.title }}
-            </h1>
-          </div>
-          <!-- Columna derecha -->
-          <div class="contenedor-9-col contendor-texto-sumario-grupo-lenguas">
-            <p v-html="post.content"></p>
-          </div>
-        </div>
-        <amuzgoan v-if="post.id === 'amuzgoan'" />
-        <nahuatl v-if="post.id === 'nahuatl'" />
-        <mayan v-if="post.id === 'mayan'" />
-        <mixtec v-if="post.id === 'mixtec'" />
-         <totonacan v-if="post.id === 'totonacan'" />
-         <triqui v-if="post.id === 'triqui'" />
+  <div class="contenedor-columnas">
+    <h4 class="instrucciones">Choose a terminal language</h4>
+    <!-- Contenedor  mosaico lenguas terminales sumario -->
+    <div class="contenedor-12-col contenedor-sumario-lenguas-terminales">
+      <!-- Módulo mosaico lenguas terminales sumario -->
+      <div
+        id="myBtn"
+        onclick=""
+        class="sumario-lengua-terminal-item sumario-lengua-terminal-item-triqui"
+      >
+        <h3 class="sumario-lengua-terminal-titulo">
+          {{ $t('topicIndex.bottomCards.triqui.region0') }}
+        </h3>
+        <code class="modulo-lexicos"
+          ><a
+            href="https://glottolog.org/resource/languoid/id/chic1273"
+            target="_blank"
+            >chic1273</a
+          ></code
+        >
+        <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
+                extension</p> -->
+      </div>
+      <div
+        id="myBtn"
+        onclick=""
+        class="sumario-lengua-terminal-item sumario-lengua-terminal-item-triqui"
+      >
+        <h3 class="sumario-lengua-terminal-titulo">
+          {{ $t('topicIndex.bottomCards.triqui.region1') }}
+        </h3>
+        <code class="modulo-lexicos"
+          ><a
+            href="https://glottolog.org/resource/languoid/id/sanm1298"
+            target="_blank"
+            >sanm1298</a
+          ></code
+        >
+        <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
+                extension</p> -->
+      </div>
+      <!-- Módulo mosaico lenguas terminales sumario etc -->
+      <div id="" onclick="" class="sumario-lexico-item-boton-regresar">
+        <h5 class="titulo-sumario-modulo-lexico-instrucciones">
+          {{ $t('topicIndex.bottomCards.back') }}
+        </h5>
+        <span
+          class="
+            material-icons-outlined
+            sumario-lexico-item-icono-boton-regresar
+          "
+        >
+          arrow_back
+        </span>
       </div>
     </div>
   </div>
 </template>
-<script>
-import breadcrumbLangugageIndex from '@/components/breadcrumbLangugageIndex';
-import amuzgoan from '@/components/summariesSquares/amuzgoan';
-import nahuatl from '@/components/summariesSquares/nahuatl';
-import mayan from '@/components/summariesSquares/mayan';
-import mixtec from '@/components/summariesSquares/mixtec';
-import totonacan from '@/components/summariesSquares/totonacan';
-import triqui from '@/components/summariesSquares/triqui';
-export default {
-  components: {
-    breadcrumbLangugageIndex,
-    amuzgoan,
-    nahuatl,
-    mayan,
-    mixtec,
-    totonacan,
-    triqui,
-  },
-  data() {
-    return {
-      lang: this.$t('navBar.help'),
-      id: this.$route.params.id,
-    };
-  },
-  head() {
-    return {
-      title: this.$t('navBar.languagesIndex'),
-    };
-  },
-  computed: {
-    updateData() {
-      const langIndex = [
-        {
-          id: 'amuzgoan',
-          title: this.$t('languageIndex.amuzgoan.title'),
-          content: this.$t('languageIndex.amuzgoan.content'),
-          langRoute: 'languageIndex.amuzgoan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-amuzgo',
-            s2: 'amuzgo-titulo-sumario',
-          },
-        },
-        {
-          id: 'nahuatl',
-          title: this.$t('languageIndex.nahuatl.title'),
-          content: this.$t('languageIndex.nahuatl.content'),
-          langRoute: 'languageIndex.nahuatl.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-nahuatl',
-            s2: 'nahuatl-titulo-sumario',
-          },
-        },
-        {
-          id: 'mayan',
-          title: this.$t('languageIndex.mayan.title'),
-          content: this.$t('languageIndex.mayan.content'),
-          langRoute: 'languageIndex.mayan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-maya',
-            s2: 'maya-titulo-sumario',
-          },
-        },
-        {
-          id: 'mixtec',
-          title: this.$t('languageIndex.mixtec.title'),
-          content: this.$t('languageIndex.mixtec.content'),
-          langRoute: 'languageIndex.mixtec.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-mixteco',
-            s2: 'mixteco-titulo-sumario',
-          },
-        },
-        {
-          id: 'totonacan',
-          title: this.$t('languageIndex.totonacan.title'),
-          content: this.$t('languageIndex.totonacan.content'),
-          langRoute: 'languageIndex.totonacan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-totonaco',
-            s2: 'totonaco-titulo-sumario',
-          },
-        },
-        {
-          id: 'triqui',
-          title: this.$t('languageIndex.triqui.title'),
-          content: this.$t('languageIndex.triqui.content'),
-          langRoute: 'languageIndex.triqui.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-triqui',
-            s2: 'triqui-titulo-sumario',
-          },
-        },
-      ];
-      return langIndex;
-    },
-    post() {
-      return this.updateData.find((post) => post.id === this.id);
-
-      /*
-            dentro del store
-           return this.$store.state.publicaciones.all.find(post => post.id === this.id)
-        */
-    },
-  },
-};
-</script>
-<style scoped>
+<style>
 /* Columna de izquierda */
 
 div.contenedor-titulo-sumario-gpo-lenguas {
@@ -261,7 +185,8 @@ div.sumario-lengua-terminal-item-triqui:hover {
   margin-bottom: 0.3333rem;
 }
 /*glotocode lengua terminal sumario*/
-code.modulo-lexico {
+code.modulo-lexicos {
+  font-size: 00.6rem;
   color: white;
   display: inline;
   background-color: rgba(0, 0, 0, 0.1);
@@ -269,7 +194,7 @@ code.modulo-lexico {
   position: absolute;
   top: 0.5rem;
 }
-code.modulo-lexico:hover {
+code.modulo-lexicos:hover {
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: darken;
 }
