@@ -1,139 +1,85 @@
 <template>
-  <div class="container">
-    <div class="contenedor-general-rebasado">
-      <div class="contenedor-general">
-        <breadcrumbLangugageIndex :datasend="$t(post.langRoute)" />
-        <div class="contenedor-columnas">
-          <div
-            :id="post.styles.s1"
-            class="contenedor-3-col contenedor-titulo-sumario-gpo-lenguas"
-          >
-            <h1 :id="post.styles.s2" class="titulo-estaticas">
-              {{ post.title }}
-            </h1>
+    <div id="myModal" class="fondo-pantalla-emergente" >
+        <div class="contenedor-pantalla-emergente contenedor-pantalla-emergente-mixteco">
+          <nav class="header-pantalla-emergente">
+            <div class="contenedor-breadcums-pantalla-emergente ">
+              <a class="breadcums-pantalla-emergente ">Grupo de lenguas</a>
+              <p class="separador-breadcums">/</p><a class="breadcums-pantalla-emergente ">Lengua
+                terminal</a>
+              <p class="separador-breadcums">/</p><a href="" class="breadcums-pantalla-emergente-activo">About</a>
+            </div>
+            <div class="boton-cerrar"><button class="cerrar">x</button></div>
+          </nav>
+          <div class="contenedor-titulo-pantalla-emergente ">
+            <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco">Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. </h1>
           </div>
-          <!-- Columna derecha -->
-          <div class="contenedor-9-col contendor-texto-sumario-grupo-lenguas">
-            <p v-html="post.content"></p>
+
+
+          <div class="contenedor-columnas-pantalla-emergente ">
+            <div class="columna-izquierda-pantalla-emergente ">
+              <div class="contenedor-texto-lengua-pantalla-emergente">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, accusamus quisquam, laboriosam sint
+                  doloribus, nostrum sit cupiditate molestiae itaque voluptatem excepturi. Commodi nostrum veritatis
+                  maxime beatae exercitationem nobis incidunt earum!
+                  Sint, voluptatum amet, explicabo labore natus sunt omnis minima maiores quidem possimus, facere non
+                  iste ex eius praesentium neque quaerat obcaecati architecto nobis delectus! Recusandae quis expedita
+                  eveniet eum iusto.</p>
+                <p>Deserunt id placeat repellendus numquam voluptatem ipsam quo consequuntur cupiditate optio? Vitae
+                  perspiciatis iste, dolores, laudantium delectus officia quibusdam non repellendus error nostrum
+                  fugit natus at recusandae blanditiis mollitia quae!
+                  Hic repudiandae eaque animi repellendus aliquid est, corrupti esse veritatis possimus asperiores non
+                  labore qui aut quae placeat eius sed. Odio veritatis nemo velit perferendis tempora consequatur ab
+                  tenetur saepe.
+                  Fugit voluptates, totam harum, dignissimos voluptatem a natus accusantium et ab earum placeat nemo
+                  possimus culpa tempora est doloremque debitis hic dolorem? Soluta, dolorem assumenda quibusdam
+                  veritatis repellat sit molestias!</p>
+              </div>
+            </div>
+            <div class="columna-derecha-pantalla-emergente ">
+              <figure class="figure-pantalla-emergente ">
+                <img class="imagen-pantalla-emergente" src="generals/imagen4a3.jpg" alt="">
+                <figcaption class="pie-foto-pantalla-emergente">Pie de foto</figcaption>
+              </figure>
+            </div>
+
+          </div>
+
+
+          <div class="footer-pantalla-emergente ">
+            <div class="footer-columna-item lexicons-footer-item-pantalla-emergente ">
+              <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Lexicons</h2>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+            </div>
+            <div class="footer-columna-item ">
+              <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Flora & fauna</h2>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+            </div>
+            <div class="footer-columna-item ">
+              <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Corpora</h2>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+            </div>
+            <div class="footer-columna-item ">
+              <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Grammar</h2>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+              <a href="" class="vinculo-footer-pantalla-emergente">Item</a>
+            </div>
           </div>
         </div>
-        <amuzgoan v-if="post.id === 'amuzgoan'" />
-        <nahuatl v-if="post.id === 'nahuatl'" />
-        <mayan v-if="post.id === 'mayan'" />
-        <mixtec v-if="post.id === 'mixtec'" />
-        <totonacan v-if="post.id === 'totonacan'" />
-        <triqui v-if="post.id === 'triqui'" />
       </div>
-    </div>
-  </div>
 </template>
 <script>
-import breadcrumbLangugageIndex from '@/components/breadcrumbLangugageIndex';
-import amuzgoan from '@/components/summariesSquares/amuzgoan';
-import nahuatl from '@/components/summariesSquares/nahuatl';
-import mayan from '@/components/summariesSquares/mayan';
-import mixtec from '@/components/summariesSquares/mixtec';
-import totonacan from '@/components/summariesSquares/totonacan';
-import triqui from '@/components/summariesSquares/triqui';
-export default {
-  components: {
-    breadcrumbLangugageIndex,
-    amuzgoan,
-    nahuatl,
-    mayan,
-    mixtec,
-    totonacan,
-    triqui,
-  },
-  data() {
-    return {
-      lang: this.$t('navBar.help'),
-      id: this.$route.params.id,
-    };
-  },
-  head() {
-    return {
-      title: this.$t('navBar.languagesIndex'),
-    };
-  },
-  computed: {
-    updateData() {
-      const langIndex = [
-        {
-          id: 'amuzgoan',
-          title: this.$t('languageIndex.amuzgoan.title'),
-          content: this.$t('languageIndex.amuzgoan.content'),
-          langRoute: 'languageIndex.amuzgoan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-amuzgo',
-            s2: 'amuzgo-titulo-sumario',
-          },
-        },
-        {
-          id: 'nahuatl',
-          title: this.$t('languageIndex.nahuatl.title'),
-          content: this.$t('languageIndex.nahuatl.content'),
-          langRoute: 'languageIndex.nahuatl.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-nahuatl',
-            s2: 'nahuatl-titulo-sumario',
-          },
-        },
-        {
-          id: 'mayan',
-          title: this.$t('languageIndex.mayan.title'),
-          content: this.$t('languageIndex.mayan.content'),
-          langRoute: 'languageIndex.mayan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-maya',
-            s2: 'maya-titulo-sumario',
-          },
-        },
-        {
-          id: 'mixtec',
-          title: this.$t('languageIndex.mixtec.title'),
-          content: this.$t('languageIndex.mixtec.content'),
-          langRoute: 'languageIndex.mixtec.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-mixteco',
-            s2: 'mixteco-titulo-sumario',
-          },
-        },
-        {
-          id: 'totonacan',
-          title: this.$t('languageIndex.totonacan.title'),
-          content: this.$t('languageIndex.totonacan.content'),
-          langRoute: 'languageIndex.totonacan.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-totonaco',
-            s2: 'totonaco-titulo-sumario',
-          },
-        },
-        {
-          id: 'triqui',
-          title: this.$t('languageIndex.triqui.title'),
-          content: this.$t('languageIndex.triqui.content'),
-          langRoute: 'languageIndex.triqui.title',
-          styles: {
-            s1: 'contenedor-titulo-sumario-triqui',
-            s2: 'triqui-titulo-sumario',
-          },
-        },
-      ];
-      return langIndex;
-    },
-    post() {
-      return this.updateData.find((post) => post.id === this.id);
 
-      /*
-            dentro del store
-           return this.$store.state.publicaciones.all.find(post => post.id === this.id)
-        */
-    },
-  },
-};
 </script>
-<style scoped>
+
+<style>
 /* Columna de izquierda */
 
 div.contenedor-titulo-sumario-gpo-lenguas {
@@ -275,7 +221,7 @@ code.modulo-lexico:hover {
 }
 /* Very short description */
 p.sumario-modulo-lengua-termial-very-short-description {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 0.7777rem; /*14 px*/
   line-height: 160%;
   margin-top: 0.66rem !important;
@@ -621,4 +567,5 @@ div.boton-cerrar {
 .titulo-footer-pantalla-emergente-triqui {
   color: var(--triqui0);
 }
+
 </style>
