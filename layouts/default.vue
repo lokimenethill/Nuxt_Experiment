@@ -54,7 +54,9 @@
         <the-language-selector />
       </nav>
     </header>
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
     <footer class="">
       <nav class="nav-footer">
         <a id="logo-neh-a" href="https://www.neh.gov/" target="_blank">

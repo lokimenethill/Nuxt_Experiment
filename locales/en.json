@@ -18,36 +18,43 @@
         "ilustration": "Illustration"
     },
     "languageIndex": {
-        "title": "Choose a language group",
+        "title":"",
+        "choose": "Choose a language group",
         "amuzgoan": {
             "title": "AMUZGOAN",
             "preText": "The three Amuzgoan languages ",
-            "text": " are spoken in a small region of Guerrero and Oaxaca. Within eastern Otomguean languages, they are most closely related to Mixtec‑Cuicatec and Triqui."
+            "text": " are spoken in a small region of Guerrero and Oaxaca. Within eastern Otomguean languages, they are most closely related to Mixtec‑Cuicatec and Triqui.",
+            "content":"<p>Three generally recognized Amuzgo languages<code><a href='https://glottolog.org/resource/languoid/id/amuz1254' target='_blank'>amuz1254</a></code> which <a href='https://glottolog.org/' target='_blank'>Glottolog</a> considers closely related tonal languages within the Amuzgo&#8209;Mixtecan branch of eastern Otomangue, are spoken in an enclave northwestern Oaxacan and southwestern Guerrero communities. Other classifications reject Amuzgo&#8209;Mixtecan as a valid 'umbrella' unit and consider Amuzgo and Mixtecan sibling language groups. Two Amuzgoan languages, centered in the municipalities of Xochistlahuaca (Guerrero) and San Pedro Amuzgos (Oaxaca), have been somewhat documented, the latter by a prolific native speaker scholar, Fermín Tapia. The third, from Ipalapa (Oaxaca), is basically unstudied. Morphologically, Amuzgoan languages are unusual in manifesting active-stative subject marking on intransitive verbs.</p>"
         },
         "nahuatl": {
             "title": "NAHUATL",
             "preText": "The approximately 30 Nahuatl (Aztec) languages ",
-            "text": " are spoken from Durango, through western and eastern Mexico, to El Salvador, making this group the most extensive of the uto‑Aztecan languages."
+            "text": " are spoken from Durango, through western and eastern Mexico, to El Salvador, making this group the most extensive of the uto‑Aztecan languages.",
+            "content":"<p>Nahuatl <code><a href='https://glottolog.org/resource/languoid/id/azte1234' target='_blank'>azte1234</a></code> represents the largest group of uto&#8209;Aztecan languages. uto&#8209;Aztecan itself is divided into a northern group (California, Utah, Arizona, and Colorado), and a southern group (southern Arizona to El Salvador). The general consensus is that speakers of proto&#8209;Nahuatl, the common ancestor of all Nahuatl languages, migrated from the Sonoran desert through central and southeastern Mexico to El Salvador. Nahuatl languages all manifest a relatively complex agglutinative verbal p (inflectional and derivational), noun incorporation, and reduplication of verbal, nominal, and adjectival stems. The Aztecs spoke Nahuatl and introduced many innovations that quickly spread to other Nahuatl languages of central Mexico.</p>"
         },
         "mayan": {
             "title": "MAYAN",
             "preText": "Two Mayan languages ",
-            "text": " are spoken in northern Veracruz (Huastecan) while 30 predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages."
+            "text": " are spoken in northern Veracruz (Huastecan) while 30 predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages.",
+            "content":"<p>Mayan languages <code><a href='https://glottolog.org/resource/languoid/id/maya1287' target='_blank'>maya1287</a></code>, spoken in Mexico, Guatemala, and Belize, have been extensively studied in their modern variants, in extensive colonial documentation (dictionaries and texts), in glyphic archaeological and codex records, and in reconstructed proto&#8209;forms. Extensive documentation of modern Maya (grammars, dictionaries, comparative studies) is the result of a model effort by an Indigenous Guatemalan collective: OKMA. Typologically, and unlike other Mesoamerican languages, Maya manifests ergative&#8209;absolutive alignment: subjects of intranstive verbs are marked and behave like objects of transitive verbs. A separate form exists for subjects of transitive verbs. Ergativity is not a recent development but has been reconstructed to proto&#8209;Mayan.</p>"
         },
         "mixtec": {
             "title": "MIXTEC",
             "preText": "The approximately 50 Mixtec languages ",
-            "text": " are closely related to Cuicatec, Triqui, and, more distantly, Amuzgo. They are spoken in Oaxaca, Guerrero, and Puebla and are highly diversified, thus often not mutually intelligible."
+            "text": " are closely related to Cuicatec, Triqui, and, more distantly, Amuzgo. They are spoken in Oaxaca, Guerrero, and Puebla and are highly diversified, thus often not mutually intelligible.",
+            "content":"<p class=''>Mixtec <code><a href='https://glottolog.org/resource/languoid/id/mixt1427' target='_blank'>mixt1427</a></code> comprises approximately 50 languages spoken in Oaxaca, Guerrero, and Puebla. Many are mutually unintelligible given that diversification began over 5,000 years&nbsp;ago. Distinct internal groupings have been suggested: (a) the 5 subdivisions (Puebla Mixtec, Guerrero, Mixtec, Mixteca Baja, Mixteca Alta, and Mixteca de la Costa) presented by Kathryn Josserand, and (b) the 12 subdivisions in the <a href='https://glottolog.org/' target='_blank'>Glottolog</a> taxonomy. The entonym for Mixtec is <em>tu'¹un¹ sa¹bi⁴</em> literally 'word rain'. Mixtec languages have a complex tonal phonology that varies considerably from one community to another, though the segmental phonology is relatively simple and the morphology relatively isolating.</p>"
         },
         "totonacan": {
             "title": "TOTONACAN",
             "preText": "Totonacan languages are divided into (a) Totonac (10 languages); and (b) Tepehua (3 languages). Totonacan ",
-            "text": " manifests Mesoamerican linguistic traits though its historical relationship to other areal languages, e.g., Mixe‑Zoque, is unclear."
+            "text": " manifests Mesoamerican linguistic traits though its historical relationship to other areal languages, e.g., Mixe‑Zoque, is unclear.",
+            "content":"<p>Totonacan <code><a href='https://glottolog.org/resource/languoid/id/toto1251' target='_blank'>toto1251</a></code> has been considered a language isolate (unrelated to other Mesoamerican language groups) although recently a Mixe&#8209;Zoque relationship has been suggested. The two branches &mdash;Tepehua (3 languages) and Totonac &mdash; are spoken across northern Veracruz and Puebla and into Hidalgo. Although internal language divisions are still debated, in general Totonac comprises two major groups (northern and lowland) with Misantla (Yecuatla) Totonac an outlier. Totonacan languages manifest a complex verbal morphology (both inflectional and derivational), multiple nominalization patterns, and a particularly extensive set of 'ideophones,' sound symbolic words that usually represent sound, olefactory, and taste perceptions. </p>"
         },
         "triqui": {
             "title": "TRIQUI",
             "preText": "Triqui languages ",
-            "text": ", related to Mixtec and Cuicatec, comprise three distinct languages spoken in three northwestern Oaxaca communities. They are notable for sharing a fairly complex tonal and segmental phonology."
+            "text": ", related to Mixtec and Cuicatec, comprise three distinct languages spoken in three northwestern Oaxaca communities. They are notable for sharing a fairly complex tonal and segmental phonology.",
+            "content":"<p>The three triqui languages <code><a href='https://glottolog.org/resource/languoid/id/triq1251' target='_blank'>triq1251</a></code> are spoken in Chicahuaxtla, San Martín Itunyoso and San Juan Copala, communities located in close proximity to the mixtec and amuzgo regions of northwest Oaxaca. Triqui is invariably classified as a Mixtecan language and it is easy to recognize an ample series of cognates across Triqui, Mixtec, and Cuicatec. Two Triqui languages, Chicahuaxtla and Itunyoso, are notable for contrasting lenis and fortis consonants, the latter of long duration and often considered geminates. All three Triqui languages, however, have a complex tonal system, with 8 to 10, or possibly more, tones.</p>"
         }
     },
     "topicIndex": {
