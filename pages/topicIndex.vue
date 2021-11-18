@@ -4,7 +4,7 @@
       <div class="contenedor-general">
         <h4 class="instrucciones">{{ $t('topicIndex.instructions') }}</h4>
         <div class="contenedor-topic-index">
-          <div @click="lexiconsPush()" class="topic-index-item" id="lexicons">
+          <div id="lexicons" class="topic-index-item" @click="lexiconsPush()">
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.lexicon.title') }}
             </h3>
@@ -13,9 +13,9 @@
             </p>
           </div>
           <div
+            id="library"
             onclick="location.href='#'"
             class="topic-index-item"
-            id="library"
           >
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
@@ -25,9 +25,9 @@
             </p>
           </div>
           <div
+            id="flora-and-fauna"
             onclick="location.href='#'"
             class="topic-index-item"
-            id="flora-and-fauna"
           >
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.flora.title') }}
@@ -36,7 +36,7 @@
               {{ $t('topicIndex.topCards.flora.text') }}
             </p>
           </div>
-          <div onclick="location.href='#'" class="topic-index-item" id="audios">
+          <div id="audios" onclick="location.href='#'" class="topic-index-item">
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.audios.title') }}
             </h3>
@@ -45,7 +45,7 @@
             </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
-          <div onclick="location.href='#'" class="topic-index-item" id="videos">
+          <div id="videos" onclick="location.href='#'" class="topic-index-item">
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.videos.title') }}
             </h3>
@@ -60,7 +60,7 @@
           click a Léxicos
         </p>
         <div v-if="lexic" class="contenedor-mosaico-lexicos">
-          <div onclick="" class="lexico-item item-amuzgo" id="">
+          <div onclick="" class="lexico-item item-amuzgo">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.amuzgoan.title') }}
             </h5>
@@ -75,7 +75,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-nahuatl" id="">
+          <div onclick="" class="lexico-item item-nahuatl">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
@@ -92,7 +92,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-nahuatl" id="">
+          <div onclick="" class="lexico-item item-nahuatl">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
@@ -107,7 +107,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-nahuatl" id="">
+          <div onclick="" class="lexico-item item-nahuatl">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
@@ -122,7 +122,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-nahuatl" id="">
+          <div onclick="" class="lexico-item item-nahuatl">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
@@ -137,7 +137,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-maya" id="">
+          <div onclick="" class="lexico-item item-maya">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mayan.title') }}
             </h5>
@@ -152,7 +152,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-maya" id="">
+          <div onclick="" class="lexico-item item-maya">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mayan.title') }}
             </h5>
@@ -167,7 +167,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -175,7 +175,7 @@
               {{ $t('topicIndex.bottomCards.mixtec.region0') }}
             </h3>
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -190,7 +190,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -205,7 +205,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -220,7 +220,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -235,7 +235,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-mixteco" id="">
+          <div onclick="" class="lexico-item item-mixteco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
@@ -250,7 +250,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-totonaco" id="">
+          <div onclick="" class="lexico-item item-totonaco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.totonacan.title') }}
             </h5>
@@ -265,7 +265,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-triqui" id="">
+          <div onclick="" class="lexico-item item-triqui">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.triqui.title') }}
             </h5>
@@ -280,7 +280,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item item-triqui" id="">
+          <div onclick="" class="lexico-item item-triqui">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.triqui.title') }}
             </h5>
@@ -295,7 +295,7 @@
               ></code
             >
           </div>
-          <div onclick="" class="lexico-item-boton-regresar" id="">
+          <div onclick="" class="lexico-item-boton-regresar">
             <h5 class="titulo-modulo-lexico-instrucciones">
               {{ $t('topicIndex.bottomCards.back') }}
             </h5>

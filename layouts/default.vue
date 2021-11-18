@@ -54,7 +54,9 @@
         <the-language-selector />
       </nav>
     </header>
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
     <footer class="">
       <nav class="nav-footer">
         <a id="logo-neh-a" href="https://www.neh.gov/" target="_blank">
@@ -78,7 +80,7 @@
             id="link-drako-estudio"
             href="mailto: contacto@drakoestudio.com.mx."
             class="footer-item"
-            >Drako Estudio <span>&copy; {{ new Date().getFullYear() }}</span></a
+            >Drako Estudio</a
           >
         </div>
         <a href="mailto:mesolex.director@gmail.com" class="footer-item"
