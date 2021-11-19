@@ -136,8 +136,7 @@ export default {
   },
 };
 </script>
-<style >
-.contenedor-languaje-index {
+<style >.contenedor-languaje-index {
   height: 465px;
   display: flex;
   flex-flow: row wrap;
@@ -167,7 +166,7 @@ h3.titulo-modulo {
   color: white;
 }
 p.descripcion-modulo {
-  font-size: 0.86rem;
+  font-size: 0.86rem !important;
   color: white;
 }
 

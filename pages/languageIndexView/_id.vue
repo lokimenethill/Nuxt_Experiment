@@ -397,7 +397,7 @@ h5.titulo-sumario-modulo-lexico-instrucciones {
   justify-content: center;
   align-items: center;
 
-  display: none;
+  display: block;
   animation: desplegado-pantalla-emergente 1s cubic-bezier(0, 0.26, 0.53, 0.99);
   overflow-y: hidden;
 }
