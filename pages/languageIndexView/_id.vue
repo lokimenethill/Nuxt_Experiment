@@ -133,7 +133,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+
+<style>
 /* Columna de izquierda */
 
 div.contenedor-titulo-sumario-gpo-lenguas {
@@ -261,7 +262,8 @@ div.sumario-lengua-terminal-item-triqui:hover {
   margin-bottom: 0.3333rem;
 }
 /*glotocode lengua terminal sumario*/
-code.modulo-lexico {
+code.modulo-lexicos {
+  font-size: 00.6rem;
   color: white;
   display: inline;
   background-color: rgba(0, 0, 0, 0.1);
@@ -269,7 +271,7 @@ code.modulo-lexico {
   position: absolute;
   top: 0.5rem;
 }
-code.modulo-lexico:hover {
+code.modulo-lexicos:hover {
   background-color: rgba(0, 0, 0, 0.2);
   background-blend-mode: darken;
 }

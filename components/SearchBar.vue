@@ -276,7 +276,7 @@ export default {
     },
     calcPages() {
       this.maxPages = Math.ceil(
-        this.axios_response.total / this.axios_response.pageSize
+        this.axios_response.total / this.axios_response.pageSize,
       );
     },
     paginatorMaker() {
@@ -291,7 +291,7 @@ export default {
         this.demodata.page = this.actualPage;
         const resp = await this.$axios.$post(
           process.env.API_HOST,
-          this.demodata
+          this.demodata,
         );
         this.axios_response = resp;
       }
@@ -303,7 +303,7 @@ export default {
         this.demodata.page = this.actualPage;
         const resp = await this.$axios.$post(
           process.env.API_HOST,
-          this.demodata
+          this.demodata,
         );
         this.axios_response = resp;
       }
