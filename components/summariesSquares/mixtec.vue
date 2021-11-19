@@ -6,7 +6,7 @@
       <!-- Módulo mosaico lenguas terminales sumario -->
       <div
         id="myBtn"
-        onclick=""
+        @click="toggleWindow()"
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -122,5 +122,30 @@
         </span>
       </div>
     </div>
+    <div >
+      <popupWindow v-if="showWindow" />
+    </div>
   </div>
 </template>
+<script>
+import popupWindow from '@/components/summariesSquares/popupWindow.vue';
+export default {
+  components:{
+    popupWindow,
+  },
+  data() {
+    return {
+      showWindow:false,
+    };
+  },
+  methods:{
+    toggleWindow(){
+      if(this.showWindow===true){
+        this.showWindow=false;
+      }else{
+        this.showWindow=true;
+      }
+    },
+  },
+};
+</script>
