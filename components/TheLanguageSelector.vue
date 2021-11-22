@@ -2,23 +2,23 @@
   <div class="contenedor-selector-leng">
     <div class="menu-item-vertical-line"></div>
     <!-- <button class="selector-lenguaje">{{$i18n.locales[0].name}}</button> -->
-    <a
+    <button
       :class="[
         isSpanishActive ? 'selector-lenguaje-activo' : 'selector-lenguaje',
       ]"
       @click="setLocale($i18n.locales[0].code)"
     >
       {{ $i18n.locales[0].name }}
-    </a>
+    </button>
     <p class="divisor-selector-lenguaje">|</p>
-    <a
+    <button
       :class="[
         !isSpanishActive ? 'selector-lenguaje-activo' : 'selector-lenguaje',
       ]"
       @click="setLocale($i18n.locales[1].code)"
     >
       {{ $i18n.locales[1].name }}
-    </a>
+    </button>
   </div>
 </template>
 
