@@ -1,15 +1,15 @@
 <template>
   <div class="contenedor-columnas">
-    <h4 class="instrucciones">Choose a terminal language</h4>
+    <h4 class="instrucciones">Choose a terminal language {{$store.state.languageIndexView.windowState}} -- {{showWindow}}</h4>
     <!-- Contenedor  mosaico lenguas terminales sumario -->
     <div class="contenedor-12-col contenedor-sumario-lenguas-terminales">
       <!-- Módulo mosaico lenguas terminales sumario -->
       <div
         id="myBtn"
-        @click="toggleWindow()"
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+        @click="toggleWindow(0)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           {{ $t('topicIndex.bottomCards.mixtec.region0') }}
@@ -123,7 +123,7 @@
       </div>
     </div>
     <div >
-      <popupWindow v-if="showWindow" />
+      <popupWindow v-if="showWindow" :datasend="sendDataWindow" />
     </div>
   </div>
 </template>
@@ -135,15 +135,69 @@ export default {
   },
   data() {
     return {
-      showWindow:false,
+      showWindow:this.$store.state.languageIndexView.windowState,
+      numOfWindow:null,
     };
   },
+  computed:{
+    sendDataWindow(){
+    const dataWindow=[
+      {
+        title:"titulo",
+        textContent:"contenido",
+        imgUri:"/generals/imagen4a3.jpg",
+        lexicons:[
+        {
+          display:"lexicon1",
+          src:"uri://",
+        },
+        {
+          display:"lexicon2",
+          src:"uri://",
+        },
+        ],
+        floraFauna:[
+        {
+          display:"flora1",
+          src:"uri://",
+        },
+        {
+          display:"flora2",
+          src:"uri://",
+        },
+        ],
+        corpora:[
+        {
+          display:"corpora1",
+          src:"uri://",
+        },
+        {
+          display:"corpora2",
+          src:"uri://",
+        },
+        ],
+        grammar:[
+        {
+          display:"grammar1",
+          src:"uri://",
+        },
+        {
+          display:"grammar2",
+          src:"uri://",
+        },
+        ],
+      },
+    ];
+    return dataWindow[this.numOfWindow];
+    },
+  },
   methods:{
-    toggleWindow(){
+    toggleWindow(nw){
       if(this.showWindow===true){
-        this.showWindow=false;
+        this.$store.commit('languageIndexView/watchWs');
       }else{
-        this.showWindow=true;
+        this.$store.commit('languageIndexView/watchWs');
+        this.numOfWindow=nw;
       }
     },
   },
