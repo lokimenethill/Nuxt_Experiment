@@ -1,6 +1,6 @@
 <template>
   <div class="contenedor-columnas">
-    <h4 class="instrucciones">Choose a terminal language {{$store.state.languageIndexView.windowState}} -- {{showWindow}}</h4>
+    <h4 class="instrucciones">Choose a terminal language</h4>
     <!-- Contenedor  mosaico lenguas terminales sumario -->
     <div class="contenedor-12-col contenedor-sumario-lenguas-terminales">
       <!-- Módulo mosaico lenguas terminales sumario -->
@@ -23,7 +23,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-         @click="toggleWindow(1)"
+        @click="toggleWindow(1)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           {{ $t('topicIndex.bottomCards.mixtec.region1') }}
@@ -38,7 +38,6 @@
       </div>
       <div
         id=""
-        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -56,7 +55,6 @@
       </div>
       <div
         id=""
-        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -74,7 +72,6 @@
       </div>
       <div
         id=""
-        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -92,7 +89,6 @@
       </div>
       <div
         id=""
-        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -108,7 +104,7 @@
           ></code
         >
       </div>
-      <div id=""  class="sumario-lexico-item-boton-regresar">
+      <div id="" class="sumario-lexico-item-boton-regresar">
         <h5 class="titulo-sumario-modulo-lexico-instrucciones">
           {{ $t('topicIndex.bottomCards.back') }}
         </h5>
@@ -122,127 +118,132 @@
         </span>
       </div>
     </div>
-    <div >
-      <popupWindow v-if="showWindow" @window="showWindow = $event" :showWs="showWindow" :datasend="sendDataWindow" />
+    <div>
+      <popupWindow
+        v-if="showWindow"
+        @window="showWindow = $event"
+        :showWs="showWindow"
+        :datasend="sendDataWindow"
+      />
     </div>
   </div>
 </template>
 <script>
 import popupWindow from '@/components/summariesSquares/popupWindow.vue';
 export default {
-  components:{
+  components: {
     popupWindow,
   },
   data() {
     return {
-      showWindow:false,
-      numOfWindow:null,
+      showWindow: false,
+      numOfWindow: null,
     };
   },
-  computed:{
-    sendDataWindow(){
-    const dataWindow=[
-      {
-        title:"titulo 0",
-        textContent:"contenido",
-        imgUri:"/generals/imagen4a3.jpg",
-        lexicons:[
+  computed: {
+    sendDataWindow() {
+      const dataWindow = [
         {
-          display:"lexicon1",
-          src:"uri://",
+          title: 'titulo 0',
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
         },
         {
-          display:"lexicon2",
-          src:"uri://",
+          title: 'titulo 1',
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
         },
-        ],
-        floraFauna:[
-        {
-          display:"flora1",
-          src:"uri://",
-        },
-        {
-          display:"flora2",
-          src:"uri://",
-        },
-        ],
-        corpora:[
-        {
-          display:"corpora1",
-          src:"uri://",
-        },
-        {
-          display:"corpora2",
-          src:"uri://",
-        },
-        ],
-        grammar:[
-        {
-          display:"grammar1",
-          src:"uri://",
-        },
-        {
-          display:"grammar2",
-          src:"uri://",
-        },
-        ],
-      },
-      {
-        title:"titulo 1",
-        textContent:"contenido",
-        imgUri:"/generals/imagen4a3.jpg",
-        lexicons:[
-        {
-          display:"lexicon1",
-          src:"uri://",
-        },
-        {
-          display:"lexicon2",
-          src:"uri://",
-        },
-        ],
-        floraFauna:[
-        {
-          display:"flora1",
-          src:"uri://",
-        },
-        {
-          display:"flora2",
-          src:"uri://",
-        },
-        ],
-        corpora:[
-        {
-          display:"corpora1",
-          src:"uri://",
-        },
-        {
-          display:"corpora2",
-          src:"uri://",
-        },
-        ],
-        grammar:[
-        {
-          display:"grammar1",
-          src:"uri://",
-        },
-        {
-          display:"grammar2",
-          src:"uri://",
-        },
-        ],
-      },
-    ];
-    return dataWindow[this.numOfWindow];
+      ];
+      return dataWindow[this.numOfWindow];
     },
   },
-  methods:{
-    toggleWindow(nw){
-      if(this.showWindow===true){
-        this.showWindow=false;
-      }else{
-        this.showWindow=true;
-        this.numOfWindow=nw;
+  methods: {
+    toggleWindow(nw) {
+      if (this.showWindow === true) {
+        this.showWindow = false;
+      } else {
+        this.showWindow = true;
+        this.numOfWindow = nw;
       }
     },
   },
