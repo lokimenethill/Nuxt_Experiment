@@ -7,11 +7,19 @@
     >
       <nav class="header-pantalla-emergente">
         <div class="contenedor-breadcums-pantalla-emergente">
-          <nuxt-link :to="localePath('languageIndex')" class="breadcums-pantalla-emergente">{{ $t('navBar.languagesIndex') }}</nuxt-link>
+          <nuxt-link
+            :to="localePath('languageIndex')"
+            class="breadcums-pantalla-emergente"
+            >{{ $t('navBar.languagesIndex') }}</nuxt-link
+          >
           <p class="separador-breadcums">/</p>
-          <a @click="closeWindow" class="breadcums-pantalla-emergente">{{datasend.rootLang}}</a>
+          <a class="breadcums-pantalla-emergente" @click="closeWindow">{{
+            datasend.rootLang
+          }}</a>
           <p class="separador-breadcums">/</p>
-          <a href="" class="breadcums-pantalla-emergente-activo">{{datasend.title}}</a>
+          <a href="" class="breadcums-pantalla-emergente-activo">{{
+            datasend.title
+          }}</a>
         </div>
         <div class="boton-cerrar">
           <button class="cerrar" @click="closeWindow">x</button>
@@ -127,7 +135,7 @@ export default {
         return { data: {} };
       },
     },
-    showWs: {
+    show: {
       type: Boolean,
       default: true,
     },
@@ -136,7 +144,7 @@ export default {
     return {
       json_datasend: {},
       contador: 1,
-      window: this.showWs,
+      window: this.show,
     };
   },
   methods: {

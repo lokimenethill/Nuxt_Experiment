@@ -121,9 +121,9 @@
     <div>
       <popupWindow
         v-if="showWindow"
-        @window="showWindow = $event"
-        :showWs="showWindow"
+        :show="showWindow"
         :datasend="sendDataWindow"
+        @window="showWindow = $event"
       />
     </div>
   </div>
@@ -144,7 +144,7 @@ export default {
     sendDataWindow() {
       const dataWindow = [
         {
-          rootLang:this.$t('languageIndex.mixtec.title'),
+          rootLang: this.$t('languageIndex.mixtec.title'),
           title: 'Mixteco histórico (proto-mixteco)',
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
@@ -190,7 +190,7 @@ export default {
           ],
         },
         {
-          rootLang:this.$t('languageIndex.mixtec.title'),
+          rootLang: this.$t('languageIndex.mixtec.title'),
           title: 'Mixteco de Magdalena Peñascos',
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
