@@ -1,5 +1,5 @@
 <template>
-    <div id="myModal" class="fondo-pantalla-emergente" >
+    <div v-if="window" id="myModal" class="fondo-pantalla-emergente" >
         <div class="contenedor-pantalla-emergente contenedor-pantalla-emergente-mixteco">
           <nav class="header-pantalla-emergente">
             <div class="contenedor-breadcums-pantalla-emergente ">
@@ -8,10 +8,10 @@
                 terminal</a>
               <p class="separador-breadcums">/</p><a href="" class="breadcums-pantalla-emergente-activo">About</a>
             </div>
-            <div class="boton-cerrar"><button class="cerrar">x</button></div>
+            <div class="boton-cerrar"><button class="cerrar" @click="closeWindow" >x</button></div>
           </nav>
           <div class="contenedor-titulo-pantalla-emergente ">
-            <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco">{{datasend.title}} </h1>
+            <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco">{{datasend.title}}</h1>
           </div>
 
 
@@ -62,15 +62,23 @@ export default {
         return { data: {} };
       },
     },
+     showWs: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
       json_datasend: {},
       contador: 1,
+      window:this.showWs,
     };
   },
   methods: {
-    pruebastorepush() {},
+    closeWindow() {
+      this.window=false;
+      this.$emit('window',this.window);
+    },
   },
 };
 </script>

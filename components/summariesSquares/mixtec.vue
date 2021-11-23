@@ -20,10 +20,10 @@
       <!-- Módulo mosaico lenguas terminales sumario etc -->
       <div
         id=""
-        onclick=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+         @click="toggleWindow(1)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           {{ $t('topicIndex.bottomCards.mixtec.region1') }}
@@ -38,7 +38,7 @@
       </div>
       <div
         id=""
-        onclick=""
+        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -56,7 +56,7 @@
       </div>
       <div
         id=""
-        onclick=""
+        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -74,7 +74,7 @@
       </div>
       <div
         id=""
-        onclick=""
+        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -92,7 +92,7 @@
       </div>
       <div
         id=""
-        onclick=""
+        
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
@@ -108,7 +108,7 @@
           ></code
         >
       </div>
-      <div id="" onclick="" class="sumario-lexico-item-boton-regresar">
+      <div id=""  class="sumario-lexico-item-boton-regresar">
         <h5 class="titulo-sumario-modulo-lexico-instrucciones">
           {{ $t('topicIndex.bottomCards.back') }}
         </h5>
@@ -123,7 +123,7 @@
       </div>
     </div>
     <div >
-      <popupWindow v-if="showWindow" :datasend="sendDataWindow" />
+      <popupWindow v-if="showWindow" @window="showWindow = $event" :showWs="showWindow" :datasend="sendDataWindow" />
     </div>
   </div>
 </template>
@@ -135,7 +135,7 @@ export default {
   },
   data() {
     return {
-      showWindow:this.$store.state.languageIndexView.windowState,
+      showWindow:false,
       numOfWindow:null,
     };
   },
@@ -143,7 +143,52 @@ export default {
     sendDataWindow(){
     const dataWindow=[
       {
-        title:"titulo",
+        title:"titulo 0",
+        textContent:"contenido",
+        imgUri:"/generals/imagen4a3.jpg",
+        lexicons:[
+        {
+          display:"lexicon1",
+          src:"uri://",
+        },
+        {
+          display:"lexicon2",
+          src:"uri://",
+        },
+        ],
+        floraFauna:[
+        {
+          display:"flora1",
+          src:"uri://",
+        },
+        {
+          display:"flora2",
+          src:"uri://",
+        },
+        ],
+        corpora:[
+        {
+          display:"corpora1",
+          src:"uri://",
+        },
+        {
+          display:"corpora2",
+          src:"uri://",
+        },
+        ],
+        grammar:[
+        {
+          display:"grammar1",
+          src:"uri://",
+        },
+        {
+          display:"grammar2",
+          src:"uri://",
+        },
+        ],
+      },
+      {
+        title:"titulo 1",
         textContent:"contenido",
         imgUri:"/generals/imagen4a3.jpg",
         lexicons:[
@@ -194,9 +239,9 @@ export default {
   methods:{
     toggleWindow(nw){
       if(this.showWindow===true){
-        this.$store.commit('languageIndexView/watchWs');
+        this.showWindow=false;
       }else{
-        this.$store.commit('languageIndexView/watchWs');
+        this.showWindow=true;
         this.numOfWindow=nw;
       }
     },
