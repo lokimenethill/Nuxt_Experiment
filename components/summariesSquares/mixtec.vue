@@ -144,7 +144,8 @@ export default {
     sendDataWindow() {
       const dataWindow = [
         {
-          title: 'titulo 0',
+          rootLang:this.$t('languageIndex.mixtec.title'),
+          title: 'Mixteco histórico (proto-mixteco)',
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
           lexicons: [
@@ -189,7 +190,8 @@ export default {
           ],
         },
         {
-          title: 'titulo 1',
+          rootLang:this.$t('languageIndex.mixtec.title'),
+          title: 'Mixteco de Magdalena Peñascos',
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
           lexicons: [

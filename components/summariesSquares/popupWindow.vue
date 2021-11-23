@@ -7,11 +7,11 @@
     >
       <nav class="header-pantalla-emergente">
         <div class="contenedor-breadcums-pantalla-emergente">
-          <a class="breadcums-pantalla-emergente">Grupo de lenguas</a>
+          <nuxt-link :to="localePath('languageIndex')" class="breadcums-pantalla-emergente">{{ $t('navBar.languagesIndex') }}</nuxt-link>
           <p class="separador-breadcums">/</p>
-          <a class="breadcums-pantalla-emergente">Lengua terminal</a>
+          <a @click="closeWindow" class="breadcums-pantalla-emergente">{{datasend.rootLang}}</a>
           <p class="separador-breadcums">/</p>
-          <a href="" class="breadcums-pantalla-emergente-activo">About</a>
+          <a href="" class="breadcums-pantalla-emergente-activo">{{datasend.title}}</a>
         </div>
         <div class="boton-cerrar">
           <button class="cerrar" @click="closeWindow">x</button>
