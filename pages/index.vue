@@ -54,13 +54,14 @@ export default {
 <style >
 .contenedor-slideshow {
   width: 100%;
-  height: 378px;
+  /* aspect-ratio: 2.8/1; */
+  height: 60vh;
 }
 .slide {
   height: 100%;
 }
 .contenido-slide {
-  height: calc(378px - 1.5rem);
+  height: calc(100% - 2rem);
 }
 
 .contenedor-slideshow-anidado {
@@ -90,7 +91,7 @@ p.credito-slideshow {
   background-repeat: no-repeat;
   background-size: 125%;
   background-position: 40% 0%;
-  animation: scala-background-120-a-100 15s linear 1;
+  animation: scala-background-120-a-100 15s linear infinite alternate-reverse;
 }
 /* animaciones de slider individuales  */
 @keyframes scala-background-120-a-100 {
@@ -99,13 +100,13 @@ p.credito-slideshow {
     background-position: 50% 0%;
   }
 }
-@media only screen and (min-width: 1400px) {
+/* @media only screen and (min-width: 1025px) {
   .contenedor-slideshow {
     width: 100%;
-    min-height: 800px;
+    min-height: 90%;
   }
   .contenido-slide {
     min-height: calc(800px - 1.5rem);
   }
-}
+} */
 </style>

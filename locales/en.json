@@ -23,7 +23,7 @@
         "amuzgoan": {
             "title": "AMUZGOAN",
             "preText": "The three Amuzgoan languages ",
-            "text": " are spoken in a small region of Guerrero and Oaxaca. Within eastern Otomguean languages, they are most closely related to Mixtec‑Cuicatec and Triqui.",
+            "text": "are spoken in a small region of Guerrero and Oaxaca. Within eastern Otomguean languages, they are most closely related to Mixtec&#8209;Cuicatec and Triqui.",
             "content": "<p>Three generally recognized Amuzgo languages<code><a href='https://glottolog.org/resource/languoid/id/amuz1254' target='_blank'>amuz1254</a></code> which <a href='https://glottolog.org/' target='_blank'>Glottolog</a> considers closely related tonal languages within the Amuzgo&#8209;Mixtecan branch of eastern Otomangue, are spoken in an enclave northwestern Oaxacan and southwestern Guerrero communities. Other classifications reject Amuzgo&#8209;Mixtecan as a valid 'umbrella' unit and consider Amuzgo and Mixtecan sibling language groups. Two Amuzgoan languages, centered in the municipalities of Xochistlahuaca (Guerrero) and San Pedro Amuzgos (Oaxaca), have been somewhat documented, the latter by a prolific native speaker scholar, Fermín Tapia. The third, from Ipalapa (Oaxaca), is basically unstudied. Morphologically, Amuzgoan languages are unusual in manifesting active-stative subject marking on intransitive verbs.</p>"
         },
         "nahuatl": {
@@ -35,7 +35,7 @@
         "mayan": {
             "title": "MAYAN",
             "preText": "Two Mayan languages ",
-            "text": " are spoken in northern Veracruz (Huastecan) while 30 predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages.",
+            "text": "are spoken in northern Veracruz (Huastecan) while 30&nbsp;predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages.",
             "content": "<p>Mayan languages <code><a href='https://glottolog.org/resource/languoid/id/maya1287' target='_blank'>maya1287</a></code>, spoken in Mexico, Guatemala, and Belize, have been extensively studied in their modern variants, in extensive colonial documentation (dictionaries and texts), in glyphic archaeological and codex records, and in reconstructed proto&#8209;forms. Extensive documentation of modern Maya (grammars, dictionaries, comparative studies) is the result of a model effort by an Indigenous Guatemalan collective: OKMA. Typologically, and unlike other Mesoamerican languages, Maya manifests ergative&#8209;absolutive alignment: subjects of intranstive verbs are marked and behave like objects of transitive verbs. A separate form exists for subjects of transitive verbs. Ergativity is not a recent development but has been reconstructed to proto&#8209;Mayan.</p>"
         },
         "mixtec": {
@@ -46,8 +46,8 @@
         },
         "totonacan": {
             "title": "TOTONACAN",
-            "preText": "Totonacan languages are divided into (a) Totonac (10 languages); and (b) Tepehua (3 languages). Totonacan ",
-            "text": " manifests Mesoamerican linguistic traits though its historical relationship to other areal languages, e.g., Mixe‑Zoque, is unclear.",
+            "preText": "Totonacan languages are divided into (a)&nbsp;Totonac (10 languages); and (b)&nbsp;Tepehua (3 languages). Totonacan",
+            "text": " manifests Mesoamerican linguistic traits though its historical relationship to other areal languages, e.g., Mixe&#8209;Zoque, is unclear.",
             "content": "<p>Totonacan <code><a href='https://glottolog.org/resource/languoid/id/toto1251' target='_blank'>toto1251</a></code> has been considered a language isolate (unrelated to other Mesoamerican language groups) although recently a Mixe&#8209;Zoque relationship has been suggested. The two branches &mdash;Tepehua (3 languages) and Totonac &mdash; are spoken across northern Veracruz and Puebla and into Hidalgo. Although internal language divisions are still debated, in general Totonac comprises two major groups (northern and lowland) with Misantla (Yecuatla) Totonac an outlier. Totonacan languages manifest a complex verbal morphology (both inflectional and derivational), multiple nominalization patterns, and a particularly extensive set of 'ideophones,' sound symbolic words that usually represent sound, olefactory, and taste perceptions. </p>"
         },
         "triqui": {
@@ -62,7 +62,7 @@
         "topCards": {
             "lexicon": {
                 "title": "Lexicons",
-                "text": "Searchable lexicosemantic resources in Mesoamerican languages."
+                "text": "Searchable lexicosemantic resources in Mesoamerican&nbsp;languages."
             },
             "library": {
                 "title": "Library",
@@ -74,7 +74,7 @@
             },
             "audios": {
                 "title": "Audios",
-                "text": "Link to SYLARD for line by line playback documented audio corpora."
+                "text": "Link to SYLARD for line&#8209;by&#8209;line playback documented audio corpora."
             },
             "videos": {
                 "title": "Videos",

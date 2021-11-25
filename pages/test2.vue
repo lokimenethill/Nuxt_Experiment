@@ -4,49 +4,63 @@
       <div class="contenedor-general">
         <h4 class="instrucciones">{{ $t('topicIndex.instructions') }}</h4>
         <div v-if="lexic == false" class="contenedor-topic-index">
-          <div id="lexicons" class="topic-index-item" @click="lexiconsPush()">
-            <h3 class="titulo-modulo-topic">
-              {{ $t('topicIndex.topCards.lexicon.title') }}
-            </h3>
-            <p v-html="$t('topicIndex.topCards.lexicon.text')" class="descripcion-modulo-topic">
-      
-            </p>
-          </div>
-          <div
-            id="library"
-            onclick="location.href='#'"
-            class="topic-index-item"
-          >
-            <h3 class="titulo-modulo-topic">
+          <transition name="lexicons">
+            <div
+              id=""
+              class="topic-index-item lexicons"
+              @click="lexiconsPush()"
+            >
+              <h3 class="titulo-modulo">
+                {{ $t('topicIndex.topCards.lexicon.title') }}
+              </h3>
+              <p class="descripcion-modulo">
+                {{ $t('topicIndex.topCards.lexicon.text') }}
+              </p>
+            </div>
+          </transition>
+          <div onclick="location.href='#'" class="topic-index-item library">
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.library.text')" class="descripcion-modulo-topic">
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.library.text') }}
             </p>
           </div>
           <div
-            id="flora-and-fauna"
+            id=""
             onclick="location.href='#'"
-            class="topic-index-item"
+            class="topic-index-item flora-and-fauna"
           >
-            <h3 class="titulo-modulo-topic">
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.flora.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.flora.text')" class="descripcion-modulo-topic">
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.flora.text') }}
             </p>
           </div>
-          <div id="audios" onclick="location.href='#'" class="topic-index-item">
-            <h3 class="titulo-modulo-topic">
+          <div
+            id="audios"
+            onclick="location.href='#'"
+            class="topic-index-item audios"
+          >
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.audios.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.audios.text')" class="descripcion-modulo-topic">        </p>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.audios.text') }}
+            </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
-          <div id="videos" onclick="location.href='#'" class="topic-index-item">
-            <h3 class="titulo-modulo-topic">
+          <div
+            id="videos"
+            onclick="location.href='#'"
+            class="topic-index-item videos"
+          >
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.videos.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.videos.text')" class="descripcion-modulo-topic">
-              
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.videos.text') }}
             </p>
           </div>
         </div>
@@ -68,224 +82,6 @@
                 href="https://glottolog.org/resource/languoid/id/sanp1260"
                 target="_blank"
                 >sanp1260</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-nahuatl">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.region0') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/high1278
-
-              "
-                target="_blank"
-                >high1278</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-nahuatl">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.region1') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/isth1242"
-                target="_blank"
-                >isth1242</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-nahuatl">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.region2') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/tete1251"
-                target="_blank"
-                >tete1251</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-nahuatl">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.title') }}
-            </h5>
-            <h3 v-html="$t('topicIndex.bottomCards.nahuatl.region3')" class="descripcion-modulo-lexico">
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/pipi1250"
-                target="_blank"
-                >pipi1250</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-maya">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mayan.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mayan.region0') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/chol1282"
-                target="_blank"
-                >chol1282</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-maya">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mayan.title') }}
-            </h5>
-            <h3 v-html="$t('topicIndex.bottomCards.mayan.region1')" class="descripcion-modulo-lexico">
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/chuj1250"
-                target="_blank"
-                >chuj1250</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region0') }}
-            </h3>
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region1') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/magd1235"
-                target="_blank"
-                >magd1235</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region2') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/juxt1235"
-                target="_blank"
-                >juxt1235</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region3') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/juxt1235"
-                target="_blank"
-                >juxt1235</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region4') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/xoch1238"
-                target="_blank"
-                >xoch1238</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-mixteco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.mixtec.region5') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/yolo1241"
-                target="_blank"
-                >yolo1241</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-totonaco">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.totonacan.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.totonacan.region0') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/high1243"
-                target="_blank"
-                >high1243</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-triqui">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.triqui.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.triqui.region0') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/chic1273"
-                target="_blank"
-                >chic1273</a
-              ></code
-            >
-          </div>
-          <div onclick="" class="lexico-item item-triqui">
-            <h5 class="titulo-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.triqui.title') }}
-            </h5>
-            <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.triqui.region1') }}
-            </h3>
-            <code class="modulo-lexico"
-              ><a
-                href="https://glottolog.org/resource/languoid/id/sanm1298"
-                target="_blank"
-                >sanm1298</a
               ></code
             >
           </div>
@@ -329,7 +125,6 @@ export default {
     lexiconsPush() {
       if (this.lexic === false) {
         this.lexic = true;
-
       } else {
         this.lexic = false;
       }
@@ -369,59 +164,67 @@ export default {
   color: none;
 }
 
-h3.titulo-modulo-topic {
+h3.titulo-modulo {
   font-weight: 600;
   margin-top: 0 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
 }
-p.descripcion-modulo-topic {
+p.descripcion-modulo {
   color: white;
-  font-size: 0.955rem;
+
   line-height: 120%;
 }
 /*PARTICULARIDADES DE CADA MODULO*/
-
-#lexicons {
+.animation-reverse {
+  animation: reverse;
+}
+.lexicons {
   width: 50%;
   height: 100%;
   order: -1;
   flex-grow: 2;
-  background-color: var(--lexicons0);
   padding-top: 5rem !important;
+  background-color: var(--lexicons0);
   animation: desplegado-topicos 1s ease-in-out;
 }
-#lexicons:hover {
+.lexicons-enter-active {
+  animation: desplegado-topicos 1s ease-in-out;
+}
+.lexicons-leave-active {
+  animation: desplegado-topicos 1s ease-in-out reverse;
+}
+.lexicons:hover {
   background-color: var(--lexicons1);
 }
-#library {
+.library {
   background-color: var(--library1);
   animation: desplegado-topicos 1.1s ease-in-out;
 }
-#library:hover {
+.library:hover {
   background-color: var(--library2);
 }
-#audios {
+.audios {
   background-color: var(--audios0);
   animation: desplegado-topicos 1.2s ease-in-out;
 }
-#audios:hover {
+.audios:hover {
   background-color: var(--audios1);
 }
 
-#flora-and-fauna {
+.flora-and-fauna {
   background-color: var(--flora0);
   animation: desplegado-topicos 1.3s ease-in-out;
 }
-#flora-and-fauna:hover {
+.flora-and-fauna:hover {
   background-color: var(--flora1);
 }
-#videos {
+.videos {
   background-color: var(--videos0);
   animation: desplegado-topicos 1.4s ease-in-out;
 }
-#videos:hover {
+.videos:hover {
   background-color: var(--videos1);
 }
 /* Animacion mosaico Topic Index */
@@ -693,7 +496,9 @@ h5.titulo-modulo-lexico-instrucciones {
   animation: desplegado-lexicos 0.9s ease-in-out 1;
 }
 .lexico-item:nth-of-type(2) {
+  animation-delay: 80s;
   animation: desplegado-lexicos 1.1s ease-in-out 1;
+  border: solid 5px blue;
 }
 .lexico-item:nth-of-type(3) {
   animation: desplegado-lexicos 1.2s ease-in-out 1;
@@ -737,5 +542,4 @@ h5.titulo-modulo-lexico-instrucciones {
 .lexico-item:nth-of-type(16) {
   animation: desplegado-lexicos 1.5s ease-in-out;
 }
-
 </style>

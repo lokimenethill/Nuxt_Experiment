@@ -17,7 +17,7 @@
             datasend.rootLang
           }}</a>
           <p class="separador-breadcums">/</p>
-          <a href="" class="breadcums-pantalla-emergente-activo">{{
+          <a href="#" class="breadcums-pantalla-emergente-activo">{{
             datasend.title
           }}</a>
         </div>

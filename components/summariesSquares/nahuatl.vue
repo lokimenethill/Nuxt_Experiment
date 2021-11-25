@@ -12,7 +12,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.nahuatl.region0') }}
+          <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -34,7 +34,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.nahuatl.region1') }}
+          <span v-html="$t('topicIndex.bottomCards.nahuatl.region1')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -54,7 +54,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.nahuatl.region2') }}
+          <span v-html="$t('topicIndex.bottomCards.nahuatl.region2')"></span>
         </h3>
 
         <code class="modulo-lexicos"
@@ -75,7 +75,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.nahuatl.region3') }}
+          <span v-html="$t('topicIndex.bottomCards.nahuatl.region3')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
