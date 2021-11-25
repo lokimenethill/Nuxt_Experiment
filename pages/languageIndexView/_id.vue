@@ -183,7 +183,7 @@ div.contenedor-titulo-sumario-gpo-lenguas {
 
 /* Columna derecha */
 div.contendor-texto-sumario-grupo-lenguas {
-  max-height: 10.3rem;
+  max-height: 11.1724rem;
   overflow-y: hidden;
 }
 /* <!-- Contenedor  mosaico lenguas terminales sumario --> */
@@ -290,7 +290,7 @@ p.sumario-modulo-lengua-termial-very-short-description {
 
 /*Boton regresar*/
 .sumario-lexico-item-boton-regresar {
-  flex-grow: 1;
+  flex-grow: 0;
   flex-basis: calc(980px / 5.5);
   min-width: calc(980px / 5.5);
   aspect-ratio: 1/1;

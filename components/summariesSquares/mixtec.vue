@@ -12,7 +12,7 @@
         @click="toggleWindow(0)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region0') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region0')"></span>
         </h3>
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
                 extension</p> -->
@@ -26,7 +26,7 @@
         @click="toggleWindow(1)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region1') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region1')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -43,7 +43,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region2') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region2')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -60,7 +60,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region3') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region3')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -77,7 +77,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region4') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region4')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -94,7 +94,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.mixtec.region5') }}
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -121,9 +121,9 @@
     <div>
       <popupWindow
         v-if="showWindow"
-        @window="showWindow = $event"
-        :showWs="showWindow"
+        :show="showWindow"
         :datasend="sendDataWindow"
+        @window="showWindow = $event"
       />
     </div>
   </div>
@@ -144,8 +144,8 @@ export default {
     sendDataWindow() {
       const dataWindow = [
         {
-          rootLang:this.$t('languageIndex.mixtec.title'),
-          title: 'Mixteco histórico (proto-mixteco)',
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region0'),
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
           lexicons: [
@@ -190,8 +190,8 @@ export default {
           ],
         },
         {
-          rootLang:this.$t('languageIndex.mixtec.title'),
-          title: 'Mixteco de Magdalena Peñascos',
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region1'),
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
           lexicons: [
