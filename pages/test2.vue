@@ -498,7 +498,6 @@ h5.titulo-modulo-lexico-instrucciones {
 .lexico-item:nth-of-type(2) {
   animation-delay: 80s;
   animation: desplegado-lexicos 1.1s ease-in-out 1;
-  border: solid 5px blue;
 }
 .lexico-item:nth-of-type(3) {
   animation: desplegado-lexicos 1.2s ease-in-out 1;
