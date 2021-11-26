@@ -337,7 +337,7 @@ export default {
   },
 };
 </script>
-<style >
+<style>
 /*CONTENEDOR DE MOSAICO*/
 .contenedor-topic-index {
   height: 465px;
