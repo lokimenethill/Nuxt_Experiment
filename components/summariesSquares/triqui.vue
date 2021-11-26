@@ -10,7 +10,7 @@
         class="sumario-lengua-terminal-item sumario-lengua-terminal-item-triqui"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.triqui.region0') }}
+          <span v-html="$t('topicIndex.bottomCards.triqui.region0')" ></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -28,7 +28,7 @@
         class="sumario-lengua-terminal-item sumario-lengua-terminal-item-triqui"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.triqui.region1') }}
+          <span v-html="$t('topicIndex.bottomCards.triqui.region1')" ></span>
         </h3>
         <code class="modulo-lexicos"
           ><a

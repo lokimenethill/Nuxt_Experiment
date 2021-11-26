@@ -169,7 +169,6 @@ body {
   padding: 0 1rem;
 }
 .contenedor-3-col {
-  flex-basis: calc(calc(calc(100% - 3rem) / 12) * 3);
   margin-left: 1rem;
   padding: 0 1rem;
 }
@@ -942,7 +941,9 @@ h5.titulo-estaticas {
 h6.titulo-estaticas {
   color: var(--gris1);
 }
-
+h1.titulo-estaticas-largo{
+  font-size: 1.8rem !important;
+}
 .contenedor-titulo-estaticas {
   border-right: 1px solid var(--interface1);
   margin-top: 2rem;

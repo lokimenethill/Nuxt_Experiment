@@ -12,7 +12,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.totonacan.region0') }}
+          <span v-html="$t('topicIndex.bottomCards.totonacan.region0')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
