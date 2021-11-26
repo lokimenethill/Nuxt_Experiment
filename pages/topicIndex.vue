@@ -3,60 +3,84 @@
     <div class="contenedor-general-rebasado">
       <div class="contenedor-general">
         <h4 class="instrucciones">{{ $t('topicIndex.instructions') }}</h4>
+        <div v-if="lexic3" class="contenedor-topic-index" ></div>
         <div v-if="lexic == false" class="contenedor-topic-index">
-          <div id="lexicons" class="topic-index-item" @click="lexiconsPush()">
-            <h3 class="titulo-modulo-topic">
-              {{ $t('topicIndex.topCards.lexicon.title') }}
-            </h3>
-            <p v-html="$t('topicIndex.topCards.lexicon.text')" class="descripcion-modulo-topic">
-      
-            </p>
-          </div>
-          <div
-            id="library"
-            onclick="location.href='#'"
-            class="topic-index-item"
-          >
-            <h3 class="titulo-modulo-topic">
+          <transition name="lexicons">
+            <div
+              id=""
+              class="topic-index-item lexicons"
+              @click="lexiconsPush()"
+            >
+              <h3 class="titulo-modulo">
+                {{ $t('topicIndex.topCards.lexicon.title') }}
+              </h3>
+              <p class="descripcion-modulo">
+                {{ $t('topicIndex.topCards.lexicon.text') }}
+              </p>
+            </div>
+          </transition>
+          <transition name="library">
+          <div onclick="location.href='#'" class="topic-index-item library">
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.library.text')" class="descripcion-modulo-topic">
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.library.text') }}
             </p>
           </div>
+          </transition>
+          <transition name="flora-and-fauna">
           <div
-            id="flora-and-fauna"
+            id=""
             onclick="location.href='#'"
-            class="topic-index-item"
+            class="topic-index-item flora-and-fauna"
           >
-            <h3 class="titulo-modulo-topic">
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.flora.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.flora.text')" class="descripcion-modulo-topic">
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.flora.text') }}
             </p>
           </div>
-          <div id="audios" onclick="location.href='#'" class="topic-index-item">
-            <h3 class="titulo-modulo-topic">
+          </transition>
+          <transition name="audios">
+          <div
+            id="audios"
+            onclick="location.href='#'"
+            class="topic-index-item audios"
+          >
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.audios.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.audios.text')" class="descripcion-modulo-topic">        </p>
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.audios.text') }}
+            </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
-          <div id="videos" onclick="location.href='#'" class="topic-index-item">
-            <h3 class="titulo-modulo-topic">
+          </transition>
+          <transition name="videos">
+          <div
+            id="videos"
+            onclick="location.href='#'"
+            class="topic-index-item videos"
+          >
+            <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.videos.title') }}
             </h3>
-            <p v-html="$t('topicIndex.topCards.videos.text')" class="descripcion-modulo-topic">
-              
+            <p class="descripcion-modulo">
+              {{ $t('topicIndex.topCards.videos.text') }}
             </p>
           </div>
+          </transition>
         </div>
         <!-- Contenedor léxicos - Se despliega al darle click al módulo de Léxicos-->
         <p>
           <strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle
           click a Léxicos
         </p>
-        <div v-if="lexic" class="contenedor-mosaico-lexicos">
-          <div onclick="" class="lexico-item item-amuzgo">
+        <div v-if="lexic"></div>
+        <div v-if="lexic2" class="contenedor-mosaico-lexicos">
+                   <div onclick="" class="lexico-item item-amuzgo">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.amuzgoan.title') }}
             </h5>
@@ -310,6 +334,8 @@ export default {
   data() {
     return {
       lexic: false,
+      lexic2:false,
+      lexic3:false,
     };
   },
   head() {
@@ -329,17 +355,25 @@ export default {
     lexiconsPush() {
       if (this.lexic === false) {
         this.lexic = true;
-
+        this.lexic3=true;
+        setTimeout(()=> this.setLexicState(true), 2000);
+        
       } else {
         this.lexic = false;
+        this.lexic2=false;
       }
+    },
+    setLexicState(val){
+      this.lexic2=val;
+      this.lexic3=false;
     },
   },
 };
 </script>
-<style>
+<style >
 /*CONTENEDOR DE MOSAICO*/
 .contenedor-topic-index {
+ /* outline: solid 5px indianred;*/
   height: 465px;
   display: flex;
   flex-flow: column wrap;
@@ -369,74 +403,110 @@ export default {
   color: none;
 }
 
-h3.titulo-modulo-topic {
+h3.titulo-modulo {
   font-weight: 600;
   margin-top: 0 !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
 }
-p.descripcion-modulo-topic {
+p.descripcion-modulo {
   color: white;
-  font-size: 0.955rem;
+
   line-height: 120%;
 }
 /*PARTICULARIDADES DE CADA MODULO*/
-
-#lexicons {
+.lexicons {
   width: 50%;
   height: 100%;
   order: -1;
-  flex-grow: 2;
-  background-color: var(--lexicons0);
+  
   padding-top: 5rem !important;
+  background-color: var(--lexicons0);
   animation: desplegado-topicos 1s ease-in-out;
 }
-#lexicons:hover {
+.lexicons-enter-active {
+  animation: desplegado-topicos 1s ease-in-out;
+}
+.lexicons-leave-active {
+  animation: desplegado-topicos 1s ease-in-out reverse;
+}
+.lexicons:hover {
   background-color: var(--lexicons1);
 }
-#library {
+.library {
   background-color: var(--library1);
   animation: desplegado-topicos 1.1s ease-in-out;
 }
-#library:hover {
+.library-enter-active {
+  animation: desplegado-topicos 1.1s ease-in-out;
+}
+.library-leave-active {
+  animation: desplegado-topicos 1.1s ease-in-out reverse;
+}
+.library:hover {
   background-color: var(--library2);
 }
-#audios {
+
+
+.audios {
   background-color: var(--audios0);
   animation: desplegado-topicos 1.2s ease-in-out;
 }
-#audios:hover {
+.audios-enter-active {
+  
+  animation: desplegado-topicos 1.2s ease-in-out ;
+}
+.audios-leave-active {
+  
+  animation: desplegado-topicos 1.2s ease-in-out reverse;
+}
+.audios:hover {
   background-color: var(--audios1);
 }
 
-#flora-and-fauna {
+.flora-and-fauna {
   background-color: var(--flora0);
   animation: desplegado-topicos 1.3s ease-in-out;
 }
-#flora-and-fauna:hover {
+.flora-and-fauna-enter-active {
+  animation: desplegado-topicos 1.3s ease-in-out;
+}
+.flora-and-fauna-leave-active {
+  animation: desplegado-topicos 1.3s ease-in-out reverse;
+}
+.flora-and-fauna:hover {
   background-color: var(--flora1);
 }
-#videos {
+.videos {
   background-color: var(--videos0);
   animation: desplegado-topicos 1.4s ease-in-out;
 }
-#videos:hover {
+.videos-enter-active {
+  animation: desplegado-topicos 1.4s ease-in-out;
+}
+.videos-leave-active {
+  animation: desplegado-topicos 1.4s ease-in-out reverse;
+}
+.videos:hover {
   background-color: var(--videos1);
 }
 /* Animacion mosaico Topic Index */
 @keyframes desplegado-topicos {
   0% {
     transform: translateY(200%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 
 /*MODULO DE LEXICOS*/
 
 .contenedor-mosaico-lexicos {
+  /*outline: solid 5px green;*/
   min-height: 465px;
   display: flex;
   flex-flow: row wrap;
@@ -693,6 +763,7 @@ h5.titulo-modulo-lexico-instrucciones {
   animation: desplegado-lexicos 0.9s ease-in-out 1;
 }
 .lexico-item:nth-of-type(2) {
+  animation-delay: 80s;
   animation: desplegado-lexicos 1.1s ease-in-out 1;
 }
 .lexico-item:nth-of-type(3) {
@@ -737,5 +808,4 @@ h5.titulo-modulo-lexico-instrucciones {
 .lexico-item:nth-of-type(16) {
   animation: desplegado-lexicos 1.5s ease-in-out;
 }
-
 </style>
