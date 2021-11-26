@@ -104,19 +104,7 @@
           ></code
         >
       </div>
-      <div id="" class="sumario-lexico-item-boton-regresar">
-        <h5 class="titulo-sumario-modulo-lexico-instrucciones">
-          {{ $t('topicIndex.bottomCards.back') }}
-        </h5>
-        <span
-          class="
-            material-icons-outlined
-            sumario-lexico-item-icono-boton-regresar
-          "
-        >
-          arrow_back
-        </span>
-      </div>
+      <backButton />
     </div>
     <div>
       <popupWindow
@@ -130,9 +118,11 @@
 </template>
 <script>
 import popupWindow from '@/components/summariesSquares/popupWindow.vue';
+import backButton from '@/components/summariesSquares/backButton.vue';
 export default {
   components: {
     popupWindow,
+    backButton,
   },
   data() {
     return {
