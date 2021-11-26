@@ -18,6 +18,7 @@
               </p>
             </div>
           </transition>
+          <transition name="library">
           <div onclick="location.href='#'" class="topic-index-item library">
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
@@ -26,6 +27,8 @@
               {{ $t('topicIndex.topCards.library.text') }}
             </p>
           </div>
+          </transition>
+          <transition name="flora-and-fauna">
           <div
             id=""
             onclick="location.href='#'"
@@ -38,6 +41,8 @@
               {{ $t('topicIndex.topCards.flora.text') }}
             </p>
           </div>
+          </transition>
+          <transition name="audios">
           <div
             id="audios"
             onclick="location.href='#'"
@@ -51,6 +56,8 @@
             </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>
+          </transition>
+          <transition name="videos">
           <div
             id="videos"
             onclick="location.href='#'"
@@ -63,6 +70,7 @@
               {{ $t('topicIndex.topCards.videos.text') }}
             </p>
           </div>
+          </transition>
         </div>
         <!-- Contenedor léxicos - Se despliega al darle click al módulo de Léxicos-->
         <p>
@@ -132,7 +140,7 @@ export default {
   },
 };
 </script>
-<style >
+<style s>
 /*CONTENEDOR DE MOSAICO*/
 .contenedor-topic-index {
   height: 465px;
@@ -202,12 +210,28 @@ p.descripcion-modulo {
   background-color: var(--library1);
   animation: desplegado-topicos 1.1s ease-in-out;
 }
+.library-enter-active {
+  animation: desplegado-topicos 1.1s ease-in-out;
+}
+.library-leave-active {
+  animation: desplegado-topicos 1.1s ease-in-out reverse;
+}
 .library:hover {
   background-color: var(--library2);
 }
+
+
 .audios {
   background-color: var(--audios0);
   animation: desplegado-topicos 1.2s ease-in-out;
+}
+.audios-enter-active {
+  
+  animation: desplegado-topicos 1.2s ease-in-out ;
+}
+.audios-leave-active {
+  
+  animation: desplegado-topicos 1.2s ease-in-out reverse;
 }
 .audios:hover {
   background-color: var(--audios1);
@@ -217,12 +241,24 @@ p.descripcion-modulo {
   background-color: var(--flora0);
   animation: desplegado-topicos 1.3s ease-in-out;
 }
+.flora-and-fauna-enter-active {
+  animation: desplegado-topicos 1.3s ease-in-out;
+}
+.flora-and-fauna-leave-active {
+  animation: desplegado-topicos 1.3s ease-in-out reverse;
+}
 .flora-and-fauna:hover {
   background-color: var(--flora1);
 }
 .videos {
   background-color: var(--videos0);
   animation: desplegado-topicos 1.4s ease-in-out;
+}
+.videos-enter-active {
+  animation: desplegado-topicos 1.4s ease-in-out;
+}
+.videos-leave-active {
+  animation: desplegado-topicos 1.4s ease-in-out reverse;
 }
 .videos:hover {
   background-color: var(--videos1);
