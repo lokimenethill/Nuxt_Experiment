@@ -12,7 +12,7 @@
         "
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          {{ $t('topicIndex.bottomCards.totonacan.region0') }}
+          <span v-html="$t('topicIndex.bottomCards.totonacan.region0')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
@@ -25,19 +25,15 @@
                 extension</p> -->
       </div>
       <!-- Módulo mosaico lenguas terminales sumario etc -->
-      <div id="" onclick="" class="sumario-lexico-item-boton-regresar">
-        <h5 class="titulo-sumario-modulo-lexico-instrucciones">
-          {{ $t('topicIndex.bottomCards.back') }}
-        </h5>
-        <span
-          class="
-            material-icons-outlined
-            sumario-lexico-item-icono-boton-regresar
-          "
-        >
-          arrow_back
-        </span>
-      </div>
+      <backButton />
     </div>
   </div>
 </template>
+<script>
+import backButton from '@/components/summariesSquares/backButton.vue';
+export default {
+  components: {
+    backButton,
+  },
+};
+</script>

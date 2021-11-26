@@ -8,7 +8,7 @@
             :id="post.styles.s1"
             class="contenedor-3-col contenedor-titulo-sumario-gpo-lenguas"
           >
-            <h1 :id="post.styles.s2" class="titulo-estaticas">
+            <h1 :id="post.styles.s2" class="titulo-estaticas-largo">
               {{ post.title }}
             </h1>
           </div>
