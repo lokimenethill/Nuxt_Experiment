@@ -754,9 +754,11 @@ h5.titulo-modulo-lexico-instrucciones {
 @keyframes desplegado-lexicos {
   0% {
     transform: translateX(600%);
+    opacity: 0;
   }
   100% {
     transform: translateX(0%);
+    opacity: 1;
   }
 }
 .lexico-item:nth-of-type(1) {
