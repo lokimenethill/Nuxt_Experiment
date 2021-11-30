@@ -1,6 +1,6 @@
 <template>
   <main class="">
-    <div v-html="$t('help.content')"></div>
+    <div v-html="$t('terms.content')"></div>
   </main>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t('navBar.help'),
+      title: this.$t('footer.terms'),
       /* metatags
     meta:[
         {name:'twitter:title', content: this.post.title},
@@ -30,7 +30,7 @@ export default {
 };
 </script>
 <style>
-h1.titulo-estaticas {
-  color: var(--help);
+#terms-conditions {
+  color: var(--terms);
 }
 </style>

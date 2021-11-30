@@ -26,7 +26,7 @@
         >
         <nuxt-link
           id="menu-item-3"
-          to="../about/about.html"
+          :to="localePath('about')"
           class="menu-item"
           >{{ $t('navBar.about') }}</nuxt-link
         >
@@ -53,8 +53,8 @@
             alt="National Endowment for the Humanities logo"
           />
         </a>
-        <a href="" class="footer-item">{{ $t('footer.credits') }}</a>
-        <a href="" class="footer-item">{{ $t('footer.terms') }}</a>
+        <nuxt-link :to="localePath('credits')" class="footer-item">{{ $t('footer.credits') }}</nuxt-link>
+        <nuxt-link :to="localePath('terms')" class="footer-item">{{ $t('footer.terms') }}</nuxt-link>
         <div class="contenedor-footer-item-developed-by">
           <p class="footer-item">{{ $t('footer.dev') }}:</p>
           <img

@@ -1,6 +1,6 @@
 <template>
   <main class="">
-    <div v-html="$t('help.content')"></div>
+    <div v-html="$t('about.content')"></div>
   </main>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t('navBar.help'),
+      title: this.$t('navBar.about'),
       /* metatags
     meta:[
         {name:'twitter:title', content: this.post.title},
@@ -22,15 +22,11 @@ export default {
     };
   },
   methods: {
-    async prueba_axios() {
-      const ip = await this.$axios.$get('http://icanhazip.com');
-      this.prueba = ip;
-    },
   },
 };
 </script>
 <style>
-h1.titulo-estaticas {
-  color: var(--help);
+#about-mesolex {
+  color: var(--flora1);
 }
 </style>
