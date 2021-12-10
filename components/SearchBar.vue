@@ -1,5 +1,6 @@
 <template lang="">
-    <div>
+    <div class="contenedor-general-rebasado">
+       <div class="contenedor-general">
         <h1>Componente barra de busqueda</h1>
         <div class="caja-busqueda-lexico">
                   <select v-model="selected_datalist_first" style="background-color:white;" >
@@ -26,6 +27,11 @@
                 <input  v-model="checkbx" type="checkbox"  value="es_thesaurus_lookup" >
                 <span class="cuadro-check"></span>
                 <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Activar tesauro</span>
+                </label>
+                <label class="contenedor-checkbox-custom ">
+                <input  v-model="onlyWtSound" type="checkbox"  value="es_thesaurus_lookup" >
+                <span class="cuadro-check"></span>
+                <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Mostrar solo con audio</span>
                 </label>
                     <br>
              
@@ -85,6 +91,7 @@
               <div v-if="devstate===true">
                 <h4>Axios response{{axios_response}}</h4>
                 </div>
+                </div>
     </div>
 </template>
 <script>
@@ -95,6 +102,7 @@ export default {
   },
   data() {
     return {
+      onlyWtSound:false,
       devstate: false,
       testData: '',
       actualPage: 1,
@@ -217,6 +225,7 @@ export default {
       return newArrJson;
     },
     set_values() {
+      if(this.onlyWtSound===false){
       this.demodata = {
         dataset: 'azz',
         query: [
@@ -232,6 +241,23 @@ export default {
         ],
         global_modifiers: [],
       };
+      }else{
+        this.demodata = {
+        dataset: 'azz',
+        query: [
+          [
+            {
+              type_tag: `${this.selected_datalist_first}`,
+              filter_type: `${this.selected_datalist_second}`,
+              value: `${this.search_element}`,
+              exclude: false,
+              modifiers: this.setChkBox(),
+            },
+          ],
+        ],
+        global_modifiers: [{name: "only_with_sound"}],
+      };
+      }
       // this.demodata.modifiers.push(this.checkbx)
       this.testData = JSON.stringify(Object.assign({}, this.checkbx));
       // this.demodata.query[0][0].modifiers.push(JSON.stringify(this.checkbx))
