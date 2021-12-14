@@ -1,98 +1,121 @@
 <template lang="">
-    <div class="contenedor-general-rebasado">
-       <div class="contenedor-general">
-        <h1>Componente barra de busqueda</h1>
-        <div class="caja-busqueda-lexico">
-                  <select v-model="selected_datalist_first" style="background-color:white;" >
-                             <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                         </select>
-                           <select v-model="selected_datalist_second" style="background-color:white;" >
-                             <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                         </select>
-                 <input class="input-caja-busqueda-lexico"  v-model="search_element" type="text"  placeholder="Type words for search"  >
+     <div class="contenedor-general-rebasado">
+        <div class="contenedor-general">
+         <h6>Lexicon</h6>
+        <h1>Nahuat of the Sierra Nororiental de Puebla</h1>
+
+        <div class="contenedor-elementos-notas-lexico">
+          <a href="#" class="icono-vinculo-readme ">
+            <span class="material-icons icono-readme ">
+              info
+            </span>
+          </a>
+          <a href="#" class="texto-vinculo-readme">Readme for more information</a>
+        </div>
+         <div class="caja-busqueda-lexico">
+                   <select v-model="selected_datalist_first"  >
+                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                          </select>
+                            <select v-model="selected_datalist_second" >
+                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                          </select>
+                  <input class="input-caja-busqueda-lexico"  v-model="search_element" type="text"  placeholder="Type words for search"  >
+                  </div>
+                  <p></p>
+                  <div class="contenedor-general-opciones-busqueda">
+                 <label class="contenedor-checkbox-custom ">
+                 <input  v-model="checkbx" type="checkbox" value="nahuat_orthography" >
+                 <span class="cuadro-check"></span>
+                 <span class="etiqueta-checkbox" for="nahuat_orthography">Activar flexibilidad ortográfica</span>
+                 </label>
+                 <label class="contenedor-checkbox-custom ">
+                 <input  v-model="checkbx" type="checkbox"  value="bilingual" >
+                 <span class="cuadro-check"></span>
+                 <span class="etiqueta-checkbox" for="bilingual">Activar búsqueda bilingüe</span>
+                 </label>
+                 <label class="contenedor-checkbox-custom ">
+                 <input  v-model="checkbx" type="checkbox"  value="es_thesaurus_lookup" >
+                 <span class="cuadro-check"></span>
+                 <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Activar tesauro</span>
+                 </label>
+                 <label class="contenedor-checkbox-custom ">
+                 <input  v-model="onlyWtSound" type="checkbox"  value="es_thesaurus_lookup" >
+                 <span class="cuadro-check"></span>
+                 <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Mostrar solo con audio</span>
+                 </label>
+                     <br>
+              
                  </div>
-                 <p></p>
-                 <div class="contenedor-general-opciones-busqueda">
-                <label class="contenedor-checkbox-custom ">
-                <input  v-model="checkbx" type="checkbox" value="nahuat_orthography" >
-                <span class="cuadro-check"></span>
-                <span class="etiqueta-checkbox" for="nahuat_orthography">Activar flexibilidad ortográfica</span>
-                </label>
-                <label class="contenedor-checkbox-custom ">
-                <input  v-model="checkbx" type="checkbox"  value="bilingual" >
-                <span class="cuadro-check"></span>
-                <span class="etiqueta-checkbox" for="bilingual">Activar búsqueda bilingüe</span>
-                </label>
-                <label class="contenedor-checkbox-custom ">
-                <input  v-model="checkbx" type="checkbox"  value="es_thesaurus_lookup" >
-                <span class="cuadro-check"></span>
-                <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Activar tesauro</span>
-                </label>
-                <label class="contenedor-checkbox-custom ">
-                <input  v-model="onlyWtSound" type="checkbox"  value="es_thesaurus_lookup" >
-                <span class="cuadro-check"></span>
-                <span class="etiqueta-checkbox" for="es_thesaurus_lookup">Mostrar solo con audio</span>
-                </label>
-                    <br>
+                 
+       <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
+             <span class="caja-busqueda-lexico"  >
              
-                </div>
-      <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
-          <p>   
-              <select class="select" v-model="find.exclude" style="background-color:white;" >
-                             <option v-for="(elements) in datalist_condition" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                         </select>
-              <select v-model="find.type_tag" style="background-color:white;" >
-                             <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                         </select>
-                           <select v-model="find.filter_type" style="background-color:white;" >
-                             <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                         </select>
-                            <input  v-model="find.value" style="background-color:white;" >
-                                    <div class="contenedor-general-opciones-busqueda">
+               <select  class="dropdown-opcion-filtro" v-model="find.exclude" style="background-color:white;" >
+                              <option v-for="(elements) in datalist_condition" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                          </select>
+               <select v-model="find.type_tag" style="background-color:white;" >
+                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                          </select>
+                            <select v-model="find.filter_type" style="background-color:white;" >
+                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
+                          </select>
+                          
+                             <input class="input-caja-busqueda-lexico"  v-model="find.value" >
+                              <button @click="deleteOfFilter(index)"  class="eliminar-filtro" >x</button>
+                             </span>
+                                     <div class="contenedor-general-opciones-busqueda">
+                                       <label class="contenedor-checkbox-custom ">
+                                      <input  v-model="find.modifiers[0].name" type="checkbox" >
+                                       <span class="cuadro-check"></span>
+                                      <span class="etiqueta-checkbox">Activar flexibilidad ortográfica</span>
+                                      </label>
                                       <label class="contenedor-checkbox-custom ">
-                                     <input  v-model="find.modifiers[0].name" type="checkbox" >
+                                      <input  v-model="find.modifiers[1].name" type="checkbox"   >
                                       <span class="cuadro-check"></span>
-                                     <span class="etiqueta-checkbox">Activar flexibilidad ortográfica</span>
+                                     <span class="etiqueta-checkbox" >Activar búsqueda bilingüe</span>
                                      </label>
                                      <label class="contenedor-checkbox-custom ">
-                                     <input  v-model="find.modifiers[1].name" type="checkbox"   >
+                                     <input  v-model="find.modifiers[2].name" type="checkbox"   >
                                      <span class="cuadro-check"></span>
-                                    <span class="etiqueta-checkbox" >Activar búsqueda bilingüe</span>
-                                    </label>
-                                    <label class="contenedor-checkbox-custom ">
-                                    <input  v-model="find.modifiers[2].name" type="checkbox"   >
-                                    <span class="cuadro-check"></span>
-                                     <span class="etiqueta-checkbox" >Activar tesauro</span>
-                                     </label>
-                                     </div>
-                            </p>
-  </div>
-                <p><button id="adfilter" class="btn-secundario" @click="addFilter" >Añadir filtro</button><button style="background-color:red;" @click="deleteFilter" >Eliminar filtro</button></p>
-                <p><button type="submit" id="search-lexico" @click="prueba_axios" >Search</button></p>
-                 <p v-if="axios_response.page" ><button style="background-color:purple;"  @click="prevPage" >Pagina anterior</button><button style="background-color:purple;"  @click="nextPage" >Siguiente pagina</button></p>
-                 
-                <div v-if="devstate===true">
-                <span>opciones seleccionadas: {{ checkbx }}</span>
-                <h3>demo query build:{{demodata}}</h3>
-                <h1>test data:{{testData}}</h1>
-                <h3>test extra filters:{{extraFilters}}</h3>
-                <h4>Functions test {{functionTester}}</h4>
-                <h3>pagina actual{{actualPage}}</h3>
+                                      <span class="etiqueta-checkbox" >Activar tesauro</span>
+                                      </label>
+                                      </div>
+                             
+                             </div>
+ <div class="contenedor-general-botones-busqueda ">
+    <div class="contenedor-botones-izquierda ">
+                 <button id="adfilter" class="btn-secundario" @click="addFilter" >Añadir filtro</button>
+                 </div>
+                  <div class="contenedor-botones-derecha  ">
+                  <button type="reset" @click="reset()" id="reset-lexico-buscador" class="btn-secundario">Reset</button>
+                 <button type="submit" id="search-lexico" @click="prueba_axios" >Search</button>
+                  </div>
+                 </div>
+                  <p v-if="axios_response.page" ><button style="background-color:purple;"  @click="prevPage" >Pagina anterior</button><button style="background-color:purple;"  @click="nextPage" >Siguiente pagina</button></p>
+                  
+                 <div v-if="devstate===true">
+                 <span>opciones seleccionadas: {{ checkbx }}</span>
+                 <h3>demo query build:{{demodata}}</h3>
+                 <h1>test data:{{testData}}</h1>
+                 <h3>test extra filters:{{extraFilters}}</h3>
+                 <h4>Functions test {{functionTester}}</h4>
+                 <h3>pagina actual{{actualPage}}</h3>
+                 </div>
+                  <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
+                    <p>
+                     <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
+                       <button  v-if="number===actualPage" @click="goPage(number)"  > [{{number}}] </button>
+                       <button v-if="number!=actualPage" @click="goPage(number)" > [{{number}}] </button>
+                     </span>
+                    </p>
+                  </p>
+              <viewer-Searchbar :datasend=axios_response />
+               <div v-if="devstate===true">
+                 <h4>Axios response{{axios_response}}</h4>
+                 </div>
                 </div>
-                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
-                   <p>
-                    <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
-                      <button  v-if="number===actualPage" @click="goPage(number)"  > [{{number}}] </button>
-                      <button v-if="number!=actualPage" @click="goPage(number)" > [{{number}}] </button>
-                    </span>
-                   </p>
-                 </p>
-             <viewer-Searchbar :datasend=axios_response />
-              <div v-if="devstate===true">
-                <h4>Axios response{{axios_response}}</h4>
-                </div>
-                </div>
-    </div>
+                 </div>
+     </div>
 </template>
 <script>
 import ViewerSearchbar from '@/components/ViewerSearchbar';
@@ -225,7 +248,9 @@ export default {
       return newArrJson;
     },
     set_values() {
-      if(this.onlyWtSound===false){
+      
+
+      
       this.demodata = {
         dataset: 'azz',
         query: [
@@ -241,22 +266,8 @@ export default {
         ],
         global_modifiers: [],
       };
-      }else{
-        this.demodata = {
-        dataset: 'azz',
-        query: [
-          [
-            {
-              type_tag: `${this.selected_datalist_first}`,
-              filter_type: `${this.selected_datalist_second}`,
-              value: `${this.search_element}`,
-              exclude: false,
-              modifiers: this.setChkBox(),
-            },
-          ],
-        ],
-        global_modifiers: [{name: "only_with_sound"}],
-      };
+      if(this.onlyWtSound===true){
+        this.demodata.global_modifiers.push({name: "only_with_sound"});
       }
       // this.demodata.modifiers.push(this.checkbx)
       this.testData = JSON.stringify(Object.assign({}, this.checkbx));
@@ -319,6 +330,19 @@ export default {
     },
     deleteFilter() {
       this.extraFilters.pop();
+    },
+    deleteOfFilter(target){
+      if(target===0){
+        this.extraFilters.splice(target,target+1);
+      }
+      this.extraFilters.splice(target,target);
+    },
+    reset(){
+      for(let i=0;i<this.extraFilter.length;i++){
+      this.deleteFilter();
+      }
+      this.search_element='';
+      this.checkbx=[];
     },
     calcPages() {
       this.maxPages = Math.ceil(

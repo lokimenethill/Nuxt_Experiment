@@ -1,34 +1,66 @@
 <template lang="">
-    <div>
-       <h1>Preview componente searchbar</h1>
+    <div class="contenedor-general-resultados">
        <div v-if="datasend.page">
-       <h2>{{datasend.pageSize}} Resultados mostrados de ({{datasend.total}}) totales</h2>
+       <h4 class="instrucciones" >{{datasend.pageSize}} Resultados mostrados de ({{datasend.total}}) totales</h4>
         </div>
          <div v-for="(element, index) in datasend.data" :key="index" :v-bind="index" >
-           <div style="border:0.5px solid white;">
-             <div style="border:0.5px solid red;">{{String(element.headword)}} | Citación:{{String(element.citation_forms)}}, Formas alt.;{{String(element.glosses)}} | Categoría gramatical:<span v-for="(grammars) in element.grammar_groups" :key="grammars.part_of_speech" :v-bind="grammars.part_of_speech" >{{grammars.part_of_speech}}</span> | Campo semántico: {{String(element.categories)}}
-             <p></p>
+           <div  class="contenedor-resultado-item">
+             <h2 class="palabra-resultado"><span>{{String(element.headword)}}</span></h2>
              <div v-for="(media) in element.media" :key="media.url" :v-bind="media.url">
                 <audio :src="media.url" controls="controls" :type="media.mime_type" preload="preload">
                 </audio>
-             </div>
-           
 
+                <div role="group" tabindex="0" aria-label="Audio Player" class="rhap_container "
+                style="display: inline-block; margin: 0px 1em;">
+                <audio :src="media.url" :type="media.mime_type"
+                  preload="auto">
+                </audio>
+                <div class="rhap_main rhap_stacked">
+                  <div class="rhap_progress-section">
+                  </div>
+                  <div class="rhap_controls-section">
+                    <div class="rhap_main-controls">
+                      <button aria-label="Play"
+                        class="rhap_button-clear rhap_main-controls-button rhap_play-pause-button" type="button"><span
+                          class="material-icons">
+                          play_arrow
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
              </div>
-             <div style="border:0.5px solid yellow;">
-                <ol>
-                  <li v-for="(sense) in element.senses" :key="sense.sense" :v-bind="sense.sense">{{sense.sense}} <p></p>
-                  <ul>
-                    <li v-for="(example) in sense.examples" :key="example.original.text" :v-bind="example.original.text">{{example.original.text}} 
-                      <p v-if="example.translation" style="color:teal;"  > {{example.translation.text}}</p>
-                    </li>
-                  </ul>
+             <div class="cabecera-resultados-secundarios">
+               <p>
+               Citación:{{String(element.citation_forms)}}, Formas alt.;{{String(element.glosses)}} | Categoría gramatical:<span v-for="(grammars) in element.grammar_groups" :key="grammars.part_of_speech" :v-bind="grammars.part_of_speech" >{{grammars.part_of_speech}}</span> | Campo semántico: {{String(element.categories)}}
+             </p>
+             </div>
+             <div class="card-body">
+                <ol class="search-results-list">
+                  <li v-for="(sense) in element.senses" :key="sense.sense" :v-bind="sense.sense"><p class="card-text"><span><p v-html="sense.sense" ></p> </span></p>
+                  
+                    <blockquote class="card-text example font-weight-light" v-for="(example) in sense.examples" :key="example.original.text" :v-bind="example.original.text">
+                      <p>
+                      {{example.original.text}} 
+                      <span v-if="example.translation" style="color:teal;" v-html="example.translation.text" ></span>
+                      </p>
+                    </blockquote>
+                
                  </li>
                 </ol>
              </div>
-             <div style="border:0.5px solid teal;">
-               <p v-for="(note) in element.notes" :key="note.text" :v-bind="note.text">Nota {{note.note_type}}:{{note.text}}</p>
-             </div>
+             <div>
+                <p class="small">
+                  <strong>Notas semánticas: </strong>
+                    <span v-for="(note) in element.notes" :key="note.text" :v-bind="note.text" v-html="note.note_type" ></span>
+                </p>
+              </div>
+                <div>
+                <p class="small">
+                  <strong>Notas morfológicas: </strong> <span v-for="(note) in element.notes" :key="note.text" :v-bind="note.text" v-html="note.text" ></span>
+                </p>
+              </div>
            </div>
          </div>
     </div>
