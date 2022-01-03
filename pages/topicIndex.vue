@@ -74,10 +74,6 @@
           </transition>
         </div>
         <!-- Contenedor léxicos - Se despliega al darle click al módulo de Léxicos-->
-        <p>
-          <strong>NOTA</strong> Esto de aca abajo 👇🏼 debe de aparecer al darle
-          click a Léxicos
-        </p>
         <div v-if="lexic"></div>
         <div v-if="lexic2" class="contenedor-mosaico-lexicos">
                    <div onclick="" class="lexico-item item-amuzgo">

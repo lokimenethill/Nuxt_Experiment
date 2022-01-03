@@ -13,12 +13,15 @@
           <a href="#" class="texto-vinculo-readme">Readme for more information</a>
         </div>
          <div class="caja-busqueda-lexico">
+                
                    <select v-model="selected_datalist_first"  >
                               <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                           </select>
+                           
                             <select v-model="selected_datalist_second" >
                               <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
                           </select>
+                         
                   <input class="input-caja-busqueda-lexico"  v-model="search_element" type="text"  placeholder="Type words for search"  >
                   </div>
                   <p></p>
@@ -117,6 +120,7 @@
                  </div>
      </div>
 </template>
+
 <script>
 import ViewerSearchbar from '@/components/ViewerSearchbar';
 export default {
