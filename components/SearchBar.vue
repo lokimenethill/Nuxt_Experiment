@@ -128,31 +128,7 @@
                <div v-if="devstate===true">
                  <h4>Axios response{{axios_response}}</h4>
                  </div>
-                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
-                    <p>
-                      <button v-if="axios_response.page" style="background-color:purple;"  @click="prevPage" ><span class="material-icons-round icono-de-boton-paginacion">
-                arrow_back_ios
-              </span></button>
-                     <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
-                       <button  v-if="number===actualPage" @click="goPage(number)"  > {{number}} </button>
-                       <button style="min-width: 1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    padding: calc(0.4rem - 2px) 0.4rem !important;
-    background: white !important;
-    color: var(--negro);
-    font-size: 0.7rem;
-    line-height: 100%;
-    font-weight: 400 !important;
-    text-align: center;
-    margin: 0rem 0.05rem !important;
-    border: 2px solid white" v-if="number!=actualPage" @click="goPage(number)" > {{number}} </button>
-                     </span>
-                     <button v-if="axios_response.page" style="background-color:purple;"  @click="nextPage" ><span class="material-icons-round icono-de-boton-paginacion ">
-                arrow_forward_ios
-              </span></button>
-                    </p>
-                  </p>
+               
                 </div>
                  </div>
      </div>
@@ -235,14 +211,16 @@ export default {
     },
   },
   methods: {
-     prueba_axios() {
+    async prueba_axios() {
       this.paginator = [];
       this.set_values();
-     // const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
-     // this.axios_response = resp;
-     // this.actualPage = resp.page;
+      const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
+      if(resp.total!==0){
+      this.axios_response = resp;
+      this.actualPage = resp.page;
       this.calcPages();
       this.paginatorMaker();
+      }
     },
     watchExtraModifTrue() {
       for (let i = 0; i < this.extraFilters.length; i++) {
