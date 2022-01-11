@@ -13,14 +13,12 @@
           <a href="#" class="texto-vinculo-readme">Readme for more information</a>
         </div>
          <div class="caja-busqueda-lexico">
-                
-                   <select v-model="selected_datalist_first"  >
-                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                          </select>
+              
+ <v-select class="style-type-search" v-model="selected_datalist_first" :options="datalist_first"></v-select>
+  
+          <v-select class="style-type-params" v-model="selected_datalist_second" :options="datalist_second"></v-select>        
                            
-                            <select v-model="selected_datalist_second" >
-                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                          </select>
+                       
                          
                   <input class="input-caja-busqueda-lexico"  v-model="search_element" type="text"  placeholder="Type words for search"  >
                   </div>
@@ -52,16 +50,13 @@
                  
        <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
              <span class="caja-busqueda-lexico"  >
-             
-               <select  class="dropdown-opcion-filtro" v-model="find.exclude" style="background-color:white;" >
-                              <option v-for="(elements) in datalist_condition" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                          </select>
-               <select v-model="find.type_tag" style="background-color:white;" >
-                              <option v-for="(elements) in datalist_first" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                          </select>
-                            <select v-model="find.filter_type" style="background-color:white;" >
-                              <option v-for="(elements) in datalist_second" :key="elements.val" :value="elements.val" >{{elements.label}}</option>
-                          </select>
+                          <v-select class="style-exclude" v-model="extra_selected_data_list_first[index]" :options="datalist_condition"></v-select>
+
+                          <v-select class="style-type-search" v-model="extra_selected_data_list_second[index]" :options="datalist_first"></v-select>
+
+                          <v-select class="style-type-params" v-model="extra_selected_data_list_third[index]" :options="datalist_second"></v-select>
+    
+              
                           
                              <input class="input-caja-busqueda-lexico"  v-model="find.value" >
                               <button @click="deleteOfFilter(index)"  class="eliminar-filtro" >x</button>
@@ -94,7 +89,7 @@
                  <button type="submit" id="search-lexico" @click="prueba_axios" >Search</button>
                   </div>
                  </div>
-                  <p v-if="axios_response.page" ><button style="background-color:purple;"  @click="prevPage" >Pagina anterior</button><button style="background-color:purple;"  @click="nextPage" >Siguiente pagina</button></p>
+                  <p v-if="axios_response.page" ></p>
                   
                  <div v-if="devstate===true">
                  <span>opciones seleccionadas: {{ checkbx }}</span>
@@ -106,16 +101,58 @@
                  </div>
                   <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
                     <p>
+                      <button v-if="axios_response.page" style="background-color:purple;"  @click="prevPage" ><span class="material-icons-round icono-de-boton-paginacion">
+                arrow_back_ios
+              </span></button>
                      <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
-                       <button  v-if="number===actualPage" @click="goPage(number)"  > [{{number}}] </button>
-                       <button v-if="number!=actualPage" @click="goPage(number)" > [{{number}}] </button>
+                       <button  v-if="number===actualPage" @click="goPage(number)"  > {{number}} </button>
+                       <button style="min-width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    padding: calc(0.4rem - 2px) 0.4rem !important;
+    background: white !important;
+    color: var(--negro);
+    font-size: 0.7rem;
+    line-height: 100%;
+    font-weight: 400 !important;
+    text-align: center;
+    margin: 0rem 0.05rem !important;
+    border: 2px solid white" v-if="number!=actualPage" @click="goPage(number)" > {{number}} </button>
                      </span>
+                     <button v-if="axios_response.page" style="background-color:purple;"  @click="nextPage" ><span class="material-icons-round icono-de-boton-paginacion ">
+                arrow_forward_ios
+              </span></button>
                     </p>
                   </p>
               <viewer-Searchbar :datasend=axios_response />
                <div v-if="devstate===true">
                  <h4>Axios response{{axios_response}}</h4>
                  </div>
+                 <p v-if="axios_response.page" >Maximo numero de paginas{{maxPages}}
+                    <p>
+                      <button v-if="axios_response.page" style="background-color:purple;"  @click="prevPage" ><span class="material-icons-round icono-de-boton-paginacion">
+                arrow_back_ios
+              </span></button>
+                     <span v-for="(number) in paginator" :key="number" :v-bind="number" > 
+                       <button  v-if="number===actualPage" @click="goPage(number)"  > {{number}} </button>
+                       <button style="min-width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    padding: calc(0.4rem - 2px) 0.4rem !important;
+    background: white !important;
+    color: var(--negro);
+    font-size: 0.7rem;
+    line-height: 100%;
+    font-weight: 400 !important;
+    text-align: center;
+    margin: 0rem 0.05rem !important;
+    border: 2px solid white" v-if="number!=actualPage" @click="goPage(number)" > {{number}} </button>
+                     </span>
+                     <button v-if="axios_response.page" style="background-color:purple;"  @click="nextPage" ><span class="material-icons-round icono-de-boton-paginacion ">
+                arrow_forward_ios
+              </span></button>
+                    </p>
+                  </p>
                 </div>
                  </div>
      </div>
@@ -131,15 +168,19 @@ export default {
     return {
       onlyWtSound:false,
       devstate: false,
+      excludeState:false,
       testData: '',
       actualPage: 1,
       maxPages: 0,
       paginator: [],
       axios_response: {},
-      selected_datalist_first: 'lemma',
+      selected_datalist_first: {label:'Entrada',val:'lemma'},
       selected_datalist_first_val: '',
-      selected_datalist_second: 'begins_with',
+      selected_datalist_second:  { label: 'empieza con', val: 'begins_with' },
       selected_datalist_second_val: '',
+      extra_selected_data_list_first:[],
+      extra_selected_data_list_second:[],
+      extra_selected_data_list_third:[],
       search_element: '',
       checkbx: [],
       datalist_first: [
@@ -182,33 +223,24 @@ export default {
         ],
         global_modifiers: [],
       },
-      extraFilter: [
-        {
-          type_tag: 'lemma',
-          filter_type: 'begins_with',
-          value: 'ou',
-          exclude: false,
-          modifiers: [{ name: 'nahuat_orthography' }],
-        },
-        {
-          type_tag: 'lemma',
-          filter_type: 'begins_with',
-          value: 's',
-          exclude: false,
-          modifiers: [],
-        },
-      ],
       extraFilters: [],
       functionTester: '',
     };
   },
+  watch:{
+    extra_selected_data_list_first(){
+      for(let i=0;i<this.extraFilters.length;i++){
+        this.extraFilters[i].exclude=this.extra_selected_data_list_first[i].val;
+      }
+    },
+  },
   methods: {
-    async prueba_axios() {
+     prueba_axios() {
       this.paginator = [];
       this.set_values();
-      const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
-      this.axios_response = resp;
-      this.actualPage = resp.page;
+     // const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
+     // this.axios_response = resp;
+     // this.actualPage = resp.page;
       this.calcPages();
       this.paginatorMaker();
     },
@@ -251,17 +283,20 @@ export default {
       });
       return newArrJson;
     },
+    setExtraFiltersDropList(){
+      for(let i=0;i<this.extra_selected_data_list_second.length;i++){
+        this.extraFilters[i].type_tag=this.extra_selected_data_list_second[i].val;
+        this.extraFilters[i].filter_type=this.extra_selected_data_list_third[i].val;
+      }
+    },
     set_values() {
-      
-
-      
       this.demodata = {
         dataset: 'azz',
         query: [
           [
             {
-              type_tag: `${this.selected_datalist_first}`,
-              filter_type: `${this.selected_datalist_second}`,
+              type_tag: `${this.selected_datalist_first.val}`,
+              filter_type: `${this.selected_datalist_second.val}`,
               value: `${this.search_element}`,
               exclude: false,
               modifiers: this.setChkBox(),
@@ -279,9 +314,17 @@ export default {
       this.testData = this.setChkBox();
 
       if (this.extraFilters.length > 0) {
+        this.refillExcludeDropDown();
+        this.setExtraFiltersDropList();
         this.watchExtraModifTrue();
         this.watchExtraModifFalse();
         this.formatQueryData();
+      }
+      
+    },
+    refillExcludeDropDown(){
+       for(let i=0;i<this.extraFilters.length;i++){
+        this.extraFilters[i].exclude=this.extra_selected_data_list_first[i].val;
       }
     },
     formatQueryData() {
@@ -290,6 +333,7 @@ export default {
         if (this.extraFilters.length > extraFiltersQueryFormat.length)
           extraFiltersQueryFormat.push(this.extraFilters[i]);
       }
+      console.log(this.extraFilters);
       for (let i = 0; i < extraFiltersQueryFormat.length; i++) {
         let excludeVal = '';
         if (
@@ -318,7 +362,8 @@ export default {
         }
       }
       this.testData = extraFiltersQueryFormat;
-
+      
+      
       /*
                this.demodata.query.push([this.extraFilters[i]])
             */
@@ -327,22 +372,34 @@ export default {
       this.extraFilters.push({
         exclude: 'and',
         value: '',
-        type_tag: `lemma`,
-        filter_type: 'begins_with',
+        type_tag: {label:'Entrada',val:'lemma'},
+        filter_type: {label: 'empieza con', val: 'begins_with'},
         modifiers: [{ name: false }, { name: false }, { name: false }],
       });
+      this.extra_selected_data_list_first.push({label:'Y',val:'and'});
+      this.extra_selected_data_list_second.push({label:'Entrada',val:'lemma'});
+      this.extra_selected_data_list_third.push( {label: 'empieza con', val: 'begins_with'});
     },
     deleteFilter() {
       this.extraFilters.pop();
+      this.extra_selected_data_list_first.pop();
+      this.extra_selected_data_list_second.pop();
+      this.extra_selected_data_list_third.pop();
     },
     deleteOfFilter(target){
       if(target===0){
         this.extraFilters.splice(target,target+1);
+        this.extra_selected_data_list_first.splice(target,target+1);
+        this.extra_selected_data_list_second.splice(target,target+1);
+        this.extra_selected_data_list_third.splice(target,target+1);
       }
       this.extraFilters.splice(target,target);
+      this.extra_selected_data_list_first.splice(target,target);
+      this.extra_selected_data_list_second.splice(target,target);
+      this.extra_selected_data_list_third.splice(target,target);
     },
     reset(){
-      for(let i=0;i<this.extraFilter.length;i++){
+      for(let i=-1;i<this.extraFilters.length;i++){
       this.deleteFilter();
       }
       this.search_element='';
@@ -393,6 +450,122 @@ export default {
 };
 </script>
 <style>
+/* selector parametros and/or/ornot etc.. */
+.style-exclude .vs__search::placeholder{
+  color: white !important;
+}
+.style-exclude .vs__dropdown-toggle{
+background-color: var(--dr-fil-mas0);
+border-radius: 0;
+color: white  !important;
+margin-right: 0.5rem;
+flex-basis: 12%;
+}
+.style-exclude .vs__dropdown-menu {
+  position: absolute;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  flex-basis: 21%;
+  margin-right: 0.5rem;
+  width:6rem;
+  
+}
+.style-exclude .vs__clear{
+display: none;
+}
+.style-exclude .vs__open-indicator {
+  fill: white  !important;
+  
+}
+.style-exclude .vs__selected{
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+}
+
+.style-exclude .vs__dropdown-menu{
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  border: 2px solid var(--dr-fil-mas0);
+}
+/*selector tipo de busqueda*/
+.style-type-search .vs__search::placeholder{
+  color: white !important;
+}
+.style-type-search .vs__dropdown-toggle{
+background-color: var(--dr-tp-busq0);
+color: white  !important;
+border-radius: 0;
+flex-basis: 21%;
+margin-right: 0.5rem;
+}
+.style-type-search .vs__dropdown-menu {
+  position: absolute;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  flex-basis: 21%;
+  margin-right: 0.5rem;
+  width:12rem;
+  
+}
+.style-type-search .vs__clear{
+display: none;
+}
+.style-type-search .vs__open-indicator {
+  fill: white  !important;
+  
+}
+.style-type-search .vs__selected{
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+}
+
+.style-type-search .vs__dropdown-menu{
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  border: 2px solid var(--dr-tp-busq0);
+}
+/* selector parametros*/
+.style-type-params .vs__search::placeholder{
+  color: white !important;
+}
+.style-type-params .vs__dropdown-toggle{
+background-color: var(--dr-par-pal0);
+border-radius: 0;
+color: white  !important;
+margin-right: 0.5rem;
+flex-basis: 21%;
+}
+.style-type-params .vs__dropdown-menu {
+  position: absolute;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  flex-basis: 21%;
+  margin-right: 0.5rem;
+  width:12rem;
+  
+}
+.style-type-params .vs__clear{
+display: none;
+}
+.style-type-params .vs__open-indicator {
+  fill: white  !important;
+  
+}
+.style-type-params .vs__selected{
+  color: white;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+}
+
+.style-type-params .vs__dropdown-menu{
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.8888rem;
+  border: 2px solid var(--dr-par-pal0);
+}
+
+/* estilos por defecto */
 .contenedor-elementos-notas-lexico {
   height: 1.5rem;
   max-width: 100%;

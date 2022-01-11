@@ -64,7 +64,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/i18n', '@nuxtjs/axios'],
+  modules: ['nuxt-vue-select','@nuxtjs/i18n', '@nuxtjs/axios'],
   // internacionalizacion
   i18n: {
     parsePages: true,
