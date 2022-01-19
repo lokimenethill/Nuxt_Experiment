@@ -18,14 +18,18 @@
           <span class="familia">{{String(element.family)}}</span>
         </h2>
         <div class="contenedor-taxon-page-demca">
+          <span v-if="String(element.demca_taxon).length>0">
           <p class="etiqueta-taxon-page-demca">DEMCA: Taxon page</p><button class="btn-micro-taxon-demca"
-            onclick="window.open('https://demca.mesolex.org/portal/taxa/index.php?taxon=Elytraria+imbricata&formsubmit=Search+Terms','_blank')"
+            @click="newTabOpen(`${String(element.demca_taxon)}`)"
             target="_blank"><span class="material-icons icono-play-boton-micro ">
               link</span></button>
+              </span>
+              <span v-if="String(element.demca_audio).length>0">
           <p class="etiqueta-taxon-page-demca"> Audio of taxon</p><button class="btn-micro-taxon-demca"
-            onclick="window.open('https://demca.mesolex.org/portal/ethno/eaf/eafdetail.php?mediaid=105&collid=25','_blank')"
+            @click="newTabOpen(`${String(element.demca_audio)}`)"
             target="_blank"><span class="material-icons icono-play-boton-micro ">
               volume_up</span></button>
+              </span>
 
         </div>
       </div>
@@ -87,16 +91,16 @@
           <!-- Inicia una fila -->
           <div class="fila-sumario-comentarios">
             <!-- Columna izquierda -->
-            <div class="col-etiqueta">
-              <p class="etiqueta-comentarios">Field recording summary</p>
+            <div v-if="String(element.fieldbot_summary).length>0" class="col-etiqueta">
+              <p  class="etiqueta-comentarios">Field recording summary</p>
               <p class="etiqueta-uid-grabacion">UID:<span class="uid-grabacion">{{String(element.field_recording_uid)}}</span></p>
             </div>
             <!-- Columna derecha -->
-            <div class="col-dato">
-              <p class="resumen">{{String(element.fieldbot_summary)}}</p>
+            <div v-if="String(element.fieldbot_summary).length>0" class="col-dato">
+              <p  class="resumen">{{String(element.fieldbot_summary)}}</p>
             </div>
           </div>
-          <div class="fila-sumario-comentarios">
+          <div v-if="String(element.comments).length>0" class="fila-sumario-comentarios">
             <!-- Columna izquierda -->
             <div class="col-etiqueta">
               <p class="etiqueta-comentarios">Comments</p>
@@ -136,7 +140,9 @@ export default {
     };
   },
   methods: {
-    pruebastorepush() {},
+    newTabOpen(URL) {
+      window.open(`${URL}`,'_blank');
+    },
   },
 };
 </script>
