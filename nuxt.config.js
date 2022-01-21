@@ -83,7 +83,7 @@ export default {
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-   // API_HOST: 'https://staging.mesolex.org/api/search/',
+    API_HOST_N: 'https://staging.mesolex.org/api/search/',
    API_HOST: 'https://mesolex-api-develop-wyolh.ondigitalocean.app/api/search/',
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build

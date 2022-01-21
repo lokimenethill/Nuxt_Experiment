@@ -135,7 +135,7 @@
 </template>
 
 <script>
-import ViewerSearchbar from '@/components/ViewerSearchbar';
+import ViewerSearchbar from '@/components/lexicons/nahuatl/sView/ViewerSearchbar';
 export default {
   components: {
     ViewerSearchbar,
@@ -214,7 +214,7 @@ export default {
     async prueba_axios() {
       this.paginator = [];
       this.set_values();
-      const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
+      const resp = await this.$axios.$post(process.env.API_HOST_N, this.demodata);
       if(resp.total!==0){
       this.axios_response = resp;
       this.actualPage = resp.page;
@@ -399,7 +399,7 @@ export default {
         this.actualPage++;
         this.demodata.page = this.actualPage;
         const resp = await this.$axios.$post(
-          process.env.API_HOST,
+          process.env.API_HOST_N,
           this.demodata,
         );
         this.axios_response = resp;
@@ -411,7 +411,7 @@ export default {
         this.actualPage--;
         this.demodata.page = this.actualPage;
         const resp = await this.$axios.$post(
-          process.env.API_HOST,
+          process.env.API_HOST_N,
           this.demodata,
         );
         this.axios_response = resp;
@@ -421,7 +421,7 @@ export default {
       this.calcPages();
       this.actualPage = targetPage;
       this.demodata.page = this.actualPage;
-      const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
+      const resp = await this.$axios.$post(process.env.API_HOST_N, this.demodata);
       this.axios_response = resp;
     },
   },

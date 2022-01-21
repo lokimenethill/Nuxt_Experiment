@@ -93,6 +93,12 @@
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
       >
+        <nuxt-link
+          id="menu-item-1"
+          :to="localePath('topicIndex')"
+          class="menu-item"
+          >{{ $t('navBar.topicIndex') }}</nuxt-link
+        >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
         </h3>
