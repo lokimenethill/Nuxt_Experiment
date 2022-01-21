@@ -11,9 +11,6 @@
           sumario-lengua-terminal-item sumario-lengua-terminal-item-nahuatl
         "
       >
-        <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
-        </h3>
         <code class="modulo-lexicos"
           ><a
             href="https://glottolog.org/resource/languoid/id/high1278
@@ -23,6 +20,12 @@
             >high1278</a
           ></code
         >
+
+        <nuxt-link :to="localePath('nahuatllexicon')" >
+          <h3 class="sumario-lengua-terminal-titulo">
+            <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
+          </h3>
+        </nuxt-link>
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
                 extension</p> -->
       </div>

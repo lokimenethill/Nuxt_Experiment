@@ -92,12 +92,14 @@
             >
           </div>
           <div onclick="" class="lexico-item item-nahuatl">
+             <nuxt-link :to="localePath('nahuatllexicon')" >
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
             <h3 class="descripcion-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.region0') }}
             </h3>
+             </nuxt-link>
             <code class="modulo-lexico"
               ><a
                 href="https://glottolog.org/resource/languoid/id/high1278
@@ -250,12 +252,14 @@
             >
           </div>
           <div onclick="" class="lexico-item item-mixteco">
+             <nuxt-link :to="localePath('mixteclexicon')" >
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
             <h3 class="descripcion-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.region5') }}
             </h3>
+             </nuxt-link>
             <code class="modulo-lexico"
               ><a
                 href="https://glottolog.org/resource/languoid/id/yolo1241"

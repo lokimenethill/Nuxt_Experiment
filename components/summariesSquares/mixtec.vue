@@ -93,15 +93,6 @@
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
       >
-        <nuxt-link
-          id="menu-item-1"
-          :to="localePath('topicIndex')"
-          class="menu-item"
-          >{{ $t('navBar.topicIndex') }}</nuxt-link
-        >
-        <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
-        </h3>
         <code class="modulo-lexicos"
           ><a
             href="https://glottolog.org/resource/languoid/id/yolo1241"
@@ -109,6 +100,11 @@
             >yolo1241</a
           ></code
         >
+        <nuxt-link :to="localePath('mixteclexicon')" >
+          <h3 class="sumario-lengua-terminal-titulo">
+            <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
+          </h3>
+        </nuxt-link>
       </div>
       <backButton />
     </div>
