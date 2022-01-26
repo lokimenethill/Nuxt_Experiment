@@ -10,7 +10,7 @@
         class="sumario-lengua-terminal-item sumario-lengua-terminal-item-amuzgo"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.mixtec.region0')"></span>
+          <span v-html="$t('topicIndex.bottomCards.amuzgoan.region0')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
