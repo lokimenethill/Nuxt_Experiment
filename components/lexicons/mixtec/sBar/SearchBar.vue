@@ -14,9 +14,9 @@
         </div>
          <div class="caja-busqueda-lexico">
               
- <v-select class="style-type-search" v-model="selected_datalist_first" :options="datalist_first"></v-select>
+ <v-select :searchable="false" class="style-type-search-mix" v-model="selected_datalist_first" :options="datalist_first"></v-select>
   
-          <v-select class="style-type-params" v-model="selected_datalist_second" :options="datalist_second"></v-select>        
+          <v-select :searchable="false" class="style-type-params-mix" v-model="selected_datalist_second" :options="datalist_second"></v-select>        
                            
                        
                          
@@ -50,11 +50,11 @@
                  
        <div v-for="(find, index) in extraFilters" :key="index" :v-bind="index" >
              <span class="caja-busqueda-lexico"  >
-                          <v-select class="style-exclude" v-model="extra_selected_data_list_first[index]" :options="datalist_condition"></v-select>
+                          <v-select :searchable="false" class="style-exclude-mix" v-model="extra_selected_data_list_first[index]" :options="datalist_condition"></v-select>
 
-                          <v-select class="style-type-search" v-model="extra_selected_data_list_second[index]" :options="datalist_first"></v-select>
+                          <v-select :searchable="false" class="style-type-search-mix" v-model="extra_selected_data_list_second[index]" :options="datalist_first"></v-select>
 
-                          <v-select class="style-type-params" v-model="extra_selected_data_list_third[index]" :options="datalist_second"></v-select>
+                          <v-select :searchable="false" class="style-type-params-mix" v-model="extra_selected_data_list_third[index]" :options="datalist_second"></v-select>
     
               
                           
@@ -180,10 +180,10 @@ export default {
         { label: 'Busqueda de texto', val: 'text_search' },
       ],
       datalist_condition: [
-        { label: 'Y', val: 'and' },
-        { label: 'Y no', val: 'andNot' },
-        { label: 'O', val: 'or' },
-        { label: 'O no', val: 'orNot' },
+        { label: 'y', val: 'and' },
+        { label: 'y no', val: 'andNot' },
+        { label: 'o', val: 'or' },
+        { label: 'o no', val: 'orNot' },
       ],
       demodata: {
         dataset: 'azz',
@@ -355,7 +355,7 @@ export default {
         filter_type: {label: 'empieza con', val: 'begins_with'},
         modifiers: [{ name: false }, { name: false }, { name: false }],
       });
-      this.extra_selected_data_list_first.push({label:'Y',val:'and'});
+      this.extra_selected_data_list_first.push({label:'y',val:'and'});
       this.extra_selected_data_list_second.push({label:'Entrada',val:'lemma'});
       this.extra_selected_data_list_third.push( {label: 'empieza con', val: 'begins_with'});
     },
@@ -429,119 +429,192 @@ export default {
 };
 </script>
 <style>
-/* selector parametros and/or/ornot etc.. */
-.style-exclude .vs__search::placeholder{
-  color: white !important;
+/* generales dropdown */
+.vs__search{
+  margin: 0px !important;
+  padding: 0px !important;
+font-family: "Fira Sans", sans-serif !important;
+font-size: 0.8888rem !important;
+fill: white;
+
 }
-.style-exclude .vs__dropdown-toggle{
+.vs__dropdown-option{
+   padding: 0rem 0.5rem;
+ 
+}
+/* selector parametros and/or/ornot etc.. */
+.style-exclude-mix .vs__dropdown-option{
+width: 4rem !important;
+}
+.style-exclude-mix .vs__search::placeholder {
+  margin: 0px;
+  padding: 0px;
+  width: 4rem !important;
+}
+.style-exclude-mix .vs__dropdown-toggle{
 background-color: var(--dr-fil-mas0);
 border-radius: 0;
 color: white  !important;
 margin-right: 0.5rem;
 flex-basis: 12%;
+width: 4rem !important;
+padding: 0px !important;
 }
-.style-exclude .vs__dropdown-menu {
+.style-exclude-mix .vs__dropdown-toggle:hover {
+background-color: var(--dr-fil-mas1);
+}
+.style-exclude-mix .vs__dropdown-menu {
   position: absolute;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   flex-basis: 21%;
-  margin-right: 0.5rem;
-  width:6rem;
+  min-width: 4rem !important;
   
 }
-.style-exclude .vs__clear{
+.style-exclude-mix .vs__clear{
 display: none;
 }
-.style-exclude .vs__open-indicator {
-  fill: white  !important;
-  
+.style-exclude-mix .vs__open-indicator {
+  fill: white !important;
 }
-.style-exclude .vs__selected{
+.style-exclude-mix .vs__selected{
   color: white;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
+  padding: 0px !important;
+  margin: 0px 0px 0px 0.25rem !important;
 }
 
-.style-exclude .vs__dropdown-menu{
+.style-exclude-mix .vs__dropdown-menu{
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   border: 2px solid var(--dr-fil-mas0);
+  width: 4rem !important;
+  
 }
+.style-exclude-mix .vs__dropdown-menu .vs__dropdown-option{
+   padding: 0rem 0rem 0rem .25rem;
+   width: 3.75rem !important;
+   }
+.style-exclude-mix .vs__dropdown-menu .vs__dropdown-option--highlight {
+background-color: var(--dr-fil-mas1);
+}
+
 /*selector tipo de busqueda*/
-.style-type-search .vs__search::placeholder{
-  color: white !important;
+
+.style-type-search-mix .vs__dropdown-option{
+width:12rem !important;
 }
-.style-type-search .vs__dropdown-toggle{
+.style-type-search-mix .vs__search::placeholder {
+  margin: 0px;
+  padding: 0px;
+  width: 12rem !important;
+}
+.style-type-search-mix .vs__dropdown-toggle{
 background-color: var(--dr-tp-busq0);
-color: white  !important;
 border-radius: 0;
-flex-basis: 21%;
+color: white  !important;
 margin-right: 0.5rem;
+flex-basis: 12%;
+width: 12rem !important;
+padding: 0px !important;
 }
-.style-type-search .vs__dropdown-menu {
+.style-type-search-mix .vs__dropdown-toggle:hover {
+background-color: var(--dr-tp-busq1);
+}
+.style-type-search-mix .vs__dropdown-menu {
   position: absolute;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   flex-basis: 21%;
-  margin-right: 0.5rem;
-  width:12rem;
+  min-width: 12rem !important;
   
 }
-.style-type-search .vs__clear{
+.style-type-search-mix .vs__clear{
 display: none;
 }
-.style-type-search .vs__open-indicator {
-  fill: white  !important;
-  
+.style-type-search-mix .vs__open-indicator {
+  fill: white !important;
 }
-.style-type-search .vs__selected{
+.style-type-search-mix .vs__selected{
   color: white;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
+  padding: 0px !important;
+  margin: 0px 0px 0px 0.25rem !important;
 }
 
-.style-type-search .vs__dropdown-menu{
+.style-type-search-mix .vs__dropdown-menu{
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   border: 2px solid var(--dr-tp-busq0);
+  width: 12rem !important;
+  
 }
+.style-type-search-mix .vs__dropdown-menu .vs__dropdown-option{
+   padding: 0rem 0rem 0rem .25rem;
+   width: 11.75rem !important;
+   }
+.style-type-search-mix .vs__dropdown-menu .vs__dropdown-option--highlight {
+background-color: var(--dr-tp-busq1);
+}
+
 /* selector parametros*/
-.style-type-params .vs__search::placeholder{
-  color: white !important;
+.style-type-params-mix  .vs__dropdown-option{
+width:12rem !important;
 }
-.style-type-params .vs__dropdown-toggle{
+.style-type-params-mix  .vs__search::placeholder {
+  margin: 0px;
+  padding: 0px;
+  width: 12rem !important;
+}
+.style-type-params-mix  .vs__dropdown-toggle{
 background-color: var(--dr-par-pal0);
 border-radius: 0;
 color: white  !important;
 margin-right: 0.5rem;
-flex-basis: 21%;
+flex-basis: 12%;
+width: 12rem !important;
+padding: 0px !important;
 }
-.style-type-params .vs__dropdown-menu {
+.style-type-params-mix .vs__dropdown-toggle:hover {
+background-color: var(--dr-par-pal1);
+}
+.style-type-params-mix  .vs__dropdown-menu {
   position: absolute;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   flex-basis: 21%;
-  margin-right: 0.5rem;
-  width:12rem;
+  min-width: 12rem !important;
   
 }
-.style-type-params .vs__clear{
+.style-type-params-mix .vs__clear{
 display: none;
 }
-.style-type-params .vs__open-indicator {
-  fill: white  !important;
-  
+.style-type-params-mix  .vs__open-indicator {
+  fill: white !important;
 }
-.style-type-params .vs__selected{
+.style-type-params-mix  .vs__selected{
   color: white;
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
+  padding: 0px !important;
+  margin: 0px 0px 0px 0.25rem !important;
 }
 
-.style-type-params .vs__dropdown-menu{
+.style-type-params-mix  .vs__dropdown-menu{
   font-family: "Fira Sans", sans-serif;
   font-size: 0.8888rem;
   border: 2px solid var(--dr-par-pal0);
+  width: 12rem !important;
+  
+}
+.style-type-params-mix  .vs__dropdown-menu .vs__dropdown-option{
+   padding: 0rem 0rem 0rem .25rem;
+   width: 11.75rem !important;
+   }
+.style-type-params-mix  .vs__dropdown-menu .vs__dropdown-option--highlight {
+background-color: var(--dr-par-pal1);
 }
 
 /* estilos por defecto */
@@ -595,21 +668,7 @@ a.texto-vinculo-readme:visited {
 .contenedor-buscador-general-lexico {
   margin-top: 2rem;
 }
-/* Caja de busqueda; contiene dropdowns y caja de texto de busqueda */
-.caja-busqueda-lexico {
-  border: 1px solid var(--gris3);
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 0.38rem;
-  margin-bottom: 0.5rem;
-}
 
-.caja-busqueda-lexico:focus-within {
-  outline: 3px solid #009d9375;
-  /* Hace que se enfocque el elemento padre */
-}
 
 /* Dropdown tipo busqueda */
 .dropdown-tipo-busqueda {
@@ -854,41 +913,6 @@ a.texto-vinculo-readme:visited {
 }
 
 /* Caja de texto de busqueda*/
-.input-caja-busqueda-lexico {
-  align-self: stretch;
-  min-height: 2.5rem;
-  flex-basis: 50%;
-  flex: 1;
-  flex-grow: 20;
-  padding: 0 0.5rem;
-  margin: 0;
-  border: none;
-  font-size: 0.8888rem;
-  font-weight: 500;
-}
-.input-caja-busqueda-lexico:focus {
-  outline: none;
-}
-.input-caja-busqueda-lexico::placeholder {
-  color: var(--gris3);
-  font-size: 0.8888rem;
-  font-weight: 400 !important;
-}
-.input-caja-busqueda-lexico::-webkit-input-placeholder {
-  color: var(--gris3);
-  font-size: 0.8888rem;
-  font-weight: 400 !important;
-}
-.input-caja-busqueda-lexico:-ms-input-placeholder {
-  color: var(--gris3);
-  font-size: 0.8888rem;
-  font-weight: 400 !important;
-}
-.input-caja-busqueda-lexico::-moz-placeholder {
-  color: var(--gris3);
-  font-size: 0.8888rem;
-  font-weight: 400 !important;
-}
 /* Contenedor de checkboxes, las checkboxes estan en estilos generales */
 
 /* Contenedor general de checboxes de lexicos */
