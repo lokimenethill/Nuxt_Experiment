@@ -5,126 +5,200 @@
       <div class="contenedor-languaje-index">
         <div class="language-index-item" id="amuzgo">
           <nuxt-link
-            style="text-decoration: none"
+            class="none"
             :to="localePath('/languageIndexView/amuzgoan')"
           >
             <h3 class="titulo-modulo">
               {{ $t('languageIndex.amuzgoan.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              {{ $t('languageIndex.amuzgoan.preText') }}
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/amuz1254"
-                  target="_blank"
-                  >amuz1254</a
-                ></code
-              >
-              <span v-html="$t('languageIndex.amuzgoan.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/amuzgoan')"
+            >
+              {{ $t('languageIndex.amuzgoan.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/amuz1254"
+                target="_blank"
+                >amuz1254</a
+              ></code
+            ><nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/amuzgoan')"
+            >
+              <span v-html="$t('languageIndex.amuzgoan.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
         <div class="language-index-item" id="nahuatl">
           <nuxt-link
+            class="none"
             style="text-decoration: none"
             :to="localePath('/languageIndexView/nahuatl')"
           >
             <h3 class="titulo-modulo">
               {{ $t('languageIndex.nahuatl.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              {{ $t('languageIndex.nahuatl.preText') }}
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/azte1234"
-                  target="_blank"
-                  >azte1234</a
-                ></code
-              >
-              <span v-html="$t('languageIndex.nahuatl.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/nahuatl')"
+            >
+              {{ $t('languageIndex.nahuatl.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/azte1234"
+                target="_blank"
+                >azte1234</a
+              ></code
+            ><nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/nahuatl')"
+            >
+              <span v-html="$t('languageIndex.nahuatl.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
         <div class="language-index-item" id="maya">
           <nuxt-link
+            class="none"
             style="text-decoration: none"
             :to="localePath('/languageIndexView/mayan')"
           >
             <h3 class="titulo-modulo">{{ $t('languageIndex.mayan.title') }}</h3>
-            <p class="descripcion-modulo">
-              {{ $t('languageIndex.mayan.preText') }}
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/maya1287"
-                  target="_blank"
-                  >maya1287</a
-                ></code
-              >
-              <span v-html="$t('languageIndex.mayan.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mayan')"
+            >
+              {{ $t('languageIndex.mayan.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/maya1287"
+                target="_blank"
+                >maya1287</a
+              ></code
+            >
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mayan')"
+            >
+              <span v-html="$t('languageIndex.mayan.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
         <div class="language-index-item" id="mixteco">
           <nuxt-link
+            class="none"
             style="text-decoration: none"
             :to="localePath('/languageIndexView/mixtec')"
           >
             <h3 class="titulo-modulo">
               {{ $t('languageIndex.mixtec.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              {{ $t('languageIndex.mixtec.preText') }}
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/mixt1427"
-                  target="_blank"
-                  >mixt1247</a
-                ></code
-              >
-              <span v-html="$t('languageIndex.mixtec.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mixtec')"
+            >
+              {{ $t('languageIndex.mixtec.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/mixt1427"
+                target="_blank"
+                >mixt1247</a
+              ></code
+            >
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mixtec')"
+            >
+              <span v-html="$t('languageIndex.mixtec.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
         <div class="language-index-item" id="totonaco">
           <nuxt-link
+            class="none"
             style="text-decoration: none"
             :to="localePath('/languageIndexView/totonacan')"
           >
             <h3 class="titulo-modulo">
               {{ $t('languageIndex.totonacan.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              <span v-html="$t('languageIndex.totonacan.preText')"></span>
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/toto1251"
-                  target="_blank"
-                  >toto1251</a
-                ></code
-              >
-              <span v-html="$t('languageIndex.totonacan.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/totonacan')"
+            >
+              <span v-html="$t('languageIndex.totonacan.preText')"></span>
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/toto1251"
+                target="_blank"
+                >toto1251</a
+              ></code
+            ><nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/totonacan')"
+            >
+              <span v-html="$t('languageIndex.totonacan.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
         <div class="language-index-item" id="triqui">
           <nuxt-link
+            class="none"
             style="text-decoration: none"
             :to="localePath('/languageIndexView/triqui')"
           >
             <h3 class="titulo-modulo">
               {{ $t('languageIndex.triqui.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              {{ $t('languageIndex.triqui.preText') }}
-              <code
-                ><a
-                  href="https://glottolog.org/resource/languoid/id/triq1251"
-                  target="_blank"
-                  >triq1251</a
-                ></code
-              ><span v-html="$t('languageIndex.triqui.text')"></span>
-            </p>
           </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/triqui')"
+            >
+              {{ $t('languageIndex.triqui.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/triq1251"
+                target="_blank"
+                >triq1251</a
+              ></code
+            >
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/triqui')"
+              ><span v-html="$t('languageIndex.triqui.text')"></span>
+            </nuxt-link>
+          </p>
         </div>
       </div>
     </div>
@@ -157,6 +231,14 @@ export default {
 };
 </script>
 <style >
+.none {
+  color: white !important;
+}
+.none:hover {
+  color: white !important;
+  font-style: none;
+  font-weight: normal;
+}
 .contenedor-languaje-index {
   height: 465px;
   display: flex;
