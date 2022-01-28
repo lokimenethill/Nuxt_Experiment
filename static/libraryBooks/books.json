@@ -1,0 +1,30 @@
+[
+    {
+        "title":"Harry potter",
+        "author":"J. K. Rowling",
+        "terminal_lang":"Inglés",
+        "topics":"Fantasia",
+        "source":""
+    }, 
+    {
+        "title":"Iliada",
+        "author":"Homero",
+        "terminal_lang":"Griego",
+        "topics":"Mitologia",
+        "source":""
+    },
+    {
+        "title":"Odisea",
+        "author":"Homero",
+        "terminal_lang":"Griego",
+        "topics":"Mitologia",
+        "source":""
+    },
+    {
+        "title":"Diario de Ana Frank",
+        "author":"Ana Frank",
+        "terminal_lang":"Aleman",
+        "topics":"Historia",
+        "source":""
+    }
+]
