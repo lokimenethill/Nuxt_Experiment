@@ -21,6 +21,20 @@
         "source":""
     },
     {
+        "title":"El Cuervo",
+        "author":"Edgar Allan Poe",
+        "terminal_lang":"Inglés",
+        "topics":"Ficcion",
+        "source":""
+    },
+    {
+        "title":"El esclavo",
+        "author":"Anand Dílvar",
+        "terminal_lang":"Español",
+        "topics":"Ficcion",
+        "source":""
+    },
+    {
         "title":"Diario de Ana Frank",
         "author":"Ana Frank",
         "terminal_lang":"Aleman",

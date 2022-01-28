@@ -18,7 +18,7 @@
               <div class="dropdown-libreria ">
                  <v-select :searchable="false" class="style-library" v-model="selected_datalist_first" :options="datalist_first"></v-select>
               </div>
-              <input type="search" placeholder="Type words for search" class="input-caja-busqueda">
+              <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
             </div>
 
 
@@ -26,12 +26,7 @@
 
 
             <div class="contenedor-general-botones-busqueda-library ">
-              <div class="contenedor-botones-izquierda ">
-                <button type="reset" id="btn-reset-lexico-buscador-library" class="btn-secundario">Reset</button>
-              </div>
-              <div class="contenedor-botones-derecha  ">
-                <button type="submit" id="btn-search-lexico-buscador-library">Search</button>
-              </div>
+             
             </div>
          
         </div>
@@ -44,8 +39,8 @@
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Title</h4>
                   <div class="table__header__row__cell__switch ">
-                    <button @click="sortByTitle()"  class="table__header__row__cell__switch__btn__asc-active"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button @click="sortByTitle_asc()"  class="table__header__row__cell__switch__btn__asc-active"></button>
+                    <button @click="sortByTitle_desc()" class="table__header__row__cell__title__btn__des"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
@@ -75,7 +70,7 @@
               </div>
             </div>
             <div class="table__main">
-              <div v-for="(find, index) in JsonLib" :key="index" :v-bind="index" >
+              <div v-for="(find, index) in items" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
                   <a href="#" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
@@ -121,9 +116,6 @@
               </span>
             </button>
             <!-- Botones de paginas -->
-            <button class="btn-pagina ">1</button>
-            <button class="btn-pagina">2</button>
-            <button class="btn-pagina">3</button>
             <button class="btn-pagina">4</button>
             <!-- btn-pagina-activa es un marcador que indica la página en la que se encuentra -->
             <button class="btn-pagina btn-pagina-activa">5</button>
@@ -157,117 +149,145 @@
 </template>
 
 <script>
-import JSonLibrary from "@/static/libraryBooks/books.json";
+import JSonLibrary from '@/static/libraryBooks/books.json';
 export default {
-  
   data() {
     return {
-      JsonLib:JSonLibrary,
-      selected_datalist_first: {label:'family',val:'family'},
+      JsonLib: JSonLibrary,
+      query_res: {},
+      dataSearch: '',
+      selected_datalist_first: { label: 'Titulo', val: 'title' },
       datalist_first: [
-        { label: 'family', val: 'family' },
-        { label: 'genus', val: 'genus' },
-        { label: 'genus species', val: 'genus_species' },
-        { label: 'glosa', val: 'glosa' },
-        { label: 'nombre', val: 'nombre' },
-        { label: 'Significado preciso', val: 'precise_meaning' },
-        { label: 'Significado extendido', val: 'extended_meaning' },
-        { label: 'Frase Ilustrativa', val: 'illustrative_phrases' },
-        { label: 'Búsqueda exhaustiva', val: 'complete_search' },
+        { label: 'Titulo', val: 'title' },
+        { label: 'Autor', val: 'author' },
+        { label: 'Lengua Terminal', val: 'terminal_lang' },
+        { label: 'Topico', val: 'topics' },
       ],
-     
     };
   },
-  watch:{
-   
-  },
+  watch: {},
   methods: {
-    sortByTitle(){
-      this.JsonLib.sort(function(a, b){
-  if (a.title > b.title){
-    return 1;
-  }
-  if (a.title < b.title){
-    return -1;
-  }
-  // a must be equal to b
-  return 0;
-});
+    sortByTitle_asc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.title > b.title) {
+          return 1;
+        }
+        if (a.title < b.title) {
+          return -1;
+        }
+        return 0;
+      });
+    },
+    sortByTitle_desc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.title > b.title) {
+          return -1;
+        }
+        if (a.title < b.title) {
+          return 1;
+        }
+        return 0;
+      });
+    },
+  },
+  computed: {
+    items() {
+      switch (this.selected_datalist_first.val) {
+        case 'title':
+          return this.JsonLib.filter((item) => {
+            return item.title
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase());
+          });
+        case 'author':
+          return this.JsonLib.filter((item) => {
+            return item.author
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase());
+          });
+        case 'terminal_lang':
+          return this.JsonLib.filter((item) => {
+            return item.terminal_lang
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase());
+          });
+        case 'topics':
+          return this.JsonLib.filter((item) => {
+            return item.topics
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase());
+          });
+      }
+      return 0;
     },
   },
 };
 </script>
 <style>
 /* generales dropdown */
-.vs__search{
+.vs__search {
   margin: 0px !important;
   padding: 0px !important;
-font-family: "Fira Sans", sans-serif !important;
-font-size: 0.8888rem !important;
-fill: white;
-
+  font-family: 'Fira Sans', sans-serif !important;
+  font-size: 0.8888rem !important;
+  fill: white;
 }
-.vs__dropdown-option{
-   padding: 0rem 0.5rem;
- 
+.vs__dropdown-option {
+  padding: 0rem 0.5rem;
 }
 /* selector parametros and/or/ornot etc.. */
-.style-library .vs__dropdown-option{
-width: 29rem !important;
+.style-library .vs__dropdown-option {
+  width: 29rem !important;
 }
 .style-library .vs__search::placeholder {
   margin: 0px;
   padding: 0px;
   width: 29rem !important;
 }
-.style-library .vs__dropdown-toggle{
-background-color: var(--library1);
-border-radius: 0;
-color: white  !important;
-margin-right: 0.5rem;
-flex-basis: 12%;
-width: 29rem !important;
-padding: 0px !important;
+.style-library .vs__dropdown-toggle {
+  background-color: var(--library1);
+  border-radius: 0;
+  color: white !important;
+  margin-right: 0.5rem;
+  flex-basis: 12%;
+  width: 29rem !important;
+  padding: 0px !important;
 }
 .style-library .vs__dropdown-toggle:hover {
-background-color: var(--library2);
+  background-color: var(--library2);
 }
 .style-library .vs__dropdown-menu {
   position: absolute;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   flex-basis: 21%;
   min-width: 29rem !important;
-  
 }
-.style-library .vs__clear{
-display: none;
+.style-library .vs__clear {
+  display: none;
 }
 .style-library .vs__open-indicator {
   fill: white !important;
 }
-.style-library .vs__selected{
+.style-library .vs__selected {
   color: white;
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   padding: 0px !important;
   margin: 0px 0px 0px 0.25rem !important;
 }
 
-.style-library .vs__dropdown-menu{
-  font-family: "Fira Sans", sans-serif;
+.style-library .vs__dropdown-menu {
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   border: 2px solid var(--library1);
   width: 29rem !important;
-  
 }
-.style-library .vs__dropdown-menu .vs__dropdown-option{
-   padding: 0rem 0rem 0rem .25rem;
-   width: 28.75rem !important;
-   }
+.style-library .vs__dropdown-menu .vs__dropdown-option {
+  padding: 0rem 0rem 0rem 0.25rem;
+  width: 28.75rem !important;
+}
 .style-library .vs__dropdown-menu .vs__dropdown-option--highlight {
-background-color: var(--library2);
+  background-color: var(--library2);
 }
-
-
 </style>
