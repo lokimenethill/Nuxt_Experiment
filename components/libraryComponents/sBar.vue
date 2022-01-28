@@ -31,7 +31,7 @@
          
         </div>
         <div class="contenedor-general-resultados">
-          <h4 class="instrucciones">{#} results. (Page {#} de {#})</h4>
+          <h4 class="instrucciones">{{rTotal}} results. (Page {#} de {#})</h4>
           <!-- Contenedor de resulatdos, cada tarjeta es un resultado -->
           <div class="table ">
             <div class="table__header ">
@@ -46,22 +46,22 @@
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Author</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button @click="sortByAuth_asc()"  class="table__header__row__cell__switch__btn__asc"></button>
+                    <button @click="sortByAuth_desc()"  class="table__header__row__cell__title__btn__des"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Terminal language</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button @click="sortByTLang_asc()" class="table__header__row__cell__switch__btn__asc"></button>
+                    <button @click="sortByTLang_desc()" class="table__header__row__cell__title__btn__des"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Topics</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button @click="sortByTopics_asc()" class="table__header__row__cell__switch__btn__asc"></button>
+                    <button @click="sortByTopics_desc()" class="table__header__row__cell__title__btn__des"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
@@ -157,6 +157,7 @@ export default {
       query_res: {},
       dataSearch: '',
       selected_datalist_first: { label: 'Titulo', val: 'title' },
+      rTotal:JSonLibrary.length,
       datalist_first: [
         { label: 'Titulo', val: 'title' },
         { label: 'Autor', val: 'author' },
@@ -165,7 +166,11 @@ export default {
       ],
     };
   },
-  watch: {},
+  watch: {
+    items(){
+      this.rTotal=this.items.length;
+    },
+  },
   methods: {
     sortByTitle_asc() {
       this.JsonLib.sort(function(a, b) {
@@ -184,6 +189,75 @@ export default {
           return -1;
         }
         if (a.title < b.title) {
+          return 1;
+        }
+        return 0;
+      });
+    },
+
+    sortByAuth_asc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.author > b.author) {
+          return 1;
+        }
+        if (a.author < b.author) {
+          return -1;
+        }
+        return 0;
+      });
+    },
+    sortByAuth_desc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.author > b.author) {
+          return -1;
+        }
+        if (a.author < b.author) {
+          return 1;
+        }
+        return 0;
+      });
+    },
+    
+    sortByTLang_asc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.terminal_lang > b.terminal_lang) {
+          return 1;
+        }
+        if (a.terminal_lang < b.terminal_lang) {
+          return -1;
+        }
+        return 0;
+      });
+    },
+    sortByTLang_desc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.terminal_lang > b.terminal_lang) {
+          return -1;
+        }
+        if (a.terminal_lang < b.terminal_lang) {
+          return 1;
+        }
+        return 0;
+      });
+    },
+
+    sortByTopics_asc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.topics > b.topics) {
+          return 1;
+        }
+        if (a.topics < b.topics) {
+          return -1;
+        }
+        return 0;
+      });
+    },
+    sortByTopics_desc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.topics > b.topics) {
+          return -1;
+        }
+        if (a.topics < b.topics) {
           return 1;
         }
         return 0;
