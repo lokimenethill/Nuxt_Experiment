@@ -1,33 +1,27 @@
 <template lang="">
-     <div class="contenedor-general-rebasado">
-      <div class="contenedor-general">
-        <div class="contenedor-breadcums"><a class="breadcums">Library</a>
-          <p class="breadcums">/</p><a href="" class="breadcums-activo">Mixtec</a>
+  <div class="contenedor-general-rebasado">
+    <div class="contenedor-general">
+      <div class="contenedor-breadcums">
+        <a class="breadcums">Library</a>
+        <p class="breadcums">/</p>
+        <a href="" class="breadcums-activo">Mixtec</a>
         </div>
         <h6>Search in</h6>
         <h1 id="titulo-library">Library</h1>
-
-
-
-
         <div class="contenedor-buscador-general">
-         
-            <div class="caja-busqueda">
-              <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
-              <!-- Checar por qué se elimina la primera opción -->
-              <div class="dropdown-libreria ">
-                 <v-select v-model="selected_datalist_first" :searchable="false" class="style-library" :options="datalist_first"></v-select>
-              </div>
-              <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
+          <div class="caja-busqueda">
+            <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
+            <!-- Checar por qué se elimina la primera opción -->
+            <div class="dropdown-libreria ">
+              <v-select v-model="searchSelector" :searchable="false" class="style-library" :options="searchSelectOptions">
+              </v-select>
             </div>
 
+            <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
+          </div>
 
-
-
-
-            <div class="contenedor-general-botones-busqueda-library ">
-             
-            </div>
+          <div class="contenedor-general-botones-busqueda-library ">
+          </div>
          
         </div>
         <div class="contenedor-general-resultados">
@@ -39,38 +33,43 @@
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Title</h4>
                   <div class="table__header__row__cell__switch ">
-                    <button class="table__header__row__cell__switch__btn__asc-active"  @click="sortByTitle_asc()"></button>
-                    <button class="table__header__row__cell__title__btn__des" @click="sortByTitle_desc()"></button>
+                    <button :class="getAscendingArrowClass('title')"  @click="setAscendingSort('title')"></button>
+                    <button :class="getDescendingArrowClass('title')" @click="setDescendingSort('title')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Author</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('author')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('author')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Terminal language</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('terminal_lang')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('terminal_lang')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Topics</h4>
                   <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"></button>
-                    <button class="table__header__row__cell__title__btn__des"></button>
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('topics')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('topics')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-
                 </div>
               </div>
             </div>
             <div class="table__main">
-              <div v-for="(find, index) in items" :key="index" :v-bind="index" >
+              <div v-for="(find, index) in itemsNew" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
                   <a href="#" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
@@ -149,15 +148,20 @@
 </template>
 
 <script>
-import JSonLibrary from '@/assets/libraryBooks/books.json';
+// eslint-disable-next-line no-unused-vars
+import _ from 'underscore';
+import JsonLibrary from '@/assets/libraryBooks/books.json';
+
 export default {
   data() {
     return {
-      JsonLib: JSonLibrary,
-      query_res: {},
+      library: JsonLibrary,
+      searchSelector: {},
       dataSearch: '',
-      selected_datalist_first: { label: 'Titulo', val: 'title' },
-      datalist_first: [
+      sortTableBy: '',
+      ascendingSort: true,
+      query_res: {},
+      searchSelectOptions: [
         { label: 'Titulo', val: 'title' },
         { label: 'Autor', val: 'author' },
         { label: 'Lengua Terminal', val: 'terminal_lang' },
@@ -166,59 +170,48 @@ export default {
     };
   },
   computed: {
-    items() {
-      switch (this.selected_datalist_first.val) {
-        case 'title':
-          return this.JsonLib.filter((item) => {
-            return item.title
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'author':
-          return this.JsonLib.filter((item) => {
-            return item.author
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'terminal_lang':
-          return this.JsonLib.filter((item) => {
-            return item.terminal_lang
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'topics':
-          return this.JsonLib.filter((item) => {
-            return item.topics
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-      }
-      return 0;
+    itemsNew() {
+      // Sorting
+      const sortedBooks = this.ascendingSort
+        ? _.sortBy(this.library, this.sortTableBy)
+        : _.sortBy(this.library, this.sortTableBy).reverse();
+      // filtered
+      const filtered = _.filter(sortedBooks, (book) =>
+        book[this.searchSelector.val]
+          .toLowerCase()
+          .includes(this.dataSearch.toLowerCase()),
+      );
+      // console.log(this.searchSelector.val);
+      return filtered;
     },
   },
   watch: {},
+  created() {
+    this.searchSelector = this.searchSelectOptions[0];
+    this.sortTableBy = this.searchSelectOptions[0].val;
+  },
   methods: {
-    sortByTitle_asc() {
-      this.JsonLib.sort(function(a, b) {
-        if (a.title > b.title) {
-          return 1;
-        }
-        if (a.title < b.title) {
-          return -1;
-        }
-        return 0;
-      });
+    setAscendingSort(column) {
+      this.ascendingSort = true;
+      this.sortTableBy = column;
     },
-    sortByTitle_desc() {
-      this.JsonLib.sort(function(a, b) {
-        if (a.title > b.title) {
-          return -1;
-        }
-        if (a.title < b.title) {
-          return 1;
-        }
-        return 0;
-      });
+    setDescendingSort(column) {
+      this.ascendingSort = false;
+      this.sortTableBy = column;
+    },
+    getAscendingArrowClass(column) {
+      return [
+        `table__header__row__cell__switch__btn__asc${
+          this.sortTableBy === column && this.ascendingSort ? '-active' : ''
+        }`,
+      ];
+    },
+    getDescendingArrowClass(column) {
+      return [
+        `table__header__row__cell__title__btn__des${
+          this.sortTableBy === column && !this.ascendingSort ? '-active' : ''
+        }`,
+      ];
     },
   },
 };
