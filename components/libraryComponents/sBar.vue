@@ -69,7 +69,7 @@
               </div>
             </div>
             <div class="table__main">
-              <div v-for="(find, index) in itemsNew" :key="index" :v-bind="index" >
+              <div v-for="(find, index) in items" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
                   <a href="#" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
@@ -170,7 +170,7 @@ export default {
     };
   },
   computed: {
-    itemsNew() {
+    items() {
       // Sorting
       const sortedBooks = this.ascendingSort
         ? _.sortBy(this.library, this.sortTableBy)
