@@ -16,7 +16,7 @@
               <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
               <!-- Checar por qué se elimina la primera opción -->
               <div class="dropdown-libreria ">
-                 <v-select :searchable="false" class="style-library" v-model="selected_datalist_first" :options="datalist_first"></v-select>
+                 <v-select v-model="selected_datalist_first" :searchable="false" class="style-library" :options="datalist_first"></v-select>
               </div>
               <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
             </div>
@@ -39,8 +39,8 @@
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Title</h4>
                   <div class="table__header__row__cell__switch ">
-                    <button @click="sortByTitle_asc()"  class="table__header__row__cell__switch__btn__asc-active"></button>
-                    <button @click="sortByTitle_desc()" class="table__header__row__cell__title__btn__des"></button>
+                    <button class="table__header__row__cell__switch__btn__asc-active"  @click="sortByTitle_asc()"></button>
+                    <button class="table__header__row__cell__title__btn__des" @click="sortByTitle_desc()"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
@@ -149,7 +149,7 @@
 </template>
 
 <script>
-import JSonLibrary from '@/static/libraryBooks/books.json';
+import JSonLibrary from '@/assets/libraryBooks/books.json';
 export default {
   data() {
     return {
@@ -164,31 +164,6 @@ export default {
         { label: 'Topico', val: 'topics' },
       ],
     };
-  },
-  watch: {},
-  methods: {
-    sortByTitle_asc() {
-      this.JsonLib.sort(function(a, b) {
-        if (a.title > b.title) {
-          return 1;
-        }
-        if (a.title < b.title) {
-          return -1;
-        }
-        return 0;
-      });
-    },
-    sortByTitle_desc() {
-      this.JsonLib.sort(function(a, b) {
-        if (a.title > b.title) {
-          return -1;
-        }
-        if (a.title < b.title) {
-          return 1;
-        }
-        return 0;
-      });
-    },
   },
   computed: {
     items() {
@@ -219,6 +194,31 @@ export default {
           });
       }
       return 0;
+    },
+  },
+  watch: {},
+  methods: {
+    sortByTitle_asc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.title > b.title) {
+          return 1;
+        }
+        if (a.title < b.title) {
+          return -1;
+        }
+        return 0;
+      });
+    },
+    sortByTitle_desc() {
+      this.JsonLib.sort(function(a, b) {
+        if (a.title > b.title) {
+          return -1;
+        }
+        if (a.title < b.title) {
+          return 1;
+        }
+        return 0;
+      });
     },
   },
 };
