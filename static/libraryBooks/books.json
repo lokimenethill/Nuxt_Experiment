@@ -40,5 +40,12 @@
         "terminal_lang":"Aleman",
         "topics":"Historia",
         "source":""
+    },
+    {
+        "title":"InvestorCoach",
+        "author":"Rodrigo Coutiño",
+        "terminal_lang":"Español",
+        "topics":"Inversiones",
+        "source":""
     }
 ]
