@@ -72,7 +72,7 @@
               <div v-for="(find, index) in items" v-show="(pag - 1) * resultsPerPage <= index  && pag * resultsPerPage > index" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
-                  <a href="#" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
+                  <a :href="watchBook(find.source)" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.author}}</span>
@@ -84,10 +84,10 @@
                   <span class="table__main__row__cell__data">{{find.topics}}</span>
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button class="table__main__row_cell__button-button_micro"><span
+                  <a :href="watchBook(find.source)" :download="find.source" class="table__main__row_cell__button-button_micro none"><span
                       class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       file_download
-                    </span></button>
+                    </span></a>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 </div>
@@ -197,6 +197,9 @@ export default {
     this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
   },
   methods: {
+    watchBook(source){
+      return "/libraryBooks/pdfs/"+source+".pdf";
+    },
     goToPage(page){
       if(page>this.maxPage){
         alert("No existe esa pagina");

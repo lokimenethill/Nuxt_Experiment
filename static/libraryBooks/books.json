@@ -25,7 +25,7 @@
         "author":"Edgar Allan Poe",
         "terminal_lang":"Inglés",
         "topics":"Ficcion",
-        "source":""
+        "source":"pdf2"
     },
     {
         "title":"El esclavo",
@@ -39,7 +39,7 @@
         "author":"Ana Frank",
         "terminal_lang":"Aleman",
         "topics":"Historia",
-        "source":""
+        "source":"pdf1"
     },
     {
         "title":"InvestorCoach",
