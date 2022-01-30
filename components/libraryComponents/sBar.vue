@@ -25,7 +25,7 @@
          
         </div>
         <div class="contenedor-general-resultados">
-          <h4 class="instrucciones">{#} results. (Page {#} de {#})</h4>
+          <h4 class="instrucciones">{{totalAnswers}} results. (Page {{pag}} de {{maxPage}})</h4>
           <!-- Contenedor de resulatdos, cada tarjeta es un resultado -->
           <div class="table ">
             <div class="table__header ">
@@ -69,7 +69,7 @@
               </div>
             </div>
             <div class="table__main">
-              <div v-for="(find, index) in items" :key="index" :v-bind="index" >
+              <div v-for="(find, index) in items" v-show="(pag - 1) * resultsPerPage <= index  && pag * resultsPerPage > index" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
                   <a href="#" taget="_blank" class="table__main_row__cell__title">{{find.title}}</a>
@@ -104,27 +104,22 @@
         <!-- Termina contenedor de resultados -->
         <!-- Inicia contenedor de paginación, esta en ESTILOS GENERALES, ya que este módulo se empleara en varias pantallas -->
         <div class="contenedor-paginacion ">
-          <p class="informacion-resultados-y-paginas">{#} results. {#} pages.</p>
+          <p class="informacion-resultados-y-paginas">{{totalAnswers}} results. {{maxPage}} pages.</p>
           <!-- Contenedor de botones y se planea que aparezcan de 10 en 10 y que la pagina activa este en medio. Es decir si esta en la pagina 24 iniciaria en la 19 y terminaria en la 29 -->
           <div class="contenedor-paginacion-por-pagina ">
             <!-- Boton de página anterior -->
-            <button class="btn-pagina-anterior">
+            <button @click="backPage()" class="btn-pagina-anterior">
               <!-- Icono boton ágina anterior -->
               <span class="material-icons-round icono-de-boton-paginacion">
                 arrow_back_ios
               </span>
             </button>
+            
             <!-- Botones de paginas -->
-            <button class="btn-pagina">4</button>
+            <button v-for="index in maxPage" :key="index" @click="goToPage(index)" :class="getActivePageClass(index)">{{index}}</button>
             <!-- btn-pagina-activa es un marcador que indica la página en la que se encuentra -->
-            <button class="btn-pagina btn-pagina-activa">5</button>
-            <button class="btn-pagina">6</button>
-            <button class="btn-pagina">7</button>
-            <button class="btn-pagina">8</button>
-            <button class="btn-pagina">9</button>
-            <button class="btn-pagina">10</button>
             <!-- Boton página siguiente -->
-            <button class="btn-pagina-siguiente">
+            <button @click="nextPage()" class="btn-pagina-siguiente">
               <span class="material-icons-round icono-de-boton-paginacion ">
                 arrow_forward_ios
               </span>
@@ -137,7 +132,7 @@
             <!-- Creo que es forzoso usar el formulario -->
 
             
-              <input type="number" min="0" placeholder="Go to page" class="caja-input-ir-a-pagina"><button type="submit"
+              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" placeholder="Go to page" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
                 class="btn-ir-a-pagina"><span class="material-icons-outlined icono-ir-a-pagina">
                   arrow_forward
                 </span></button>
@@ -150,17 +145,22 @@
 <script>
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
-import JsonLibrary from '@/assets/libraryBooks/books.json';
+import JsonLibrary from  '@/static/libraryBooks/books.json';
 
 export default {
   data() {
     return {
+      pagSelectorInput:null,
       library: JsonLibrary,
       searchSelector: {},
       dataSearch: '',
       sortTableBy: '',
       ascendingSort: true,
       query_res: {},
+      totalAnswers:JsonLibrary.length,
+      resultsPerPage:5,
+      maxPage:0,
+      pag:1,
       searchSelectOptions: [
         { label: 'Titulo', val: 'title' },
         { label: 'Autor', val: 'author' },
@@ -185,12 +185,35 @@ export default {
       return filtered;
     },
   },
-  watch: {},
+  watch: {
+     dataSearch(){
+      this.totalAnswers=this.items.length;
+      this.maxPage=Math.ceil(this.items.length/this.resultsPerPage);
+    },
+  },
   created() {
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
+    this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
   },
   methods: {
+    goToPage(page){
+      if(page>this.maxPage){
+        alert("No existe esa pagina");
+      }else{
+      this.pag=page;
+      }
+    },
+    nextPage(){
+      if(this.pag<this.maxPage){
+      this.pag+=1;
+      }
+    },
+    backPage(){
+      if(this.pag>1){
+      this.pag-=1;
+      }
+    },
     setAscendingSort(column) {
       this.ascendingSort = true;
       this.sortTableBy = column;
@@ -210,6 +233,13 @@ export default {
       return [
         `table__header__row__cell__title__btn__des${
           this.sortTableBy === column && !this.ascendingSort ? '-active' : ''
+        }`,
+      ];
+    },
+     getActivePageClass(page) {
+      return [
+        `btn-pagina${
+          this.pag === page ? ' btn-pagina' : ''
         }`,
       ];
     },
