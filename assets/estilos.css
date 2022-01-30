@@ -125,7 +125,15 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--interface1);
 }
-
+.none {
+  color: white !important;
+}
+.none:hover {
+  color: white !important;
+  font-style: none;
+  font-weight: normal;
+  text-decoration: none;
+}
 /*>>>>>>>>>>>>>>>>>>>>>>>DIMENSIONES DE PÁGINA<<<<<<<<<<<<<<<<<<<<<<<<*/
 body {
   min-width: 55rem; /*990px*/

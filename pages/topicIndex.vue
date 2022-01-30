@@ -21,12 +21,14 @@
           </transition>
           <transition name="library">
           <div onclick="location.href='#'" class="topic-index-item library">
+            <nuxt-link class="none" :to="localePath('library')" >
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
             </h3>
             <p class="descripcion-modulo">
               {{ $t('topicIndex.topCards.library.text') }}
             </p>
+            </nuxt-link>
           </div>
           </transition>
           <transition name="flora-and-fauna">

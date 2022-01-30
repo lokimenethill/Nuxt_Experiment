@@ -231,14 +231,7 @@ export default {
 };
 </script>
 <style >
-.none {
-  color: white !important;
-}
-.none:hover {
-  color: white !important;
-  font-style: none;
-  font-weight: normal;
-}
+
 .contenedor-languaje-index {
   height: 465px;
   display: flex;
