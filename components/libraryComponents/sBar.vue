@@ -39,7 +39,7 @@
                 <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Title</h4>
                   <div class="table__header__row__cell__switch ">
-                    <button @click="sortByTitle_asc()"  class="table__header__row__cell__switch__btn__asc-active"></button>
+                    <button @click="sortByTitle_asc()"  class="table__header__row__cell__switch__btn__asc"></button>
                     <button @click="sortByTitle_desc()" class="table__header__row__cell__title__btn__des"></button>
                   </div>
                 </div>
@@ -118,7 +118,7 @@
             <!-- Botones de paginas -->
             <button class="btn-pagina">4</button>
             <!-- btn-pagina-activa es un marcador que indica la página en la que se encuentra -->
-            <button class="btn-pagina btn-pagina-activa">5</button>
+            <button class="btn-pagina btn-pagina">5</button>
             <button class="btn-pagina">6</button>
             <button class="btn-pagina">7</button>
             <button class="btn-pagina">8</button>
@@ -158,6 +158,11 @@ export default {
       dataSearch: '',
       selected_datalist_first: { label: 'Titulo', val: 'title' },
       rTotal:JSonLibrary.length,
+      info:null,
+      rPerPage:3,
+      counter:1,
+      j:1,
+      actualPage:1,
       datalist_first: [
         { label: 'Titulo', val: 'title' },
         { label: 'Autor', val: 'author' },
@@ -166,12 +171,55 @@ export default {
       ],
     };
   },
+   computed: {
+    items() {
+      switch (this.selected_datalist_first.val) {
+        case 'title':
+          return this.JsonLib.filter((item) => {
+            return item.title
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase()) && item.page ===this.actualPage;
+          });
+        case 'author':
+          return this.JsonLib.filter((item) => {
+            return item.author
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase())&& item.page ===this.actualPage;
+          });
+        case 'terminal_lang':
+          return this.JsonLib.filter((item) => {
+            return item.terminal_lang
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase())&& item.page ===this.actualPage;
+          });
+        case 'topics':
+          return this.JsonLib.filter((item) => {
+            return item.topics
+              .toLowerCase()
+              .includes(this.dataSearch.toLowerCase())&& item.page ===this.actualPage;
+          });
+      }
+      return 0;
+    },
+  },
   watch: {
     items(){
       this.rTotal=this.items.length;
     },
   },
+   created(){
+     this.makePages();
+  },
   methods: {
+    makePages(){
+      for(let i=0;i<this.JsonLib.length;i++){
+    this.JsonLib[i].page=this.counter;
+    if(this.j%this.rPerPage===0 ){
+        this.counter++;
+    }
+    this.j++;
+    }
+    },
     sortByTitle_asc() {
       this.JsonLib.sort(function(a, b) {
         if (a.title > b.title) {
@@ -264,37 +312,8 @@ export default {
       });
     },
   },
-  computed: {
-    items() {
-      switch (this.selected_datalist_first.val) {
-        case 'title':
-          return this.JsonLib.filter((item) => {
-            return item.title
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'author':
-          return this.JsonLib.filter((item) => {
-            return item.author
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'terminal_lang':
-          return this.JsonLib.filter((item) => {
-            return item.terminal_lang
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-        case 'topics':
-          return this.JsonLib.filter((item) => {
-            return item.topics
-              .toLowerCase()
-              .includes(this.dataSearch.toLowerCase());
-          });
-      }
-      return 0;
-    },
-  },
+ 
+ 
 };
 </script>
 <style>
