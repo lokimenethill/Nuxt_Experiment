@@ -41,6 +41,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+         @click="toggleWindow(2)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region2')"></span>
@@ -58,6 +59,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+         @click="toggleWindow(3)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region3')"></span>
@@ -75,6 +77,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+         @click="toggleWindow(4)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region4')"></span>
@@ -92,6 +95,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
+         @click="toggleWindow(5)"
       >
         <code class="modulo-lexicos"
           ><a
@@ -100,11 +104,9 @@
             >yolo1241</a
           ></code
         >
-        <nuxt-link :to="localePath('mixteclexicon')" >
           <h3 class="sumario-lengua-terminal-titulo">
             <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
           </h3>
-        </nuxt-link>
       </div>
       <backButton />
     </div>
@@ -184,6 +186,190 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region1'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+           {
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region2'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+           {
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region3'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+           {
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region4'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+           {
+          rootLang: this.$t('languageIndex.mixtec.title'),
+          title: this.$t('topicIndex.bottomCards.mixtec.region5'),
           textContent: 'contenido',
           imgUri: '/generals/imagen4a3.jpg',
           lexicons: [

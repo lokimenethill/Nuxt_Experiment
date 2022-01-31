@@ -6,10 +6,10 @@
       <!-- Módulo mosaico lenguas terminales sumario -->
       <div
         id="myBtn"
-        onclick=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-nahuatl
         "
+        @click="toggleWindow(0)"
       >
         <code class="modulo-lexicos"
           ><a
@@ -20,21 +20,18 @@
             >high1278</a
           ></code
         >
-
-        <nuxt-link :to="localePath('nahuatllexicon')" >
           <h3 class="sumario-lengua-terminal-titulo">
             <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
           </h3>
-        </nuxt-link>
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
                 extension</p> -->
       </div>
       <div
         id="myBtn"
-        onclick=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-nahuatl
         "
+        @click="toggleWindow(1)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.nahuatl.region1')"></span>
@@ -51,10 +48,10 @@
       </div>
       <div
         id="myBtn"
-        onclick=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-nahuatl
         "
+        @click="toggleWindow(2)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.nahuatl.region2')"></span>
@@ -72,10 +69,10 @@
       </div>
       <div
         id="myBtn"
-        onclick=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-nahuatl
         "
+        @click="toggleWindow(3)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.nahuatl.region3')"></span>
@@ -93,13 +90,230 @@
       <!-- Módulo mosaico lenguas terminales sumario etc -->
       <backButton />
     </div>
+    <div>
+      <popupWindow
+        v-if="showWindow"
+        :show="showWindow"
+        :datasend="sendDataWindow"
+        @window="showWindow = $event"
+      />
+    </div>
   </div>
 </template>
 <script>
+import popupWindow from '@/components/summariesSquares/popupWindow.vue';
 import backButton from '@/components/summariesSquares/backButton.vue';
 export default {
   components: {
     backButton,
+    popupWindow,
+  },
+  data() {
+    return {
+      showWindow: false,
+      numOfWindow: null,
+    };
+  },
+  computed: {
+    sendDataWindow() {
+      const dataWindow = [
+        {
+          rootLang: this.$t('languageIndex.nahuatl.title'),
+          title: this.$t('topicIndex.bottomCards.nahuatl.region0'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+         {
+          rootLang: this.$t('languageIndex.nahuatl.title'),
+          title: this.$t('topicIndex.bottomCards.nahuatl.region1'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+         {
+          rootLang: this.$t('languageIndex.nahuatl.title'),
+          title: this.$t('topicIndex.bottomCards.nahuatl.region2'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+         {
+          rootLang: this.$t('languageIndex.nahuatl.title'),
+          title: this.$t('topicIndex.bottomCards.nahuatl.region3'),
+          textContent: 'contenido',
+          imgUri: '/generals/imagen4a3.jpg',
+          lexicons: [
+            {
+              display: 'lexicon1',
+              src: 'uri://',
+            },
+            {
+              display: 'lexicon2',
+              src: 'uri://',
+            },
+          ],
+          floraFauna: [
+            {
+              display: 'flora1',
+              src: 'uri://',
+            },
+            {
+              display: 'flora2',
+              src: 'uri://',
+            },
+          ],
+          corpora: [
+            {
+              display: 'corpora1',
+              src: 'uri://',
+            },
+            {
+              display: 'corpora2',
+              src: 'uri://',
+            },
+          ],
+          grammar: [
+            {
+              display: 'grammar1',
+              src: 'uri://',
+            },
+            {
+              display: 'grammar2',
+              src: 'uri://',
+            },
+          ],
+        },
+      ];
+      return dataWindow[this.numOfWindow];
+    },
+  },
+   methods: {
+    toggleWindow(nw) {
+      if (this.showWindow === true) {
+        this.showWindow = false;
+      } else {
+        this.showWindow = true;
+        this.numOfWindow = nw;
+      }
+    },
   },
 };
 </script>

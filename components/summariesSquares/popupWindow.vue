@@ -13,21 +13,19 @@
             >{{ $t('navBar.languagesIndex') }}</nuxt-link
           >
           <p class="separador-breadcums">/</p>
-          <a class="breadcums-pantalla-emergente" @click="closeWindow">{{
+          <a class="breadcums-pantalla-emergente" @click="closeWindow"  >{{
             datasend.rootLang
           }}</a>
           <p class="separador-breadcums">/</p>
-          <a href="#" class="breadcums-pantalla-emergente-activo">{{
-            datasend.title
-          }}</a>
+          <a href="#" class="breadcums-pantalla-emergente-activo"  v-html="datasend.title" ></a>
         </div>
         <div class="boton-cerrar">
           <button class="cerrar" @click="closeWindow">x</button>
         </div>
       </nav>
       <div class="contenedor-titulo-pantalla-emergente">
-        <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco">
-          {{ datasend.title }}
+        <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco" v-html="datasend.title" >
+          
         </h1>
       </div>
 
