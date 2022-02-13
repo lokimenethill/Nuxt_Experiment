@@ -215,12 +215,15 @@ export default {
     async prueba_axios() {
       this.paginator = [];
       this.set_values();
+      try{
       const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
-      if(resp.total!==0){
       this.axios_response = resp;
       this.actualPage = resp.page;
       this.calcPages();
       this.paginatorMaker();
+      }
+      catch(e){
+        alert("no hay datos");
       }
     },
     watchExtraModifTrue() {
