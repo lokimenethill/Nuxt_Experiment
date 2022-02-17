@@ -208,11 +208,13 @@ export default {
       }
     },
     nextPage(){
+      this.pag=parseInt(this.pag);
       if(this.pag<this.maxPage){
       this.pag+=1;
       }
     },
     backPage(){
+      this.pag=parseInt(this.pag);
       if(this.pag>1){
       this.pag-=1;
       }
