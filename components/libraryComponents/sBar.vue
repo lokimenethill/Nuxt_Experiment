@@ -204,17 +204,15 @@ export default {
       if(page>this.maxPage){
         alert("No existe esa pagina");
       }else{
-      this.pag=page;
+      this.pag=parseInt(page);
       }
     },
     nextPage(){
-      this.pag=parseInt(this.pag);
       if(this.pag<this.maxPage){
       this.pag+=1;
       }
     },
     backPage(){
-      this.pag=parseInt(this.pag);
       if(this.pag>1){
       this.pag-=1;
       }
