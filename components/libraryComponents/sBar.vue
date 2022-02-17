@@ -201,7 +201,8 @@ export default {
       return "/libraryBooks/pdfs/"+source+".pdf";
     },
     goToPage(page){
-      if(page>this.maxPage){
+      const tempPag=parseInt(page);
+      if(page>this.maxPage || isNaN(tempPag)){
         alert("No existe esa pagina");
       }else{
       this.pag=parseInt(page);
