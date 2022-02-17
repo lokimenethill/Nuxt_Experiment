@@ -126,6 +126,7 @@ export default {
 }
 .table {
   margin-bottom: 3rem;
+  min-height: 345px;
 }
 .table__header {
   border-bottom: 2px solid var(--gris2);
