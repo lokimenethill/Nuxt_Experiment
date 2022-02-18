@@ -41,9 +41,9 @@
                   <h4 class="table__header__row__cell__title">Author</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('author')"></button>
+                    @click="setAscendingSort('authors')"></button>
                     <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('author')"></button>
+                    @click="setDescendingSort('authors')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
@@ -75,7 +75,11 @@
                   <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title">{{find.title}}</a>
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.author}}</span>
+                  <ul>
+                    
+                  <span v-for="author in find.authors" :key="author" class="table__main__row__cell__data">
+                   <li> {{author}}</li></span>
+                  </ul>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
@@ -163,7 +167,7 @@ export default {
       pag:1,
       searchSelectOptions: [
         { label: 'Titulo', val: 'title' },
-        { label: 'Autor', val: 'author' },
+        { label: 'Autor', val: 'authors' },
         { label: 'Lengua Terminal', val: 'terminal_lang' },
         { label: 'Topico', val: 'topics' },
       ],
@@ -176,11 +180,21 @@ export default {
         ? _.sortBy(this.library, this.sortTableBy)
         : _.sortBy(this.library, this.sortTableBy).reverse();
       // filtered
-      const filtered = _.filter(sortedBooks, (book) =>
+      let filtered = '';
+      if(this.searchSelector.val==="authors"){
+        filtered = _.filter(sortedBooks, (book) =>
+        book[this.searchSelector.val][0]
+          .toLowerCase()
+          .includes(this.dataSearch.toLowerCase()),
+      );
+      }else{
+        filtered = _.filter(sortedBooks, (book) =>
         book[this.searchSelector.val]
           .toLowerCase()
           .includes(this.dataSearch.toLowerCase()),
       );
+      }
+        
       // console.log(this.searchSelector.val);
       return filtered;
     },
@@ -220,11 +234,11 @@ export default {
     },
     setAscendingSort(column) {
       this.ascendingSort = true;
-      this.sortTableBy = column;
+      this.sortTableBy = column[0];
     },
     setDescendingSort(column) {
       this.ascendingSort = false;
-      this.sortTableBy = column;
+      this.sortTableBy = column[0];
     },
     getAscendingArrowClass(column) {
       return [

@@ -1,51 +1,23 @@
 [
     {
         "title":"Harry potter",
-        "author":"J. K. Rowling",
+        "authors":["J. K. Rowling","J. K. Rowling2"],
         "terminal_lang":"Inglés",
         "topics":"Fantasia",
         "source":""
     }, 
     {
         "title":"Iliada",
-        "author":"Homero",
+        "authors":["Homero","Homero2","Homero3"],
         "terminal_lang":"Griego",
         "topics":"Mitologia",
         "source":""
-    },
+    }, 
     {
-        "title":"Odisea",
-        "author":"Homero",
+        "title":"Zapatos",
+        "authors":["anastasio","Homero2","Homero3"],
         "terminal_lang":"Griego",
         "topics":"Mitologia",
-        "source":""
-    },
-    {
-        "title":"El Cuervo",
-        "author":"Edgar Allan Poe",
-        "terminal_lang":"Inglés",
-        "topics":"Ficcion",
-        "source":"pdf2"
-    },
-    {
-        "title":"El esclavo",
-        "author":"Anand Dílvar",
-        "terminal_lang":"Español",
-        "topics":"Ficcion",
-        "source":""
-    },
-    {
-        "title":"Diario de Ana Frank",
-        "author":"Ana Frank",
-        "terminal_lang":"Aleman",
-        "topics":"Historia",
-        "source":"pdf1"
-    },
-    {
-        "title":"InvestorCoach",
-        "author":"Rodrigo Coutiño",
-        "terminal_lang":"Español",
-        "topics":"Inversiones",
         "source":""
     }
 ]
