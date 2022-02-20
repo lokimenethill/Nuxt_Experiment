@@ -25,7 +25,7 @@
          
         </div>
         <div class="contenedor-general-resultados">
-          <h4 class="instrucciones">{{totalAnswers}} results. (Page {{pag}} de {{maxPage}})</h4>
+          <h4 class="instrucciones">{{totalAnswers}} {{ $t('library.res') }} ({{ $t('library.pg') }} {{pag}} {{ $t('library.of') }} {{maxPage}})</h4>
           <!-- Contenedor de resulatdos, cada tarjeta es un resultado -->
           <div class="table ">
             <div class="table__header ">
@@ -138,7 +138,7 @@
         <!-- Termina contenedor de resultados -->
         <!-- Inicia contenedor de paginación, esta en ESTILOS GENERALES, ya que este módulo se empleara en varias pantallas -->
         <div class="contenedor-paginacion ">
-          <p class="informacion-resultados-y-paginas">{{totalAnswers}} results. {{maxPage}} pages.</p>
+          <p class="informacion-resultados-y-paginas">{{totalAnswers}} {{ $t('library.res') }} {{maxPage}} {{ $t('library.pg') }}s.</p>
           <!-- Contenedor de botones y se planea que aparezcan de 10 en 10 y que la pagina activa este en medio. Es decir si esta en la pagina 24 iniciaria en la 19 y terminaria en la 29 -->
           <div class="contenedor-paginacion-por-pagina ">
             <!-- Boton de página anterior -->
@@ -166,7 +166,7 @@
             <!-- Creo que es forzoso usar el formulario -->
 
             
-              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" placeholder="Go to page" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
+              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" :placeholder="$t('library.go2p')" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
                 class="btn-ir-a-pagina"><span class="material-icons-outlined icono-ir-a-pagina">
                   arrow_forward
                 </span></button>

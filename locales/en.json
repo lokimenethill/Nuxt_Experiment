@@ -126,7 +126,11 @@
         "tCommunity":"Community",
         "tLang":"Language",
         "tKeywords":"Keywords",
-        "typeWords":"Type Words for serch"
+        "typeWords":"Type Words for serch",
+        "go2p":"Go to Page",
+        "pg":"Page",
+        "of":"of",
+        "res":"Results"
     },
     "about":{
         "title":"About",

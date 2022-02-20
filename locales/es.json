@@ -126,7 +126,11 @@
         "tCommunity":"Comunidad",
         "tLang":"Lenguaje",
         "tKeywords":"Palabras Clave",
-        "typeWords":"Escribe palabras a buscar"
+        "typeWords":"Escribe palabras a buscar",
+        "go2p":"Ir a pagina",
+        "pg":"Página",
+        "of":"de",
+        "res":"Resultados"
     },
     "about":{
         "title":"Acerca de",
