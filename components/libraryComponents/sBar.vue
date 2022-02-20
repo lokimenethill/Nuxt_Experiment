@@ -1,5 +1,6 @@
 <template lang="">
   <div class="contenedor-general-rebasado">
+   
     <div class="contenedor-general">
       <div class="contenedor-breadcums">
         <a class="breadcums">{{ $t('library.title') }}</a>
@@ -118,7 +119,7 @@
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button id="myBtn" class="table__main__row_cell__button-button_micro"><span
+                  <button @click="toggleWindow(find.id)" id="myBtn" class="table__main__row_cell__button-button_micro"><span
                       class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       info
                     </span></button>
@@ -173,6 +174,13 @@
           </div>
         </div>
       </div>
+        <popWindow
+        v-if="showWindow"
+        :show="showWindow"
+        :datasend="sendDataWindow"
+        @window="showWindow = $event"
+      />
+    </div>
     </div>
 </template>
 
@@ -180,10 +188,15 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
 import JsonLibrary from  '@/static/libraryBooks/books.json';
-
+import popWindow from '@/components/libraryComponents/popWindow.vue';
 export default {
+   components: {
+    popWindow,
+  },
   data() {
     return {
+      showWindow: false,
+      numOfWindow: null,
       pagSelectorInput:null,
       library: JsonLibrary,
       searchSelector: {},
@@ -231,6 +244,9 @@ export default {
       // console.log(this.searchSelector.val);
       return filtered;
     },
+    sendDataWindow() {
+      return this.library[this.numOfWindow];
+    },
   },
   watch: {
      dataSearch(){
@@ -241,6 +257,7 @@ export default {
   created() {
       // postprocess data concat Library
       for(let i=0;i<this.library.length;i++){
+        this.library[i].id=i;
         for(let n=0;n<this.library[i].authors.length;n++){
           if(n===0){
             this.library[i].authrs=this.library[i].authors[n]+', ';
@@ -261,6 +278,14 @@ export default {
     this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
   },
   methods: {
+    toggleWindow(nw) {
+      if (this.showWindow === true) {
+        this.showWindow = false;
+      } else {
+        this.showWindow = true;
+        this.numOfWindow = nw;
+      }
+    },
     watchBook(source){
       return "/libraryBooks/pdfs/"+source+".pdf";
     },

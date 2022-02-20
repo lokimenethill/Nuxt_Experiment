@@ -393,18 +393,18 @@ export default {
 
 /* Pantalla emergente */
 
-.fondo-pantalla-emergente {
-  position: fixed;
-  top: 3.5rem;
+.fondo-pantalla-emergente-2 {
+ position: absolute;
+  top: 25rem;
   right: 0;
-  bottom: 3.5rem;
-  left: 0;
+  bottom: 0rem;
+  left:35rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 
-  display: none;
+  display: block;
   animation: desplegado-pantalla-emergente 1s cubic-bezier(0, 0.26, 0.53, 0.99);
   overflow-y: hidden;
 }

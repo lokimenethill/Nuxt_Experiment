@@ -5,7 +5,9 @@
         "community":"Reino Unido",
         "terminal_lang":"Inglés",
         "keywords":["Fantasia","Magia","Escolar"],
-        "source":""
+        "year":"1989",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }, 
     {
         "title":"Iliada",
@@ -13,7 +15,9 @@
         "community":"Atenas",
         "terminal_lang":"Griego",
         "keywords":["Mitologia","Epico","Historia"],
-        "source":""
+        "year":"3ac",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }, 
     {
         "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec. ",
@@ -21,7 +25,9 @@
         "community":"Yoloxóchitl",
         "terminal_lang":"Griego",
         "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
-        "source":""
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     },
     {
         "title":"Principito",
@@ -29,7 +35,9 @@
         "community":"Reino Unido",
         "terminal_lang":"Inglés",
         "keywords":["Fantasia","Magia","Escolar"],
-        "source":""
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }, 
     {
         "title":"Verbal inflection in Yoloxóchitl Mixtec",
@@ -37,7 +45,9 @@
         "community":"Atenas",
         "terminal_lang":"Griego",
         "keywords":["Mixtec","morphology","inflection","tone","grammar"],
-        "source":""
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }, 
     {
         "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec.",
@@ -45,6 +55,8 @@
         "community":"Yoloxóchitl",
         "terminal_lang":"Griego",
         "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
-        "source":""
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }
 ]
