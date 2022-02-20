@@ -47,6 +47,15 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
+                  <h4 class="table__header__row__cell__title">Comunidad</h4>
+                  <div class="table__header__row__cell__switch">
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('authors')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('authors')"></button>
+                  </div>
+                </div>
+                <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">Terminal language</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
@@ -56,7 +65,7 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Topics</h4>
+                  <h4 class="table__header__row__cell__title">Palabras Clave</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('topics')"></button>
@@ -64,7 +73,11 @@
                     @click="setDescendingSort('topics')"></button>
                   </div>
                 </div>
+                 <div class="table__header__row__cell  ">
+
+                </div>
                 <div class="table__header__row__cell  ">
+
                 </div>
               </div>
             </div>
@@ -85,6 +98,9 @@
                   <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
                 </div>
                 <div class="table__main__row__cell ">
+                  <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
+                </div>
+                <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.topics}}</span>
                 </div>
                 <div class="table__main__row__cell  ">
@@ -92,6 +108,13 @@
                       class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       file_download
                     </span></a>
+                  <!--Este elemento hace que descargue el documento directamente-->
+                </div>
+                <div class="table__main__row__cell  ">
+                  <button id="myBtn" class="table__main__row_cell__button-button_micro"><span
+                      class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
+                      info
+                    </span></button>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 </div>
