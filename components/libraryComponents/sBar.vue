@@ -187,27 +187,27 @@
 <script>
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
-import JsonLibrary from  '@/static/libraryBooks/books.json';
+import JsonLibrary from '@/static/libraryBooks/books.json';
 import popWindow from '@/components/libraryComponents/popWindow.vue';
 export default {
-   components: {
+  components: {
     popWindow,
   },
   data() {
     return {
       showWindow: false,
       numOfWindow: null,
-      pagSelectorInput:null,
+      pagSelectorInput: null,
       library: JsonLibrary,
       searchSelector: {},
       dataSearch: '',
       sortTableBy: '',
       ascendingSort: true,
       query_res: {},
-      totalAnswers:JsonLibrary.length,
-      resultsPerPage:5,
-      maxPage:0,
-      pag:1,
+      totalAnswers: JsonLibrary.length,
+      resultsPerPage: 5,
+      maxPage: 0,
+      pag: 1,
       searchSelectOptions: [
         { label: this.$t('library.tTitle'), val: 'title' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
@@ -219,28 +219,29 @@ export default {
   },
   computed: {
     items() {
-  
       // Sorting
       const sortedBooks = this.ascendingSort
         ? _.sortBy(this.library, this.sortTableBy)
         : _.sortBy(this.library, this.sortTableBy).reverse();
       // filtered
       let filtered = '';
-      if(this.searchSelector.val==="authors" || this.searchSelector.val==="keywords"){
+      if (
+        this.searchSelector.val === 'authors' ||
+        this.searchSelector.val === 'keywords'
+      ) {
         filtered = _.filter(sortedBooks, (book) =>
           book[this.searchSelector.val][0]
-          .toLowerCase()
-          .includes(this.dataSearch.toLowerCase()),
+            .toLowerCase()
+            .includes(this.dataSearch.toLowerCase()),
         );
-        
-      }else{
+      } else {
         filtered = _.filter(sortedBooks, (book) =>
-        book[this.searchSelector.val]
-          .toLowerCase()
-          .includes(this.dataSearch.toLowerCase()),
-      );
+          book[this.searchSelector.val]
+            .toLowerCase()
+            .includes(this.dataSearch.toLowerCase()),
+        );
       }
-        
+
       // console.log(this.searchSelector.val);
       return filtered;
     },
@@ -249,33 +250,33 @@ export default {
     },
   },
   watch: {
-     dataSearch(){
-      this.totalAnswers=this.items.length;
-      this.maxPage=Math.ceil(this.items.length/this.resultsPerPage);
+    dataSearch() {
+      this.totalAnswers = this.items.length;
+      this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
     },
   },
   created() {
-      // postprocess data concat Library
-      for(let i=0;i<this.library.length;i++){
-        this.library[i].id=i;
-        for(let n=0;n<this.library[i].authors.length;n++){
-          if(n===0){
-            this.library[i].authrs=this.library[i].authors[n]+', ';
-          }else{
-          this.library[i].authrs+=this.library[i].authors[n]+', ';
-          }
-        }
-        for(let n=0;n<this.library[i].keywords.length;n++){
-          if(n===0){
-            this.library[i].kwrds=this.library[i].keywords[n]+', ';
-          }else{
-          this.library[i].kwrds+=this.library[i].keywords[n]+', ';
-          }
+    // postprocess data concat Library
+    for (let i = 0; i < this.library.length; i++) {
+      this.library[i].id = i;
+      for (let n = 0; n < this.library[i].authors.length; n++) {
+        if (n === 0) {
+          this.library[i].authrs = this.library[i].authors[n] + ', ';
+        } else {
+          this.library[i].authrs += this.library[i].authors[n] + ', ';
         }
       }
+      for (let n = 0; n < this.library[i].keywords.length; n++) {
+        if (n === 0) {
+          this.library[i].kwrds = this.library[i].keywords[n] + ', ';
+        } else {
+          this.library[i].kwrds += this.library[i].keywords[n] + ', ';
+        }
+      }
+    }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
-    this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
+    this.maxPage = Math.ceil(JsonLibrary.length / this.resultsPerPage);
   },
   methods: {
     toggleWindow(nw) {
@@ -286,41 +287,40 @@ export default {
         this.numOfWindow = nw;
       }
     },
-    watchBook(source){
-      return "/libraryBooks/pdfs/"+source+".pdf";
+    watchBook(source) {
+      return '/libraryBooks/pdfs/' + source + '.pdf';
     },
-    goToPage(page){
-      const tempPag=parseInt(page);
-      if(page>this.maxPage || isNaN(tempPag)){
-        alert("No existe esa pagina");
-      }else{
-      this.pag=parseInt(page);
+    goToPage(page) {
+      const tempPag = parseInt(page);
+      if (page > this.maxPage || isNaN(tempPag)) {
+        alert('No existe esa pagina');
+      } else {
+        this.pag = parseInt(page);
       }
     },
-    nextPage(){
-      if(this.pag<this.maxPage){
-      this.pag+=1;
+    nextPage() {
+      if (this.pag < this.maxPage) {
+        this.pag += 1;
       }
     },
-    backPage(){
-      if(this.pag>1){
-      this.pag-=1;
+    backPage() {
+      if (this.pag > 1) {
+        this.pag -= 1;
       }
     },
     setAscendingSort(column) {
       this.ascendingSort = true;
-      if(column==="keywords" || column==="authors"){
+      if (column === 'keywords' || column === 'authors') {
         this.sortTableBy = column[0];
-      }
-      else{
+      } else {
         this.sortTableBy = column;
       }
     },
     setDescendingSort(column) {
-      if(column==="keywords" || column==="authors"){
+      if (column === 'keywords' || column === 'authors') {
         this.ascendingSort = false;
         this.sortTableBy = column[0];
-      }else{
+      } else {
         this.ascendingSort = false;
         this.sortTableBy = column;
       }
@@ -339,12 +339,8 @@ export default {
         }`,
       ];
     },
-     getActivePageClass(page) {
-      return [
-        `btn-pagina${
-          this.pag === page ? ' btn-pagina' : ''
-        }`,
-      ];
+    getActivePageClass(page) {
+      return [`btn-pagina${this.pag === page ? ' btn-pagina' : ''}`];
     },
   },
 };
