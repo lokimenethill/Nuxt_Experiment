@@ -6,7 +6,7 @@
           <div class="boton-cerrar"><button @click="closeWindow" class="cerrar">x</button></div>
         </nav>
         <div class="contenedor-titulo-pantalla-emergente-ficha--bibliografica ">
-          <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-ficha--bibliografica">Bibliographic information
+          <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-ficha--bibliografica">{{ $t('library.popWinTitle') }}
           </h1>
         </div>
 
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="footer-pantalla-emergente-ficha--bibliografica ">
-          <button @click="copyData()" class="boton_library">Copy to clipboard & close</button>
+          <button @click="copyData()" class="boton_library">{{ $t('library.popWinCopyBuutton') }}</button>
         </div>
       </div>
   </div>

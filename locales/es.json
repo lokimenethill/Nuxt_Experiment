@@ -130,7 +130,9 @@
         "go2p":"Ir a pagina",
         "pg":"Página",
         "of":"de",
-        "res":"Resultados"
+        "res":"Resultados",
+        "popWinTitle":"Información bibliográfica",
+        "popWinCopyBuutton":"Copiar en portapapeles y cerrar"
     },
     "about":{
         "title":"Acerca de",
