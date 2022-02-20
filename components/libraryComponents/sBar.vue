@@ -2,12 +2,12 @@
   <div class="contenedor-general-rebasado">
     <div class="contenedor-general">
       <div class="contenedor-breadcums">
-        <a class="breadcums">Library</a>
+        <a class="breadcums">{{ $t('library.title') }}</a>
         <p class="breadcums">/</p>
         <a href="" class="breadcums-activo">Mixtec</a>
         </div>
         <h6>Search in</h6>
-        <h1 id="titulo-library">Library</h1>
+        <h1 id="titulo-library">{{ $t('library.title') }}</h1>
         <div class="contenedor-buscador-general">
           <div class="caja-busqueda">
             <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
@@ -17,7 +17,7 @@
               </v-select>
             </div>
 
-            <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
+            <input v-model="dataSearch" type="search" :placeholder="$t('library.typeWords')" class="input-caja-busqueda">
           </div>
 
           <div class="contenedor-general-botones-busqueda-library ">
@@ -31,14 +31,14 @@
             <div class="table__header ">
               <div class="table__header__row ">
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Title</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tTitle') }}</h4>
                   <div class="table__header__row__cell__switch ">
                     <button :class="getAscendingArrowClass('title')"  @click="setAscendingSort('title')"></button>
                     <button :class="getDescendingArrowClass('title')" @click="setDescendingSort('title')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Author</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tAuthor') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('authors')"></button>
@@ -47,16 +47,16 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Comunidad</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tCommunity') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('authors')"></button>
+                    @click="setAscendingSort('community')"></button>
                     <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('authors')"></button>
+                    @click="setDescendingSort('community')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Terminal language</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tLang') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('terminal_lang')"></button>
@@ -65,12 +65,12 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Palabras Clave</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tKeywords') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('topics')"></button>
+                    @click="setAscendingSort('keywords')"></button>
                     <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('topics')"></button>
+                    @click="setDescendingSort('keywords')"></button>
                   </div>
                 </div>
                  <div class="table__header__row__cell  ">
@@ -88,20 +88,27 @@
                   <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title">{{find.title}}</a>
                 </div>
                 <div class="table__main__row__cell ">
-                  <ul>
+                  
                     
-                  <span v-for="author in find.authors" :key="author" class="table__main__row__cell__data">
-                   <li> {{author}}</li></span>
-                  </ul>
+                  <span class="table__main__row__cell__data">
+                    <span v-for="author in find.authors" :key="author" >
+                      {{author}}<br/>
+                    </span>
+                    </span>
+                  
+                </div>
+                <div class="table__main__row__cell ">
+                  <span class="table__main__row__cell__data">{{find.community}}</span>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
-                </div>
-                <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.topics}}</span>
+                  <span class="table__main__row__cell__data">
+                    <span  v-for="keyword in find.keywords" :key="keyword"  >
+                        {{keyword}},
+                    </span>
+                  </span>
                 </div>
                 <div class="table__main__row__cell  ">
                   <a :href="watchBook(find.source)" :download="find.source" class="table__main__row_cell__button-button_micro none"><span
@@ -189,27 +196,30 @@ export default {
       maxPage:0,
       pag:1,
       searchSelectOptions: [
-        { label: 'Titulo', val: 'title' },
-        { label: 'Autor', val: 'authors' },
-        { label: 'Lengua Terminal', val: 'terminal_lang' },
-        { label: 'Topico', val: 'topics' },
+        { label: this.$t('library.tTitle'), val: 'title' },
+        { label: this.$t('library.tAuthor'), val: 'authrs' },
+        { label: this.$t('library.tCommunity'), val: 'community' },
+        { label: this.$t('library.tLang'), val: 'terminal_lang' },
+        { label: this.$t('library.tKeywords'), val: 'kwrds' },
       ],
     };
   },
   computed: {
     items() {
+  
       // Sorting
       const sortedBooks = this.ascendingSort
         ? _.sortBy(this.library, this.sortTableBy)
         : _.sortBy(this.library, this.sortTableBy).reverse();
       // filtered
       let filtered = '';
-      if(this.searchSelector.val==="authors"){
+      if(this.searchSelector.val==="authors" || this.searchSelector.val==="keywords"){
         filtered = _.filter(sortedBooks, (book) =>
-        book[this.searchSelector.val][0]
+          book[this.searchSelector.val][0]
           .toLowerCase()
           .includes(this.dataSearch.toLowerCase()),
-      );
+        );
+        
       }else{
         filtered = _.filter(sortedBooks, (book) =>
         book[this.searchSelector.val]
@@ -229,6 +239,23 @@ export default {
     },
   },
   created() {
+      // postprocess data concat Library
+      for(let i=0;i<this.library.length;i++){
+        for(let n=0;n<this.library[i].authors.length;n++){
+          if(n===0){
+            this.library[i].authrs=this.library[i].authors[n]+', ';
+          }else{
+          this.library[i].authrs+=this.library[i].authors[n]+', ';
+          }
+        }
+        for(let n=0;n<this.library[i].keywords.length;n++){
+          if(n===0){
+            this.library[i].kwrds=this.library[i].keywords[n]+', ';
+          }else{
+          this.library[i].kwrds+=this.library[i].keywords[n]+', ';
+          }
+        }
+      }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
     this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
@@ -257,11 +284,21 @@ export default {
     },
     setAscendingSort(column) {
       this.ascendingSort = true;
-      this.sortTableBy = column[0];
+      if(column==="keywords" || column==="authors"){
+        this.sortTableBy = column[0];
+      }
+      else{
+        this.sortTableBy = column;
+      }
     },
     setDescendingSort(column) {
-      this.ascendingSort = false;
-      this.sortTableBy = column[0];
+      if(column==="keywords" || column==="authors"){
+        this.ascendingSort = false;
+        this.sortTableBy = column[0];
+      }else{
+        this.ascendingSort = false;
+        this.sortTableBy = column;
+      }
     },
     getAscendingArrowClass(column) {
       return [

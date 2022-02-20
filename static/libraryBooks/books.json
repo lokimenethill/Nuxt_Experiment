@@ -2,22 +2,49 @@
     {
         "title":"Harry potter",
         "authors":["J. K. Rowling","J. K. Rowling2"],
+        "community":"Reino Unido",
         "terminal_lang":"Inglés",
-        "topics":"Fantasia",
+        "keywords":["Fantasia","Magia","Escolar"],
         "source":""
     }, 
     {
         "title":"Iliada",
         "authors":["Homero","Homero2","Homero3"],
+        "community":"Atenas",
         "terminal_lang":"Griego",
-        "topics":"Mitologia",
+        "keywords":["Mitologia","Epico","Historia"],
         "source":""
     }, 
     {
-        "title":"Zapatos",
-        "authors":["anastasio","Homero2","Homero3"],
+        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec. ",
+        "authors":["Amith, Jonathan D.","Jiatong Shi, and Rey","Castillo García"],
+        "community":"Yoloxóchitl",
         "terminal_lang":"Griego",
-        "topics":"Mitologia",
+        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
+        "source":""
+    },
+    {
+        "title":"Principito",
+        "authors":["J. K. Rowling","J. K. Rowling2"],
+        "community":"Reino Unido",
+        "terminal_lang":"Inglés",
+        "keywords":["Fantasia","Magia","Escolar"],
+        "source":""
+    }, 
+    {
+        "title":"Verbal inflection in Yoloxóchitl Mixtec",
+        "authors":["Palancar, Enrique","Amith, Jonathan D","Castillo García, Rey"],
+        "community":"Atenas",
+        "terminal_lang":"Griego",
+        "keywords":["Mixtec","morphology","inflection","tone","grammar"],
+        "source":""
+    }, 
+    {
+        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec.",
+        "authors":["Amith, Jonathan D.","Jiatong Shi","Rey Castillo García"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":"Griego",
+        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
         "source":""
     }
 ]

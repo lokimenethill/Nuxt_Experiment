@@ -12,6 +12,19 @@ export default {
       components:{
     SearchBar,  
   },
+  head() {
+    return {
+      title: this.$t('library.title'),
+      /* metatags
+    meta:[
+        {name:'twitter:title', content: this.post.title},
+        {name:'twitter:description', content:"prueba de proyecto nuxt"},
+        {name:'twitter:image', content:'none'},
+        {name:'twitter:card', content:'summary_large_image'}
+      ]
+      */
+    };
+  },
 };
 </script>
 <style>
@@ -126,6 +139,7 @@ export default {
 }
 .table {
   margin-bottom: 3rem;
+  min-height: 550px;
 }
 .table__header {
   border-bottom: 2px solid var(--gris2);
