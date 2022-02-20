@@ -20,9 +20,9 @@
             >high1278</a
           ></code
         >
-          <h3 class="sumario-lengua-terminal-titulo">
-            <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
-          </h3>
+        <h3 class="sumario-lengua-terminal-titulo">
+          <span v-html="$t('topicIndex.bottomCards.nahuatl.region0')"></span>
+        </h3>
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
                 extension</p> -->
       </div>
@@ -120,8 +120,10 @@ export default {
         {
           rootLang: this.$t('languageIndex.nahuatl.title'),
           title: this.$t('topicIndex.bottomCards.nahuatl.region0'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/nahuatl_sierra_nororiental-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -163,11 +165,13 @@ export default {
             },
           ],
         },
-         {
+        {
           rootLang: this.$t('languageIndex.nahuatl.title'),
           title: this.$t('topicIndex.bottomCards.nahuatl.region1'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/nahuatl_meyacapan-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -209,11 +213,13 @@ export default {
             },
           ],
         },
-         {
+        {
           rootLang: this.$t('languageIndex.nahuatl.title'),
           title: this.$t('topicIndex.bottomCards.nahuatl.region2'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/nahuatl_tetelzingo-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -255,11 +261,13 @@ export default {
             },
           ],
         },
-         {
+        {
           rootLang: this.$t('languageIndex.nahuatl.title'),
           title: this.$t('topicIndex.bottomCards.nahuatl.region3'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/nawat_pipil-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -305,7 +313,7 @@ export default {
       return dataWindow[this.numOfWindow];
     },
   },
-   methods: {
+  methods: {
     toggleWindow(nw) {
       if (this.showWindow === true) {
         this.showWindow = false;

@@ -1,13 +1,14 @@
 <template lang="">
   <div class="contenedor-general-rebasado">
+   
     <div class="contenedor-general">
       <div class="contenedor-breadcums">
-        <a class="breadcums">Library</a>
+        <a class="breadcums">{{ $t('library.title') }}</a>
         <p class="breadcums">/</p>
         <a href="" class="breadcums-activo">Mixtec</a>
         </div>
         <h6>Search in</h6>
-        <h1 id="titulo-library">Library</h1>
+        <h1 id="titulo-library">{{ $t('library.title') }}</h1>
         <div class="contenedor-buscador-general">
           <div class="caja-busqueda">
             <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
@@ -17,7 +18,7 @@
               </v-select>
             </div>
 
-            <input v-model="dataSearch" type="search" placeholder="Type words for search" class="input-caja-busqueda">
+            <input v-model="dataSearch" type="search" :placeholder="$t('library.typeWords')" class="input-caja-busqueda">
           </div>
 
           <div class="contenedor-general-botones-busqueda-library ">
@@ -25,29 +26,38 @@
          
         </div>
         <div class="contenedor-general-resultados">
-          <h4 class="instrucciones">{{totalAnswers}} results. (Page {{pag}} de {{maxPage}})</h4>
+          <h4 class="instrucciones">{{totalAnswers}} {{ $t('library.res') }} ({{ $t('library.pg') }} {{pag}} {{ $t('library.of') }} {{maxPage}})</h4>
           <!-- Contenedor de resulatdos, cada tarjeta es un resultado -->
           <div class="table ">
             <div class="table__header ">
               <div class="table__header__row ">
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Title</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tTitle') }}</h4>
                   <div class="table__header__row__cell__switch ">
                     <button :class="getAscendingArrowClass('title')"  @click="setAscendingSort('title')"></button>
                     <button :class="getDescendingArrowClass('title')" @click="setDescendingSort('title')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Author</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tAuthor') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('author')"></button>
+                    @click="setAscendingSort('authors')"></button>
                     <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('author')"></button>
+                    @click="setDescendingSort('authors')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Terminal language</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tCommunity') }}</h4>
+                  <div class="table__header__row__cell__switch">
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('community')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('community')"></button>
+                  </div>
+                </div>
+                <div class="table__header__row__cell  ">
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tLang') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('terminal_lang')"></button>
@@ -56,15 +66,19 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">Topics</h4>
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tKeywords') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('topics')"></button>
+                    @click="setAscendingSort('keywords')"></button>
                     <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('topics')"></button>
+                    @click="setDescendingSort('keywords')"></button>
                   </div>
                 </div>
+                 <div class="table__header__row__cell  ">
+
+                </div>
                 <div class="table__header__row__cell  ">
+
                 </div>
               </div>
             </div>
@@ -75,19 +89,40 @@
                   <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title">{{find.title}}</a>
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.author}}</span>
+                  
+                    
+                  <span class="table__main__row__cell__data">
+                    <span v-for="author in find.authors" :key="author" >
+                      {{author}}<br/>
+                    </span>
+                    </span>
+                  
+                </div>
+                <div class="table__main__row__cell ">
+                  <span class="table__main__row__cell__data">{{find.community}}</span>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.topics}}</span>
+                  <span class="table__main__row__cell__data">
+                    <span  v-for="keyword in find.keywords" :key="keyword"  >
+                        {{keyword}},
+                    </span>
+                  </span>
                 </div>
                 <div class="table__main__row__cell  ">
                   <a :href="watchBook(find.source)" :download="find.source" class="table__main__row_cell__button-button_micro none"><span
                       class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       file_download
                     </span></a>
+                  <!--Este elemento hace que descargue el documento directamente-->
+                </div>
+                <div class="table__main__row__cell  ">
+                  <button @click="toggleWindow(find.id)" id="myBtn" class="table__main__row_cell__button-button_micro"><span
+                      class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
+                      info
+                    </span></button>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 </div>
@@ -104,7 +139,7 @@
         <!-- Termina contenedor de resultados -->
         <!-- Inicia contenedor de paginación, esta en ESTILOS GENERALES, ya que este módulo se empleara en varias pantallas -->
         <div class="contenedor-paginacion ">
-          <p class="informacion-resultados-y-paginas">{{totalAnswers}} results. {{maxPage}} pages.</p>
+          <p class="informacion-resultados-y-paginas">{{totalAnswers}} {{ $t('library.res') }} {{maxPage}} {{ $t('library.pg') }}s.</p>
           <!-- Contenedor de botones y se planea que aparezcan de 10 en 10 y que la pagina activa este en medio. Es decir si esta en la pagina 24 iniciaria en la 19 y terminaria en la 29 -->
           <div class="contenedor-paginacion-por-pagina ">
             <!-- Boton de página anterior -->
@@ -132,40 +167,53 @@
             <!-- Creo que es forzoso usar el formulario -->
 
             
-              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" placeholder="Go to page" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
+              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" :placeholder="$t('library.go2p')" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
                 class="btn-ir-a-pagina"><span class="material-icons-outlined icono-ir-a-pagina">
                   arrow_forward
                 </span></button>
           </div>
         </div>
       </div>
+        <popWindow
+        v-if="showWindow"
+        :show="showWindow"
+        :datasend="sendDataWindow"
+        @window="showWindow = $event"
+      />
+    </div>
     </div>
 </template>
 
 <script>
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
-import JsonLibrary from  '@/static/libraryBooks/books.json';
-
+import JsonLibrary from '@/static/libraryBooks/books.json';
+import popWindow from '@/components/libraryComponents/popWindow.vue';
 export default {
+  components: {
+    popWindow,
+  },
   data() {
     return {
-      pagSelectorInput:null,
+      showWindow: false,
+      numOfWindow: null,
+      pagSelectorInput: null,
       library: JsonLibrary,
       searchSelector: {},
       dataSearch: '',
       sortTableBy: '',
       ascendingSort: true,
       query_res: {},
-      totalAnswers:JsonLibrary.length,
-      resultsPerPage:5,
-      maxPage:0,
-      pag:1,
+      totalAnswers: JsonLibrary.length,
+      resultsPerPage: 5,
+      maxPage: 0,
+      pag: 1,
       searchSelectOptions: [
-        { label: 'Titulo', val: 'title' },
-        { label: 'Autor', val: 'author' },
-        { label: 'Lengua Terminal', val: 'terminal_lang' },
-        { label: 'Topico', val: 'topics' },
+        { label: this.$t('library.tTitle'), val: 'title' },
+        { label: this.$t('library.tAuthor'), val: 'authrs' },
+        { label: this.$t('library.tCommunity'), val: 'community' },
+        { label: this.$t('library.tLang'), val: 'terminal_lang' },
+        { label: this.$t('library.tKeywords'), val: 'kwrds' },
       ],
     };
   },
@@ -176,54 +224,106 @@ export default {
         ? _.sortBy(this.library, this.sortTableBy)
         : _.sortBy(this.library, this.sortTableBy).reverse();
       // filtered
-      const filtered = _.filter(sortedBooks, (book) =>
-        book[this.searchSelector.val]
-          .toLowerCase()
-          .includes(this.dataSearch.toLowerCase()),
-      );
+      let filtered = '';
+      if (
+        this.searchSelector.val === 'authors' ||
+        this.searchSelector.val === 'keywords'
+      ) {
+        filtered = _.filter(sortedBooks, (book) =>
+          book[this.searchSelector.val][0]
+            .toLowerCase()
+            .includes(this.dataSearch.toLowerCase()),
+        );
+      } else {
+        filtered = _.filter(sortedBooks, (book) =>
+          book[this.searchSelector.val]
+            .toLowerCase()
+            .includes(this.dataSearch.toLowerCase()),
+        );
+      }
+
       // console.log(this.searchSelector.val);
       return filtered;
     },
+    sendDataWindow() {
+      return this.library[this.numOfWindow];
+    },
   },
   watch: {
-     dataSearch(){
-      this.totalAnswers=this.items.length;
-      this.maxPage=Math.ceil(this.items.length/this.resultsPerPage);
+    dataSearch() {
+      this.totalAnswers = this.items.length;
+      this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
     },
   },
   created() {
+    // postprocess data concat Library
+    for (let i = 0; i < this.library.length; i++) {
+      this.library[i].id = i;
+      for (let n = 0; n < this.library[i].authors.length; n++) {
+        if (n === 0) {
+          this.library[i].authrs = this.library[i].authors[n] + ', ';
+        } else {
+          this.library[i].authrs += this.library[i].authors[n] + ', ';
+        }
+      }
+      for (let n = 0; n < this.library[i].keywords.length; n++) {
+        if (n === 0) {
+          this.library[i].kwrds = this.library[i].keywords[n] + ', ';
+        } else {
+          this.library[i].kwrds += this.library[i].keywords[n] + ', ';
+        }
+      }
+    }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
-    this.maxPage=Math.ceil(JsonLibrary.length/this.resultsPerPage);
+    this.maxPage = Math.ceil(JsonLibrary.length / this.resultsPerPage);
   },
   methods: {
-    watchBook(source){
-      return "/libraryBooks/pdfs/"+source+".pdf";
-    },
-    goToPage(page){
-      if(page>this.maxPage){
-        alert("No existe esa pagina");
-      }else{
-      this.pag=page;
+    toggleWindow(nw) {
+      if (this.showWindow === true) {
+        this.showWindow = false;
+      } else {
+        this.showWindow = true;
+        this.numOfWindow = nw;
       }
     },
-    nextPage(){
-      if(this.pag<this.maxPage){
-      this.pag+=1;
+    watchBook(source) {
+      return '/libraryBooks/pdfs/' + source + '.pdf';
+    },
+    goToPage(page) {
+      const tempPag = parseInt(page);
+      if (page > this.maxPage || isNaN(tempPag)) {
+        alert('No existe esa pagina');
+      } else {
+        this.pag = parseInt(page);
       }
     },
-    backPage(){
-      if(this.pag>1){
-      this.pag-=1;
+    nextPage() {
+      if (this.pag < this.maxPage) {
+        this.pag += 1;
+      }
+    },
+    backPage() {
+      if (this.pag > 1) {
+        this.pag -= 1;
       }
     },
     setAscendingSort(column) {
       this.ascendingSort = true;
-      this.sortTableBy = column;
+      if (column === 'keywords' || column === 'authors') {
+        this.sortTableBy = column[0];
+      } else {
+        this.sortTableBy = column;
+      }
     },
     setDescendingSort(column) {
-      this.ascendingSort = false;
-      this.sortTableBy = column;
+      if (column === 'keywords' || column === 'authors') {
+        this.ascendingSort = false;
+        this.sortTableBy = column[0];
+      } else {
+        this.ascendingSort = false;
+        this.sortTableBy = column;
+      }
     },
     getAscendingArrowClass(column) {
       return [
@@ -239,12 +339,8 @@ export default {
         }`,
       ];
     },
-     getActivePageClass(page) {
-      return [
-        `btn-pagina${
-          this.pag === page ? ' btn-pagina' : ''
-        }`,
-      ];
+    getActivePageClass(page) {
+      return [`btn-pagina${this.pag === page ? ' btn-pagina' : ''}`];
     },
   },
 };

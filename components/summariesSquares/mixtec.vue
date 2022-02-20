@@ -41,7 +41,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-         @click="toggleWindow(2)"
+        @click="toggleWindow(2)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region2')"></span>
@@ -59,7 +59,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-         @click="toggleWindow(3)"
+        @click="toggleWindow(3)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region3')"></span>
@@ -77,7 +77,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-         @click="toggleWindow(4)"
+        @click="toggleWindow(4)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region4')"></span>
@@ -95,7 +95,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-         @click="toggleWindow(5)"
+        @click="toggleWindow(5)"
       >
         <code class="modulo-lexicos"
           ><a
@@ -104,9 +104,9 @@
             >yolo1241</a
           ></code
         >
-          <h3 class="sumario-lengua-terminal-titulo">
-            <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
-          </h3>
+        <h3 class="sumario-lengua-terminal-titulo">
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
+        </h3>
       </div>
       <backButton />
     </div>
@@ -140,8 +140,10 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region0'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_historico-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -186,8 +188,10 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region1'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_magdalena_penascos-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -229,11 +233,13 @@ export default {
             },
           ],
         },
-           {
+        {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region2'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_san_martin_duraznos-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -275,11 +281,13 @@ export default {
             },
           ],
         },
-           {
+        {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region3'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_san_martin_peras-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -321,11 +329,13 @@ export default {
             },
           ],
         },
-           {
+        {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region4'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_xochapan-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',
@@ -367,11 +377,13 @@ export default {
             },
           ],
         },
-           {
+        {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region5'),
-          textContent: 'contenido',
-          imgUri: '/generals/imagen4a3.jpg',
+          textContent:
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          imgUri:
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_yoloxochitl-image.jpg',
           lexicons: [
             {
               display: 'lexicon1',

@@ -215,12 +215,15 @@ export default {
     async prueba_axios() {
       this.paginator = [];
       this.set_values();
+      try{
       const resp = await this.$axios.$post(process.env.API_HOST, this.demodata);
-      if(resp.total!==0){
       this.axios_response = resp;
       this.actualPage = resp.page;
       this.calcPages();
       this.paginatorMaker();
+      }
+      catch(e){
+        alert("no hay datos");
       }
     },
     watchExtraModifTrue() {
@@ -351,12 +354,12 @@ export default {
       this.extraFilters.push({
         exclude: 'and',
         value: '',
-        type_tag: {label:'Entrada',val:'lemma'},
+        type_tag: {label: 'family', val: 'family'},
         filter_type: {label: 'empieza con', val: 'begins_with'},
         modifiers: [{ name: false }, { name: false }, { name: false }],
       });
       this.extra_selected_data_list_first.push({label:'y',val:'and'});
-      this.extra_selected_data_list_second.push({label:'Entrada',val:'lemma'});
+      this.extra_selected_data_list_second.push({label: 'family', val: 'family'});
       this.extra_selected_data_list_third.push( {label: 'empieza con', val: 'begins_with'});
     },
     deleteFilter() {

@@ -1,51 +1,62 @@
 [
     {
         "title":"Harry potter",
-        "author":"J. K. Rowling",
+        "authors":["J. K. Rowling","J. K. Rowling2"],
+        "community":"Reino Unido",
         "terminal_lang":"Inglés",
-        "topics":"Fantasia",
-        "source":""
+        "keywords":["Fantasia","Magia","Escolar"],
+        "year":"1989",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }, 
     {
         "title":"Iliada",
-        "author":"Homero",
+        "authors":["Homero","Homero2","Homero3"],
+        "community":"Atenas",
         "terminal_lang":"Griego",
-        "topics":"Mitologia",
-        "source":""
+        "keywords":["Mitologia","Epico","Historia"],
+        "year":"3ac",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
+    }, 
+    {
+        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec. ",
+        "authors":["Amith, Jonathan D.","Jiatong Shi, and Rey","Castillo García"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":"Griego",
+        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     },
     {
-        "title":"Odisea",
-        "author":"Homero",
-        "terminal_lang":"Griego",
-        "topics":"Mitologia",
-        "source":""
-    },
-    {
-        "title":"El Cuervo",
-        "author":"Edgar Allan Poe",
+        "title":"Principito",
+        "authors":["J. K. Rowling","J. K. Rowling2"],
+        "community":"Reino Unido",
         "terminal_lang":"Inglés",
-        "topics":"Ficcion",
-        "source":"pdf2"
-    },
+        "keywords":["Fantasia","Magia","Escolar"],
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
+    }, 
     {
-        "title":"El esclavo",
-        "author":"Anand Dílvar",
-        "terminal_lang":"Español",
-        "topics":"Ficcion",
-        "source":""
-    },
+        "title":"Verbal inflection in Yoloxóchitl Mixtec",
+        "authors":["Palancar, Enrique","Amith, Jonathan D","Castillo García, Rey"],
+        "community":"Atenas",
+        "terminal_lang":"Griego",
+        "keywords":["Mixtec","morphology","inflection","tone","grammar"],
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
+    }, 
     {
-        "title":"Diario de Ana Frank",
-        "author":"Ana Frank",
-        "terminal_lang":"Aleman",
-        "topics":"Historia",
-        "source":"pdf1"
-    },
-    {
-        "title":"InvestorCoach",
-        "author":"Rodrigo Coutiño",
-        "terminal_lang":"Español",
-        "topics":"Inversiones",
-        "source":""
+        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec.",
+        "authors":["Amith, Jonathan D.","Jiatong Shi","Rey Castillo García"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":"Griego",
+        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
+        "year":"2021",
+        "source":"",
+        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
     }
 ]
