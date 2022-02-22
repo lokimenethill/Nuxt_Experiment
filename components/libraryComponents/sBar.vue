@@ -133,8 +133,6 @@
             </div>
 
           </div>
-
-
         </div>
         <!-- Termina contenedor de resultados -->
         <!-- Inicia contenedor de paginación, esta en ESTILOS GENERALES, ya que este módulo se empleara en varias pantallas -->
@@ -359,12 +357,12 @@ export default {
 }
 /* selector parametros and/or/ornot etc.. */
 .style-library .vs__dropdown-option {
-  width: 29rem !important;
+  width: 14.5rem !important;
 }
 .style-library .vs__search::placeholder {
   margin: 0px;
   padding: 0px;
-  width: 29rem !important;
+  width: 14.5rem !important;
 }
 .style-library .vs__dropdown-toggle {
   background-color: var(--library1);
@@ -372,7 +370,7 @@ export default {
   color: white !important;
   margin-right: 0.5rem;
   flex-basis: 12%;
-  width: 29rem !important;
+  width: 14.5rem !important;
   padding: 0px !important;
 }
 .style-library .vs__dropdown-toggle:hover {
@@ -382,8 +380,8 @@ export default {
   position: absolute;
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
-  flex-basis: 21%;
-  min-width: 29rem !important;
+  flex-basis: 10.5%;
+  min-width: 14.5rem !important;
 }
 .style-library .vs__clear {
   display: none;
@@ -403,11 +401,11 @@ export default {
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   border: 2px solid var(--library1);
-  width: 29rem !important;
+  width: 14.5rem !important;
 }
 .style-library .vs__dropdown-menu .vs__dropdown-option {
   padding: 0rem 0rem 0rem 0.25rem;
-  width: 28.75rem !important;
+  width: 14.25rem !important;
 }
 .style-library .vs__dropdown-menu .vs__dropdown-option--highlight {
   background-color: var(--library2);

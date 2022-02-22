@@ -32,85 +32,6 @@ export default {
   color: var(--library1) !important;
 }
 
-/* Dropdown libreria */
-.dropdown-libreria {
-  position: relative;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 0.8888rem;
-  min-width: 21%;
-  flex-basis: 50%;
-  flex-grow: 1;
-  margin-top: 0.2222rem;
-  margin-bottom: 0.2222rem;
-  margin-right: 0.5rem;
-}
-.dropdown-libreria:focus {
-  outline: 2px solid var(--interfacesp);
-}
-.dropdown-libreria select {
-  display: none; /*hide original SELECT element: */
-}
-.dropdown-libreria .select-selected {
-  background-color: var(--library1);
-}
-.dropdown-libreria .select-selected:hover {
-  background-color: var(--library2);
-}
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 0.55rem;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 0.25rem;
-}
-
-/* style the items (options),  */
-.dropdown-libreria .select-items div {
-  color: var(--library1);
-  padding: 0.25rem;
-  border: 1px solid transparent;
-  /* border-color: transparent var(--videos1) transparent var(--videos1); */
-  cursor: pointer;
-}
-/* including the selected item: */
-.dropdown-libreria .select-selected {
-  color: white;
-  padding: 0.25rem;
-  border: 1px solid transparent;
-  /* border-color: transparent transparent var(--videos1) transparent; */
-  cursor: pointer;
-}
-
-/* Style items (options): */
-.dropdown-libreria .select-items {
-  position: absolute;
-  background-color: white;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  border: 1px solid var(--library1);
-}
-
-/* Hide the items when the select box is closed: */
-.dropdown-libreria .select-hide {
-  display: none;
-}
-
-.dropdown-libreria .select-items div:hover,
-.dropdown-libreria .same-as-selected {
-  background-color: var(--library1);
-  color: white !important;
-}
 
 /* BOTONES LIBRERIA */
 #btn-reset-lexico-buscador-library {
@@ -339,8 +260,8 @@ export default {
 }
 
 .table__main__row_cell__button-button_micro {
-  height: 1rem !important;
-  width: 1rem !important;
+  height: 1.20rem !important;
+  width: 1.20rem !important;
   padding: 0 !important;
   margin: 0 !important;
   background: var(--library1);
@@ -394,17 +315,18 @@ export default {
 /* Pantalla emergente */
 
 .fondo-pantalla-emergente-2 {
- position: absolute;
-  top: 25rem;
+  
+  position:absolute;
+  top: 3.5rem;
   right: 0;
   bottom: 0rem;
-  left:35rem;
+  left: 3.5rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 
-  display: block;
+  
   animation: desplegado-pantalla-emergente 1s cubic-bezier(0, 0.26, 0.53, 0.99);
   overflow-y: hidden;
 }

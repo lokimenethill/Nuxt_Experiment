@@ -43,7 +43,7 @@
               alt=""
             />
             <figcaption class="pie-foto-pantalla-emergente">
-              {{ $t('home.ilustration') }}:{{datasend.imgMeta}}
+              {{ $t('home.ilustration') }}: {{datasend.imgMeta}}
             </figcaption>
           </figure>
         </div>
