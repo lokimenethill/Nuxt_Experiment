@@ -1,6 +1,7 @@
 <template>
   <div v-if="window" id="myModal" class="fondo-pantalla-emergente">
     <div
+    :style="{color: computedColor}"
       class="
         contenedor-pantalla-emergente contenedor-pantalla-emergente-mixteco
       "
@@ -24,7 +25,7 @@
         </div>
       </nav>
       <div class="contenedor-titulo-pantalla-emergente">
-        <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco" v-html="datasend.title" >
+        <h1 class="titulo-pantalla-emergente titulo-pantalla-emergente-mixteco" :style="{color: computedColor}"  v-html="datasend.title" >
           
         </h1>
       </div>
@@ -54,6 +55,7 @@
           class="footer-columna-item lexicons-footer-item-pantalla-emergente"
         >
           <h2
+          :style="{color: computedColor}"
             class="
               titulo-footer-pantalla-emergente
               titulo-footer-pantalla-emergente-mixteco
@@ -75,6 +77,7 @@
               titulo-footer-pantalla-emergente
               titulo-footer-pantalla-emergente-mixteco
             "
+            :style="{color: computedColor}"
           >
             Flora & fauna
           </h2>
@@ -92,6 +95,7 @@
               titulo-footer-pantalla-emergente
               titulo-footer-pantalla-emergente-mixteco
             "
+            :style="{color: computedColor}"
           >
             Corpora
           </h2>
@@ -109,6 +113,7 @@
               titulo-footer-pantalla-emergente
               titulo-footer-pantalla-emergente-mixteco
             "
+            :style="{color: computedColor}"
           >
             Grammar
           </h2>
@@ -137,6 +142,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    keyC: {
+      type: String,
+      default:"",
+    },
   },
   data() {
     return {
@@ -144,6 +153,11 @@ export default {
       contador: 1,
       window: this.show,
     };
+  },
+  computed:{
+    computedColor(){
+      return this.keyC;
+    },
   },
   methods: {
     closeWindow() {
