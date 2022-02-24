@@ -14,8 +14,7 @@
               <h3 class="titulo-modulo">
                 {{ $t('topicIndex.topCards.lexicon.title') }}
               </h3>
-              <p class="descripcion-modulo">
-                {{ $t('topicIndex.topCards.lexicon.text') }}
+              <p class="descripcion-modulo" v-html="$t('topicIndex.topCards.lexicon.text')" >
               </p>
             </div>
           </transition>
@@ -54,8 +53,7 @@
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.audios.title') }}
             </h3>
-            <p class="descripcion-modulo">
-              {{ $t('topicIndex.topCards.audios.text') }}
+            <p class="descripcion-modulo" v-html="$t('topicIndex.topCards.audios.text')" >
             </p>
             <!-- &#8209; es un - de no separación y sirve para mantener juntas 2 palabras que van unidas por guion-->
           </div>

@@ -30,6 +30,7 @@
         v-if="showWindow"
         :show="showWindow"
         :datasend="sendDataWindow"
+        :keyC="keyColor"
         @window="showWindow = $event"
       />
     </div>
@@ -47,6 +48,7 @@ export default {
     return {
       showWindow: false,
       numOfWindow: null,
+      keyColor:"var(--amuzgo0)",
     };
   },
   computed: {

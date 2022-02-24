@@ -601,11 +601,11 @@ div.boton-cerrar {
 }
 /* Mixteco */
 .contenedor-pantalla-emergente-mixteco {
-  border-bottom-color: var(--mixteco0);
+
 }
 .titulo-pantalla-emergente-mixteco,
 .titulo-footer-pantalla-emergente-mixteco {
-  color: var(--mixteco0);
+  
 }
 /* Totonaco */
 .contenedor-pantalla-emergente-totonaco {
