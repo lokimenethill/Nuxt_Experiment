@@ -48,21 +48,21 @@
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tCommunity') }}</h4>
-                  <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('community')"></button>
-                    <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('community')"></button>
-                  </div>
-                </div>
-                <div class="table__header__row__cell  ">
                   <h4 class="table__header__row__cell__title">{{ $t('library.tLang') }}</h4>
                   <div class="table__header__row__cell__switch">
                     <button class="table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('terminal_lang')"></button>
                     <button class="table__header__row__cell__title__btn__des"
                     @click="setDescendingSort('terminal_lang')"></button>
+                  </div>
+                </div>
+                <div class="table__header__row__cell  ">
+                  <h4 class="table__header__row__cell__title">{{ $t('library.tCommunity') }}</h4>
+                  <div class="table__header__row__cell__switch">
+                    <button class="table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('community')"></button>
+                    <button class="table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('community')"></button>
                   </div>
                 </div>
                 <div class="table__header__row__cell  ">
@@ -99,10 +99,10 @@
                   
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.community}}</span>
+                  <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
+                  <span class="table__main__row__cell__data">{{find.community}}</span>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">
