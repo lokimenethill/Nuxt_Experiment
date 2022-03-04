@@ -178,12 +178,6 @@
           </div>
         </div>
       </div>
-        <popWindow
-        v-if="showWindow"
-        :show="showWindow"
-        :datasend="sendDataWindow"
-        @window="showWindow = $event"
-      />
     </div>
     </div>
 </template>
@@ -192,11 +186,8 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
 import JsonLibrary from '@/static/library/videos.json';
-import popWindow from '@/components/libraryComponents/popWindow.vue';
+
 export default {
-  components: {
-    popWindow,
-  },
   data() {
     return {
       showWindow: false,
