@@ -237,7 +237,6 @@ export default {
 .table__main__row__cell__data__terminal--lang {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 0.88rem;
-  line-height: 2px !important;
   margin-right: 0.15rem;
   margin-left: 0.66rem;
 }

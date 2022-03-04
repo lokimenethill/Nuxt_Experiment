@@ -99,7 +99,13 @@
                   
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.terminal_lang}}</span>
+                  <span class="table__main__row__cell__data__group--lang">{{find.terminal_lang}}
+                    <code
+                       class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
+                  </span>
+                   <span class="table__main__row__cell__data__terminal--lang" v-for="Gpo_lang in find.Gpo_lang" :key="Gpo_lang" >
+                      {{Gpo_lang.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lang.gtlog}}</code>
+                    </span>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.community}}</span>
