@@ -290,12 +290,12 @@ export default {
 }
 .table__header__row__cell:nth-of-type(3),
 .table__main__row__cell:nth-of-type(3) {
-  flex-basis: 18%;
+  flex-basis: 27%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(4),
 .table__main__row__cell:nth-of-type(4) {
-  flex-basis: 27%;
+  flex-basis: 18%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(5),
