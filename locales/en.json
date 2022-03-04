@@ -132,8 +132,8 @@
         "of":"of",
         "res":"Results",
         "popWinTitle":"Bibliographic information",
-        "popWinCopyBuutton":"Copy to clipboard & close"
-    
+        "popWinCopyBuutton":"Copy to clipboard & close",
+        "all":"All"
     },
     "about":{
         "title":"About",

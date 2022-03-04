@@ -132,7 +132,8 @@
         "of":"de",
         "res":"Resultados",
         "popWinTitle":"Información bibliográfica",
-        "popWinCopyBuutton":"Copiar en portapapeles y cerrar"
+        "popWinCopyBuutton":"Copiar en portapapeles y cerrar",
+        "all":"Todo"
     },
     "about":{
         "title":"Acerca de",

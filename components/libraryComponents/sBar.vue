@@ -218,6 +218,7 @@ export default {
         { label: this.$t('library.tCommunity'), val: 'community' },
         { label: this.$t('library.tLang'), val: 'terminal_lang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
+        { label: this.$t('library.all'), val: 'all' },
       ],
     };
   },
@@ -262,6 +263,7 @@ export default {
   created() {
     // postprocess data concat Library
     for (let i = 0; i < this.library.length; i++) {
+      this.library[i].all ="";
       this.library[i].id = i;
       for (let n = 0; n < this.library[i].authors.length; n++) {
         if (n === 0) {
@@ -277,6 +279,8 @@ export default {
           this.library[i].kwrds += this.library[i].keywords[n] + ', ';
         }
       }
+          this.library[i].all += this.library[i].title + ', '+this.library[i].authors[0] + ', '+this.library[i].community + ', '+this.library[i].terminal_lang + ', '+this.library[i].gtolog + ', '+this.library[i].Gpo_lang[0].name + ', '+this.library[i].Gpo_lang[0].gtlog + ', '+this.library[i].keywords[0] + ', '+this.library[i].year + ', ';
+        
     }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
