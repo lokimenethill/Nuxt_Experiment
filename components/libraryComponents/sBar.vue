@@ -103,8 +103,8 @@
                     <code
                        class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
                   </span>
-                   <span class="table__main__row__cell__data__terminal--lang" v-for="Gpo_lang in find.Gpo_lang" :key="Gpo_lang" >
-                      {{Gpo_lang.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lang.gtlog}}</code>
+                   <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
+                      {{Gpo_lan.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
                     </span>
                 </div>
                 <div class="table__main__row__cell ">
@@ -125,7 +125,7 @@
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button @click="toggleWindow(find.id)" id="myBtn" class="table__main__row_cell__button-button_micro"><span
+                  <button id="myBtn" class="table__main__row_cell__button-button_micro" @click="toggleWindow(find.id)"  ><span
                       class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       info
                     </span></button>
@@ -147,7 +147,7 @@
           <!-- Contenedor de botones y se planea que aparezcan de 10 en 10 y que la pagina activa este en medio. Es decir si esta en la pagina 24 iniciaria en la 19 y terminaria en la 29 -->
           <div class="contenedor-paginacion-por-pagina ">
             <!-- Boton de página anterior -->
-            <button @click="backPage()" class="btn-pagina-anterior">
+            <button class="btn-pagina-anterior" @click="backPage()" >
               <!-- Icono boton ágina anterior -->
               <span class="material-icons-round icono-de-boton-paginacion">
                 arrow_back_ios
@@ -155,10 +155,10 @@
             </button>
             
             <!-- Botones de paginas -->
-            <button v-for="index in maxPage" :key="index" @click="goToPage(index)" :class="getActivePageClass(index)">{{index}}</button>
+            <button v-for="index in maxPage" :key="index" :class="getActivePageClass(index)"  @click="goToPage(index)" >{{index}}</button>
             <!-- btn-pagina-activa es un marcador que indica la página en la que se encuentra -->
             <!-- Boton página siguiente -->
-            <button @click="nextPage()" class="btn-pagina-siguiente">
+            <button class="btn-pagina-siguiente" @click="nextPage()" >
               <span class="material-icons-round icono-de-boton-paginacion ">
                 arrow_forward_ios
               </span>
@@ -171,8 +171,8 @@
             <!-- Creo que es forzoso usar el formulario -->
 
             
-              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" :placeholder="$t('library.go2p')" class="caja-input-ir-a-pagina"><button @click="goToPage(pagSelectorInput)" type="submit"
-                class="btn-ir-a-pagina"><span class="material-icons-outlined icono-ir-a-pagina">
+              <input v-model="pagSelectorInput" type="number" min="1" :max="maxPage" :placeholder="$t('library.go2p')" class="caja-input-ir-a-pagina"><button type="submit" class="btn-ir-a-pagina" @click="goToPage(pagSelectorInput)" 
+                ><span class="material-icons-outlined icono-ir-a-pagina">
                   arrow_forward
                 </span></button>
           </div>
@@ -263,7 +263,7 @@ export default {
   created() {
     // postprocess data concat Library
     for (let i = 0; i < this.library.length; i++) {
-      this.library[i].all ="";
+      this.library[i].all = '';
       this.library[i].id = i;
       for (let n = 0; n < this.library[i].authors.length; n++) {
         if (n === 0) {
@@ -279,8 +279,25 @@ export default {
           this.library[i].kwrds += this.library[i].keywords[n] + ', ';
         }
       }
-          this.library[i].all += this.library[i].title + ', '+this.library[i].authors[0] + ', '+this.library[i].community + ', '+this.library[i].terminal_lang + ', '+this.library[i].gtolog + ', '+this.library[i].Gpo_lang[0].name + ', '+this.library[i].Gpo_lang[0].gtlog + ', '+this.library[i].keywords[0] + ', '+this.library[i].year + ', ';
-        
+      this.library[i].all +=
+        this.library[i].title +
+        ', ' +
+        this.library[i].authors[0] +
+        ', ' +
+        this.library[i].community +
+        ', ' +
+        this.library[i].terminal_lang +
+        ', ' +
+        this.library[i].gtolog +
+        ', ' +
+        this.library[i].Gpo_lang[0].name +
+        ', ' +
+        this.library[i].Gpo_lang[0].gtlog +
+        ', ' +
+        this.library[i].keywords[0] +
+        ', ' +
+        this.library[i].year +
+        ', ';
     }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
