@@ -86,7 +86,7 @@
               <div v-for="(find, index) in items" v-show="(pag - 1) * resultsPerPage <= index  && pag * resultsPerPage > index" :key="index" :v-bind="index" >
               <div class="videos__table__main__row">
                 <div class="videos__table__main__row__cell ">
-                  <a :href="watchBook(find.source)" target="_blank" class="videos__table__main_row__cell__title" v-html="find.title" ></a>
+                  <a :href="find.source" target="_blank" class="videos__table__main_row__cell__title" v-html="find.title" ></a>
                 </div>
                 <div class="videos__table__main__row__cell ">
                   
@@ -118,14 +118,14 @@
                   </span>
                 </div>
                 <div class="videos__table__main__row__cell  ">
-                  <a :href="watchBook(find.source)" :download="find.source" class="videos__table__main__row_cell__button-button_micro none"><span
+                  <a :href="find.source" target="_blank"  class="videos__table__main__row_cell__button-button_micro none"><span
                       class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       launch
                     </span></a>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button id="myBtn" class="videos__table__main__row_cell__button-button_micro" @click="toggleWindow(find.id)"  ><span
+                  <button id="myBtn" class="videos__table__main__row_cell__button-button_micro"   ><span
                       class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       info
                     </span></button>
