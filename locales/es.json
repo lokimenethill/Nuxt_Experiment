@@ -132,7 +132,24 @@
         "of":"de",
         "res":"Resultados",
         "popWinTitle":"Información bibliográfica",
-        "popWinCopyBuutton":"Copiar en portapapeles y cerrar"
+        "popWinCopyBuutton":"Copiar en portapapeles y cerrar",
+        "all":"Todo"
+    },
+    "videos":{
+        "title":"Videos",
+        "tTitle":"Titulo",
+        "tDirector":"Directores",
+        "tCommunity":"Comunidad",
+        "tLang":"Lenguaje",
+        "tKeywords":"Palabras Clave",
+        "typeWords":"Escribe palabras a buscar",
+        "go2p":"Ir a pagina",
+        "pg":"Página",
+        "of":"de",
+        "res":"Resultados",
+        "popWinTitle":"Información bibliográfica",
+        "popWinCopyBuutton":"Copiar en portapapeles y cerrar",
+        "all":"Todo"
     },
     "about":{
         "title":"Acerca de",

@@ -237,15 +237,15 @@ export default {
 .table__main__row__cell__data__terminal--lang {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 0.88rem;
-  line-height: 2px !important;
   margin-right: 0.15rem;
   margin-left: 0.66rem;
 }
 .table__main__row__cell__data__terminal--lang::before {
   content: "●";
   color: var(--library1) !important;
-  margin-right: 0.25rem;
+ 
   margin-left: -0.66rem;
+  font-size: 28px;
 }
 .table__main__row__cell__data__terminal--lang--code {
   font-family: "Fira Sans Condensed", sans-serif;
@@ -290,12 +290,12 @@ export default {
 }
 .table__header__row__cell:nth-of-type(3),
 .table__main__row__cell:nth-of-type(3) {
-  flex-basis: 18%;
+  flex-basis: 27%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(4),
 .table__main__row__cell:nth-of-type(4) {
-  flex-basis: 27%;
+  flex-basis: 18%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(5),

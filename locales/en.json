@@ -132,8 +132,24 @@
         "of":"of",
         "res":"Results",
         "popWinTitle":"Bibliographic information",
-        "popWinCopyBuutton":"Copy to clipboard & close"
-    
+        "popWinCopyBuutton":"Copy to clipboard & close",
+        "all":"All"
+    },
+    "videos":{
+        "title":"Videos",
+        "tTitle":"Title",
+        "tDirector":"Directors",
+        "tCommunity":"Community",
+        "tLang":"Language",
+        "tKeywords":"Keywords",
+        "typeWords":"Type Words for serch",
+        "go2p":"Go to Page",
+        "pg":"Page",
+        "of":"of",
+        "res":"Results",
+        "popWinTitle":"Bibliographic information",
+        "popWinCopyBuutton":"Copy to clipboard & close",
+        "all":"All"
     },
     "about":{
         "title":"About",
