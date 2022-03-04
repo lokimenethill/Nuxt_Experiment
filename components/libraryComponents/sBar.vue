@@ -86,7 +86,7 @@
               <div v-for="(find, index) in items" v-show="(pag - 1) * resultsPerPage <= index  && pag * resultsPerPage > index" :key="index" :v-bind="index" >
               <div class="table__main__row">
                 <div class="table__main__row__cell ">
-                  <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title">{{find.title}}</a>
+                  <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title" v-html="find.title" ></a>
                 </div>
                 <div class="table__main__row__cell ">
                   
