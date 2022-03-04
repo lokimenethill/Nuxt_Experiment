@@ -3,22 +3,22 @@
    
     <div class="contenedor-general">
       <div class="contenedor-breadcums">
-        <a class="breadcums">{{ $t('library.title') }}</a>
+        <a class="breadcums">{{ $t('videos.title') }}</a>
         <p class="breadcums">/</p>
         <a href="" class="breadcums-activo">Mixtec</a>
         </div>
         <h6>Search in</h6>
-        <h1 id="titulo-library">{{ $t('library.title') }}</h1>
+        <h1 id="titulo-videos">{{ $t('videos.title') }}</h1>
         <div class="contenedor-buscador-general">
           <div class="caja-busqueda">
             <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
             <!-- Checar por qué se elimina la primera opción -->
             <div class="dropdown-libreria ">
-              <v-select v-model="searchSelector" :searchable="false" class="style-library" :options="searchSelectOptions">
+              <v-select v-model="searchSelector" :searchable="false" class="style-videos" :options="searchSelectOptions">
               </v-select>
             </div>
 
-            <input v-model="dataSearch" type="search" :placeholder="$t('library.typeWords')" class="input-caja-busqueda">
+            <input v-model="dataSearch" type="search" :placeholder="$t('videos.typeWords')" class="input-caja-busqueda">
           </div>
 
           <div class="contenedor-general-botones-busqueda-library ">
@@ -26,107 +26,107 @@
          
         </div>
         <div class="contenedor-general-resultados">
-          <h4 class="instrucciones">{{totalAnswers}} {{ $t('library.res') }} ({{ $t('library.pg') }} {{pag}} {{ $t('library.of') }} {{maxPage}})</h4>
+          <h4 class="instrucciones">{{totalAnswers}} {{ $t('videos.res') }} ({{ $t('videos.pg') }} {{pag}} {{ $t('videos.of') }} {{maxPage}})</h4>
           <!-- Contenedor de resulatdos, cada tarjeta es un resultado -->
           <div class="table ">
-            <div class="table__header ">
-              <div class="table__header__row ">
-                <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tTitle') }}</h4>
-                  <div class="table__header__row__cell__switch ">
+            <div class="videos__table__header ">
+              <div class="videos__table__header__row ">
+                <div class="videos__table__header__row__cell  ">
+                  <h4 class="videos__table__header__row__cell__title">{{ $t('videos.tTitle') }}</h4>
+                  <div class="videos__table__header__row__cell__switch ">
                     <button :class="getAscendingArrowClass('title')"  @click="setAscendingSort('title')"></button>
                     <button :class="getDescendingArrowClass('title')" @click="setDescendingSort('title')"></button>
                   </div>
                 </div>
-                <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tAuthor') }}</h4>
-                  <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"
-                    @click="setAscendingSort('authors')"></button>
-                    <button class="table__header__row__cell__title__btn__des"
-                    @click="setDescendingSort('authors')"></button>
+                <div class="videos__table__header__row__cell  ">
+                  <h4 class="videos__table__header__row__cell__title">{{ $t('videos.tDirector') }}</h4>
+                  <div class="videos__table__header__row__cell__switch">
+                    <button class="videos__table__header__row__cell__switch__btn__asc"
+                    @click="setAscendingSort('directors')"></button>
+                    <button class="videos__table__header__row__cell__title__btn__des"
+                    @click="setDescendingSort('directors')"></button>
                   </div>
                 </div>
-                <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tLang') }}</h4>
-                  <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"
+                <div class="videos__table__header__row__cell  ">
+                  <h4 class="videos__table__header__row__cell__title">{{ $t('videos.tLang') }}</h4>
+                  <div class="videos__table__header__row__cell__switch">
+                    <button class="videos__table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('terminal_lang')"></button>
-                    <button class="table__header__row__cell__title__btn__des"
+                    <button class="videos__table__header__row__cell__title__btn__des"
                     @click="setDescendingSort('terminal_lang')"></button>
                   </div>
                 </div>
-                <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tCommunity') }}</h4>
-                  <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"
+                <div class="videos__table__header__row__cell  ">
+                  <h4 class="videos__table__header__row__cell__title">{{ $t('videos.tCommunity') }}</h4>
+                  <div class="videos__table__header__row__cell__switch">
+                    <button class="videos__table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('community')"></button>
-                    <button class="table__header__row__cell__title__btn__des"
+                    <button class="videos__table__header__row__cell__title__btn__des"
                     @click="setDescendingSort('community')"></button>
                   </div>
                 </div>
-                <div class="table__header__row__cell  ">
-                  <h4 class="table__header__row__cell__title">{{ $t('library.tKeywords') }}</h4>
-                  <div class="table__header__row__cell__switch">
-                    <button class="table__header__row__cell__switch__btn__asc"
+                <div class="videos__table__header__row__cell  ">
+                  <h4 class="videos__table__header__row__cell__title">{{ $t('videos.tKeywords') }}</h4>
+                  <div class="videos__table__header__row__cell__switch">
+                    <button class="videos__table__header__row__cell__switch__btn__asc"
                     @click="setAscendingSort('keywords')"></button>
-                    <button class="table__header__row__cell__title__btn__des"
+                    <button class="videos__table__header__row__cell__title__btn__des"
                     @click="setDescendingSort('keywords')"></button>
                   </div>
                 </div>
-                 <div class="table__header__row__cell  ">
+                 <div class="videos__table__header__row__cell  ">
 
                 </div>
-                <div class="table__header__row__cell  ">
+                <div class="videos__table__header__row__cell  ">
 
                 </div>
               </div>
             </div>
-            <div class="table__main">
+            <div class="videos__table__main">
               <div v-for="(find, index) in items" v-show="(pag - 1) * resultsPerPage <= index  && pag * resultsPerPage > index" :key="index" :v-bind="index" >
-              <div class="table__main__row">
-                <div class="table__main__row__cell ">
-                  <a :href="watchBook(find.source)" target="_blank" class="table__main_row__cell__title" v-html="find.title" ></a>
+              <div class="videos__table__main__row">
+                <div class="videos__table__main__row__cell ">
+                  <a :href="watchBook(find.source)" target="_blank" class="videos__table__main_row__cell__title" v-html="find.title" ></a>
                 </div>
-                <div class="table__main__row__cell ">
+                <div class="videos__table__main__row__cell ">
                   
                     
-                  <span class="table__main__row__cell__data">
-                    <span v-for="author in find.authors" :key="author" >
+                  <span class="videos__table__main__row__cell__data">
+                    <span v-for="author in find.directors" :key="author" >
                       {{author}}<br/>
                     </span>
                     </span>
                   
                 </div>
-                <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data__group--lang">{{find.terminal_lang}}
+                <div class="videos__table__main__row__cell ">
+                  <span class="videos__table__main__row__cell__data__group--lang">{{find.terminal_lang}}
                     <code
-                       class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
+                       class="videos__table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
                   </span>
-                   <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
-                      {{Gpo_lan.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
+                   <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="videos__table__main__row__cell__data__terminal--lang" >
+                      {{Gpo_lan.name}}<code class="videos__table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
                     </span>
                 </div>
-                <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">{{find.community}}</span>
+                <div class="videos__table__main__row__cell ">
+                  <span class="videos__table__main__row__cell__data">{{find.community}}</span>
                 </div>
-                <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data">
+                <div class="videos__table__main__row__cell ">
+                  <span class="videos__table__main__row__cell__data">
                     <span  v-for="keyword in find.keywords" :key="keyword"  >
                         {{keyword}},
                     </span>
                   </span>
                 </div>
-                <div class="table__main__row__cell  ">
-                  <a :href="watchBook(find.source)" :download="find.source" class="table__main__row_cell__button-button_micro none"><span
-                      class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
-                      file_download
+                <div class="videos__table__main__row__cell  ">
+                  <a :href="watchBook(find.source)" :download="find.source" class="videos__table__main__row_cell__button-button_micro none"><span
+                      class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
+                      launch
                     </span></a>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button id="myBtn" class="table__main__row_cell__button-button_micro" @click="toggleWindow(find.id)"  ><span
-                      class="material-icons-outlined table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
+                  <button id="myBtn" class="videos__table__main__row_cell__button-button_micro" @click="toggleWindow(find.id)"  ><span
+                      class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       info
                     </span></button>
                   <!--Este elemento hace que descargue el documento directamente-->
@@ -143,7 +143,7 @@
         <!-- Termina contenedor de resultados -->
         <!-- Inicia contenedor de paginación, esta en ESTILOS GENERALES, ya que este módulo se empleara en varias pantallas -->
         <div class="contenedor-paginacion ">
-          <p class="informacion-resultados-y-paginas">{{totalAnswers}} {{ $t('library.res') }} {{maxPage}} {{ $t('library.pg') }}s.</p>
+          <p class="informacion-resultados-y-paginas">{{totalAnswers}} {{ $t('videos.res') }} {{maxPage}} {{ $t('videos.pg') }}s.</p>
           <!-- Contenedor de botones y se planea que aparezcan de 10 en 10 y que la pagina activa este en medio. Es decir si esta en la pagina 24 iniciaria en la 19 y terminaria en la 29 -->
           <div class="contenedor-paginacion-por-pagina ">
             <!-- Boton de página anterior -->
@@ -191,7 +191,7 @@
 <script>
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
-import JsonLibrary from '@/static/library/books.json';
+import JsonLibrary from '@/static/library/videos.json';
 import popWindow from '@/components/libraryComponents/popWindow.vue';
 export default {
   components: {
@@ -213,12 +213,12 @@ export default {
       maxPage: 0,
       pag: 1,
       searchSelectOptions: [
-        { label: this.$t('library.tTitle'), val: 'title' },
-        { label: this.$t('library.tAuthor'), val: 'authrs' },
-        { label: this.$t('library.tCommunity'), val: 'community' },
-        { label: this.$t('library.tLang'), val: 'terminal_lang' },
-        { label: this.$t('library.tKeywords'), val: 'kwrds' },
-        { label: this.$t('library.all'), val: 'all' },
+        { label: this.$t('videos.tTitle'), val: 'title' },
+        { label: this.$t('videos.tDirector'), val: 'drectrs' },
+        { label: this.$t('videos.tCommunity'), val: 'community' },
+        { label: this.$t('videos.tLang'), val: 'terminal_lang' },
+        { label: this.$t('videos.tKeywords'), val: 'kwrds' },
+        { label: this.$t('videos.all'), val: 'all' },
       ],
     };
   },
@@ -231,7 +231,7 @@ export default {
       // filtered
       let filtered = '';
       if (
-        this.searchSelector.val === 'authors' ||
+        this.searchSelector.val === 'directors' ||
         this.searchSelector.val === 'keywords'
       ) {
         filtered = _.filter(sortedBooks, (book) =>
@@ -265,11 +265,11 @@ export default {
     for (let i = 0; i < this.library.length; i++) {
       this.library[i].all = '';
       this.library[i].id = i;
-      for (let n = 0; n < this.library[i].authors.length; n++) {
+      for (let n = 0; n < this.library[i].directors.length; n++) {
         if (n === 0) {
-          this.library[i].authrs = this.library[i].authors[n] + ', ';
+          this.library[i].drectrs = this.library[i].directors[n] + ', ';
         } else {
-          this.library[i].authrs += this.library[i].authors[n] + ', ';
+          this.library[i].drectrs += this.library[i].directors[n] + ', ';
         }
       }
       for (let n = 0; n < this.library[i].keywords.length; n++) {
@@ -282,7 +282,7 @@ export default {
       this.library[i].all +=
         this.library[i].title +
         ', ' +
-        this.library[i].authors[0] +
+        this.library[i].directors[0] +
         ', ' +
         this.library[i].community +
         ', ' +
@@ -335,14 +335,14 @@ export default {
     },
     setAscendingSort(column) {
       this.ascendingSort = true;
-      if (column === 'keywords' || column === 'authors') {
+      if (column === 'keywords' || column === 'directors') {
         this.sortTableBy = column[0];
       } else {
         this.sortTableBy = column;
       }
     },
     setDescendingSort(column) {
-      if (column === 'keywords' || column === 'authors') {
+      if (column === 'keywords' || column === 'directors') {
         this.ascendingSort = false;
         this.sortTableBy = column[0];
       } else {
@@ -383,16 +383,16 @@ export default {
   padding: 0rem 0.5rem;
 }
 /* selector parametros and/or/ornot etc.. */
-.style-library .vs__dropdown-option {
+.style-videos .vs__dropdown-option {
   width: 14.5rem !important;
 }
-.style-library .vs__search::placeholder {
+.style-videos .vs__search::placeholder {
   margin: 0px;
   padding: 0px;
   width: 14.5rem !important;
 }
-.style-library .vs__dropdown-toggle {
-  background-color: var(--library1);
+.style-videos .vs__dropdown-toggle {
+  background-color: var(--videos0);
   border-radius: 0;
   color: white !important;
   margin-right: 0.5rem;
@@ -400,23 +400,23 @@ export default {
   width: 14.5rem !important;
   padding: 0px !important;
 }
-.style-library .vs__dropdown-toggle:hover {
-  background-color: var(--library2);
+.style-videos .vs__dropdown-toggle:hover {
+  background-color: var(--videos1);
 }
-.style-library .vs__dropdown-menu {
+.style-videos .vs__dropdown-menu {
   position: absolute;
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
   flex-basis: 10.5%;
   min-width: 14.5rem !important;
 }
-.style-library .vs__clear {
+.style-videos .vs__clear {
   display: none;
 }
-.style-library .vs__open-indicator {
+.style-videos .vs__open-indicator {
   fill: white !important;
 }
-.style-library .vs__selected {
+.style-videos .vs__selected {
   color: white;
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
@@ -424,17 +424,17 @@ export default {
   margin: 0px 0px 0px 0.25rem !important;
 }
 
-.style-library .vs__dropdown-menu {
+.style-videos .vs__dropdown-menu {
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.8888rem;
-  border: 2px solid var(--library1);
+  border: 2px solid var(--videos0);
   width: 14.5rem !important;
 }
-.style-library .vs__dropdown-menu .vs__dropdown-option {
+.style-videos .vs__dropdown-menu .vs__dropdown-option {
   padding: 0rem 0rem 0rem 0.25rem;
   width: 14.25rem !important;
 }
-.style-library .vs__dropdown-menu .vs__dropdown-option--highlight {
-  background-color: var(--library2);
+.style-videos .vs__dropdown-menu .vs__dropdown-option--highlight {
+  background-color: var(--videos1);
 }
 </style>
