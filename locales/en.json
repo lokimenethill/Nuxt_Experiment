@@ -17,6 +17,12 @@
         "p1": "Lexicosemantic resources for Mesoamerican languages",
         "ilustration": "Illustration"
     },
+    "summaryButtomPopUp":{
+        "c1":"Lexicons",
+        "c2":"Flora & fauna",
+        "c3":"Corpora",
+        "c4":"Library"
+    },
     "languageIndex": {
         "title": "",
         "choose": "Choose a language group",

@@ -14,7 +14,7 @@ export default {
   },
   head() {
     return {
-      title: this.$t('library.title'),
+      title: this.$t('videos.title'),
       /* metatags
     meta:[
         {name:'twitter:title', content: this.post.title},
@@ -321,7 +321,7 @@ export default {
 .videos__table__main__row__cell__data__terminal--lang::before {
   content: "●";
   color: var(--videos1) !important;
-  font-size: 28px;
+  font-size: 0.88rem;
   margin-left: -0.66rem;
 }
 .videos__table__main__row__cell__data__terminal--lang--code {

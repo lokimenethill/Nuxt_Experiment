@@ -13,7 +13,7 @@
           <div class="caja-busqueda">
             <!-- Selector personalizado https://www.w3schools.com/howto/howto_custom_select.asp -->
             <!-- Checar por qué se elimina la primera opción -->
-            <div class="dropdown-libreria ">
+            <div  class="dropdown-libreria ">
               <v-select v-model="searchSelector" :searchable="false" class="style-library" :options="searchSelectOptions">
               </v-select>
             </div>
@@ -212,17 +212,23 @@ export default {
       resultsPerPage: 5,
       maxPage: 0,
       pag: 1,
-      searchSelectOptions: [
+    };
+  },
+  computed: {
+    searchSelectOptions(){
+      const list =[
         { label: this.$t('library.tTitle'), val: 'title' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
         { label: this.$t('library.tCommunity'), val: 'community' },
         { label: this.$t('library.tLang'), val: 'terminal_lang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
         { label: this.$t('library.all'), val: 'all' },
-      ],
-    };
-  },
-  computed: {
+      ];
+      return list;
+    },
+    langW(){
+      return this.$t('library.tTitle');
+    },
     items() {
       // Sorting
       const sortedBooks = this.ascendingSort
@@ -258,6 +264,9 @@ export default {
     dataSearch() {
       this.totalAnswers = this.items.length;
       this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
+    },
+    langW(){
+      this.searchSelector = this.searchSelectOptions[0];
     },
   },
   created() {

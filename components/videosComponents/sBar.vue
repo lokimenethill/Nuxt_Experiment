@@ -203,17 +203,23 @@ export default {
       resultsPerPage: 5,
       maxPage: 0,
       pag: 1,
-      searchSelectOptions: [
+    };
+  },
+  computed: {
+     searchSelectOptions(){
+      const list = [
         { label: this.$t('videos.tTitle'), val: 'title' },
         { label: this.$t('videos.tDirector'), val: 'drectrs' },
         { label: this.$t('videos.tCommunity'), val: 'community' },
         { label: this.$t('videos.tLang'), val: 'terminal_lang' },
         { label: this.$t('videos.tKeywords'), val: 'kwrds' },
         { label: this.$t('videos.all'), val: 'all' },
-      ],
-    };
-  },
-  computed: {
+      ];
+      return list;
+    },
+    langW(){
+      return this.$t('library.tTitle');
+    },
     items() {
       // Sorting
       const sortedBooks = this.ascendingSort
@@ -249,6 +255,9 @@ export default {
     dataSearch() {
       this.totalAnswers = this.items.length;
       this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
+    },
+     langW(){
+      this.searchSelector = this.searchSelectOptions[0];
     },
   },
   created() {
