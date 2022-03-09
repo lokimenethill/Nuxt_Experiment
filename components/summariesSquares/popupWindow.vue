@@ -61,7 +61,7 @@
               titulo-footer-pantalla-emergente-mixteco
             "
           >
-            Lexicons
+            {{ $t('summaryButtomPopUp.c1') }}
           </h2>
           <a
             v-for="(element, index) in datasend.lexicons"
@@ -79,7 +79,7 @@
             "
             :style="{color: computedColor}"
           >
-            Flora & fauna
+             {{ $t('summaryButtomPopUp.c2') }}
           </h2>
           <a
             v-for="(element, index) in datasend.floraFauna"
@@ -97,7 +97,7 @@
             "
             :style="{color: computedColor}"
           >
-            Corpora
+             {{ $t('summaryButtomPopUp.c3') }}
           </h2>
           <a
             v-for="(element, index) in datasend.corpora"
@@ -115,7 +115,7 @@
             "
             :style="{color: computedColor}"
           >
-            Grammar
+             {{ $t('summaryButtomPopUp.c4') }}
           </h2>
           <a
             v-for="(element, index) in datasend.grammar"
@@ -125,6 +125,12 @@
             >{{ element.display }}</a
           >
         </div>
+        <div class="footer-columna-item-creditos  ">
+              <!-- <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Credits</h2> -->
+              <nuxt-link :to="localePath('credits')"                class="vinculo-footer-pantalla-emergente-creditos  ">{{ $t('summaryButtomPopUp.c5') }}</nuxt-link>
+              <img class="logo_creditos " src="/generals/logo-mesolex-menu-01.svg">
+
+            </div>
       </div>
     </div>
   </div>

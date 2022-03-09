@@ -623,4 +623,28 @@ div.boton-cerrar {
 .titulo-footer-pantalla-emergente-triqui {
   color: var(--triqui0);
 }
+.vinculo-footer-pantalla-emergente-creditos {
+  font-size: 0.6666rem;
+  margin-top: 0 !important;
+  display: block;
+  color: var(--interface1) !important;
+  align-self: flex-start;
+}
+.vinculo-footer-pantalla-emergente-creditos:hover {
+  color: var(--interface0) !important;
+}
+.logo_creditos {
+  /* max-height: 1.33rem; */
+  max-width: 100%;
+  margin-top: 0.8rem;
+  align-self: flex-end;
+}
+.footer-columna-item-creditos {
+  flex-grow: 1;
+  max-width: 120px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 </style>

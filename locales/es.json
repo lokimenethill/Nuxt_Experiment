@@ -17,6 +17,13 @@
         "p1": "Recursos lexicosemánticos de lenguas mesoamericanas",
         "ilustration": "Ilustración"
     },
+    "summaryButtomPopUp":{
+        "c1":"Lexicos",
+        "c2":"Flora y fauna",
+        "c3":"Corpus",
+        "c4":"Biblioteca",
+        "c5":"Ver Creditos"
+    },
     "languageIndex": {
         "title": "",
         "choose": "Escoja un grupo de lenguas",

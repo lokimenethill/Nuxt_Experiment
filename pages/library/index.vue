@@ -245,7 +245,7 @@ export default {
   color: var(--library1) !important;
  
   margin-left: -0.66rem;
-  font-size: 28px;
+  font-size: 0.88rem;
 }
 .table__main__row__cell__data__terminal--lang--code {
   font-family: "Fira Sans Condensed", sans-serif;
