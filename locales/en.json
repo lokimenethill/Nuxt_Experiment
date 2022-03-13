@@ -45,6 +45,12 @@
             "text": "are spoken in northern Veracruz (Huastecan) while 30&nbsp;predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages.",
             "content": "<p>Mayan languages <code><a href='https://glottolog.org/resource/languoid/id/maya1287' target='_blank'>maya1287</a></code>, spoken in Mexico, Guatemala, and Belize, have been extensively studied in their modern variants, in extensive colonial documentation (dictionaries and texts), in glyphic archaeological and codex records, and in reconstructed proto&#8209;forms. Extensive documentation of modern Maya (grammars, dictionaries, comparative studies) is the result of a model effort by an Indigenous Guatemalan collective: OKMA. Typologically, and unlike other Mesoamerican languages, Maya manifests ergative&#8209;absolutive alignment: subjects of intranstive verbs are marked and behave like objects of transitive verbs. A separate form exists for subjects of transitive verbs. Ergativity is not a recent development but has been reconstructed to proto&#8209;Mayan.</p>"
         },
+        "mazatec": {
+            "title": "MAZATEC",
+            "preText": "The 9 Mazatecan languages ",
+            "text": "are Eastern Otomanguean languages concentrated in northeastern Oaxaca. The language in general manifests contrastive phonation (oral, nasal, breathy voice, creaky voice) and a relatively abundant tonal inventory.",
+            "content": "<p>According to <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, the Mazatecan language group <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code>comprises 9 tonal languages spoken almost exclusively in northeastern Oaxaca, although a few spill over into adjacent communities of Puebla and Veracruz. Mazatecan is noteworthy for abundant and contrastive phonation&#8209;oral, nasal, breathy voice, creaky voice&#8209;as well as a rich tonal inventory, which generally includes 3 or 4 level tones and some 5 or more contours (rising and falling). Vowel inventories are relatively simple: 4 to 6 depending on the language. One of the more interesting features of Mazatecan is the existence of a well-developed whistled language, used particularly for long-distance communication. </p>"
+        },
         "mixtec": {
             "title": "MIXTEC",
             "preText": "The approximately 50 Mixtec languages ",
@@ -104,6 +110,10 @@
                 "title": "Mayan",
                 "region0": "A historical dictionary of Chol (Mayan): The lexical sources from 1789 to 1935",
                 "region1": "A dictionary of Chuj (Mayan) as spoken in San Mateo Ixtatán, Guatemala (1964–65)"
+            },
+            "mazatec": {
+                "title": "Mazatec",
+                "region0": "Mazatec of Huautla"
             },
             "mixtec": {
                 "title": "Mixtec",

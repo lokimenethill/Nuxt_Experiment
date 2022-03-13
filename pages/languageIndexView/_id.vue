@@ -20,6 +20,7 @@
         <amuzgoan v-if="post.id === 'amuzgoan'" />
         <nahuatl v-if="post.id === 'nahuatl'" />
         <mayan v-if="post.id === 'mayan'" />
+        <mazatec v-if="post.id === 'mazatec'" />
         <mixtec v-if="post.id === 'mixtec'" />
         <totonacan v-if="post.id === 'totonacan'" />
         <triqui v-if="post.id === 'triqui'" />
@@ -32,6 +33,7 @@ import breadcrumbLangugageIndex from '@/components/breadcrumbLangugageIndex';
 import amuzgoan from '@/components/summariesSquares/amuzgoan';
 import nahuatl from '@/components/summariesSquares/nahuatl';
 import mayan from '@/components/summariesSquares/mayan';
+import mazatec from '@/components/summariesSquares/mazatec';
 import mixtec from '@/components/summariesSquares/mixtec';
 import totonacan from '@/components/summariesSquares/totonacan';
 import triqui from '@/components/summariesSquares/triqui';
@@ -41,6 +43,7 @@ export default {
     amuzgoan,
     nahuatl,
     mayan,
+    mazatec,
     mixtec,
     totonacan,
     triqui,
@@ -87,6 +90,16 @@ export default {
           styles: {
             s1: 'contenedor-titulo-sumario-maya',
             s2: 'maya-titulo-sumario',
+          },
+        },
+        {
+          id: 'mazatec',
+          title: this.$t('languageIndex.mazatec.title'),
+          content: this.$t('languageIndex.mazatec.content'),
+          langRoute: 'languageIndex.mazatec.title',
+          styles: {
+            s1: 'contenedor-titulo-sumario-mazateco',
+            s2: 'mazateco-titulo-sumario',
           },
         },
         {
@@ -151,6 +164,9 @@ div.contenedor-titulo-sumario-gpo-lenguas {
 #contenedor-titulo-sumario-maya {
   border-right: 1px solid var(--maya0);
 }
+#contenedor-titulo-sumario-mazateco {
+  border-right: 1px solid var(--mazateco0);
+}
 #contenedor-titulo-sumario-mixteco {
   border-right: 1px solid var(--mixteco0);
 }
@@ -170,6 +186,9 @@ div.contenedor-titulo-sumario-gpo-lenguas {
 }
 #maya-titulo-sumario {
   color: var(--maya0);
+}
+#mazateco-titulo-sumario {
+  color: var(--mazateco0);
 }
 #mixteco-titulo-sumario {
   color: var(--mixteco0);
@@ -233,6 +252,12 @@ div.sumario-lengua-terminal-item-maya {
 }
 div.sumario-lengua-terminal-item-maya:hover {
   background-color: var(--maya1);
+}
+div.sumario-lengua-terminal-item-mazateco {
+  background-color: var(--mazateco0);
+}
+div.sumario-lengua-terminal-item.mazateco:hover {
+  background-color: var(--mazateco1);
 }
 div.sumario-lengua-terminal-item-mixteco {
   background-color: var(--mixteco0);

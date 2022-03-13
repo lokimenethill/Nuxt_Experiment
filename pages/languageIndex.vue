@@ -100,6 +100,32 @@
             </nuxt-link>
           </p>
         </div>
+        <div class="language-index-item" id="mazateco">
+          <nuxt-link
+            class="none"
+            style="text-decoration: none"
+            :to="localePath('/languageIndexView/mazatec')"
+          >
+            <h3 class="titulo-modulo">{{ $t('languageIndex.mazatec.title') }}</h3>
+          </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mazatec')"
+            >
+              {{ $t('languageIndex.mazatec.preText') }}
+            </nuxt-link>
+           <code><a href="https://glottolog.org/resource/languoid/id/maza1295" target="_blank">maza1295</a></code>,
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mazatec')"
+            >
+              <span v-html="$t('languageIndex.mazatec.text')"></span>
+            </nuxt-link>
+          </p>
+        </div>
         <div class="language-index-item" id="mixteco">
           <nuxt-link
             class="none"
@@ -231,19 +257,17 @@ export default {
 };
 </script>
 <style >
-
 .contenedor-languaje-index {
-  height: 465px;
   display: flex;
   flex-flow: row wrap;
   overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .language-index-item {
-  height: 50%;
+  height: 232px;
   width: 33.333%;
-  flex-grow: 1;
+  flex-grow: 0;
   flex-shrink: 0;
   /*aspect-ratio: 1/1; /*Es para darle proporcion cuadrada, compatible con los navegadores conocidos hasta 2021. Es experimental*/
   display: block;
@@ -297,23 +321,30 @@ p.descripcion-modulo {
 #maya:hover {
   background-color: var(--maya1);
 }
+#mazateco {
+  background-color: var(--mazateco0);
+  animation: desplegado-gpo-lenguas 1.6s ease-in-out;
+}
+#mazateco:hover {
+  background-color: var(--mazateco1);
+}
 #mixteco {
   background-color: var(--mixteco0);
-  animation: desplegado-gpo-lenguas 1.6s ease-in-out;
+  animation: desplegado-gpo-lenguas 1.5s ease-in-out;
 }
 #mixteco:hover {
   background-color: var(--mixteco1);
 }
 #totonaco {
   background-color: var(--totonaco0);
-  animation: desplegado-gpo-lenguas 1.5s ease-in-out;
+  animation: desplegado-gpo-lenguas 1.4s ease-in-out;
 }
 #totonaco:hover {
   background-color: var(--totonaco1);
 }
 #triqui {
   background-color: var(--triqui0);
-  animation: desplegado-gpo-lenguas 1.4s ease-in-out;
+  animation: desplegado-gpo-lenguas 1.8s ease-in-out;
 }
 #triqui:hover {
   background-color: var(--triqui1);
@@ -328,4 +359,5 @@ p.descripcion-modulo {
     transform: translateY(0%);
   }
 }
+
 </style>

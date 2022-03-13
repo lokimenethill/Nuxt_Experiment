@@ -45,6 +45,12 @@
             "text": "se hablan en el norte de Veracruz (huasteca) mientras que la mayoría (30)&nbsp;predominan en el sur de México, Guatemala y Belice. Representan el grupo de lenguas mesoamericanas más documentadas.",
             "content": "<p>Las lenguas maya <code><a href='https://glottolog.org/resource/languoid/id/maya1287' target='_blank'>maya1287</a></code>, habladas en Mexico, Guatemala y Belice, han sido estudiadas como lenguas modernas, en documentación colonial (dictionarios y textos), en los códices y restos arqueológicos, y en proto&#8209;formas reconstruidas. La documentación más extensa (gramáticas, diccionarios y estudios comparativos) es resultado de una iniciativa de una colectiva indígena guatemalteca: OKMA. Tipológicamente, y en contraste a otros idiomas mesoamericanos, las lenguas maya manifiestan alineamiento ergativo&#8209;absolutivo: sujetos de verbs intransitivos se marcan y se comportan como objetos de verbos transitivos. Una forma distinta existe para el sujeto de verbos transitivos. La ergatividad ha sido reconstruida hasta para el proto&#8209;maya.</p>"
         },
+        "mazatec": {
+            "title": "MAZATECO",
+            "preText": "Las 9 lenguas mazatecanas ",
+            "text": "de la rama otomangue oriental, se concentran en el noreste de Oaxaca. El grupo en general manifiesta fonación contrastiva (oral, nasal, voz susurrada, voz laringealizada) y un inventario tonal relativamente abundante.",
+            "content": "<p>Según <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, el grupo de lenguas mazatecanas <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code> abarca 9 lenguas tonales, concentrados en el noreste de Oaxaca, aunque algunas se hablan en comunidades vecinos de Puebla y Veracruz. Mazatecano se caracteriza por un abundante sistema de fonación —oral, nasal, voz susurrada, voz laringealizada— además de un amplio inventario de tonos, generalmente 3 o 4 tonos de nivel y como 5 o 6 de contorno (ascendente y descendente). Los inventarios de vocales son relativamente sencillos: 4 a 6 dependiendo de la lengua. Uno característica interesante de las lenguas mazatecanas es la existencia del mazateco silbado, empleado principalmente para la comunicación a través de grandes distancias. </p>"
+        },
         "mixtec": {
             "title": "MIXTECO",
             "preText": "Las aproximadamente 50 lenguas mixtecanas ",
@@ -104,6 +110,10 @@
                 "title": "Maya",
                 "region0": "Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a 1935",
                 "region1": "Diccionario de Chuj (Maya) hablado en San&NonBreakingSpace;Mateo Ixtatán, Guatemala (1964–65)"
+            },
+            "mazatec": {
+                "title": "Mazateco",
+                "region0": "Mazateco de Huautla"
             },
             "mixtec": {
                 "title": "Mixteco",
