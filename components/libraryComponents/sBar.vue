@@ -99,13 +99,15 @@
                   
                 </div>
                 <div class="table__main__row__cell ">
-                  <span class="table__main__row__cell__data__group--lang">{{find.terminal_lang}}
-                    <code
-                       class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
-                  </span>
-                   <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
-                      {{Gpo_lan.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
+                  <div>
+                    <span class="table__main__row__cell__data__group--lang">{{find.terminal_lang}}
+                      <code
+                        class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
                     </span>
+                    <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
+                        {{Gpo_lan.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
+                      </span>
+                    </div>
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">{{find.community}}</span>
