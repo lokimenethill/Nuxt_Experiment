@@ -100,12 +100,12 @@
                 </div>
                 <div class="table__main__row__cell ">
                   <div>
-                    <span class="table__main__row__cell__data__group--lang">{{find.terminal_lang}}
+                    <span class="table__main__row__cell__data__group--lang">{{find.Gpo_lang}}
                       <code
                         class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
                     </span>
-                    <span  v-for="(Gpo_lan,id) in find.Gpo_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
-                        {{Gpo_lan.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{Gpo_lan.gtlog}}</code>
+                    <span  v-for="(terminal_lang,id) in find.terminal_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
+                        {{terminal_lang.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{terminal_lang.gtlog}}</code>
                       </span>
                     </div>
                 </div>
@@ -222,7 +222,7 @@ export default {
         { label: this.$t('library.tTitle'), val: 'title' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
         { label: this.$t('library.tCommunity'), val: 'community' },
-        { label: this.$t('library.tLang'), val: 'terminal_lang' },
+        { label: this.$t('library.tLang'), val: 'Gpo_lang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
         { label: this.$t('library.all'), val: 'all' },
       ];
@@ -297,13 +297,13 @@ export default {
         ', ' +
         this.library[i].community +
         ', ' +
-        this.library[i].terminal_lang +
+        this.library[i].Gpo_lang +
         ', ' +
         this.library[i].gtolog +
         ', ' +
-        this.library[i].Gpo_lang[0].name +
+        this.library[i].terminal_lang[0].name +
         ', ' +
-        this.library[i].Gpo_lang[0].gtlog +
+        this.library[i].terminal_lang[0].gtlog +
         ', ' +
         this.library[i].keywords[0] +
         ', ' +
