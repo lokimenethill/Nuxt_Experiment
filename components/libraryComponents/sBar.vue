@@ -323,7 +323,7 @@ export default {
       }
     },
     watchBook(source) {
-      return '/libraryBooks/pdfs/' + source + '.pdf';
+      return source;
     },
     goToPage(page) {
       const tempPag = parseInt(page);
