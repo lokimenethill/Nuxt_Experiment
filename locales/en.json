@@ -97,23 +97,27 @@
         "bottomCards": {
             "amuzgoan": {
                 "title": "Amuzgoan",
-                "region0": "San Pedro Amuzgos"
+                "region0": "San Pedro Amuzgos",
+                "popUpW":["<p>San Pedro Amuzgos <code><a href='https://glottolog.org/resource/languoid/id/sanp1260' target='_blank'>sanp1260</a></code> is the municipality in which one of three Amuzgoan languages is spoken. Located on the Tlaxiaco to Pinotepa Nacional highway, S.P. Amuzgos comprises an urbanized municipal center and 9 outlying colonies where, in general, Amuzgo is more highly conserved and used in almost all everyday interactions. The language itself is characterized by a segmental phonology with a relatively abundant set of vowels and a relatively reduced set of consonants that, nevertheless, may occur in complex clusters. For example, nasals may precede all stops and affricates, whereas an <h> may follow any non-palatalized stop. Of the seven oral vowels all but the high front (<i>) and back (<u>) also occur as nasalized; these high vowels are the only ones that occur at the beginning of the approximately 10 oral and nasal dipthongs. Tonal phonology is complicated and still under analysis. Discussions are presented in the articles and manuscripts available through the SPA Amuzgo library. </p>"]
             },
             "nahuatl": {
                 "title": "Nahuatl",
                 "region0": "Highland Puebla Nahuat (Sierra Nororiental de Puebla)",
                 "region1": "Nahuatl of Mecayapan, Veracruz",
                 "region2": "Nahuatl of Tetelcingo, Morelos",
-                "region3": "Nawat (Pipil) of El Salvador"
+                "region3": "Nawat (Pipil) of El Salvador",
+                "popUpW":[]
             },
             "mayan": {
                 "title": "Mayan",
                 "region0": "A historical dictionary of Chol (Mayan): The lexical sources from 1789 to 1935",
-                "region1": "A dictionary of Chuj (Mayan) as spoken in San Mateo Ixtatán, Guatemala (1964–65)"
+                "region1": "A dictionary of Chuj (Mayan) as spoken in San Mateo Ixtatán, Guatemala (1964–65)",
+                "popUpW":[]
             },
             "mazatec": {
                 "title": "Mazatec",
-                "region0": "Mazatec of Huautla"
+                "region0": "Mazatec of Huautla",
+                "popUpW":["<p>Huautla Mazatec <code><a href='https://glottolog.org/resource/languoid/id/huau1238' target='_blank'>huau1238</a></code> was the first of the present 9 Mazatecan languages to split from the main branch. It is also the most widely documented Mazatecan language and is well-known for being that of Marina Sabina, an iconic curer whose prayers have been recorded and translated into Spanish and English. In terms of its phonemic system, Huautla Mazatec has 4 vowels (i,&nbsp;e,&nbsp;a,&nbsp;and&nbsp;o). It maintains oral and nasal distinctions but has lost both creaky voice and breathy voice vowels, two of the four phonation types common in many other Mazatecan languages. Instead, in Huauatla Mazatec the laryngealized and breathy features are realized on a preceding consonant, which can be laryngealized or aspirated. There are 4 level tones (4&nbsp;high&nbsp;to&nbsp;1&nbsp;low) and, in the language of Rio Santiago represented in this portal, 3 falling and 2 rising tones. </p>"]
             },
             "mixtec": {
                 "title": "Mixtec",
@@ -122,16 +126,19 @@
                 "region2": "Mixtec of San Martín Duraznos",
                 "region3": "Mixtec of San Martín Peras",
                 "region4": "Mixtec of Xochapan",
-                "region5": "Mixtec of the Yoloxóchitl community"
+                "region5": "Mixtec of the Yoloxóchitl community",
+                "popUpW":[]
             },
             "totonacan": {
                 "title": "Totonacan",
-                "region0": "Totonac of the municipality of Zongozotla"
+                "region0": "Totonac of the municipality of Zongozotla",
+                "popUpW":[]
             },
             "triqui": {
                 "title": "Triqui",
                 "region0": "Chicahuaxtla Triqui",
-                "region1": "San Martín Itunyoso Triqui"
+                "region1": "San Martín Itunyoso Triqui",
+                "popUpW":[]
             },
             "back": "Go back"
         }

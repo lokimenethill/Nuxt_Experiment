@@ -32,8 +32,7 @@
 
       <div class="contenedor-columnas-pantalla-emergente">
         <div class="columna-izquierda-pantalla-emergente">
-          <div class="contenedor-texto-lengua-pantalla-emergente">
-            <p>{{ datasend.textContent }}</p>
+          <div class="contenedor-texto-lengua-pantalla-emergente" v-html="datasend.textContent" >
           </div>
         </div>
         <div class="columna-derecha-pantalla-emergente">

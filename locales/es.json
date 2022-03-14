@@ -97,23 +97,27 @@
         "bottomCards": {
             "amuzgoan": {
                 "title": "Amuzgo",
-                "region0": "San Pedro Amuzgos"
+                "region0": "San Pedro Amuzgos",
+                "popUpW":["<p>San Pedro Amuzgos <code><a href='https://glottolog.org/resource/languoid/id/sanp1260' target='_blank'>sanp1260</a></code> es el municipio en que se habla una de las tres lenguas amuzgoanas. Ubicado sobre la carretera que va de Tlaxiaco a Pinotepa Nacional, S.P. Amuzgos incluye la cabecera municipal urbanizada y 9 colonias adicionales donde, en general, al amuzgo es más conservado y empleada en casi todas las interacciones cotidianas. La lengua se caracteriza por una fonología segmental con una relativamente amplia serie de vocales y un inventario relativamente reducida de consonantes que, sin embargo, pueden ocurrir en secuencias complejas. Por ejemplo, las nasales pueden anteceder a todos las oclusivas y africadas mientras que una <h> puede seguir cualquier oclusiva no palatalizada. De las 7 vocales orales, todas menos las altas anterior (<i>) y posterior (<u>) ocurren como nasalizadas; estas vocales altas son las únicas que ocurren al principio de los aproximadamente 10 dipthongos orales y nasales. La fonología tonal es complicada y todavía está siendo investigada. Varios análises se pueden consultar en los artículos y manuscritos accesible en la biblioteca de SPA amuzgo. </p>"]
             },
             "nahuatl": {
                 "title": "Náhuatl",
                 "region0": "Náhuat de la Sierra Nororiental de Puebla",
                 "region1": "Náhuatl de Mecayapan, Veracruz",
                 "region2": "Náhuatl de Tetelcingo, Morelos",
-                "region3": "Náwat (Pipil) de El&NonBreakingSpace;Salvador"
+                "region3": "Náwat (Pipil) de El&NonBreakingSpace;Salvador",
+                "popUpW":[]
             },
             "mayan": {
                 "title": "Maya",
                 "region0": "Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a 1935",
-                "region1": "Diccionario de Chuj (Maya) hablado en San&NonBreakingSpace;Mateo Ixtatán, Guatemala (1964–65)"
+                "region1": "Diccionario de Chuj (Maya) hablado en San&NonBreakingSpace;Mateo Ixtatán, Guatemala (1964–65)",
+                "popUpW":[]
             },
             "mazatec": {
                 "title": "Mazateco",
-                "region0": "Mazateco de Huautla"
+                "region0": "Mazateco de Huautla",
+                "popUpW":["<p>El mazateco de Huautla <code><a href='https://glottolog.org/resource/languoid/id/huau1238' target='_blank'>huau1238</a></code> fue el primero de las 9 lenguas mazatecanas de separarse del tronco principal y es la lengua mazatecana más documentada. También es bien conocida por ser el idioma de Marina Sabina, una curandera icónica cuyos rezos han sido grabados y traducidos al español e inglés. En cuanto a su sistema de fonemas, el mazateco de Huautla tiene 4 vocales (i,&nbsp;e,&nbsp;a,&nbsp;o). Mantiene la distinción entre vocales orales y nasales pero ha perdido las vocales murmuradas y laringealizadas. En su lugar, las mismas características se realizan como aspiración y laringealización en la articulación de las consonantes. En cuanto a los tonos, el mazateco de Huautla tiene 4 tonos de nivel (1&nbsp;bajo&nbsp;a&nbsp;4&nbsp;alto) y, por lo menos en la variante de Rio Santiago representada en este portal, 3 tonos ascendentes y 2 descendentes. </p>"]
             },
             "mixtec": {
                 "title": "Mixteco",
@@ -122,16 +126,19 @@
                 "region2": "Mixteco de San Martín Duraznos",
                 "region3": "Mixteco de San Martín Peras",
                 "region4": "Mixteco de Xochapan",
-                "region5": "Mixteco de la comunidad de Yoloxóchitl"
+                "region5": "Mixteco de la comunidad de Yoloxóchitl",
+                "popUpW":[]
             },
             "totonacan": {
                 "title": "Totonacano",
-                "region0": "Totonaco del municipio de Zongozotla"
+                "region0": "Totonaco del municipio de Zongozotla",
+                "popUpW":[]
             },
             "triqui": {
                 "title": "Triqui",
                 "region0": "Triqui de Chicahuaxtla",
-                "region1": "Triqui de San Martín Itunyoso"
+                "region1": "Triqui de San Martín Itunyoso",
+                "popUpW":[]
             },
             "back": "Regresar"
         }
