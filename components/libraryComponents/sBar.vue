@@ -101,8 +101,7 @@
                 <div class="table__main__row__cell ">
                   <div>
                     <span class="table__main__row__cell__data__group--lang">{{find.Gpo_lang}}
-                      <code
-                        class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
+                      <code class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
                     </span>
                     <span  v-for="(terminal_lang,id) in find.terminal_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
                         {{terminal_lang.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{terminal_lang.gtlog}}</code>
