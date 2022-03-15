@@ -36,7 +36,7 @@
                 </span> </span
               ><span class="titulo"
                 ><i>{{ datasend.title }}</i></span
-              ><span class="resto"> {{ datasend.extra }}</span>
+              ><span class="resto" v-html="datasend.extra" ></span>
             </p>
           </div>
         </div>

@@ -6,17 +6,19 @@
       <!-- Módulo mosaico lenguas terminales sumario -->
       <div
         id="myBtn"
-        class="sumario-lengua-terminal-item sumario-lengua-terminal-item-amuzgo"
+        class="
+          sumario-lengua-terminal-item sumario-lengua-terminal-item-mazateco
+        "
         @click="toggleWindow(0)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.amuzgoan.region0')"></span>
+          <span v-html="$t('topicIndex.bottomCards.mazatec.region0')"></span>
         </h3>
         <code class="modulo-lexicos"
           ><a
-            href="https://glottolog.org/resource/languoid/id/sanp1260"
+            href="https://glottolog.org/resource/languoid/id/huau1238"
             target="_blank"
-            >sanp1260</a
+            >huau1238</a
           ></code
         >
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
@@ -48,18 +50,18 @@ export default {
     return {
       showWindow: false,
       numOfWindow: null,
-      keyColor:"var(--amuzgo0)",
+      keyColor:"var(--mazateco0)",
     };
   },
   computed: {
     sendDataWindow() {
       const dataWindow = [
         {
-          rootLang: this.$t('languageIndex.amuzgoan.title'),
-          title: this.$t('topicIndex.bottomCards.amuzgoan.region0'),
-          textContent:this.$t('topicIndex.bottomCards.amuzgoan.popUpW[0]'),
+          rootLang: this.$t('languageIndex.mazatec.title'),
+          title: this.$t('topicIndex.bottomCards.mazatec.region0'),
+          textContent:this.$t('topicIndex.bottomCards.mazatec.popUpW[0]'),
           imgUri:
-            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/san_pedro_amuzgos-image.jpg',
+            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/totonaco_zangozotla-image.jpg',
           imgMeta:"Inocencio Jiménez",
           lexicons: [
             {

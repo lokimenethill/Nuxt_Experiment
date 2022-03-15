@@ -45,6 +45,12 @@
             "text": "are spoken in northern Veracruz (Huastecan) while 30&nbsp;predominate in contiguous areas of southern Mexico, Guatemala, and Belize. They represent the most documented of Mesoamerican languages.",
             "content": "<p>Mayan languages <code><a href='https://glottolog.org/resource/languoid/id/maya1287' target='_blank'>maya1287</a></code>, spoken in Mexico, Guatemala, and Belize, have been extensively studied in their modern variants, in extensive colonial documentation (dictionaries and texts), in glyphic archaeological and codex records, and in reconstructed proto&#8209;forms. Extensive documentation of modern Maya (grammars, dictionaries, comparative studies) is the result of a model effort by an Indigenous Guatemalan collective: OKMA. Typologically, and unlike other Mesoamerican languages, Maya manifests ergative&#8209;absolutive alignment: subjects of intranstive verbs are marked and behave like objects of transitive verbs. A separate form exists for subjects of transitive verbs. Ergativity is not a recent development but has been reconstructed to proto&#8209;Mayan.</p>"
         },
+        "mazatec": {
+            "title": "MAZATEC",
+            "preText": "The 9 Mazatecan languages ",
+            "text": "are Eastern Otomanguean languages concentrated in northeastern Oaxaca. The language in general manifests contrastive phonation (oral, nasal, breathy voice, creaky voice) and a relatively abundant tonal inventory.",
+            "content": "<p>According to <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, the Mazatecan language group <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code>comprises 9 tonal languages spoken almost exclusively in northeastern Oaxaca, although a few spill over into adjacent communities of Puebla and Veracruz. Mazatecan is noteworthy for abundant and contrastive phonation&#8209;oral, nasal, breathy voice, creaky voice&#8209;as well as a rich tonal inventory, which generally includes 3 or 4 level tones and some 5 or more contours (rising and falling). Vowel inventories are relatively simple: 4 to 6 depending on the language. One of the more interesting features of Mazatecan is the existence of a well-developed whistled language, used particularly for long-distance communication. </p>"
+        },
         "mixtec": {
             "title": "MIXTEC",
             "preText": "The approximately 50 Mixtec languages ",
@@ -91,19 +97,27 @@
         "bottomCards": {
             "amuzgoan": {
                 "title": "Amuzgoan",
-                "region0": "San Pedro Amuzgos"
+                "region0": "San Pedro Amuzgos",
+                "popUpW":["<p>San Pedro Amuzgos <code><a href='https://glottolog.org/resource/languoid/id/sanp1260' target='_blank'>sanp1260</a></code> is the municipality in which one of three Amuzgoan languages is spoken. Located on the Tlaxiaco to Pinotepa Nacional highway, S.P. Amuzgos comprises an urbanized municipal center and 9 outlying colonies where, in general, Amuzgo is more highly conserved and used in almost all everyday interactions. The language itself is characterized by a segmental phonology with a relatively abundant set of vowels and a relatively reduced set of consonants that, nevertheless, may occur in complex clusters. For example, nasals may precede all stops and affricates, whereas an &#60;h&#62; may follow any non-palatalized stop. Of the seven oral vowels all but the high front (&#60;i&#62;) and back (&#60;u&#62;) also occur as nasalized; these high vowels are the only ones that occur at the beginning of the approximately 10 oral and nasal dipthongs. Tonal phonology is complicated and still under analysis. Discussions are presented in the articles and manuscripts available through the SPA Amuzgo library. </p>"]
             },
             "nahuatl": {
                 "title": "Nahuatl",
                 "region0": "Highland Puebla Nahuat (Sierra Nororiental de Puebla)",
                 "region1": "Nahuatl of Mecayapan, Veracruz",
                 "region2": "Nahuatl of Tetelcingo, Morelos",
-                "region3": "Nawat (Pipil) of El Salvador"
+                "region3": "Nawat (Pipil) of El Salvador",
+                "popUpW":[]
             },
             "mayan": {
                 "title": "Mayan",
                 "region0": "A historical dictionary of Chol (Mayan): The lexical sources from 1789 to 1935",
-                "region1": "A dictionary of Chuj (Mayan) as spoken in San Mateo Ixtatán, Guatemala (1964–65)"
+                "region1": "A dictionary of Chuj (Mayan) as spoken in San Mateo Ixtatán, Guatemala (1964–65)",
+                "popUpW":[]
+            },
+            "mazatec": {
+                "title": "Mazatec",
+                "region0": "Mazatec of Huautla",
+                "popUpW":["<p>Huautla Mazatec <code><a href='https://glottolog.org/resource/languoid/id/huau1238' target='_blank'>huau1238</a></code> was the first of the present 9 Mazatecan languages to split from the main branch. It is also the most widely documented Mazatecan language and is well-known for being that of Marina Sabina, an iconic curer whose prayers have been recorded and translated into Spanish and English. In terms of its phonemic system, Huautla Mazatec has 4 vowels (i,&nbsp;e,&nbsp;a,&nbsp;and&nbsp;o). It maintains oral and nasal distinctions but has lost both creaky voice and breathy voice vowels, two of the four phonation types common in many other Mazatecan languages. Instead, in Huauatla Mazatec the laryngealized and breathy features are realized on a preceding consonant, which can be laryngealized or aspirated. There are 4 level tones (4&nbsp;high&nbsp;to&nbsp;1&nbsp;low) and, in the language of Rio Santiago represented in this portal, 3 falling and 2 rising tones. </p>"]
             },
             "mixtec": {
                 "title": "Mixtec",
@@ -112,16 +126,19 @@
                 "region2": "Mixtec of San Martín Duraznos",
                 "region3": "Mixtec of San Martín Peras",
                 "region4": "Mixtec of Xochapan",
-                "region5": "Mixtec of the Yoloxóchitl community"
+                "region5": "Mixtec of the Yoloxóchitl community",
+                "popUpW":[]
             },
             "totonacan": {
                 "title": "Totonacan",
-                "region0": "Totonac of the municipality of Zongozotla"
+                "region0": "Totonac of the municipality of Zongozotla",
+                "popUpW":[]
             },
             "triqui": {
                 "title": "Triqui",
                 "region0": "Chicahuaxtla Triqui",
-                "region1": "San Martín Itunyoso Triqui"
+                "region1": "San Martín Itunyoso Triqui",
+                "popUpW":[]
             },
             "back": "Go back"
         }

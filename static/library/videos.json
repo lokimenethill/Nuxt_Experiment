@@ -1,74 +1,284 @@
 [
     {
-        "title":"Harry potter <b>la piedra filosofal</b>",
-        "directors":["J. K. Rowling","J. K. Rowling2"],
-        "community":"Reino Unido",
-        "terminal_lang":"Inglés",
-        "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"Mixtec of the Yoloxóchitl","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["Fantasia","Magia","Escolar"],
-        "year":"1989",
-        "source":"",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
-    }, 
-    {
-        "title":"Iliada",
-        "directors":["Homero","Homero2","Homero3"],
-        "community":"Atenas",
-        "terminal_lang":"Griego",
-        "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"chunchumaru","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["Mitologia","Epico","Historia"],
-        "year":"3ac",
-        "source":"",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
-    }, 
-    {
-        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec. ",
-        "directors":["Amith, Jonathan D.","Jiatong Shi, and Rey","Castillo García"],
+        "title":"El trompo de Esteban Guadalupe Sierra (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)","Roberto Olivares (director)"],
         "community":"Yoloxóchitl",
-        "terminal_lang":"Griego",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
         "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"chunchumaru","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
-        "year":"2021",
-        "source":"https://www.youtube.com/watch?v=KkHKoffgFT0",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Material culture","Plant use","Mixteco","Cultura material","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=XzumbCmedSM&t"
     },
     {
-        "title":"Principito",
-        "directors":["J. K. Rowling","J. K. Rowling2"],
-        "community":"Reino Unido",
-        "terminal_lang":"Inglés",
-        "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"chunchumaru","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["Fantasia","Magia","Escolar"],
-        "year":"2021",
-        "source":"",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
-    }, 
-    {
-        "title":"Verbal inflection in Yoloxóchitl Mixtec",
-        "directors":["Palancar, Enrique","Amith, Jonathan D","Castillo García, Rey"],
-        "community":"Atenas",
-        "terminal_lang":"Griego",
-        "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"chunchumaru","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["Mixtec","morphology","inflection","tone","grammar"],
-        "year":"2021",
-        "source":"",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
-    }, 
-    {
-        "title":"End-to-end automatic speech recognition: Its impact on the workflow for documenting Yoloxóchitl Mixtec.",
-        "directors":["Amith, Jonathan D.","Jiatong Shi","Rey Castillo García"],
+        "title":"El trompo de Esteban Guadalupe Sierra (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
         "community":"Yoloxóchitl",
-        "terminal_lang":"Griego",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
         "gtolog":"mixt1247",
-        "Gpo_lang":[{"name":"chunchumaru","gtlog":"yolo1241"},{"name":"chomosuke","gtlog":"yolo1241"}],
-        "keywords":["language documentation","automatic speech","recognition","computational linguistics"],
-        "year":"2021",
-        "source":"https://www.youtube.com/watch?v=AODaWVhaE0s",
-        "extra":"First Workshop on NLP for Indigenous Languages of the Americas. 11 June 2021."
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Material culture","Plant use","Mixteco","Cultura material","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=1D6K_PNlJp4&t"
+    },
+    {
+        "title":"Trapiche de metal (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Material culture","Plant use","Mixteco","Cultura material","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=UF08L9BZZXo&t"
+    },
+    {
+        "title":"Trapiche de metal (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Material culture","Plant use","Mixteco","Cultura material","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=S4KzRiQWy1E&t"
+    },
+    {
+        "title":"Pollo pintado (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Plant use","Mixteco","Comida","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=n3fRvOk6Gtk&t"
+    },
+    {
+        "title":"Pollo pintado (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Plant use","Mixteco","Comida","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=guQpecz8AK4&t"
+    },
+    {
+        "title":"La honda de don Martín Severiano (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Plant use","Mixteco","Comida","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=lUQnMiF6OcI&t"
+    },
+    {
+        "title":"La honda de don Martín Severiano (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Plant use","Mixteco","Comida","Uso de plantas"],
+        "source":"https://www.youtube.com/watch?v=w063o82prA8&t"
+    },
+    {
+        "title":"Lo que se va perdiendo (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Mixteco","Lenguas amenazadas"],
+        "source":"https://www.youtube.com/watch?v=Ozaa6lIYtOs"
+    },
+    {
+        "title":"Lo que se va perdiendo (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Mixteco","Lenguas amenazadas"],
+        "source":"https://www.youtube.com/watch?v=oZWjMSm4ulY&t"
+    },
+    {
+        "title":"Petición de lluvia de Pedro González Martínez en Yoloxóchitl, Guerrero (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Mixteco","Lenguas amenazadas","Ritual"],
+        "source":"https://www.youtube.com/watch?v=7FkRWonLSt4&t"
+    },
+    {
+        "title":"Petición de lluvia de Pedro González Martínez en Yoloxóchitl, Guerrero (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Mixteco","Lenguas amenazadas","Ritual"],
+        "source":"https://www.youtube.com/watch?v=ZP8Wv2iI4eg"
+    },
+    {
+        "title":"El telar de Cecilia Francisco Gabino (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Material culture","Mixteco","Lenguas amenazadas","Cultura material"],
+        "source":"https://www.youtube.com/watch?v=B1Vmzu9i61s&t"
+    },
+    {
+        "title":"El telar de Cecilia Francisco Gabino (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Material culture","Mixteco","Lenguas amenazadas","Cultura material"],
+        "source":"https://www.youtube.com/watch?v=B1Vmzu9i61s&t"
+    },
+    {
+        "title":"Los comales de Alfonsa Jiménez Felipe (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Material culture","Mixteco","Lenguas amenazadas","Cultura material"],
+        "source":"https://www.youtube.com/watch?v=fbxGDsFqMLU&t"
+    },
+    {
+        "title":"Los comales de Alfonsa Jiménez Felipe (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Endangered languages","Material culture","Mixteco","Lenguas amenazadas","Cultura material"],
+        "source":"https://www.youtube.com/watch?v=DGc-UtuKY0Q"
+    },
+    {
+        "title":"La hormiga león (ndi³ki⁴bi⁴) (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Ethnobiology","Mixteco","Etnobiología"],
+        "source":"https://www.youtube.com/watch?v=EUSBz9PemOk"
+    },
+    {
+        "title":"Ndi³ki⁴bi⁴ (La hormiga león) (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Ethnobiology","Mixteco","Etnobiología"],
+        "source":"https://www.youtube.com/watch?v=HUlBL7MMGwQ&t"
+    },
+    {
+        "title":"Atole agrio de Magdalena Leonides y Sidronia García (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=T6LF4pWfhNE&t"
+    },
+    {
+        "title":"Atole agrio de Magdalena Leonides y Sidronia García (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=tx1j-BD7n-A&t"
+    },
+    {
+        "title":"Cociendo cangrejos en el campo (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Ethnobiology","Mixteco","Comida","Etnobiología"],
+        "source":"https://www.youtube.com/watch?v=ctV1CUUCApk&t"
+    },
+    {
+        "title":"Cociendo cangrejos en el campo (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Ethnobiology","Mixteco","Comida","Etnobiología"],
+        "source":"https://www.youtube.com/watch?v=-W6mfbInGRU&t"
+    },
+    {
+        "title":"Cociendo cangrejos en el campo (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=88l7Z4BW9uU&t"
+    },
+    {
+        "title":"Cociendo cangrejos en el campo (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=j8pXeK2uOoY&t"
+    },
+    {
+        "title":"Tamales de calabaza (subtítulos español)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=AODaWVhaE0s&t"
+    },
+    {
+        "title":"Tamales de calabaza (subtítulos mixteco)",
+        "directors":["Jonathan D. Amith (producer, co-director)"," Roberto Olivares (director)"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mixtec","Food","Mixteco","Comida"],
+        "source":"https://www.youtube.com/watch?v=KkHKoffgFT0&t"
+    }
+    ,
+    {
+        "title":"Así suena el mazateco silbado",
+        "directors":["A+J Español"],
+        "community":"Río Santiago",
+        "terminal_lang":[{"name":"Huautla Mazatec","gtlog":"yolo1241"},{"name":"Mazateco de Huautla","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mazatecano",
+        "keywords":["Mazatec","Whistle language","Mazateco","Mazateco silbado"],
+        "source":"https://www.youtube.com/watch?v=PhNPirsfg00"
+    }
+    ,
+    {
+        "title":"B’e Xui Lee Yá – El chiflido de los árboles",
+        "directors":["David Escobar Parra","Eloy García Garcia"],
+        "community":"Yoloxóchitl",
+        "terminal_lang":[{"name":"Mixteco de Yoloxóchitl","gtlog":"yolo1241"},{"name":"Yoloxóchitl Mixtec","gtlog":"yolo1241"}],
+        "gtolog":"mixt1247",
+        "Gpo_lang":"Mixtecano",
+        "keywords":["Mazatec","Whistle language","Mazateco","Mazateco silbado"],
+        "source":"https://www.youtube.com/watch?v=0kemMnzZU74&t"
     }
 ]
