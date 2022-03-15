@@ -1,6 +1,5 @@
 <template lang="">
   <div class="contenedor-general-rebasado">
-   
     <div class="contenedor-general">
       <div class="contenedor-breadcums">
         <a class="breadcums">{{ $t('library.title') }}</a>
@@ -211,7 +210,7 @@ export default {
       query_res: {},
       totalAnswers: JsonLibrary.length,
       resultsPerPage: 5,
-      maxPage: 0,
+    //  maxPage: 0,
       pag: 1,
     };
   },
@@ -231,10 +230,21 @@ export default {
       return this.$t('library.tTitle');
     },
     items() {
+      // Prequeryed
+       let queryed='';
+      if(this.$route.params.id!=="general"){
+        queryed = _.filter(this.library, (book) =>
+          book.terminal_lang[0].name
+            .toLowerCase()
+            .includes(this.$route.params.id.toLowerCase()),
+        );
+      }else{
+        queryed=this.library;
+      }
       // Sorting
       const sortedBooks = this.ascendingSort
-        ? _.sortBy(this.library, this.sortTableBy)
-        : _.sortBy(this.library, this.sortTableBy).reverse();
+        ? _.sortBy(queryed, this.sortTableBy)
+        : _.sortBy(queryed, this.sortTableBy).reverse();
       // filtered
       let filtered = '';
       if (
@@ -253,18 +263,20 @@ export default {
             .includes(this.dataSearch.toLowerCase()),
         );
       }
-
+     
       // console.log(this.searchSelector.val);
       return filtered;
     },
     sendDataWindow() {
       return this.library[this.numOfWindow];
     },
+    maxPage(){
+      return Math.ceil(this.items.length / this.resultsPerPage);
+    },
   },
   watch: {
     dataSearch() {
       this.totalAnswers = this.items.length;
-      this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
     },
     langW(){
       this.searchSelector = this.searchSelectOptions[0];
@@ -311,7 +323,6 @@ export default {
     }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
-    this.maxPage = Math.ceil(JsonLibrary.length / this.resultsPerPage);
   },
   methods: {
     toggleWindow(nw) {

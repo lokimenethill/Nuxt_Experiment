@@ -20,7 +20,7 @@
           </transition>
           <transition name="library">
           <div onclick="location.href='#'" class="topic-index-item library">
-            <nuxt-link class="none" :to="localePath('library')" >
+            <nuxt-link class="none" :to="localePath('/library/general')" >
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.library.title') }}
             </h3>

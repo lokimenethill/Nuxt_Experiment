@@ -425,7 +425,7 @@ export default {
           grammar: [
             {
               display: 'grammar1',
-              src: 'uri://',
+              src: 'Yoloxóchitl Mixtec',
             },
             {
               display: 'grammar2',
