@@ -1,7 +1,6 @@
 <template>
 <div>
  <search-Bar/>
- 
 </div>
 
 </template>
@@ -24,6 +23,9 @@ export default {
       ]
       */
     };
+  },
+   computed: {
+
   },
 };
 </script>

@@ -116,13 +116,13 @@
           >
              {{ $t('summaryButtomPopUp.c4') }}
           </h2>
-          <a
+          <nuxt-link
             v-for="(element, index) in datasend.grammar"
             :key="index"
             :v-bind="index"
             class="vinculo-footer-pantalla-emergente"
-            >{{ element.display }}</a
-          >
+            :to="localePath('/library/'+element.src)"
+            >{{ element.display }}</nuxt-link>
         </div>
         <div class="footer-columna-item-creditos  ">
               <!-- <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Credits</h2> -->
