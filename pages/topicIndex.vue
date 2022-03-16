@@ -63,7 +63,7 @@
             id="videos"
             onclick="location.href='#'"
             class="topic-index-item videos"
-          ><nuxt-link class="none" :to="localePath('videos')" >
+          ><nuxt-link class="none" :to="localePath('/videos/general')" >
             <h3 class="titulo-modulo">
               {{ $t('topicIndex.topCards.videos.title') }}
             </h3>

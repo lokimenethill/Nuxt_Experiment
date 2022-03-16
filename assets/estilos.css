@@ -950,7 +950,7 @@ p.divisor-selector-lenguaje {
 }
 
 /*--------------------------------Estaticas---------------------------------*/
-h1.titulo-estaticas {
+h1.titulo-estaticas,h2.titulo-estaticas-seccion {
   text-align: right;
 }
 h2.titulo-estaticas {
@@ -970,6 +970,20 @@ h6.titulo-estaticas {
 }
 h1.titulo-estaticas-largo{
   font-size: 1.8rem !important;
+}
+ol.lista-ordenada-estaticas {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.955rem; /*17.19 px*/
+  line-height: 130%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--gris1);
+  font-weight: 400;
+}
+.imagen-estaticas-columna-grande {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .contenedor-titulo-estaticas {
   border-right: 1px solid var(--interface1);

@@ -20,9 +20,9 @@
     "summaryButtomPopUp":{
         "c1":"Lexicos",
         "c2":"Flora y fauna",
-        "c3":"Corpus",
+        "c3":"Videos",
         "c4":"Biblioteca",
-        "c5":"Ver Creditos"
+        "c5":"Creditos"
     },
     "languageIndex": {
         "title": "",
@@ -48,8 +48,8 @@
         "mazatec": {
             "title": "MAZATECO",
             "preText": "Las 9 lenguas mazatecanas ",
-            "text": "de la rama otomangue oriental, se concentran en el noreste de Oaxaca. El grupo en general manifiesta fonación contrastiva (oral, nasal, voz susurrada, voz laringealizada) y un inventario tonal relativamente abundante.",
-            "content": "<p>Según <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, el grupo de lenguas mazatecanas <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code> abarca 9 lenguas tonales, concentrados en el noreste de Oaxaca, aunque algunas se hablan en comunidades vecinos de Puebla y Veracruz. Mazatecano se caracteriza por un abundante sistema de fonación —oral, nasal, voz susurrada, voz laringealizada— además de un amplio inventario de tonos, generalmente 3 o 4 tonos de nivel y como 5 o 6 de contorno (ascendente y descendente). Los inventarios de vocales son relativamente sencillos: 4 a 6 dependiendo de la lengua. Uno característica interesante de las lenguas mazatecanas es la existencia del mazateco silbado, empleado principalmente para la comunicación a través de grandes distancias. </p>"
+            "text": "de la rama otomangue oriental, se concentran en el noreste de Oaxaca. El grupo en general manifiesta fonación contrastiva (oral, nasal, voz murmurada, voz laringealizada) y un inventario tonal relativamente abundante.",
+            "content": "<p>Según <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, el grupo de lenguas mazatecanas <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code> abarca 9 lenguas tonales, concentrados en el noreste de Oaxaca, aunque algunas se hablan en comunidades vecinos de Puebla y Veracruz. Mazatecano se caracteriza por un abundante sistema de fonación —oral, nasal, voz murmurada, voz laringealizada— además de un amplio inventario de tonos, generalmente 3 o 4 tonos de nivel y como 5 o 6 de contorno (ascendente y descendente). Los inventarios de vocales son relativamente sencillos: 4 a 6 dependiendo de la lengua. Uno característica interesante de las lenguas mazatecanas es la existencia del mazateco silbado, empleado principalmente para la comunicación a través de grandes distancias. </p>"
         },
         "mixtec": {
             "title": "MIXTECO",
@@ -138,7 +138,7 @@
                 "title": "Triqui",
                 "region0": "Triqui de Chicahuaxtla",
                 "region1": "Triqui de San Martín Itunyoso",
-                "popUpW":[]
+                "popUpW":["<p>El Triqui de Chicahuaxtla<code><a href='https://glottolog.org/resource/languoid/id/chic1273' target='_blank'>chic1273</a></code> se habla en 15 comunidades alrededor de San Andrés Chicahuaxtla (municipiode Putla, Oaxaca). El polígono dentro del cual se habla esta lengua es pequeño (aprox. 40 km. cuadrado); por logeneral el terreno se encuentra en una altitud relativamente alta (&#62; 2,000 m.). El triqui de Chicahuaxtlamantiene la distinción entre consonantes fortis y lenis característica de triqui en general. Aunque en palabrasmonosilábicas las oclusivas lenis tienden a sonorizarse, la duración sigue distinguiendo consonantes fortis delenis en otros contextos. El inventario tonal es relativamente abundante con 4 tonos de nivel (1 bajo a 4 alto)además de 3 tonos ascendentes y 3 descendentes (un tono 5 “superalto” quizá sea solamente un alotono de 4 en eltono ascendente 35). El triqui de Chicahuaxtla Triqui, en contraste a otras lenguas triqui, se nota por vocalesrearticuladas a fin de frase, un reflejo de un tono flotante.</p>"]
             },
             "back": "Regresar"
         }

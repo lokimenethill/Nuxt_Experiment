@@ -26,7 +26,8 @@ export default {
 };
 </script>
 <style>
-#about-mesolex {
+#about-mesolex,
+#topic-index-about {
   color: var(--flora1);
 }
 </style>
