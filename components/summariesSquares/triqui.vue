@@ -75,8 +75,7 @@ export default {
         {
           rootLang: this.$t('languageIndex.triqui.title'),
           title: this.$t('topicIndex.bottomCards.triqui.region0'),
-          textContent:
-            '<p>El Triqui de Chicahuaxtla<code><a href="https://glottolog.org/resource/languoid/id/chic1273" target="_blank">chic1273</a></code> se habla en 15 comunidades alrededor de San Andrés Chicahuaxtla (municipiode Putla, Oaxaca). El polígono dentro del cual se habla esta lengua es pequeño (aprox. 40 km. cuadrado); por logeneral el terreno se encuentra en una altitud relativamente alta (&#62; 2,000 m.). El triqui de Chicahuaxtlamantiene la distinción entre consonantes fortis y lenis característica de triqui en general. Aunque en palabrasmonosilábicas las oclusivas lenis tienden a sonorizarse, la duración sigue distinguiendo consonantes fortis delenis en otros contextos. El inventario tonal es relativamente abundante con 4 tonos de nivel (1 bajo a 4 alto)además de 3 tonos ascendentes y 3 descendentes (un tono 5 “superalto” quizá sea solamente un alotono de 4 en eltono ascendente 35). El triqui de Chicahuaxtla Triqui, en contraste a otras lenguas triqui, se nota por vocalesrearticuladas a fin de frase, un reflejo de un tono flotante.</p>',
+          textContent:this.$t('topicIndex.bottomCards.triqui.popUpW[0]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/triqui_chicahuaxtla-image.jpg',
           imgMeta:"Inocencio Jiménez",
