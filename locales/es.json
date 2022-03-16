@@ -20,9 +20,9 @@
     "summaryButtomPopUp":{
         "c1":"Lexicos",
         "c2":"Flora y fauna",
-        "c3":"Corpus",
+        "c3":"Videos",
         "c4":"Biblioteca",
-        "c5":"Ver Creditos"
+        "c5":"Creditos"
     },
     "languageIndex": {
         "title": "",
@@ -48,8 +48,8 @@
         "mazatec": {
             "title": "MAZATECO",
             "preText": "Las 9 lenguas mazatecanas ",
-            "text": "de la rama otomangue oriental, se concentran en el noreste de Oaxaca. El grupo en general manifiesta fonación contrastiva (oral, nasal, voz susurrada, voz laringealizada) y un inventario tonal relativamente abundante.",
-            "content": "<p>Según <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, el grupo de lenguas mazatecanas <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code> abarca 9 lenguas tonales, concentrados en el noreste de Oaxaca, aunque algunas se hablan en comunidades vecinos de Puebla y Veracruz. Mazatecano se caracteriza por un abundante sistema de fonación —oral, nasal, voz susurrada, voz laringealizada— además de un amplio inventario de tonos, generalmente 3 o 4 tonos de nivel y como 5 o 6 de contorno (ascendente y descendente). Los inventarios de vocales son relativamente sencillos: 4 a 6 dependiendo de la lengua. Uno característica interesante de las lenguas mazatecanas es la existencia del mazateco silbado, empleado principalmente para la comunicación a través de grandes distancias. </p>"
+            "text": "de la rama otomangue oriental, se concentran en el noreste de Oaxaca. El grupo en general manifiesta fonación contrastiva (oral, nasal, voz murmurada, voz laringealizada) y un inventario tonal relativamente abundante.",
+            "content": "<p>Según <a href='https://glottolog.org/' target='_blank'>Glottolog</a>, el grupo de lenguas mazatecanas <code><a href='https://glottolog.org/resource/languoid/id/maza1295' target='_blank'>maza1295</a></code> abarca 9 lenguas tonales, concentrados en el noreste de Oaxaca, aunque algunas se hablan en comunidades vecinos de Puebla y Veracruz. Mazatecano se caracteriza por un abundante sistema de fonación —oral, nasal, voz murmurada, voz laringealizada— además de un amplio inventario de tonos, generalmente 3 o 4 tonos de nivel y como 5 o 6 de contorno (ascendente y descendente). Los inventarios de vocales son relativamente sencillos: 4 a 6 dependiendo de la lengua. Uno característica interesante de las lenguas mazatecanas es la existencia del mazateco silbado, empleado principalmente para la comunicación a través de grandes distancias. </p>"
         },
         "mixtec": {
             "title": "MIXTECO",
