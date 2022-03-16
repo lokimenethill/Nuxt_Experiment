@@ -424,12 +424,8 @@ export default {
           ],
           grammar: [
             {
-              display: 'grammar1',
+              display: 'Ver documentos',
               src: 'Yoloxóchitl Mixtec',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
             },
           ],
         },

@@ -201,7 +201,7 @@ export default {
       query_res: {},
       totalAnswers: JsonLibrary.length,
       resultsPerPage: 5,
-      maxPage: 0,
+      // maxPage: 0,
       pag: 1,
     };
   },
@@ -221,10 +221,20 @@ export default {
       return this.$t('library.tTitle');
     },
     items() {
+      let queryed='';
+      if(this.$route.params.id!=="general"){
+        queryed = _.filter(this.library, (book) =>
+          book.terminal_lang[0].name
+            .toLowerCase()
+            .includes(this.$route.params.id.toLowerCase()),
+        );
+      }else{
+        queryed=this.library;
+      }
       // Sorting
       const sortedBooks = this.ascendingSort
-        ? _.sortBy(this.library, this.sortTableBy)
-        : _.sortBy(this.library, this.sortTableBy).reverse();
+        ? _.sortBy(queryed, this.sortTableBy)
+        : _.sortBy(queryed, this.sortTableBy).reverse();
       // filtered
       let filtered = '';
       if (
@@ -247,6 +257,9 @@ export default {
       // console.log(this.searchSelector.val);
       return filtered;
     },
+    maxPage(){
+      return  Math.ceil(this.items.length / this.resultsPerPage);
+    },
     sendDataWindow() {
       return this.library[this.numOfWindow];
     },
@@ -254,7 +267,6 @@ export default {
   watch: {
     dataSearch() {
       this.totalAnswers = this.items.length;
-      this.maxPage = Math.ceil(this.items.length / this.resultsPerPage);
     },
      langW(){
       this.searchSelector = this.searchSelectOptions[0];
@@ -301,7 +313,6 @@ export default {
     }
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
-    this.maxPage = Math.ceil(JsonLibrary.length / this.resultsPerPage);
   },
   methods: {
     toggleWindow(nw) {
