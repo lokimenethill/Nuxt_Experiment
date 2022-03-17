@@ -220,7 +220,7 @@ export default {
         { label: this.$t('library.tTitle'), val: 'title' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
         { label: this.$t('library.tCommunity'), val: 'community' },
-        { label: this.$t('library.tLang'), val: 'Gpo_lang' },
+        { label: this.$t('library.tLang'), val: 'tLang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
         { label: this.$t('library.all'), val: 'all' },
       ];
@@ -249,7 +249,8 @@ export default {
       let filtered = '';
       if (
         this.searchSelector.val === 'authors' ||
-        this.searchSelector.val === 'keywords'
+        this.searchSelector.val === 'keywords' ||
+        this.searchSelector.val === 'terminal_lang'
       ) {
         filtered = _.filter(sortedBooks, (book) =>
           book[this.searchSelector.val][0]
@@ -299,6 +300,13 @@ export default {
           this.library[i].kwrds = this.library[i].keywords[n] + ', ';
         } else {
           this.library[i].kwrds += this.library[i].keywords[n] + ', ';
+        }
+      }
+       for (let n = 0; n < this.library[i].terminal_lang.length; n++) {
+        if (n === 0) {
+          this.library[i].tLang = this.library[i].terminal_lang[n].name + ', ';
+        } else {
+          this.library[i].tLang += this.library[i].terminal_lang[n].name + ', ';
         }
       }
       this.library[i].all +=
