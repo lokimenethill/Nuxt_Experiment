@@ -18,11 +18,13 @@
       </div>
 
       <div class="contenedor-columnas-pantalla-emergente-ficha--bibliografica">
+         <!--
         <div class="columna-izquierda-pantalla-emergente-ficha--bibliografica">
           <p class="ano">
             <span>{{ datasend.year }}</span>
           </p>
         </div>
+        -->
         <div class="columna-derecha-pantalla-emergente-ficha--bibliografica">
           <div
             class="
@@ -30,13 +32,14 @@
             "
           >
             <p class="ficha_texto">
+              <!--
               <span class="autor-1">
                 <span v-for="author in datasend.authors" :key="author">
                   {{ author }}
                 </span> </span
               ><span class="titulo"
                 ><i>{{ datasend.title }}</i></span
-              ><span class="resto" v-html="datasend.extra" ></span>
+              >--><span class="resto" v-html="datasend.extra" ></span>
             </p>
           </div>
         </div>
@@ -69,12 +72,12 @@ export default {
       contador: 1,
       window: this.show,
       textToCopy:
-        this.datasend.year +
+       /* this.datasend.year +
         ' ' +
         this.datasend.authrs +
         ' ' +
         this.datasend.title +
-        ' ' +
+        ' ' + */
         this.datasend.extra,
     };
   },

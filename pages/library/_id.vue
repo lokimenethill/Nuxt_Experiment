@@ -202,7 +202,6 @@ export default {
 }
 .table__main_row__cell__title {
   font-family: "Fira Sans Condensed", sans-serif;
-  font-style: italic;
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -492,6 +491,14 @@ p.ficha_texto {
 .boton_library:hover {
   background-color: var(--library2) !important;
 }
-
+span a {
+  color: var(--interfacesp) !important;
+  font-weight: 400;
+}
+span a:hover {
+  color: var(--interface0) !important;
+  font-weight: 600;
+  text-decoration-color: var(--interface1) !important;
+}
 
 </style>
