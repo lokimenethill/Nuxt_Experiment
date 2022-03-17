@@ -1,6 +1,8 @@
 <template>
   <main class="">
-    <div v-html="$t('about.content')"></div>
+    <div class='contenedor-general-rebasado'>
+    <div class='contenedor-general ' v-html="$t('about.content')"></div>
+    </div>
   </main>
 </template>
 <script>
