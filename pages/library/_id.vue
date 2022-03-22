@@ -62,7 +62,6 @@ export default {
 }
 .table {
   margin-bottom: 3rem;
-  min-height: 550px;
 }
 .table__header {
   border-bottom: 2px solid var(--gris2);
@@ -186,7 +185,7 @@ export default {
   background: var(--library3);
 }
 .table__main__row__cell {
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.5rem;
   flex-grow: 1;
   flex-basis: 25%;
 
@@ -202,6 +201,7 @@ export default {
 }
 .table__main_row__cell__title {
   font-family: "Fira Sans Condensed", sans-serif;
+
   font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -238,17 +238,25 @@ export default {
 .table__main__row__cell__data__terminal--lang {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 0.88rem;
-  line-height: 2px !important;
-  margin-right: 0.15rem;
-  margin-left: 0.66rem;
+  /* border: green 1px solid; */
+
+  /* margin-right: 0.15rem; */
+
+  /* margin-left: 0.66rem; */
 }
-.table__main__row__cell__data__terminal--lang::before {
+.table__main__row__cell__contenedor__lang {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* .table__main__row__cell__data__terminal--lang::before {
   content: "●";
   color: var(--library1) !important;
   font-size: 0.88rem;
   margin-right: 0.25rem;
   margin-left: -0.66rem;
-}
+} */
 .table__main__row__cell__data__terminal--lang--code {
   font-family: "Fira Sans Condensed", sans-serif;
   letter-spacing: 1.5px;
@@ -262,19 +270,52 @@ export default {
 }
 
 .table__main__row_cell__button-button_micro {
-  height: 1.20rem !important;
-  width: 1.20rem !important;
+  height: 1rem !important;
+  width: 1rem !important;
   padding: 0 !important;
   margin: 0 !important;
   background: var(--library1);
   align-self: center;
+  vertical-align: middle;
 }
+.table__main__row_cell__button-button_micro--lang {
+  /* align-self: flex-start !important; */
+  height: 1.15rem !important;
+  width: 1.15rem !important;
+  padding: 0.07rem !important;
+  background: var(--library1);
+  margin-right: 0.25rem !important;
+}
+.table__main__row_cell__button-button_micro--lang:hover {
+  background: var(--library2);
+}
+.table__main__row_cell__button-button_micro--lang:disabled {
+  /* background-color: var(--gris3); */
+  cursor: not-allowed;
+}
+.table__main__row_cell__button-button_micro--lang:disabled:hover {
+}
+
 .table__main__row_cell__button-button_micro:hover {
   background: var(--library2);
 }
+.table__main__row_cell__button-button_micro:disabled {
+  background-color: var(--gris3);
+  cursor: not-allowed;
+}
+
 .table__main__row_cell__button-button_micro__icono_boton_descagar_micro {
   font-size: 18px !important;
   margin: 0 !important;
+}
+.table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro {
+  font-size: 16px !important;
+}
+.table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro:hover {
+  background: var(--library2);
+}
+.table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro:disabled {
+  background-color: var(--gris3);
 }
 
 /* Ajustes de anchos */
@@ -282,28 +323,33 @@ export default {
 
 .table__header__row__cell:nth-of-type(1),
 .table__main__row__cell:nth-of-type(1) {
-  flex-basis: 27%;
+  flex-basis: 25%;
   flex-grow: 2;
 }
 .table__header__row__cell:nth-of-type(2),
 .table__main__row__cell:nth-of-type(2) {
-  flex-basis: 20%;
+  flex-basis: 23%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(3),
 .table__main__row__cell:nth-of-type(3) {
-  flex-basis: 27%;
-  flex-grow: 1;
+  flex-basis: 22%;
+  flex-grow: 0;
 }
 .table__header__row__cell:nth-of-type(4),
 .table__main__row__cell:nth-of-type(4) {
-  flex-basis: 18%;
+  flex-basis: 20%;
   flex-grow: 1;
 }
 .table__header__row__cell:nth-of-type(5),
 .table__main__row__cell:nth-of-type(5) {
-  flex-basis: calc(27% - 1.36rem);
+  flex-basis: 22%;
   flex-grow: 1;
+}
+.table__header__row__cell:nth-of-type(5),
+.table__main__row__cell:nth-of-type(5) {
+  flex-basis: 20%;
+  flex-grow: 0;
 }
 .table__header__row__cell:nth-of-type(6),
 .table__main__row__cell:nth-of-type(6),
@@ -500,5 +546,10 @@ span a:hover {
   font-weight: 600;
   text-decoration-color: var(--interface1) !important;
 }
+/* a {
+  position: sticky;
+  bottom: ;
+} */
+
 
 </style>
