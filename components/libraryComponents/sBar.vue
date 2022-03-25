@@ -92,7 +92,7 @@
                     
                   <span class="table__main__row__cell__data">
                     <span v-for="(author,id) in find.authors" :key="id" >
-                      {{author}}<br/><span v-if="id+1 < find.authors.length">, </span>
+                      {{author}}<span v-if="id+1 < find.authors.length">, </br></span>
                     </span>
                     </span>
                   
