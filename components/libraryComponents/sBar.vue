@@ -221,9 +221,9 @@ export default {
   computed: {
     searchSelectOptions(){
       const list =[
-        { label: this.$t('library.tTitle'), val: 'title' },
+        { label: this.$t('library.tTitle'), val: 'ttle' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
-        { label: this.$t('library.tCommunity'), val: 'community' },
+        { label: this.$t('library.tCommunity'), val: 'cmmunity' },
         { label: this.$t('library.tLang'), val: 'tLang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
         { label: this.$t('library.all'), val: 'all' },
@@ -260,11 +260,13 @@ export default {
       // postprocess data concat Library
     for (let i = 0; i < queryed.length; i++) {
        queryed[i].all = '';
+       queryed[i].cmmunity='';
+       queryed[i].ttle='';
       for (let n = 0; n < queryed[i].authors.length; n++) {
         if (n === 0) {
-          queryed[i].authrs = queryed[i].authors[n] + ', ';
+          queryed[i].authrs = queryed[i].authors[n] + ', '+this.removeSpecialChar(queryed[i].authors[n])+ ', ';
         } else {
-          queryed[i].authrs += queryed[i].authors[n] + ', ';
+          queryed[i].authrs += queryed[i].authors[n] + ', '+this.removeSpecialChar(queryed[i].authors[n])+ ', ';
         }
       }
       for (let n = 0; n < queryed[i].keywords.length; n++) {
@@ -276,15 +278,17 @@ export default {
       }
        for (let n = 0; n < queryed[i].terminal_lang.length; n++) {
         if (n === 0) {
-          queryed[i].tLang = queryed[i].terminal_lang[n].name + ', ';
+          queryed[i].tLang = queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
         } else {
-          queryed[i].tLang += queryed[i].terminal_lang[n].name + ', ';
+          queryed[i].tLang += queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
         }
+        queryed[i].cmmunity+=queryed[i].community+'+'+ this.removeSpecialChar(queryed[i].community);
+        queryed[i].ttle+=queryed[i].title+', '+this.removeSpecialChar(queryed[i].title);
       }
       queryed[i].all +=
         queryed[i].title +
         ', ' +
-        queryed[i].authors[0] +
+        queryed[i].authrs +
         ', ' +
         queryed[i].community +
         ', ' +
@@ -292,14 +296,11 @@ export default {
         ', ' +
         queryed[i].gtolog +
         ', ' +
-        queryed[i].terminal_lang[0].name +
+        queryed[i].tLang +
         ', ' +
-        queryed[i].terminal_lang[0].gtlog +
-        ', ' +
-        queryed[i].keywords[0] +
-        ', ' +
-        queryed[i].year +
-        ', ';
+        // queryed[i].tLang[0].gtlog +
+       // ', ' +
+        queryed[i].kwrds[0];
     }
       // Sorting
       const sortedBooks = this.ascendingSort
