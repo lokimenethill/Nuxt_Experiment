@@ -290,7 +290,7 @@ export default {
         ', ' +
         queryed[i].authrs +
         ', ' +
-        queryed[i].community +
+        queryed[i].cmmunity +
         ', ' +
         queryed[i].Gpo_lang +
         ', ' +
