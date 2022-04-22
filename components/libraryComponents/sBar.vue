@@ -252,9 +252,11 @@ export default {
         if(this.$i18n.locale==="es"){
           queryed[i].keywords=queryed[i].keywords_es;
           queryed[i].terminal_lang=queryed[i].terminal_lang_es;
+          queryed[i].extra=queryed[i].extra_es;
         }else{
           queryed[i].keywords=queryed[i].keywords_en;
           queryed[i].terminal_lang=queryed[i].terminal_lang_en;
+          queryed[i].extra=queryed[i].extra_en;
         }
       }
       // postprocess data concat Library
