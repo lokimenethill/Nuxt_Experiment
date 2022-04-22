@@ -528,8 +528,7 @@ p.ano {
 
 /* Ficha */
 p.ficha_texto {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 .boton_library {
   background-color: var(--library1) !important;
