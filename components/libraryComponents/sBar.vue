@@ -91,19 +91,23 @@
                   
                     
                   <span class="table__main__row__cell__data">
-                    <span v-for="author in find.authors" :key="author" >
-                      {{author}}<br/>
+                    <span v-for="(author,id) in find.authors" :key="id" >
+                      {{author}}<span v-if="id+1 < find.authors.length">, </br></span>
                     </span>
                     </span>
                   
                 </div>
                 <div class="table__main__row__cell ">
-                  <div>
-                    <span class="table__main__row__cell__data__group--lang">{{find.Gpo_lang}}
-                      <code class="table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
-                    </span>
-                    <span  v-for="(terminal_lang,id) in find.terminal_lang" :key="id" class="table__main__row__cell__data__terminal--lang" >
-                        {{terminal_lang.name}}<code class="table__main__row__cell__data__terminal--lang--code">{{terminal_lang.gtlog}}</code></br>
+                  <div class="table__main__row__cell__contenedor__lang " >
+                    <button class="table__main__row_cell__button-button_micro--lang" disabled><span
+                        class="material-icons table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro">
+                        library_books
+                      </span></button>
+                      
+                    <span class="table__main__row__cell__data__terminal--lang" >
+                      <span v-for="(terminal_lang,id) in find.terminal_lang" :key="id" >
+                         {{terminal_lang.name}}<span v-if="id+1 < find.terminal_lang.length">, </span>
+                      </span>
                       </span>
                     </div>
                 </div>
@@ -112,8 +116,8 @@
                 </div>
                 <div class="table__main__row__cell ">
                   <span class="table__main__row__cell__data">
-                    <span  v-for="keyword in find.keywords" :key="keyword"  >
-                        {{keyword}},
+                    <span  v-for="(keyword,id) in find.keywords" :key="id"  >
+                        {{keyword}}<span v-if="id+1 < find.keywords.length">, </span>
                     </span>
                   </span>
                 </div>
@@ -217,9 +221,9 @@ export default {
   computed: {
     searchSelectOptions(){
       const list =[
-        { label: this.$t('library.tTitle'), val: 'title' },
+        { label: this.$t('library.tTitle'), val: 'ttle' },
         { label: this.$t('library.tAuthor'), val: 'authrs' },
-        { label: this.$t('library.tCommunity'), val: 'community' },
+        { label: this.$t('library.tCommunity'), val: 'cmmunity' },
         { label: this.$t('library.tLang'), val: 'tLang' },
         { label: this.$t('library.tKeywords'), val: 'kwrds' },
         { label: this.$t('library.all'), val: 'all' },
@@ -227,10 +231,10 @@ export default {
       return list;
     },
     langW(){
-      return this.$t('library.tTitle');
+      return this.$i18n.locale;
     },
     items() {
-      // Prequeryed
+      // Prequeryed URL
        let queryed='';
       if(this.$route.params.id!=="general"){
         queryed = _.filter(this.library, (book) =>
@@ -241,11 +245,70 @@ export default {
       }else{
         queryed=this.library;
       }
+       // Language Filter Comprobation
+      // queryed=this.initkwordsLangFilter(queryed);
+      // let tempkword=[];
+      for(let i=0;i<queryed.length;i++){
+        if(this.$i18n.locale==="es"){
+          queryed[i].keywords=queryed[i].keywords_es;
+          queryed[i].terminal_lang=queryed[i].terminal_lang_es;
+          queryed[i].extra=queryed[i].extra_es;
+        }else{
+          queryed[i].keywords=queryed[i].keywords_en;
+          queryed[i].terminal_lang=queryed[i].terminal_lang_en;
+          queryed[i].extra=queryed[i].extra_en;
+        }
+      }
+      // postprocess data concat Library
+    for (let i = 0; i < queryed.length; i++) {
+       queryed[i].all = '';
+       queryed[i].cmmunity='';
+       queryed[i].ttle='';
+      for (let n = 0; n < queryed[i].authors.length; n++) {
+        if (n === 0) {
+          queryed[i].authrs = queryed[i].authors[n] + ', '+this.removeSpecialChar(queryed[i].authors[n])+ ', ';
+        } else {
+          queryed[i].authrs += queryed[i].authors[n] + ', '+this.removeSpecialChar(queryed[i].authors[n])+ ', ';
+        }
+      }
+      for (let n = 0; n < queryed[i].keywords.length; n++) {
+        if (n === 0) {
+          queryed[i].kwrds = queryed[i].keywords[n] + ', '+this.removeSpecialChar(queryed[i].keywords[n])+ ', ';
+        } else {
+          queryed[i].kwrds += queryed[i].keywords[n] + ', '+this.removeSpecialChar(queryed[i].keywords[n])+ ', ';
+        }
+      }
+       for (let n = 0; n < queryed[i].terminal_lang.length; n++) {
+        if (n === 0) {
+          queryed[i].tLang = queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
+        } else {
+          queryed[i].tLang += queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
+        }
+        queryed[i].cmmunity+=queryed[i].community+'+'+ this.removeSpecialChar(queryed[i].community);
+        queryed[i].ttle+=queryed[i].title+', '+this.removeSpecialChar(queryed[i].title);
+      }
+      queryed[i].all +=
+        queryed[i].title +
+        ', ' +
+        queryed[i].authrs +
+        ', ' +
+        queryed[i].cmmunity +
+        ', ' +
+        queryed[i].Gpo_lang +
+        ', ' +
+        queryed[i].gtolog +
+        ', ' +
+        queryed[i].tLang +
+        ', ' +
+        // queryed[i].tLang[0].gtlog +
+       // ', ' +
+        queryed[i].kwrds[0];
+    }
       // Sorting
       const sortedBooks = this.ascendingSort
         ? _.sortBy(queryed, this.sortTableBy)
-        : _.sortBy(queryed, this.sortTableBy).reverse();
-      // filtered
+        : _.sortBy(queryed, this.sortTableBy).reverse(); 
+      // filtered 
       let filtered = '';
       if (
         this.searchSelector.val === 'authors' ||
@@ -284,55 +347,19 @@ export default {
     },
   },
   created() {
-    // postprocess data concat Library
     for (let i = 0; i < this.library.length; i++) {
-      this.library[i].all = '';
       this.library[i].id = i;
-      for (let n = 0; n < this.library[i].authors.length; n++) {
-        if (n === 0) {
-          this.library[i].authrs = this.library[i].authors[n] + ', ';
-        } else {
-          this.library[i].authrs += this.library[i].authors[n] + ', ';
-        }
-      }
-      for (let n = 0; n < this.library[i].keywords.length; n++) {
-        if (n === 0) {
-          this.library[i].kwrds = this.library[i].keywords[n] + ', ';
-        } else {
-          this.library[i].kwrds += this.library[i].keywords[n] + ', ';
-        }
-      }
-       for (let n = 0; n < this.library[i].terminal_lang.length; n++) {
-        if (n === 0) {
-          this.library[i].tLang = this.library[i].terminal_lang[n].name + ', ';
-        } else {
-          this.library[i].tLang += this.library[i].terminal_lang[n].name + ', ';
-        }
-      }
-      this.library[i].all +=
-        this.library[i].title +
-        ', ' +
-        this.library[i].authors[0] +
-        ', ' +
-        this.library[i].community +
-        ', ' +
-        this.library[i].Gpo_lang +
-        ', ' +
-        this.library[i].gtolog +
-        ', ' +
-        this.library[i].terminal_lang[0].name +
-        ', ' +
-        this.library[i].terminal_lang[0].gtlog +
-        ', ' +
-        this.library[i].keywords[0] +
-        ', ' +
-        this.library[i].year +
-        ', ';
     }
+    // preprocess lang
+  
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
   },
   methods: {
+    removeSpecialChar(chain){
+      const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
+      return chain.split('').map( letra => acentos[letra] || letra).join('').toString();	
+    },
     toggleWindow(nw) {
       if (this.showWindow === true) {
         this.showWindow = false;
@@ -341,6 +368,7 @@ export default {
         this.numOfWindow = nw;
       }
     },
+    
     watchBook(source) {
       return source;
     },
