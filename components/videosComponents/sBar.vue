@@ -99,13 +99,11 @@
                   
                 </div>
                 <div class="videos__table__main__row__cell ">
-                  <span class="videos__table__main__row__cell__data__group--lang">{{find.Gpo_lang}}
-                    <code
-                       class="videos__table__main__row__cell__data__group--lang--code">{{find.gtolog}}</code>
+                  <button class="videos__table__main__row_cell__button-button_micro--lang" disabled><span
+                        class="material-icons videos__table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro">
+                        library_books
+                      </span></button>{{find.Gpo_lang}}               
                   </span>
-                   <span  v-for="(terminal_lan,id) in find.terminal_lang" :key="id" class="videos__table__main__row__cell__data__terminal--lang" >
-                      {{terminal_lan.name}}<code class="videos__table__main__row__cell__data__terminal--lang--code">{{terminal_lan.gtlog}}</code>
-                    </span>
                 </div>
                 <div class="videos__table__main__row__cell ">
                   <span class="videos__table__main__row__cell__data">{{find.community}}</span>
@@ -125,7 +123,8 @@
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
                 <div class="table__main__row__cell  ">
-                  <button id="myBtn" class="videos__table__main__row_cell__button-button_micro"   ><span
+                  <button id="myBtn" @click="toggleWindow(find.id)" class="videos__table__main__row_cell__button-button_micro"  
+                    ><span
                       class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
                       info
                     </span></button>
@@ -178,6 +177,12 @@
           </div>
         </div>
       </div>
+       <popWindow
+        v-if="showWindow"
+        :show="showWindow"
+        :datasend="sendDataWindow"
+        @window="showWindow = $event"
+      />
     </div>
     </div>
 </template>
@@ -186,8 +191,12 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'underscore';
 import JsonLibrary from '@/static/library/videos.json';
+import popWindow from '@/components/videosComponents/popWindow.vue';
 
 export default {
+   components: {
+    popWindow,
+  },
   data() {
     return {
       showWindow: false,
