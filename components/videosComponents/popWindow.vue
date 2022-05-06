@@ -1,34 +1,34 @@
 <template>
   <div v-if="window" id="myModal-1" class="fondo-pantalla-emergente-2">
-    <div class="contenedor-pantalla-emergente-ficha--bibliografica">
-      <nav class="header-pantalla-emergente-ficha--bibliografica">
+    <div class="contenedor-pantalla-emergente-ficha--videos">
+      <nav class="header-pantalla-emergente-ficha--videos">
         <div class="boton-cerrar">
           <button @click="closeWindow" class="cerrar">x</button>
         </div>
       </nav>
-      <div class="contenedor-titulo-pantalla-emergente-ficha--bibliografica">
+      <div class="contenedor-titulo-pantalla-emergente-ficha--videos">
         <h1
           class="
             titulo-pantalla-emergente
-            titulo-pantalla-emergente-ficha--bibliografica
+            titulo-pantalla-emergente-ficha--videos
           "
         >
           {{ $t('library.popWinTitle') }}
         </h1>
       </div>
 
-      <div class="contenedor-columnas-pantalla-emergente-ficha--bibliografica">
+      <div class="contenedor-columnas-pantalla-emergente-ficha--videos">
          <!--
-        <div class="columna-izquierda-pantalla-emergente-ficha--bibliografica">
+        <div class="columna-izquierda-pantalla-emergente-ficha--videos">
           <p class="ano">
             <span>{{ datasend.year }}</span>
           </p>
         </div>
         -->
-        <div class="columna-derecha-pantalla-emergente-ficha--bibliografica">
+        <div class="columna-derecha-pantalla-emergente-ficha--videos">
           <div
             class="
-              contenedor-texto-lengua-pantalla-emergente-ficha--bibliografica
+              contenedor-texto-lengua-pantalla-emergente-ficha--videos
             "
           >
             <p class="ficha_texto">
@@ -44,8 +44,8 @@
           </div>
         </div>
       </div>
-      <div class="footer-pantalla-emergente-ficha--bibliografica">
-        <button @click="copyData()" class="boton_library">
+      <div class="footer-pantalla-emergente-ficha--videos">
+        <button @click="copyData()" class="boton_library_videos">
           {{ $t('library.popWinCopyBuutton') }}
         </button>
       </div>

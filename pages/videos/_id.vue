@@ -441,7 +441,7 @@ code:after {
   animation: desplegado-pantalla-emergente 1s cubic-bezier(0, 0.26, 0.53, 0.99);
   overflow-y: hidden;
 }
-.contenedor-pantalla-emergente-ficha--bibliografica {
+.contenedor-pantalla-emergente-ficha--videos {
   max-width: 682px;
   width: 75%;
   max-height: 648px;
@@ -497,7 +497,7 @@ div.boton-cerrar {
   background: none;
 }
 /* Contenedor de titulo para pantalla emergente */
-.contenedor-titulo-pantalla-emergente-ficha--bibliografica {
+.contenedor-titulo-pantalla-emergente-ficha--videos {
   margin-top: 0rem;
   min-height: 5.2rem; /* Esta calculado para 2 renglones de titulo */
 
@@ -512,11 +512,11 @@ div.boton-cerrar {
   margin: 0 !important;
   font-size: 2rem;
 }
-.titulo-pantalla-emergente-ficha--bibliografica {
+.titulo-pantalla-emergente-ficha--videos {
   color: var(--videos0);
 }
 /* Contenedor de texto e imagen */
-.contenedor-columnas-pantalla-emergente-ficha--bibliografica {
+.contenedor-columnas-pantalla-emergente-ficha--videos {
   margin-top: 1rem;
   flex-grow: 1;
   /* overflow-y: hidden;
@@ -525,7 +525,7 @@ div.boton-cerrar {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-.columna-izquierda-pantalla-emergente-ficha--bibliografica {
+.columna-izquierda-pantalla-emergente-ficha--videos {
   flex-basis: calc(15% - 0.5rem);
   margin-right: 1rem;
 }
@@ -536,7 +536,7 @@ p.ano {
 /* .contenedor-texto-lengua-pantalla-emergente-ficha--bibliografica {
 } */
 /* Contenedor para imagen derecha */
-.columna-derecha-pantalla-emergente-ficha--bibliografica {
+.columna-derecha-pantalla-emergente-ficha--videos {
   flex-basis: calc(85% - 0.5rem);
   flex-grow: 2;
 }
@@ -550,7 +550,7 @@ p.ano {
   margin-bottom: 0.25rem;
 }
 /* Footer pantalla emergente */
-.footer-pantalla-emergente-ficha--bibliografica {
+.footer-pantalla-emergente-ficha--videos {
   margin-top: 1rem;
   margin-bottom: 0rem;
   display: flex;
@@ -593,10 +593,10 @@ p.ano {
 p.ficha_texto {
   text-align: left;
 }
-.boton_library {
+.boton_library_videos {
   background-color: var(--videos0) !important;
 }
-.boton_library:hover {
+.boton_library_videos:hover {
   background-color: var(--videos1) !important;
 }
 span a {
