@@ -102,7 +102,7 @@
                   <button class="videos__table__main__row_cell__button-button_micro--lang" disabled><span
                         class="material-icons videos__table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro">
                         library_books
-                      </span></button>{{find.Gpo_lang}}               
+                      </span></button><span class="videos__table__main__row__cell__data__terminal--lang">{{find.Gpo_lang}}               
                   </span>
                 </div>
                 <div class="videos__table__main__row__cell ">
@@ -110,8 +110,8 @@
                 </div>
                 <div class="videos__table__main__row__cell ">
                   <span class="videos__table__main__row__cell__data">
-                    <span  v-for="keyword in find.keywords" :key="keyword"  >
-                        {{keyword}},
+                    <span  v-for="(keyword,id) in find.keywords" :key="id"  >
+                        {{keyword}}<span v-if="id+1 < find.keywords.length">, </span>
                     </span>
                   </span>
                 </div>
@@ -122,7 +122,7 @@
                     </span></a>
                   <!--Este elemento hace que descargue el documento directamente-->
                 </div>
-                <div class="table__main__row__cell  ">
+                <div class="videos__table__main__row__cell  ">
                   <button id="myBtn" @click="toggleWindow(find.id)" class="videos__table__main__row_cell__button-button_micro"  
                     ><span
                       class="material-icons-outlined videos__table__main__row_cell__button-button_micro__icono_boton_descagar_micro">
