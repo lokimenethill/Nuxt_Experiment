@@ -216,12 +216,12 @@ export default {
   computed: {
     searchSelectOptions(){
       const list =[
-        { label: this.$t('library.tTitle'), val: 'ttle' },
-        { label: this.$t('library.tAuthor'), val: 'authrs' },
-        { label: this.$t('library.tCommunity'), val: 'cmmunity' },
-        { label: this.$t('library.tLang'), val: 'tLang' },
-        { label: this.$t('library.tKeywords'), val: 'kwrds' },
-        { label: this.$t('library.all'), val: 'all' },
+        { label: this.$t('videos.tTitle'), val: 'title' },
+        { label: this.$t('videos.tDirector'), val: 'directors' },
+        { label: this.$t('videos.tCommunity'), val: 'community' },
+        { label: this.$t('videos.tLang'), val: 'tLang' },
+        { label: this.$t('videos.tKeywords'), val: 'kwrds' },
+        { label: this.$t('videos.all'), val: 'all' },
       ];
       return list;
     },
