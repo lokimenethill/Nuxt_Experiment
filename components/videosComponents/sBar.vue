@@ -192,9 +192,8 @@
 import _ from 'underscore';
 import JsonLibrary from '@/static/library/videos.json';
 import popWindow from '@/components/videosComponents/popWindow.vue';
-
 export default {
-   components: {
+  components: {
     popWindow,
   },
   data() {
@@ -210,27 +209,28 @@ export default {
       query_res: {},
       totalAnswers: JsonLibrary.length,
       resultsPerPage: 5,
-      // maxPage: 0,
+    //  maxPage: 0,
       pag: 1,
     };
   },
   computed: {
-     searchSelectOptions(){
-      const list = [
-        { label: this.$t('videos.tTitle'), val: 'title' },
-        { label: this.$t('videos.tDirector'), val: 'drectrs' },
-        { label: this.$t('videos.tCommunity'), val: 'community' },
-        { label: this.$t('videos.tLang'), val: 'tLang' },
-        { label: this.$t('videos.tKeywords'), val: 'kwrds' },
-        { label: this.$t('videos.all'), val: 'all' },
+    searchSelectOptions(){
+      const list =[
+        { label: this.$t('library.tTitle'), val: 'ttle' },
+        { label: this.$t('library.tAuthor'), val: 'authrs' },
+        { label: this.$t('library.tCommunity'), val: 'cmmunity' },
+        { label: this.$t('library.tLang'), val: 'tLang' },
+        { label: this.$t('library.tKeywords'), val: 'kwrds' },
+        { label: this.$t('library.all'), val: 'all' },
       ];
       return list;
     },
     langW(){
-      return this.$t('library.tTitle');
+      return this.$i18n.locale;
     },
     items() {
-      let queryed='';
+      // Prequeryed URL
+       let queryed='';
       if(this.$route.params.id!=="general"){
         queryed = _.filter(this.library, (book) =>
           book.terminal_lang[0].name
@@ -240,15 +240,74 @@ export default {
       }else{
         queryed=this.library;
       }
+       // Language Filter Comprobation
+      // queryed=this.initkwordsLangFilter(queryed);
+      // let tempkword=[];
+      for(let i=0;i<queryed.length;i++){
+        if(this.$i18n.locale==="es"){
+          queryed[i].keywords=queryed[i].keywords_es;
+          queryed[i].terminal_lang=queryed[i].terminal_lang_es;
+          queryed[i].extra=queryed[i].extra_es;
+        }else{
+          queryed[i].keywords=queryed[i].keywords_en;
+          queryed[i].terminal_lang=queryed[i].terminal_lang_en;
+          queryed[i].extra=queryed[i].extra_en;
+        }
+      }
+      // postprocess data concat Library
+    for (let i = 0; i < queryed.length; i++) {
+       queryed[i].all = '';
+       queryed[i].cmmunity='';
+       queryed[i].ttle='';
+      for (let n = 0; n < queryed[i].directors.length; n++) {
+        if (n === 0) {
+          queryed[i].authrs = queryed[i].directors[n] + ', '+this.removeSpecialChar(queryed[i].directors[n])+ ', ';
+        } else {
+          queryed[i].authrs += queryed[i].directors[n] + ', '+this.removeSpecialChar(queryed[i].directors[n])+ ', ';
+        }
+      }
+      for (let n = 0; n < queryed[i].keywords.length; n++) {
+        if (n === 0) {
+          queryed[i].kwrds = queryed[i].keywords[n] + ', '+this.removeSpecialChar(queryed[i].keywords[n])+ ', ';
+        } else {
+          queryed[i].kwrds += queryed[i].keywords[n] + ', '+this.removeSpecialChar(queryed[i].keywords[n])+ ', ';
+        }
+      }
+       for (let n = 0; n < queryed[i].terminal_lang.length; n++) {
+        if (n === 0) {
+          queryed[i].tLang = queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
+        } else {
+          queryed[i].tLang += queryed[i].terminal_lang[n].name + ', '+this.removeSpecialChar(queryed[i].terminal_lang[n].name)+ ', ';
+        }
+        queryed[i].cmmunity+=queryed[i].community+'+'+ this.removeSpecialChar(queryed[i].community);
+        queryed[i].ttle+=queryed[i].title+', '+this.removeSpecialChar(queryed[i].title);
+      }
+      queryed[i].all +=
+        queryed[i].title +
+        ', ' +
+        queryed[i].authrs +
+        ', ' +
+        queryed[i].cmmunity +
+        ', ' +
+        queryed[i].Gpo_lang +
+        ', ' +
+        queryed[i].gtolog +
+        ', ' +
+        queryed[i].tLang +
+        ', ' +
+        // queryed[i].tLang[0].gtlog +
+       // ', ' +
+        queryed[i].kwrds[0];
+    }
       // Sorting
       const sortedBooks = this.ascendingSort
         ? _.sortBy(queryed, this.sortTableBy)
-        : _.sortBy(queryed, this.sortTableBy).reverse();
-      // filtered
+        : _.sortBy(queryed, this.sortTableBy).reverse(); 
+      // filtered 
       let filtered = '';
       if (
         this.searchSelector.val === 'directors' ||
-        this.searchSelector.val === 'keywords'||
+        this.searchSelector.val === 'keywords' ||
         this.searchSelector.val === 'terminal_lang'
       ) {
         filtered = _.filter(sortedBooks, (book) =>
@@ -263,75 +322,39 @@ export default {
             .includes(this.dataSearch.toLowerCase()),
         );
       }
-
+     
       // console.log(this.searchSelector.val);
       return filtered;
     },
-    maxPage(){
-      return  Math.ceil(this.items.length / this.resultsPerPage);
-    },
     sendDataWindow() {
       return this.library[this.numOfWindow];
+    },
+    maxPage(){
+      return Math.ceil(this.items.length / this.resultsPerPage);
     },
   },
   watch: {
     dataSearch() {
       this.totalAnswers = this.items.length;
     },
-     langW(){
+    langW(){
       this.searchSelector = this.searchSelectOptions[0];
     },
   },
   created() {
-    // postprocess data concat Library
     for (let i = 0; i < this.library.length; i++) {
-      this.library[i].all = '';
       this.library[i].id = i;
-      for (let n = 0; n < this.library[i].directors.length; n++) {
-        if (n === 0) {
-          this.library[i].drectrs = this.library[i].directors[n] + ', ';
-        } else {
-          this.library[i].drectrs += this.library[i].directors[n] + ', ';
-        }
-      }
-      for (let n = 0; n < this.library[i].keywords.length; n++) {
-        if (n === 0) {
-          this.library[i].kwrds = this.library[i].keywords[n] + ', ';
-        } else {
-          this.library[i].kwrds += this.library[i].keywords[n] + ', ';
-        }
-      }
-       for (let n = 0; n < this.library[i].terminal_lang.length; n++) {
-        if (n === 0) {
-          this.library[i].tLang = this.library[i].terminal_lang[n].name + ', ';
-        } else {
-          this.library[i].tLang += this.library[i].terminal_lang[n].name + ', ';
-        }
-      }
-      this.library[i].all +=
-        this.library[i].title +
-        ', ' +
-        this.library[i].directors[0] +
-        ', ' +
-        this.library[i].community +
-        ', ' +
-        this.library[i].Gpo_lang +
-        ', ' +
-        this.library[i].gtolog +
-        ', ' +
-        this.library[i].terminal_lang[0].name +
-        ', ' +
-        this.library[i].terminal_lang[0].gtlog +
-        ', ' +
-        this.library[i].keywords[0] +
-        ', ' +
-        this.library[i].year +
-        ', ';
     }
+    // preprocess lang
+  
     this.searchSelector = this.searchSelectOptions[0];
     this.sortTableBy = this.searchSelectOptions[0].val;
   },
   methods: {
+    removeSpecialChar(chain){
+      const acentos = {'á':'a','é':'e','í':'i','ó':'o','ú':'u','Á':'A','É':'E','Í':'I','Ó':'O','Ú':'U'};
+      return chain.split('').map( letra => acentos[letra] || letra).join('').toString();	
+    },
     toggleWindow(nw) {
       if (this.showWindow === true) {
         this.showWindow = false;
