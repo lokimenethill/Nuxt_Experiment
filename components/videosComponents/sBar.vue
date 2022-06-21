@@ -99,11 +99,13 @@
                   
                 </div>
                 <div class="videos__table__main__row__cell ">
+                  <div class="videos__table__main__row__cell__contenedor__lang" >
                   <button class="videos__table__main__row_cell__button-button_micro--lang" disabled><span
                         class="material-icons videos__table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro">
                         library_books
                       </span></button><span class="videos__table__main__row__cell__data__terminal--lang">{{find.terminal_lang[0].name}}               
                   </span>
+                  </div>
                 </div>
                 <div class="videos__table__main__row__cell ">
                   <span class="videos__table__main__row__cell__data">{{find.community}}</span>
