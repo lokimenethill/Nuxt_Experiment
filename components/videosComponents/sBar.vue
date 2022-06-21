@@ -102,7 +102,7 @@
                   <button class="videos__table__main__row_cell__button-button_micro--lang" disabled><span
                         class="material-icons videos__table__main__row_cell__button-button_micro__icono_boton_visitar-pantalla_micro">
                         library_books
-                      </span></button><span class="videos__table__main__row__cell__data__terminal--lang">{{find.Gpo_lang}}               
+                      </span></button><span class="videos__table__main__row__cell__data__terminal--lang">{{find.terminal_lang[0].name}}               
                   </span>
                 </div>
                 <div class="videos__table__main__row__cell ">
