@@ -98,12 +98,13 @@
           >
              {{ $t('summaryButtomPopUp.c3') }}
           </h2>
-          <a
+          <nuxt-link
             v-for="(element, index) in datasend.corpora"
             :key="index"
             :v-bind="index"
             class="vinculo-footer-pantalla-emergente"
-            >{{ element.display }}</a
+            :to="localePath('/videos/'+element.src)"
+            >{{ element.display }}</nuxt-link
           >
         </div>
         <div class="footer-columna-item">

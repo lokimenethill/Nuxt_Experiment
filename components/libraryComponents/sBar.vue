@@ -238,7 +238,7 @@ export default {
        let queryed='';
       if(this.$route.params.id!=="general"){
         queryed = _.filter(this.library, (book) =>
-          book.terminal_lang[0].name
+          book.terminal_lang_es[0].name
             .toLowerCase()
             .includes(this.$route.params.id.toLowerCase()),
         );
