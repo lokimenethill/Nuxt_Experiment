@@ -27,6 +27,8 @@
     "languageIndex": {
         "title": "",
         "choose": "Escoja un grupo de lenguas",
+        "watchVideos":"Ver Videos",
+        "watchBooks":"Ver Libros",
         "amuzgoan": {
             "title": "AMUZGO",
             "preText": "Las tres lenguas amuzgas ",

@@ -27,6 +27,8 @@
     "languageIndex": {
         "title": "",
         "choose": "Choose a language group",
+        "watchVideos":"Watch Videos",
+        "watchBooks":"Watch Books",
         "amuzgoan": {
             "title": "AMUZGOAN",
             "preText": "The three Amuzgoan languages ",

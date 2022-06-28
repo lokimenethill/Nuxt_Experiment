@@ -80,27 +80,19 @@ export default {
             },
             {
               display: 'flora2',
-              src: 'uri://',
+              src: 'Mazateco de Huautla',
             },
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
+              display: this.$t('languageIndex.watchVideos'),
               src: 'uri://',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mazateco de Huautla',
             },
           ],
         },

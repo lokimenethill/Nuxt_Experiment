@@ -16,9 +16,7 @@
           ><a
             href="https://glottolog.org/resource/languoid/id/sanp1260"
             target="_blank"
-            >sanp1260</a
-          ></code
-        >
+            >sanp1260</a></code>
         <!-- <p class="sumario-modulo-lengua-termial-very-short-description">Very short description seven words
                 extension</p> -->
       </div>
@@ -83,13 +81,13 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
+              display: this.$t('languageIndex.watchVideos'),
               src: 'San Pedro Amuzgos',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
+              display: this.$t('languageIndex.watchBooks'),
               src: 'San Pedro Amuzgos',
             },
           ],
