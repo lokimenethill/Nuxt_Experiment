@@ -375,13 +375,13 @@ export default {
           corpora: [
             {
               display: this.$t('languageIndex.watchVideos'),
-              src: 'Mixteco de la comunidad de Yoloxóchitl',
+              src: 'Mixteco de Yoloxóchitl',
             },
           ],
           grammar: [
             {
               display: 'Ver documentos',
-              src: 'Mixteco de la comunidad de Yoloxóchitl',
+              src: 'Mixteco de Yoloxóchitl',
             },
           ],
         },
