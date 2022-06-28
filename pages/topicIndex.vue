@@ -47,7 +47,7 @@
           <transition name="audios">
           <div
             id="audios"
-            onclick="location.href='#'"
+            onclick="location.href='https://sylard-hsnrj.ondigitalocean.app/'"
             class="topic-index-item audios"
           >
             <h3 class="titulo-modulo">
