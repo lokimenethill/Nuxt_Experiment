@@ -1,5 +1,8 @@
 {
     "welcome": "Welcome",
+    "commonComponents":{
+        "NotEnoughWindow":"Sorry! No results found for your search.But see rest of our information below"
+    },
     "navBar": {
         "home": "Home",
         "topicIndex": "Topic index",

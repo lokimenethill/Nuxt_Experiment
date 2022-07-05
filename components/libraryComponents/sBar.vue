@@ -22,7 +22,13 @@
 
           <div class="contenedor-general-botones-busqueda-library ">
           </div>
-         
+         <Transition name="alertAnimation">
+         <NotEnoughWindow
+        v-if="NotEnoughResWindow"
+        :showRw="NotEnoughResWindow"
+        @alert="NotEnoughResWindow = $event"
+      />
+      </Transition>
         </div>
         <div class="contenedor-general-resultados">
           <h4 class="instrucciones">{{totalAnswers}} {{ $t('library.res') }} ({{ $t('library.pg') }} {{pag}} {{ $t('library.of') }} {{maxPage}})</h4>
@@ -197,9 +203,11 @@
 import _ from 'underscore';
 import JsonLibrary from '@/static/library/books.json';
 import popWindow from '@/components/libraryComponents/popWindow.vue';
+import NotEnoughWindow from '@/components/CommonComponents/NotEnoughWindow.vue';
 export default {
   components: {
     popWindow,
+    NotEnoughWindow,
   },
   data() {
     return {
@@ -214,6 +222,7 @@ export default {
       query_res: {},
       totalAnswers: JsonLibrary.length,
       resultsPerPage: 5,
+      NotEnoughResWindow:false,
     //  maxPage: 0,
       pag: 1,
     };
@@ -341,6 +350,10 @@ export default {
   watch: {
     dataSearch() {
       this.totalAnswers = this.items.length;
+      if(this.totalAnswers<1){
+        this.NotEnoughResWindow=true;
+        setTimeout(()=>{this.dataSearch="";},2000);
+      }
     },
     langW(){
       this.searchSelector = this.searchSelectOptions[0];
