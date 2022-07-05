@@ -54,6 +54,7 @@
           ></code
         >
       </div>
+      <!--
       <div
         id=""
         class="
@@ -72,6 +73,7 @@
           ></code
         >
       </div>
+      -->
       <div
         id=""
         class="
@@ -262,6 +264,7 @@ export default {
             },
           ],
         },
+        /*
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region3'),
@@ -303,6 +306,7 @@ export default {
             },
           ],
         },
+        */
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region4'),

@@ -31,7 +31,7 @@
         "title": "",
         "choose": "Escoja un grupo de lenguas",
         "watchVideos":"Ver Videos",
-        "watchBooks":"Ver Libros",
+        "watchBooks":"Ver Publicaciones",
         "amuzgoan": {
             "title": "AMUZGO",
             "preText": "Las tres lenguas amuzgas ",
@@ -143,7 +143,7 @@
                 "title": "Triqui",
                 "region0": "Triqui de Chicahuaxtla",
                 "region1": "Triqui de San Martín Itunyoso",
-                "popUpW":["<p>El Triqui de Chicahuaxtla<code><a href='https://glottolog.org/resource/languoid/id/chic1273' target='_blank'>chic1273</a></code> se habla en 15 comunidades alrededor de San Andrés Chicahuaxtla (municipiode Putla, Oaxaca). El polígono dentro del cual se habla esta lengua es pequeño (aprox. 40 km. cuadrado); por logeneral el terreno se encuentra en una altitud relativamente alta (&#62; 2,000 m.). El triqui de Chicahuaxtlamantiene la distinción entre consonantes fortis y lenis característica de triqui en general. Aunque en palabrasmonosilábicas las oclusivas lenis tienden a sonorizarse, la duración sigue distinguiendo consonantes fortis delenis en otros contextos. El inventario tonal es relativamente abundante con 4 tonos de nivel (1 bajo a 4 alto)además de 3 tonos ascendentes y 3 descendentes (un tono 5 “superalto” quizá sea solamente un alotono de 4 en eltono ascendente 35). El triqui de Chicahuaxtla Triqui, en contraste a otras lenguas triqui, se nota por vocalesrearticuladas a fin de frase, un reflejo de un tono flotante.</p>"]
+                "popUpW":["<p>El Triqui de Chicahuaxtla<code><a href='https://glottolog.org/resource/languoid/id/chic1273' target='_blank'>chic1273</a></code> se habla en 15 comunidades alrededor de San Andrés Chicahuaxtla (municipio de Putla, Oaxaca). El polígono dentro del cual se habla esta lengua es pequeño (aprox. 40 km. cuadrado); por lo general el terreno se encuentra en una altitud relativamente alta (&#62; 2,000 m.). El triqui de Chicahuaxtla mantiene la distinción entre consonantes fortis y lenis característica de triqui en general. Aunque en palabras monosilábicas las oclusivas lenis tienden a sonorizarse, la duración sigue distinguiendo consonantes fortis delenis en otros contextos. El inventario tonal es relativamente abundante, con 4 tonos de nivel (1 bajo a 4 alto)además de 3 tonos ascendentes y 3 descendentes (un tono 5 “superalto” quizá sea solamente un alotono de 4 en eltono ascendente 35). El triqui de Chicahuaxtla Triqui, en contraste a otras lenguas triqui, se nota por vocales rearticuladas a fin de frase, un reflejo de un tono flotante.</p>"]
             },
             "back": "Regresar"
         }
