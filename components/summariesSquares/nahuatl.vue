@@ -149,22 +149,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Náhuat de la Sierra Nororiental de Puebla',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Náhuat de la Sierra Nororiental de Puebla',
             },
           ],
         },
@@ -198,22 +190,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Náhuatl de Mecayapan, Veracruz',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Náhuatl de Mecayapan, Veracruz',
             },
           ],
         },
@@ -247,22 +231,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Náhuatl de Tetelcingo, Morelos',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Náhuatl de Tetelcingo, Morelos',
             },
           ],
         },
@@ -296,22 +272,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Náwat (Pipil) de El Salvador',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Náwat (Pipil) de El Salvador',
             },
           ],
         },

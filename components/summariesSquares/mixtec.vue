@@ -54,6 +54,7 @@
           ></code
         >
       </div>
+      <!--
       <div
         id=""
         class="
@@ -72,6 +73,7 @@
           ></code
         >
       </div>
+      -->
       <div
         id=""
         class="
@@ -169,22 +171,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco histórico (proto-mixteco)',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mixteco histórico (proto-mixteco)',
             },
           ],
         },
@@ -218,22 +212,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco de Magdalena Peñascos',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mixteco de Magdalena Peñascos',
             },
           ],
         },
@@ -267,25 +253,18 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco de San Martín Duraznos',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mixteco de San Martín Duraznos',
             },
           ],
         },
+        /*
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region3'),
@@ -316,25 +295,18 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco de San Martín Peras',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mixteco de San Martín Peras',
             },
           ],
         },
+        */
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region4'),
@@ -365,22 +337,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco de Xochapan',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Mixteco de Xochapan',
             },
           ],
         },
@@ -414,18 +378,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Mixteco de Yoloxóchitl',
             },
           ],
           grammar: [
             {
               display: 'Ver documentos',
-              src: 'Yoloxóchitl Mixtec',
+              src: 'Mixteco de Yoloxóchitl',
             },
           ],
         },

@@ -1,5 +1,8 @@
 {
     "welcome": "Welcome",
+    "commonComponents":{
+        "NotEnoughWindow":"Sorry! No results found for your search.But see rest of our information below"
+    },
     "navBar": {
         "home": "Home",
         "topicIndex": "Topic index",
@@ -27,6 +30,8 @@
     "languageIndex": {
         "title": "",
         "choose": "Choose a language group",
+        "watchVideos":"View videos",
+        "watchBooks":"View library",
         "amuzgoan": {
             "title": "AMUZGOAN",
             "preText": "The three Amuzgoan languages ",

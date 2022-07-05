@@ -103,8 +103,8 @@
             :key="index"
             :v-bind="index"
             class="vinculo-footer-pantalla-emergente"
-            >{{ element.display }}</a
-          >
+            @click="$router.push(`../videos/${element.src}`),closeWindow()"
+            >{{ element.display }}</a>
         </div>
         <div class="footer-columna-item">
           <h2
@@ -116,13 +116,13 @@
           >
              {{ $t('summaryButtomPopUp.c4') }}
           </h2>
-          <nuxt-link
+          <a
             v-for="(element, index) in datasend.grammar"
             :key="index"
             :v-bind="index"
             class="vinculo-footer-pantalla-emergente"
-            :to="localePath('/library/'+element.src)"
-            >{{ element.display }}</nuxt-link>
+            @click="$router.push(`../library/${element.src}`),closeWindow()"
+            >{{ element.display }}</a>
         </div>
         <div class="footer-columna-item-creditos  ">
               <!-- <h2 class="titulo-footer-pantalla-emergente titulo-footer-pantalla-emergente-mixteco">Credits</h2> -->

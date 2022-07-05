@@ -86,22 +86,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Totonaco del municipio de Zongozotla',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Totonaco del municipio de Zongozotla',
             },
           ],
         },

@@ -104,22 +104,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a 1935',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Diccionario histórico de Chol (Maya): Las fuentes léxica de 1789 a 1935',
             },
           ],
         },
@@ -153,22 +145,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Diccionario de Chuj (Maya) hablado en San Mateo Ixtatán, Guatemala (1964–65)',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Diccionario de Chuj (Maya) hablado en San Mateo Ixtatán, Guatemala (1964–65)',
             },
           ],
         },

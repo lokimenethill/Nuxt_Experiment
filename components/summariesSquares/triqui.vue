@@ -101,22 +101,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Triqui de Chicahuaxtla',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Triqui de Chicahuaxtla',
             },
           ],
         },
@@ -150,22 +142,14 @@ export default {
           ],
           corpora: [
             {
-              display: 'corpora1',
-              src: 'uri://',
-            },
-            {
-              display: 'corpora2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchVideos'),
+              src: 'Triqui de San Martín Itunyoso',
             },
           ],
           grammar: [
             {
-              display: 'grammar1',
-              src: 'uri://',
-            },
-            {
-              display: 'grammar2',
-              src: 'uri://',
+              display: this.$t('languageIndex.watchBooks'),
+              src: 'Triqui de San Martín Itunyoso',
             },
           ],
         },
