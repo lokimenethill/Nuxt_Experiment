@@ -1,7 +1,8 @@
 {
     "welcome": "Bienvenido",
     "commonComponents":{
-        "NotEnoughWindow":"Lo sentimos, No hay resultados para tu búsqueda. Pero mira el resto de nuestra información abajo"
+        "NotEnoughWindow":"Lo sentimos, No hay resultados para tu búsqueda. Pero mira el resto de nuestra información abajo",
+        "ChooseTL":"Escoger una lengua terminal"
     },
     "navBar": {
         "home": "Inicio",

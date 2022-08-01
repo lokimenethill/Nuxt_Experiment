@@ -1,7 +1,8 @@
 {
     "welcome": "Welcome",
     "commonComponents":{
-        "NotEnoughWindow":"Sorry! No results found for your search.But see rest of our information below"
+        "NotEnoughWindow":"Sorry! No results found for your search.But see rest of our information below",
+        "ChooseTL":"Choose a terminal language"
     },
     "navBar": {
         "home": "Home",
