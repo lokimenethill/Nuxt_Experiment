@@ -1,6 +1,6 @@
 <template>
   <div class="contenedor-columnas">
-    <h4 class="instrucciones">Choose a terminal language</h4>
+    <h4 class="instrucciones">{{$t('commonComponents.ChooseTL')}}</h4>
     <!-- Contenedor  mosaico lenguas terminales sumario -->
     <div class="contenedor-12-col contenedor-sumario-lenguas-terminales">
       <!-- Módulo mosaico lenguas terminales sumario -->
