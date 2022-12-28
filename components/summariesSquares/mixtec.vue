@@ -54,32 +54,12 @@
           ></code
         >
       </div>
-      <!--
       <div
         id=""
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
         @click="toggleWindow(3)"
-      >
-        <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.mixtec.region3')"></span>
-        </h3>
-        <code class="modulo-lexicos"
-          ><a
-            href="https://glottolog.org/resource/languoid/id/juxt1235"
-            target="_blank"
-            >juxt1235</a
-          ></code
-        >
-      </div>
-      -->
-      <div
-        id=""
-        class="
-          sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
-        "
-        @click="toggleWindow(4)"
       >
         <h3 class="sumario-lengua-terminal-titulo">
           <span v-html="$t('topicIndex.bottomCards.mixtec.region4')"></span>
@@ -97,7 +77,7 @@
         class="
           sumario-lengua-terminal-item sumario-lengua-terminal-item-mixteco
         "
-        @click="toggleWindow(5)"
+        @click="toggleWindow(4)"
       >
         <code class="modulo-lexicos"
           ><a
@@ -107,7 +87,7 @@
           ></code
         >
         <h3 class="sumario-lengua-terminal-titulo">
-          <span v-html="$t('topicIndex.bottomCards.mixtec.region5')"></span>
+          <span v-html="$t('topicIndex.bottomCards.mixtec.region4')"></span>
         </h3>
       </div>
       <backButton />
@@ -144,8 +124,7 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region0'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          textContent:this.$t('topicIndex.bottomCards.mixtec.popUpW[0]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_historico-image.jpg',
           imgMeta:"Inocencio Jiménez",
@@ -185,8 +164,7 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region1'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          textContent:this.$t('topicIndex.bottomCards.mixtec.popUpW[1]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_magdalena_penascos-image.jpg',
           imgMeta:"Inocencio Jiménez",
@@ -226,8 +204,7 @@ export default {
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region2'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          textContent:this.$t('topicIndex.bottomCards.mixtec.popUpW[2]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_san_martin_duraznos-image.jpg',
           imgMeta:"Inocencio Jiménez",
@@ -264,12 +241,11 @@ export default {
             },
           ],
         },
-        /*
+        
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region3'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          textContent:this.$t('topicIndex.bottomCards.mixtec.popUpW[3]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_san_martin_peras-image.jpg',
           imgMeta:"Inocencio Jiménez",
@@ -306,12 +282,11 @@ export default {
             },
           ],
         },
-        */
+        
         {
           rootLang: this.$t('languageIndex.mixtec.title'),
           title: this.$t('topicIndex.bottomCards.mixtec.region4'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
+          textContent:this.$t('topicIndex.bottomCards.mixtec.popUpW[4]'),
           imgUri:
             '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_xochapan-image.jpg',
           imgMeta:"Inocencio Jiménez",
@@ -348,48 +323,8 @@ export default {
             },
           ],
         },
-        {
-          rootLang: this.$t('languageIndex.mixtec.title'),
-          title: this.$t('topicIndex.bottomCards.mixtec.region5'),
-          textContent:
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab nisi aperiam officiis numquam recusandae voluptatem, natus veritatis atque neque in mollitia dicta dolor ea molestias ipsam non nam, ex, vitae facilis nemo nobis distinctio quis. Similique corporis animi obcaecati ex modi nam ipsum quis ducimus consequatur facilis culpa, laboriosam numquam atque quos voluptatem sequi! Sint, sed natus. Porro vitae doloribus commodi, neque illo autem? Autem asperiores praesentium voluptatibus id illum nihil dolore consequuntur, blanditiis enim maiores odit nostrum officiis veniam, magni tempore deleniti ab nemo dolores exercitationem, facilis laborum. Minus provident exercitationem animi sunt facilis accusamus? Minima commodi dignissimos molestiae. Illo quas excepturi iste facilis amet possimus quaerat nesciunt aliquam dicta. Delectus nemo est nihil officia saepe voluptates necessitatibus sed!',
-          imgUri:
-            '/generals/IMAGENES_TERMINAL_LANGUAGES_sumario/mixteco_yoloxochitl-image.jpg',
-          imgMeta:"Inocencio Jiménez",
-          lexicons: [
-            {
-              display: 'lexicon1',
-              src: 'uri://',
-            },
-            {
-              display: 'lexicon2',
-              src: 'uri://',
-            },
-          ],
-          floraFauna: [
-            {
-              display: 'flora1',
-              src: 'uri://',
-            },
-            {
-              display: 'flora2',
-              src: 'uri://',
-            },
-          ],
-          corpora: [
-            {
-              display: this.$t('languageIndex.watchVideos'),
-              src: 'Mixteco de Yoloxóchitl',
-            },
-          ],
-          grammar: [
-            {
-              display: 'Ver documentos',
-              src: 'Mixteco de Yoloxóchitl',
-            },
-          ],
-        },
       ];
+      console.log(this.numOfWindow);
       return dataWindow[this.numOfWindow];
     },
   },
