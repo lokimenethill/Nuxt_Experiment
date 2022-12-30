@@ -141,6 +141,7 @@
               ></code
             >
           </div>
+          <!--
           <div onclick="" class="lexico-item item-nahuatl">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
@@ -155,6 +156,7 @@
               ></code
             >
           </div>
+          -->
           <div onclick="" class="lexico-item item-maya">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mayan.title') }}
@@ -252,6 +254,7 @@
               ></code
             >
           </div>
+          <!--
           <div onclick="" class="lexico-item item-mixteco">
              <nuxt-link :to="localePath('mixteclexicon')" >
             <h5 class="titulo-modulo-lexico">
@@ -269,6 +272,7 @@
               ></code
             >
           </div>
+          -->
           <div onclick="" class="lexico-item item-totonaco">
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.totonacan.title') }}
