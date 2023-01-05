@@ -35,39 +35,7 @@
             </nuxt-link>
           </p>
         </div>
-        <div class="language-index-item" id="nahuatl">
-          <nuxt-link
-            class="none"
-            style="text-decoration: none"
-            :to="localePath('/languageIndexView/nahuatl')"
-          >
-            <h3 class="titulo-modulo">
-              {{ $t('languageIndex.nahuatl.title') }}
-            </h3>
-          </nuxt-link>
-          <p class="descripcion-modulo">
-            <nuxt-link
-              class="none"
-              style="text-decoration: none"
-              :to="localePath('/languageIndexView/nahuatl')"
-            >
-              {{ $t('languageIndex.nahuatl.preText') }}
-            </nuxt-link>
-            <code
-              ><a
-                href="https://glottolog.org/resource/languoid/id/azte1234"
-                target="_blank"
-                >azte1234</a
-              ></code
-            ><nuxt-link
-              class="none"
-              style="text-decoration: none"
-              :to="localePath('/languageIndexView/nahuatl')"
-            >
-              <span v-html="$t('languageIndex.nahuatl.text')"></span>
-            </nuxt-link>
-          </p>
-        </div>
+
         <div class="language-index-item" id="maya">
           <nuxt-link
             class="none"
@@ -126,6 +94,40 @@
             </nuxt-link>
           </p>
         </div>
+                <div class="language-index-item" id="mixe">
+          <nuxt-link
+            class="none"
+            style="text-decoration: none"
+            :to="localePath('/languageIndexView/mixtec')"
+          >
+            <h3 class="titulo-modulo">
+              {{ $t('languageIndex.mixe.title') }}
+            </h3>
+          </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mixe')"
+            >
+              {{ $t('languageIndex.mixe.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href=" https://glottolog.org/resource/languoid/id/mixe1286"
+                target="_blank"
+                >mixe1286</a
+              ></code
+            >
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/mixe')"
+            >
+              <span v-html="$t('languageIndex.mixe.text')"></span>
+            </nuxt-link>
+          </p>
+        </div>
         <div class="language-index-item" id="mixteco">
           <nuxt-link
             class="none"
@@ -157,6 +159,39 @@
               :to="localePath('/languageIndexView/mixtec')"
             >
               <span v-html="$t('languageIndex.mixtec.text')"></span>
+            </nuxt-link>
+          </p>
+        </div>
+                <div class="language-index-item" id="nahuatl">
+          <nuxt-link
+            class="none"
+            style="text-decoration: none"
+            :to="localePath('/languageIndexView/nahuatl')"
+          >
+            <h3 class="titulo-modulo">
+              {{ $t('languageIndex.nahuatl.title') }}
+            </h3>
+          </nuxt-link>
+          <p class="descripcion-modulo">
+            <nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/nahuatl')"
+            >
+              {{ $t('languageIndex.nahuatl.preText') }}
+            </nuxt-link>
+            <code
+              ><a
+                href="https://glottolog.org/resource/languoid/id/azte1234"
+                target="_blank"
+                >azte1234</a
+              ></code
+            ><nuxt-link
+              class="none"
+              style="text-decoration: none"
+              :to="localePath('/languageIndexView/nahuatl')"
+            >
+              <span v-html="$t('languageIndex.nahuatl.text')"></span>
             </nuxt-link>
           </p>
         </div>
@@ -327,6 +362,13 @@ p.descripcion-modulo {
 }
 #mazateco:hover {
   background-color: var(--mazateco1);
+}
+#mixe {
+  background-color: var(--mixe0);
+  animation: desplegado-gpo-lenguas 1.5s ease-in-out;
+}
+#mixe:hover {
+  background-color: var(--mixe1);
 }
 #mixteco {
   background-color: var(--mixteco0);

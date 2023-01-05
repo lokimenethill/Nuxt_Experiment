@@ -22,6 +22,7 @@
         <mayan v-if="post.id === 'mayan'" />
         <mazatec v-if="post.id === 'mazatec'" />
         <mixtec v-if="post.id === 'mixtec'" />
+        <mixe v-if="post.id === 'mixe'" />
         <totonacan v-if="post.id === 'totonacan'" />
         <triqui v-if="post.id === 'triqui'" />
       </div>
@@ -35,6 +36,7 @@ import nahuatl from '@/components/summariesSquares/nahuatl';
 import mayan from '@/components/summariesSquares/mayan';
 import mazatec from '@/components/summariesSquares/mazatec';
 import mixtec from '@/components/summariesSquares/mixtec';
+import mixe from '@/components/summariesSquares/mixe';
 import totonacan from '@/components/summariesSquares/totonacan';
 import triqui from '@/components/summariesSquares/triqui';
 export default {
@@ -45,6 +47,7 @@ export default {
     mayan,
     mazatec,
     mixtec,
+    mixe,
     totonacan,
     triqui,
   },
@@ -113,6 +116,16 @@ export default {
           },
         },
         {
+          id: 'mixe',
+          title: this.$t('languageIndex.mixe.title'),
+          content: this.$t('languageIndex.mixe.content'),
+          langRoute: 'languageIndex.mixe.title',
+          styles: {
+            s1: 'contenedor-titulo-sumario-mixe',
+            s2: 'mixe-titulo-sumario',
+          },
+        },
+        {
           id: 'totonacan',
           title: this.$t('languageIndex.totonacan.title'),
           content: this.$t('languageIndex.totonacan.content'),
@@ -170,6 +183,9 @@ div.contenedor-titulo-sumario-gpo-lenguas {
 #contenedor-titulo-sumario-mixteco {
   border-right: 1px solid var(--mixteco0);
 }
+#contenedor-titulo-sumario-mixe {
+  border-right: 1px solid var(--mixe0);
+}
 #contenedor-titulo-sumario-totonaco {
   border-right: 1px solid var(--totonaco0);
 }
@@ -192,6 +208,9 @@ div.contenedor-titulo-sumario-gpo-lenguas {
 }
 #mixteco-titulo-sumario {
   color: var(--mixteco0);
+}
+#mixe-titulo-sumario {
+  color: var(--mixe0);
 }
 #totonaco-titulo-sumario {
   color: var(--totonaco0);
@@ -264,6 +283,12 @@ div.sumario-lengua-terminal-item-mixteco {
 }
 div.sumario-lengua-terminal-item-mixteco:hover {
   background-color: var(--mixteco1);
+}
+div.sumario-lengua-terminal-item-mixe {
+  background-color: var(--mixe0);
+}
+div.sumario-lengua-terminal-item-mixe:hover {
+  background-color: var(--mixe1);
 }
 div.sumario-lengua-terminal-item-totonaco {
   background-color: var(--totonaco0);
