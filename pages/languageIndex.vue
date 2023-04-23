@@ -344,7 +344,7 @@ p.descripcion-modulo {
 }
 #nahuatl {
   background-color: var(--nahuatl0);
-  animation: desplegado-gpo-lenguas 1.1s ease-in-out;
+  animation: desplegado-gpo-lenguas 1.6s ease-in-out;
 }
 #nahuatl:hover {
   background-color: var(--nahuatl1);
@@ -358,7 +358,7 @@ p.descripcion-modulo {
 }
 #mazateco {
   background-color: var(--mazateco0);
-  animation: desplegado-gpo-lenguas 1.6s ease-in-out;
+  animation: desplegado-gpo-lenguas 1.4s ease-in-out;
 }
 #mazateco:hover {
   background-color: var(--mazateco1);

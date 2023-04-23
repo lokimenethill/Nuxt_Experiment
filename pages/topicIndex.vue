@@ -131,7 +131,8 @@
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
             <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.region2') }}
+              <span v-html="$t('topicIndex.bottomCards.nahuatl.region2')" ></span>
+             
             </h3>
             <code class="modulo-lexico"
               ><a

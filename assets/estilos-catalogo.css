@@ -187,6 +187,7 @@ body {
   width: 100%;
   background-color: white;
   flex-grow: 3;
+  box-shadow: none;
 }
 
 main {
@@ -708,7 +709,7 @@ h6 {
   bottom: 1rem;
   left: 1rem; */
   width: 100%;
-
+  color:black;
   margin: 0 0 0 0 !important;
   font-size: 0.7rem;
   line-height: normal;

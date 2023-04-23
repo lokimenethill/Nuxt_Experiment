@@ -782,7 +782,26 @@ button.btn-ir-a-pagina:hover {
 }
 .icono-ir-a-pagina {
 }
+ul.lista-sin-orden-estaticas {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.955rem; /*17.19 px*/
+  line-height: 130%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 0.3rem;
+  list-style-position: inside;
+  color: var(--gris1);
+  font-weight: 400;
+  list-style-type: none;
+}
 
+ul.lista-sin-orden-estaticas li::before {
+  content: "•";
+  color: var(--mixteco1);
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  vertical-align: -2px;
+}
 /*PARA GLOTOCODE*/
 code {
   font-family: "Fira Sans Condensed", sans-serif;
