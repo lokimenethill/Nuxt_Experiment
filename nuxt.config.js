@@ -43,7 +43,7 @@ export default {
       {
         re:"manifest",
         href:"../imagenes-generales/favicon_package/site.webmanifest",
-      }
+      },
     ],
   },
 
