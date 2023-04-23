@@ -22,7 +22,8 @@
 			"extensions": [
         "sdras.vue-vscode-extensionpack",
 				"meganrogge.template-string-converter",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"wayou.vscode-todo-highlight"
 			]
 		}
 	}
