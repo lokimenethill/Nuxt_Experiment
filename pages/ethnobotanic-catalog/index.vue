@@ -24,8 +24,6 @@
               :key="especie" 
               :nombre="especie" 
               :is-grid="isGrid" />
-            <!-- <card-species-book v-for="especie in especies" 
-              :key="especie" nombre="Pseudobombax ellipticum" :is-grid="false" /> -->
           </div>
         </section>
         <p class="smallest">
