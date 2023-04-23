@@ -3,21 +3,59 @@
     <header>
       <section>
         <nav class="menu-lengua-terminal">
-          <button class="lengua-terminal-item" name="mixteco">Mixteco</button>
-          <button class="lengua-terminal-item" name="Náhuatl">Náhuatl</button>
-          <button class="lengua-terminal-item" name="Totonaco">Totonaco</button>
+          <button 
+            class="lengua-terminal-item"
+            name="mixteco"
+            :disabled="isButtonActive('mixtec')"
+            :class="{ activo : isButtonActive('mixtec')}"
+            @click="setLanguageText('mixtec')">
+            Mixteco
+          </button>
+          <button 
+            class="lengua-terminal-item" name="Náhuatl"
+            :disabled="isButtonActive('nahuatl')"
+            :class="{ activo : isButtonActive('nahuatl')}"
+            @click="setLanguageText('nahuatl')">
+            Náhuatl
+          </button>
+          <button 
+            class="lengua-terminal-item" name="Totonaco"
+            :disabled="isButtonActive('totonac')"
+            :class="{ activo : isButtonActive('totonac')}"
+            @click="setLanguageText('totonac')">
+            Totonaco
+          </button>
           <!-- Separator -->
-          <button class="lengua-terminal-item" name="Comentario">Comentario</button>
+          <button
+            class="lengua-terminal-item"
+            name="Comentario"
+            :class="{ activo : isButtonActive('comment')}" 
+            @click="setLanguageText('comment')">
+            Comentario
+          </button>
           <!-- Separator -->
-          <button class="lengua-terminal-item boton-iconos-lengua-terminal-item" name="Play">
+          <button
+            class="lengua-terminal-item boton-iconos-lengua-terminal-item" 
+            name="Play"
+            :disabled="isButtonActive('comment')"
+            @click="playPause">
             <span class="material-icons-sharp iconos-lengua-terminal-item">
-              music_note
+              {{ playing ? 'pause' : 'music_note' }}
             </span>
           </button>
-          <button class="lengua-terminal-item boton-iconos-lengua-terminal-item" name="Rewind">
-            <span class="material-icons-sharp iconos-lengua-terminal-item">replay</span>
+          <button
+            class="lengua-terminal-item boton-iconos-lengua-terminal-item"
+            name="Rewind"
+            :disabled="isButtonActive('comment')" 
+            @click="resetAudio">
+            <span class="material-icons-sharp iconos-lengua-terminal-item">
+              replay
+            </span>
           </button>
-          <button class="lengua-terminal-item boton-iconos-lengua-terminal-item" name="Back">
+          <button 
+            class="lengua-terminal-item boton-iconos-lengua-terminal-item" 
+            name="Back"
+            @click="goToEthobotanicCatalog">
             <span class="material-icons-sharp iconos-lengua-terminal-item">
               arrow_back
             </span>
@@ -26,7 +64,7 @@
       </section>
     </header>
     <div class="">
-      <species-viewer :especie="especie" :text="topPanelSelection"/>
+      <species-viewer ref="speciesViewer" :especie="especie" :text="topPanelSelection"/>
     </div>
     <aside 
       id="sidebar-menu"
@@ -34,15 +72,35 @@
       class="contenedor-menu-flotante abierto">
       <nav class="menu-flotante">
         <div class="menu-flotante-header">
-          <button>x</button>
+          <button @click="toggleSideBar">x</button>
           <h4>Contenido</h4>
         </div>
-        <div class="menu-flotante-body"></div>
+        <div class="menu-flotante-body">
+          <nuxt-link 
+            v-for="especieItem in speciesDataset"
+            :key="especieItem.nombre_cientifico"
+            to="/ethnobotanic-catalog/Pseudobombax%20ellipticum">
+            <div class="menu-flotante-body__data-container-vista-lista">
+              <h3 class="menu-flotante-body__liga__titulo-vista-lista">
+                <i>{{especieItem.nombre_cientifico}}</i> {{especieItem.indicador_subespecie}}
+                <i>{{especieItem.subespecie}}</i>
+                {{especieItem.autor}}
+              </h3>
+              <h4 class="menu-flotante-body__liga__familia">{{especieItem.familia}}</h4>
+            </div>
+          </nuxt-link>
+        </div>
       </nav>
       <div class="">
-
+        <button class="boton-menu-flotante" @click="toggleSideBar">
+          <span class="material-icons-sharp">
+            {{ visibleSideBar ? 'close': 'view_list' }}
+          </span>
+        </button>
+        <span class="material-icons-sharp">keyboard_arrow_right</span>
       </div>
     </aside>
+    <audio ref="audio" :src="getAudioUrl()">Download audio</audio>
     <!-- {{$route.params.page}} -->
   </div>
 </template>
@@ -68,6 +126,7 @@ export default {
     const especie = speciesDataset.find( species => species.nombre_cientifico === params.page );
     return{
       especie,
+      speciesDataset,
     };
   },
   data(){
@@ -75,7 +134,55 @@ export default {
       topPanelSelection: topPanelOptions.mixtec,
       playing: false,
       visibleSideBar: false,
+      audio: null,
     };
+  },
+  created(){
+    this.audio = this.$refs.audio;
+  },
+  methods:{
+    getAudioUrl(){
+      return this.topPanelSelection === "comentario"? 
+      "" : this.especie[`audio${this.topPanelSelection}_url`];
+    },
+    playPause(){
+      if (this.playing) {
+        this.audio.pause();
+      } else {
+        this.audio.play();
+      }
+      this.playing = !this.playing;
+    },
+    resetAudio() {
+      this.audio.currentTime = 0;
+    },
+    stop() {
+      this.playing = false;
+    },
+    isButtonActive(buttonName) {
+      return topPanelOptions[buttonName] === this.topPanelSelection;
+    },
+    setLanguageText(language){
+      this.stop();
+      this.topPanelSelection = topPanelOptions[language];
+      this.$refs.speciesViewer.setLanguageText("spanish");
+      if (language === "comment"){
+        this.$refs.translatedText.$refs.translationPanel.style.order = "-1";
+      }else{
+        this.$refs.translatedText.$refs.translationPanel.style.order = "0";
+      }
+    },
+    goToEthobotanicCatalog(){
+      this.$router.push('/ethnobotanic-catalog');
+    },
+    toggleSideBar(){
+      this.visibleSideBar = !this.visibleSideBar;
+      if (this.visibleSideBar) {
+        this.$refs.sidebarMenu.style.left = "0";
+      } else {
+        this.$refs.sidebarMenu.style.left = "-40%";
+      }
+    },
   },
 };
 </script>

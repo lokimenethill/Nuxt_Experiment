@@ -28,7 +28,7 @@
         </div>
       </article>
       <hr class="divisor-lengua-terminal--traduccion">
-      <div id="menu-traduccion" class="menu-traduccion">
+      <div id="menu-traduccion" ref="translationPanel" class="menu-traduccion">
         <button 
           class="menu-traduccion-item"
           :class="{ activo: isButtonActive('spanish')}"
@@ -47,7 +47,6 @@
           <div v-html="especie[`texto${text}${translationLanguage}`]"></div>
         </div>
       </article>
-      <audio ref="audio" :src="getAudioUrl()">Download audio</audio>
     </section>
   </main>
 </template>
@@ -94,9 +93,6 @@ export default {
     },
     setLanguageText(language) {
       this.translationLanguage = bottomPanelOptions[language];
-    },
-    getAudioUrl(){
-      return this.text === "comentario"? "" : this.especie[`audio${this.text}_url`];
     },
   },
 };
