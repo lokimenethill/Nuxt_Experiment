@@ -101,7 +101,6 @@
       </div>
     </aside>
     <audio ref="audio" :src="getAudioUrl()">Download audio</audio>
-    <!-- {{$route.params.page}} -->
   </div>
 </template>
 
@@ -114,11 +113,6 @@ const topPanelOptions = {
   totonac: "_totonaco",
   comment: "comentario",
 };
-
-// const bottomPanelOptions = {
-//   english: "_ing",
-//   spanish: "_esp",
-// };
 
 export default {
   async asyncData({ params }){
@@ -134,11 +128,7 @@ export default {
       topPanelSelection: topPanelOptions.mixtec,
       playing: false,
       visibleSideBar: false,
-      audio: null,
     };
-  },
-  created(){
-    this.audio = this.$refs.audio;
   },
   methods:{
     getAudioUrl(){
@@ -147,14 +137,14 @@ export default {
     },
     playPause(){
       if (this.playing) {
-        this.audio.pause();
+        this.$refs.audio.pause();
       } else {
-        this.audio.play();
+        this.$refs.audio.play();
       }
       this.playing = !this.playing;
     },
     resetAudio() {
-      this.audio.currentTime = 0;
+      this.$refs.audio.currentTime = 0;
     },
     stop() {
       this.playing = false;
@@ -173,7 +163,10 @@ export default {
       }
     },
     goToEthobotanicCatalog(){
-      this.$router.push('/ethnobotanic-catalog');
+      const localePath = '/ethnobotanic-catalog';
+      const currentLocale = this.$i18n.locale;
+      const url = `/${currentLocale}${localePath}`;
+      this.$router.push(url);
     },
     toggleSideBar(){
       this.visibleSideBar = !this.visibleSideBar;
