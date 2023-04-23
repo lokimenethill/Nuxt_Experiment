@@ -167,9 +167,9 @@ export default {
       this.topPanelSelection = topPanelOptions[language];
       this.$refs.speciesViewer.setLanguageText("spanish");
       if (language === "comment"){
-        this.$refs.translatedText.$refs.translationPanel.style.order = "-1";
+        this.$refs.speciesViewer.$refs.translationPanel.style.order = "-1";
       }else{
-        this.$refs.translatedText.$refs.translationPanel.style.order = "0";
+        this.$refs.speciesViewer.$refs.translationPanel.style.order = "0";
       }
     },
     goToEthobotanicCatalog(){
