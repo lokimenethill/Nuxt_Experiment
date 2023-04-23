@@ -26,7 +26,7 @@
       </section>
     </header>
     <div class="">
-
+      <species-viewer :especie="especie" :text="topPanelSelection"/>
     </div>
     <aside 
       id="sidebar-menu"
@@ -49,18 +49,38 @@
 
 <script>
 // importing species data
-import species from "~/assets/data/species.json";
+// Auxiliary Variables
+const topPanelOptions = {
+  mixtec: "_mixteco",
+  nahuatl: "_nahuatl",
+  totonac: "_totonaco",
+  comment: "comentario",
+};
+
+// const bottomPanelOptions = {
+//   english: "_ing",
+//   spanish: "_esp",
+// };
+
 export default {
+  async asyncData({ params }){
+    const speciesDataset = await require('~/assets/data/species.json');
+    const especie = speciesDataset.find( species => species.nombre_cientifico === params.page );
+    return{
+      especie,
+    };
+  },
   data(){
     return {
+      topPanelSelection: topPanelOptions.mixtec,
       playing: false,
       visibleSideBar: false,
-      species,
     };
   },
 };
 </script>
 
 <style scoped>
+@import '@/assets/estilos-catalogo.css';
 @import '@/assets/estilos-catalogo-interior.css';
 </style>
