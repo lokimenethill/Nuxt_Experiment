@@ -1,8 +1,14 @@
 <template>
   <div :class=" [isGrid ? 'indice__tarjeta' : 'indice__tarjeta-vista-lista']">
     <div :class="[isGrid ? 'indice__tarjeta__header' : 'indice__tarjeta__header-vista-lista']">
-      <a :href="especie.pagina_url" :class="[isGrid ? 'indice__tarjeta__header__liga' : 'indice__tarjeta__header__liga-vista-lista']">
-        <img :class="[isGrid ? 'indice__tarjeta__header__liga__img' : 'oculto']" :src="especie.miniatura_img_url" alt="Imagen 1 a 1">
+      <!-- :TODO FALTA AGREGAR I18N A LOS LINKS  -->
+      <nuxt-link 
+        to="/en/ethnobotanic-catalog/Pseudobombax%20ellipticum" 
+        :class="[isGrid ? 'indice__tarjeta__header__liga'
+        : 'indice__tarjeta__header__liga-vista-lista']">
+        <img 
+          :class="[isGrid ? 'indice__tarjeta__header__liga__img' : 'oculto']" 
+          :src="especie.miniatura_img_url" alt="Imagen 1 a 1">
         <div :class="[isGrid ? 'indice__tarjeta__header__data-container' : 'indice__tarjeta__header__data-container-vista-lista']">
           <h3 :class="[isGrid ? 'indice__tarjeta__header__liga__titulo' : 'indice__tarjeta__header__liga__titulo-vista-lista']">
           <i>{{especie.nombre_cientifico}}</i>
@@ -11,7 +17,7 @@
           {{especie.autor}}</h3>
           <h4 class="indice__tarjeta__header__liga__familia">{{especie.familia}}</h4>
         </div>
-      </a>
+      </nuxt-link>
     </div>
   </div>
 </template>

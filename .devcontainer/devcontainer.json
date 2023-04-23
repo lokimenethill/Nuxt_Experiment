@@ -21,7 +21,9 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
         "sdras.vue-vscode-extensionpack",
-				"meganrogge.template-string-converter"
+				"meganrogge.template-string-converter",
+				"eamodio.gitlens",
+				"wayou.vscode-todo-highlight"
 			]
 		}
 	}
