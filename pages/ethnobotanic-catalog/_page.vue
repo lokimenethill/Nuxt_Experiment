@@ -79,7 +79,7 @@
           <nuxt-link 
             v-for="especieItem in speciesDataset"
             :key="especieItem.nombre_cientifico"
-            to="/ethnobotanic-catalog/Pseudobombax%20ellipticum">
+            to="/en/ethnobotanic-catalog/Pseudobombax%20ellipticum">
             <div class="menu-flotante-body__data-container-vista-lista">
               <h3 class="menu-flotante-body__liga__titulo-vista-lista">
                 <i>{{especieItem.nombre_cientifico}}</i> {{especieItem.indicador_subespecie}}
