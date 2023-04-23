@@ -36,12 +36,14 @@
             onclick="location.href='#'"
             class="topic-index-item flora-and-fauna"
           >
-            <h3 class="titulo-modulo">
-              {{ $t('topicIndex.topCards.flora.title') }}
-            </h3>
-            <p class="descripcion-modulo">
-              {{ $t('topicIndex.topCards.flora.text') }}
-            </p>
+            <nuxt-link class="none" :to="localePath('/ethnobotanic-catalog')">
+              <h3 class="titulo-modulo">
+                {{ $t('topicIndex.topCards.flora.title') }}
+              </h3>
+              <p class="descripcion-modulo">
+                {{ $t('topicIndex.topCards.flora.text') }}
+              </p>
+            </nuxt-link>
           </div>
           </transition>
           <transition name="audios">
@@ -103,9 +105,7 @@
              </nuxt-link>
             <code class="modulo-lexico"
               ><a
-                href="https://glottolog.org/resource/languoid/id/high1278
-
-              "
+                href="https://glottolog.org/resource/languoid/id/high1278"
                 target="_blank"
                 >high1278</a
               ></code
@@ -131,7 +131,8 @@
               {{ $t('topicIndex.bottomCards.nahuatl.title') }}
             </h5>
             <h3 class="descripcion-modulo-lexico">
-              {{ $t('topicIndex.bottomCards.nahuatl.region2') }}
+              <span v-html="$t('topicIndex.bottomCards.nahuatl.region2')" ></span>
+             
             </h3>
             <code class="modulo-lexico"
               ><a
@@ -176,7 +177,7 @@
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mayan.title') }}
             </h5>
-            <h3 v-html="$t('topicIndex.bottomCards.mayan.region1')" class="descripcion-modulo-lexico">
+            <h3 class="descripcion-modulo-lexico" v-html="$t('topicIndex.bottomCards.mayan.region1')">
             </h3>
             <code class="modulo-lexico"
               ><a
@@ -240,12 +241,14 @@
             >
           </div>
           <div onclick="" class="lexico-item item-mixteco">
+            <nuxt-link :to="localePath('mixteclexicon')" >
             <h5 class="titulo-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.title') }}
             </h5>
             <h3 class="descripcion-modulo-lexico">
               {{ $t('topicIndex.bottomCards.mixtec.region4') }}
             </h3>
+          </nuxt-link>
             <code class="modulo-lexico"
               ><a
                 href="https://glottolog.org/resource/languoid/id/xoch1238"
@@ -318,7 +321,7 @@
               ></code
             >
           </div>
-          <div @click="lexiconsPush()" class="lexico-item-boton-regresar">
+          <div class="lexico-item-boton-regresar" @click="lexiconsPush()">
             <h5 class="titulo-modulo-lexico-instrucciones">
               {{ $t('topicIndex.bottomCards.back') }}
             </h5>
