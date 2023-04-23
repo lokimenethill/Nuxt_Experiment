@@ -3,7 +3,7 @@
     <div class="contenedor-general">
       <h4 class="instrucciones">{{ $t('languageIndex.choose') }}</h4>
       <div class="contenedor-languaje-index">
-        <div class="language-index-item" id="amuzgo">
+        <div id="amuzgo" class="language-index-item" >
           <nuxt-link
             class="none"
             :to="localePath('/languageIndexView/amuzgoan')"
@@ -36,7 +36,7 @@
           </p>
         </div>
 
-        <div class="language-index-item" id="maya">
+        <div id="maya" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -68,7 +68,7 @@
             </nuxt-link>
           </p>
         </div>
-        <div class="language-index-item" id="mazateco">
+        <div id="mazateco" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -94,7 +94,7 @@
             </nuxt-link>
           </p>
         </div>
-                <div class="language-index-item" id="mixe">
+                <div id="mixe" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -128,7 +128,7 @@
             </nuxt-link>
           </p>
         </div>
-        <div class="language-index-item" id="mixteco">
+        <div id="mixteco" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -162,7 +162,7 @@
             </nuxt-link>
           </p>
         </div>
-                <div class="language-index-item" id="nahuatl">
+                <div id="nahuatl" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -195,7 +195,7 @@
             </nuxt-link>
           </p>
         </div>
-        <div class="language-index-item" id="totonaco">
+        <div id="totonaco" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
@@ -228,7 +228,7 @@
             </nuxt-link>
           </p>
         </div>
-        <div class="language-index-item" id="triqui">
+        <div id="triqui" class="language-index-item">
           <nuxt-link
             class="none"
             style="text-decoration: none"
