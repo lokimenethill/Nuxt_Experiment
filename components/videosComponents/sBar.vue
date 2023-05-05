@@ -360,6 +360,12 @@ export default {
     for (let i = 0; i < this.library.length; i++) {
       this.library[i].id = i;
     }
+    
+    if(this.$route.params.id!=="general"){
+      if(this.items.length<=0  ){
+        this.NotEnoughResWindow=true;
+      }
+    }
     // preprocess lang
   
     this.searchSelector = this.searchSelectOptions[0];

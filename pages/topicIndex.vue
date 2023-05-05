@@ -33,17 +33,17 @@
           <transition name="flora-and-fauna">
           <div
             id=""
-            onclick="location.href='#'"
+            onclick="location.href='https://bespoke-quokka-bd955c.netlify.app/ethnobotanic-catalog/'"
             class="topic-index-item flora-and-fauna"
           >
-            <nuxt-link class="none" :to="localePath('/ethnobotanic-catalog')">
+            <!-- <nuxt-link class="none" :to="localePath('/ethnobotanic-catalog')"> -->
               <h3 class="titulo-modulo">
                 {{ $t('topicIndex.topCards.flora.title') }}
               </h3>
               <p class="descripcion-modulo">
                 {{ $t('topicIndex.topCards.flora.text') }}
               </p>
-            </nuxt-link>
+           <!-- </nuxt-link> -->
           </div>
           </transition>
           <transition name="audios">
