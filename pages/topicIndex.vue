@@ -33,7 +33,7 @@
           <transition name="flora-and-fauna">
           <div
             id=""
-            onclick="location.href='https://bespoke-quokka-bd955c.netlify.app/ethnobotanic-catalog/'"
+            onclick="location.href='https://shark-app-n3qek.ondigitalocean.app/ethnobotanic-catalog/'"
             class="topic-index-item flora-and-fauna"
           >
             <!-- <nuxt-link class="none" :to="localePath('/ethnobotanic-catalog')"> -->
