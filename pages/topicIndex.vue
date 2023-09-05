@@ -47,9 +47,10 @@
           </div>
           </transition>
           <transition name="audios">
+            <!-- oldurl https://sylard-hsnrj.ondigitalocean.app/ -->
           <div
             id="audios"
-            onclick="location.href='https://sylard-hsnrj.ondigitalocean.app/'"
+            onclick="location.href='https://conabio.sylard.org/'"
             class="topic-index-item audios"
           >
             <h3 class="titulo-modulo">
