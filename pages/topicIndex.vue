@@ -50,7 +50,7 @@
             <!-- oldurl https://sylard-hsnrj.ondigitalocean.app/ -->
           <div
             id="audios"
-            onclick="location.href='https://conabio.sylard.org/'"
+            onclick="location.href='https://sylard-hsnrj.ondigitalocean.app/'"
             class="topic-index-item audios"
           >
             <h3 class="titulo-modulo">
@@ -133,7 +133,7 @@
             </h5>
             <h3 class="descripcion-modulo-lexico">
               <span v-html="$t('topicIndex.bottomCards.nahuatl.region2')" ></span>
-             
+
             </h3>
             <code class="modulo-lexico"
               ><a
@@ -350,7 +350,7 @@ export default {
   head() {
     return {
       title: this.$t('navBar.topicIndex'),
-      /* metatags  
+      /* metatags
     meta:[
         {name:'twitter:title', content: this.post.title},
         {name:'twitter:description', content:"prueba de proyecto nuxt"},
@@ -366,7 +366,7 @@ export default {
         this.lexic = true;
         this.lexic3=true;
         setTimeout(()=> this.setLexicState(true), 2000);
-        
+
       } else {
         this.lexic = false;
         this.lexic2=false;
@@ -429,7 +429,7 @@ p.descripcion-modulo {
   width: 50%;
   height: 100%;
   order: -1;
-  
+
   padding-top: 5rem !important;
   background-color: var(--lexicons0);
   animation: desplegado-topicos 1s ease-in-out;
@@ -463,11 +463,11 @@ p.descripcion-modulo {
   animation: desplegado-topicos 1.2s ease-in-out;
 }
 .audios-enter-active {
-  
+
   animation: desplegado-topicos 1.2s ease-in-out ;
 }
 .audios-leave-active {
-  
+
   animation: desplegado-topicos 1.2s ease-in-out reverse;
 }
 .audios:hover {
